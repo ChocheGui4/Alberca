@@ -24,8 +24,12 @@ public class Inscripciones extends javax.swing.JFrame {
     int dias = 1;
     int contardos = 0, dos =  0;
     int contartres = 0, tres =  0;
+    int contarcuatro = 0, cuatro =  0;
+    int contarcinco = 0, cinco =  0;
     JCheckBox diasdos[] = new JCheckBox[2];
     JCheckBox diastres[] = new JCheckBox[3];
+    JCheckBox diascuatro[] = new JCheckBox[4];
+    JCheckBox diascinco []= new JCheckBox[5];
 
     public Inscripciones() {
         this.setContentPane(fondo);
@@ -112,8 +116,6 @@ public class Inscripciones extends javax.swing.JFrame {
                             tres=i-2;
                             break;
                         }
-
-
                     }
                 }
                 for (int i = 0; i < 3; i++) {
@@ -137,6 +139,128 @@ public class Inscripciones extends javax.swing.JFrame {
                         System.out.println(diastres[i].getText());    
                     }else{
                         System.out.println(diastres[i]);
+                    }
+                    
+                }
+            }
+        }else if(dias==4){
+            if(checkprincipal.isSelected()==true){
+                for (int i = 0; i < 4; i++) {
+
+                    if (diascuatro[i] == null) {
+                        contarcuatro += 1;
+                        diascuatro[i] = checkprincipal;
+                        break;
+                    }else if(contarcuatro==4){
+                        if(cuatro==i & i==0){
+                            diascuatro[i].setSelected(false);
+                            diascuatro[i]= checkprincipal;
+                            cuatro=i+1;
+                            break;
+                        }else if(cuatro==i & i==1){
+                            diascuatro[i].setSelected(false);
+                            diascuatro[i]= checkprincipal;
+                            cuatro=i+1;
+                            break;
+                        }else if(cuatro==i & i==2){
+                            diascuatro[i].setSelected(false);
+                            diascuatro[i]= checkprincipal;
+                            cuatro=i+1;
+                            break;
+                        }else if(cuatro==i & i==3){
+                            diascuatro[i].setSelected(false);
+                            diascuatro[i]= checkprincipal;
+                            cuatro=i-3;
+                            break;
+                        }
+
+
+                    }
+                }
+                for (int i = 0; i < 4; i++) {
+                    if(diascuatro[i]!=null){
+                        System.out.println(diascuatro[i].getText());
+                        diascuatro[i].setSelected(true);
+                    }
+
+                }
+            }else{
+                for (int i = 0; i < 4; i++) {
+                    if(checkprincipal==diascuatro[i]){
+                        diascuatro[i]=null;
+                        contarcuatro -=1;
+                        break;
+                    }
+                }
+                
+                for (int i = 0; i < 4; i++) {
+                    if(diascuatro[i]!=null){
+                        System.out.println(diascuatro[i].getText());    
+                    }else{
+                        System.out.println(diascuatro[i]);
+                    }
+                    
+                }
+            }
+        }else if(dias==5){
+            if(checkprincipal.isSelected()==true){
+                for (int i = 0; i < 5; i++) {
+
+                    if (diascinco[i] == null) {
+                        contarcinco += 1;
+                        diascinco[i] = checkprincipal;
+                        break;
+                    }else if(contarcinco==5){
+                        System.out.println("contar 5");
+                        if(cinco==i & i==0){
+                            diascinco[i].setSelected(false);
+                            diascinco[i]= checkprincipal;
+                            cinco=i+1;
+                            break;
+                        }else if(cinco==i & i==1){
+                            diascinco[i].setSelected(false);
+                            diascinco[i]= checkprincipal;
+                            cinco=i+1;
+                            break;
+                        }else if(cinco==i & i==2){
+                            diascinco[i].setSelected(false);
+                            diascinco[i]= checkprincipal;
+                            cinco=i+1;
+                            break;
+                        }else if(cinco==i & i==3){
+                            diascinco[i].setSelected(false);
+                            diascinco[i]= checkprincipal;
+                            cinco=i+1;
+                            break;
+                        }else if(cinco==i & i==4){
+                            diascinco[i].setSelected(false);
+                            diascinco[i]= checkprincipal;
+                            cinco=i-4;
+                            break;
+                        }
+                    }
+                }
+                for (int i = 0; i < 5; i++) {
+                    if(diascinco[i]!=null){
+                        System.out.println(diascinco[i].getText());
+                        diascinco[i].setSelected(true);
+                    }
+
+                }
+            }else{
+                for (int i = 0; i < 5; i++) {
+                    if(checkprincipal==diascinco[i]){
+                        diascinco[i]=null;
+                        contarcinco -=1;
+                        break;
+                    }
+                }
+                
+                for (int i = 0; i < 5; i++) {
+                    if(diascinco[i]!=null){
+                        System.out.println(diascinco[i].getText());    
+                    }else{
+                        System.out.println(diascinco[i]);
                     }
                     
                 }
@@ -664,6 +788,10 @@ public class Inscripciones extends javax.swing.JFrame {
 
         dias = cbdias.getSelectedIndex() + 1;
         deseleccionarckdias(false);
+        System.out.println("item = "+dias);
+        
+        
+        
 
     }//GEN-LAST:event_cbdiasActionPerformed
 
