@@ -287,6 +287,25 @@ public class Inscripciones extends javax.swing.JFrame {
         cksabado.setSelected(valor);
     }
 
+    public void inicializarvariables(){
+        contardos=0; dos=0;
+        contartres=0; tres=0;
+        contarcuatro=0; cuatro=0;
+        contarcinco=0; cinco=0;
+        for (int i = 0; i < 2; i++) {
+            diasdos[i]=null;
+        }
+        for (int i = 0; i < 3; i++) {
+            diastres[i]=null;
+        }
+        
+        for (int i = 0; i < 4; i++) {
+            diascuatro[i]=null;
+        }
+        for (int i = 0; i < 5; i++) {
+            diascinco[i]=null;
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -788,7 +807,13 @@ public class Inscripciones extends javax.swing.JFrame {
 
         dias = cbdias.getSelectedIndex() + 1;
         deseleccionarckdias(false);
-        System.out.println("item = "+dias);
+//        System.out.println("item = "+dias);
+        inicializarvariables();
+        System.out.println("contar 2 = "+contardos);
+        System.out.println("contar 3 = "+contartres);
+        System.out.println("contar 4 = "+contarcuatro);
+        System.out.println("contar 5 = "+contarcinco);
+        
         
         
         
