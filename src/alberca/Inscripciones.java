@@ -22,40 +22,145 @@ public class Inscripciones extends javax.swing.JFrame {
      */
     FondoPanel fondo = new FondoPanel();
     int dias = 1;
-    JCheckBox diasdos []= new JCheckBox[2];
+    int contardos = 0, dos =  0;
+    int contartres = 0, tres =  0;
+    JCheckBox diasdos[] = new JCheckBox[2];
+    JCheckBox diastres[] = new JCheckBox[3];
 
     public Inscripciones() {
         this.setContentPane(fondo);
         initComponents();
         lbltutor.setVisible(false);
         txtnombretutor.setVisible(false);
-        
+
         this.setLocationRelativeTo(null);
     }
-    
-    public void checkdias(JCheckBox check1, JCheckBox check2, JCheckBox check3, JCheckBox check4, JCheckBox check5, 
+
+    public void checkdias(JCheckBox check1, JCheckBox check2, JCheckBox check3, JCheckBox check4, JCheckBox check5,
             JCheckBox checkprincipal) {
-        if (dias == 0) {
-            deshabilitarcheckdias(false);
-        }else if(dias==1){
-            
+        if (dias == 1) {
+
             check1.setSelected(false);
             check2.setSelected(false);
             check3.setSelected(false);
             check4.setSelected(false);
             check5.setSelected(false);
-        }else if(dias==2){
-            diasdos[0]=check1;
+        } else if (dias == 2) {
+            if(checkprincipal.isSelected()==true){
+                for (int i = 0; i < 2; i++) {
+
+                    if (diasdos[i] == null) {
+                        contardos += 1;
+                        diasdos[i] = checkprincipal;
+                        break;
+                    }else if(contardos==2){
+                        if(dos==i & i==0){
+                            diasdos[i].setSelected(false);
+                            diasdos[i]= checkprincipal;
+                            dos=i+1;
+                            break;
+                        }else if(dos==i & i==1){
+                            diasdos[i].setSelected(false);
+                            diasdos[i]= checkprincipal;
+                            dos=i-1;
+                            break;
+                        }
+
+
+                    }
+                }
+            }else{
+                for (int i = 0; i < 2; i++) {
+                    if(checkprincipal==diasdos[i]){
+                        diasdos[i]=null;
+                        contardos -=1;
+                        break;
+                    }
+                }
+                
+                for (int i = 0; i < 2; i++) {
+                    if(diasdos[i]!=null){
+                        System.out.println(diasdos[i].getText());    
+                    }else{
+                        System.out.println(diasdos[i]);
+                    }
+                    
+                }
+            }
+        }else if(dias==3){
+            if(checkprincipal.isSelected()==true){
+                for (int i = 0; i < 3; i++) {
+
+                    if (diastres[i] == null) {
+                        contartres += 1;
+                        diastres[i] = checkprincipal;
+                        break;
+                    }else if(contartres==3){
+                        if(tres==i & i==0){
+                            diastres[i].setSelected(false);
+                            diastres[i]= checkprincipal;
+                            tres=i+1;
+                            break;
+                        }else if(tres==i & i==1){
+                            diastres[i].setSelected(false);
+                            diastres[i]= checkprincipal;
+                            tres=i+1;
+                            break;
+                        }else if(tres==i & i==2){
+                            diastres[i].setSelected(false);
+                            diastres[i]= checkprincipal;
+                            tres=i-2;
+                            break;
+                        }
+
+
+                    }
+                }
+                for (int i = 0; i < 3; i++) {
+                    if(diastres[i]!=null){
+                        System.out.println(diastres[i].getText());
+                        diastres[i].setSelected(true);
+                    }
+
+                }
+            }else{
+                for (int i = 0; i < 3; i++) {
+                    if(checkprincipal==diastres[i]){
+                        diastres[i]=null;
+                        contartres -=1;
+                        break;
+                    }
+                }
+                
+                for (int i = 0; i < 3; i++) {
+                    if(diastres[i]!=null){
+                        System.out.println(diastres[i].getText());    
+                    }else{
+                        System.out.println(diastres[i]);
+                    }
+                    
+                }
+            }
         }
 
     }
-    public void deshabilitarcheckdias(boolean valor){
+
+    public void deshabilitarcheckdias(boolean valor) {
         cklunes.setEnabled(valor);
         ckmartes.setEnabled(valor);
         ckmiercoles.setEnabled(valor);
         ckjueves.setEnabled(valor);
         ckviernes.setEnabled(valor);
         cksabado.setEnabled(valor);
+    }
+    
+    public void deseleccionarckdias(boolean valor) {
+        cklunes.setSelected(valor);
+        ckmartes.setSelected(valor);
+        ckmiercoles.setSelected(valor);
+        ckjueves.setSelected(valor);
+        ckviernes.setSelected(valor);
+        cksabado.setSelected(valor);
     }
 
     /**
@@ -523,34 +628,43 @@ public class Inscripciones extends javax.swing.JFrame {
 
     private void cklunesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cklunesActionPerformed
         System.out.println(cklunes.getText());
-        checkdias(ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes);
+        System.out.println(cklunes.isSelected());
+        
+            checkdias(ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes);            
+
 
     }//GEN-LAST:event_cklunesActionPerformed
 
     private void ckmartesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckmartesActionPerformed
-        checkdias(cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes);
+            checkdias(cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes);
+        
     }//GEN-LAST:event_ckmartesActionPerformed
 
     private void ckmiercolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckmiercolesActionPerformed
-        checkdias(cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles);
+            checkdias(cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles);
+        
     }//GEN-LAST:event_ckmiercolesActionPerformed
 
     private void ckjuevesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckjuevesActionPerformed
-        checkdias(ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves);
+            checkdias(ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves);
+        
     }//GEN-LAST:event_ckjuevesActionPerformed
 
     private void ckviernesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckviernesActionPerformed
-        checkdias(ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes);
+            checkdias(ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes);
+        
     }//GEN-LAST:event_ckviernesActionPerformed
 
     private void cksabadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cksabadoActionPerformed
-        checkdias(ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado);
+            checkdias(ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado);
+        
     }//GEN-LAST:event_cksabadoActionPerformed
 
     private void cbdiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbdiasActionPerformed
-        
+
         dias = cbdias.getSelectedIndex() + 1;
-        
+        deseleccionarckdias(false);
+
     }//GEN-LAST:event_cbdiasActionPerformed
 
     /**
