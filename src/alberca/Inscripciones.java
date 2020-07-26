@@ -9,6 +9,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JPanel;
 
 /**
@@ -22,14 +23,18 @@ public class Inscripciones extends javax.swing.JFrame {
      */
     FondoPanel fondo = new FondoPanel();
     int dias = 1;
-    int contardos = 0, dos =  0;
-    int contartres = 0, tres =  0;
-    int contarcuatro = 0, cuatro =  0;
-    int contarcinco = 0, cinco =  0;
+    int contardos = 0, dos = 0;
+    int contartres = 0, tres = 0;
+    int contarcuatro = 0, cuatro = 0;
+    int contarcinco = 0, cinco = 0;
     JCheckBox diasdos[] = new JCheckBox[2];
+    JComboBox combodos[] = new JComboBox[2];
     JCheckBox diastres[] = new JCheckBox[3];
+    JComboBox combotres[] = new JComboBox[3];
     JCheckBox diascuatro[] = new JCheckBox[4];
-    JCheckBox diascinco []= new JCheckBox[5];
+    JComboBox combocuatro[] = new JComboBox[4];
+    JCheckBox diascinco[] = new JCheckBox[5];
+    JComboBox combocinco[] = new JComboBox[5];
 
     public Inscripciones() {
         this.setContentPane(fondo);
@@ -42,228 +47,294 @@ public class Inscripciones extends javax.swing.JFrame {
     }
 
     public void checkdias(JCheckBox check1, JCheckBox check2, JCheckBox check3, JCheckBox check4, JCheckBox check5,
-            JCheckBox checkprincipal) {
+            JCheckBox checkprincipal, JComboBox cb1, JComboBox cb2, JComboBox cb3, JComboBox cb4, JComboBox cb5, JComboBox cbprincipal) {
         if (dias == 1) {
+            if (checkprincipal.isSelected() == true) {
+                check1.setSelected(false);
+                check2.setSelected(false);
+                check3.setSelected(false);
+                check4.setSelected(false);
+                check5.setSelected(false);
+                cb1.setEnabled(false);
+                cb2.setEnabled(false);
+                cb3.setEnabled(false);
+                cb4.setEnabled(false);
+                cb5.setEnabled(false);
+                cbprincipal.setEnabled(true);
+            }else{
+                cbprincipal.setEnabled(false);
+            }
 
-            check1.setSelected(false);
-            check2.setSelected(false);
-            check3.setSelected(false);
-            check4.setSelected(false);
-            check5.setSelected(false);
         } else if (dias == 2) {
-            if(checkprincipal.isSelected()==true){
+            if (checkprincipal.isSelected() == true) {
                 for (int i = 0; i < 2; i++) {
 
                     if (diasdos[i] == null) {
                         contardos += 1;
                         diasdos[i] = checkprincipal;
+                        combodos[i] = cbprincipal;
+                        combodos[i].setEnabled(true);
                         break;
-                    }else if(contardos==2){
-                        if(dos==i & i==0){
+                    } else if (contardos == 2) {
+                        if (dos == i & i == 0) {
                             diasdos[i].setSelected(false);
-                            diasdos[i]= checkprincipal;
-                            dos=i+1;
+                            diasdos[i] = checkprincipal;
+                            combodos[i].setEnabled(false);
+                            combodos[i] = cbprincipal;
+                            combodos[i].setEnabled(true);
+                            dos = i + 1;
                             break;
-                        }else if(dos==i & i==1){
+                        } else if (dos == i & i == 1) {
                             diasdos[i].setSelected(false);
-                            diasdos[i]= checkprincipal;
-                            dos=i-1;
+                            diasdos[i] = checkprincipal;
+                            combodos[i].setEnabled(false);
+                            combodos[i] = cbprincipal;
+                            combodos[i].setEnabled(true);
+                            dos = i - 1;
                             break;
                         }
 
-
                     }
                 }
-            }else{
+            } else {
                 for (int i = 0; i < 2; i++) {
-                    if(checkprincipal==diasdos[i]){
-                        diasdos[i]=null;
-                        contardos -=1;
+                    if (checkprincipal == diasdos[i]) {
+                        diasdos[i] = null;
+                        combodos[i].setEnabled(false);
+                        combodos[i] = null;
+                        contardos -= 1;
                         break;
                     }
                 }
-                
+
                 for (int i = 0; i < 2; i++) {
-                    if(diasdos[i]!=null){
-                        System.out.println(diasdos[i].getText());    
-                    }else{
+                    if (diasdos[i] != null) {
+                        System.out.println(diasdos[i].getText());
+                    } else {
                         System.out.println(diasdos[i]);
                     }
-                    
+
                 }
             }
-        }else if(dias==3){
-            if(checkprincipal.isSelected()==true){
+        } else if (dias == 3) {
+            if (checkprincipal.isSelected() == true) {
                 for (int i = 0; i < 3; i++) {
 
                     if (diastres[i] == null) {
                         contartres += 1;
                         diastres[i] = checkprincipal;
+                        combotres[i] = cbprincipal;
+                        combotres[i].setEnabled(true);
                         break;
-                    }else if(contartres==3){
-                        if(tres==i & i==0){
+                    } else if (contartres == 3) {
+                        if (tres == i & i == 0) {
                             diastres[i].setSelected(false);
-                            diastres[i]= checkprincipal;
-                            tres=i+1;
+                            diastres[i] = checkprincipal;
+                            combotres[i].setEnabled(false);
+                            combotres[i] = cbprincipal;
+                            combotres[i].setEnabled(true);
+                            tres = i + 1;
                             break;
-                        }else if(tres==i & i==1){
+                        } else if (tres == i & i == 1) {
                             diastres[i].setSelected(false);
-                            diastres[i]= checkprincipal;
-                            tres=i+1;
+                            diastres[i] = checkprincipal;
+                            combotres[i].setEnabled(false);
+                            combotres[i] = cbprincipal;
+                            combotres[i].setEnabled(true);
+                            tres = i + 1;
                             break;
-                        }else if(tres==i & i==2){
+                        } else if (tres == i & i == 2) {
                             diastres[i].setSelected(false);
-                            diastres[i]= checkprincipal;
-                            tres=i-2;
+                            diastres[i] = checkprincipal;
+                            combotres[i].setEnabled(false);
+                            combotres[i] = cbprincipal;
+                            combotres[i].setEnabled(true);
+                            tres = i - 2;
                             break;
                         }
                     }
                 }
                 for (int i = 0; i < 3; i++) {
-                    if(diastres[i]!=null){
+                    if (diastres[i] != null) {
                         System.out.println(diastres[i].getText());
                         diastres[i].setSelected(true);
                     }
 
                 }
-            }else{
+            } else {
                 for (int i = 0; i < 3; i++) {
-                    if(checkprincipal==diastres[i]){
-                        diastres[i]=null;
-                        contartres -=1;
+                    if (checkprincipal == diastres[i]) {
+                        diastres[i] = null;
+                        combotres[i].setEnabled(false);
+                        combotres[i] = null;
+                        contartres -= 1;
                         break;
                     }
                 }
-                
+
                 for (int i = 0; i < 3; i++) {
-                    if(diastres[i]!=null){
-                        System.out.println(diastres[i].getText());    
-                    }else{
+                    if (diastres[i] != null) {
+                        System.out.println(diastres[i].getText());
+                    } else {
                         System.out.println(diastres[i]);
                     }
-                    
+
                 }
             }
-        }else if(dias==4){
-            if(checkprincipal.isSelected()==true){
+        } else if (dias == 4) {
+            if (checkprincipal.isSelected() == true) {
                 for (int i = 0; i < 4; i++) {
 
                     if (diascuatro[i] == null) {
                         contarcuatro += 1;
                         diascuatro[i] = checkprincipal;
+                        combocuatro[i] = cbprincipal;
+                        combocuatro[i].setEnabled(true);
                         break;
-                    }else if(contarcuatro==4){
-                        if(cuatro==i & i==0){
+                    } else if (contarcuatro == 4) {
+                        if (cuatro == i & i == 0) {
                             diascuatro[i].setSelected(false);
-                            diascuatro[i]= checkprincipal;
-                            cuatro=i+1;
+                            diascuatro[i] = checkprincipal;
+                            combocuatro[i].setEnabled(false);
+                            combocuatro[i] = cbprincipal;
+                            combocuatro[i].setEnabled(true);
+                            cuatro = i + 1;
                             break;
-                        }else if(cuatro==i & i==1){
+                        } else if (cuatro == i & i == 1) {
                             diascuatro[i].setSelected(false);
-                            diascuatro[i]= checkprincipal;
-                            cuatro=i+1;
+                            diascuatro[i] = checkprincipal;
+                            combocuatro[i].setEnabled(false);
+                            combocuatro[i] = cbprincipal;
+                            combocuatro[i].setEnabled(true);
+                            cuatro = i + 1;
                             break;
-                        }else if(cuatro==i & i==2){
+                        } else if (cuatro == i & i == 2) {
                             diascuatro[i].setSelected(false);
-                            diascuatro[i]= checkprincipal;
-                            cuatro=i+1;
+                            diascuatro[i] = checkprincipal;
+                            combocuatro[i].setEnabled(false);
+                            combocuatro[i] = cbprincipal;
+                            combocuatro[i].setEnabled(true);
+                            cuatro = i + 1;
                             break;
-                        }else if(cuatro==i & i==3){
+                        } else if (cuatro == i & i == 3) {
                             diascuatro[i].setSelected(false);
-                            diascuatro[i]= checkprincipal;
-                            cuatro=i-3;
+                            diascuatro[i] = checkprincipal;
+                            combocuatro[i].setEnabled(false);
+                            combocuatro[i] = cbprincipal;
+                            combocuatro[i].setEnabled(true);
+                            cuatro = i - 3;
                             break;
                         }
-
 
                     }
                 }
                 for (int i = 0; i < 4; i++) {
-                    if(diascuatro[i]!=null){
+                    if (diascuatro[i] != null) {
                         System.out.println(diascuatro[i].getText());
                         diascuatro[i].setSelected(true);
                     }
 
                 }
-            }else{
+            } else {
                 for (int i = 0; i < 4; i++) {
-                    if(checkprincipal==diascuatro[i]){
-                        diascuatro[i]=null;
-                        contarcuatro -=1;
+                    if (checkprincipal == diascuatro[i]) {
+                        diascuatro[i] = null;
+                        combocuatro[i].setEnabled(false);
+                        combocuatro[i] = null;
+                        contarcuatro -= 1;
                         break;
                     }
                 }
-                
+
                 for (int i = 0; i < 4; i++) {
-                    if(diascuatro[i]!=null){
-                        System.out.println(diascuatro[i].getText());    
-                    }else{
+                    if (diascuatro[i] != null) {
+                        System.out.println(diascuatro[i].getText());
+                    } else {
                         System.out.println(diascuatro[i]);
                     }
-                    
+
                 }
             }
-        }else if(dias==5){
-            if(checkprincipal.isSelected()==true){
+        } else if (dias == 5) {
+            if (checkprincipal.isSelected() == true) {
                 for (int i = 0; i < 5; i++) {
 
                     if (diascinco[i] == null) {
                         contarcinco += 1;
                         diascinco[i] = checkprincipal;
+                        combocinco[i] = cbprincipal;
+                        combocinco[i].setEnabled(true);
                         break;
-                    }else if(contarcinco==5){
+                    } else if (contarcinco == 5) {
                         System.out.println("contar 5");
-                        if(cinco==i & i==0){
+                        if (cinco == i & i == 0) {
                             diascinco[i].setSelected(false);
-                            diascinco[i]= checkprincipal;
-                            cinco=i+1;
+                            diascinco[i] = checkprincipal;
+                            combocinco[i].setEnabled(false);
+                            combocinco[i] = cbprincipal;
+                            combocinco[i].setEnabled(true);
+                            cinco = i + 1;
                             break;
-                        }else if(cinco==i & i==1){
+                        } else if (cinco == i & i == 1) {
                             diascinco[i].setSelected(false);
-                            diascinco[i]= checkprincipal;
-                            cinco=i+1;
+                            diascinco[i] = checkprincipal;
+                            combocinco[i].setEnabled(false);
+                            combocinco[i] = cbprincipal;
+                            combocinco[i].setEnabled(true);
+                            cinco = i + 1;
                             break;
-                        }else if(cinco==i & i==2){
+                        } else if (cinco == i & i == 2) {
                             diascinco[i].setSelected(false);
-                            diascinco[i]= checkprincipal;
-                            cinco=i+1;
+                            diascinco[i] = checkprincipal;
+                            combocinco[i].setEnabled(false);
+                            combocinco[i] = cbprincipal;
+                            combocinco[i].setEnabled(true);
+                            cinco = i + 1;
                             break;
-                        }else if(cinco==i & i==3){
+                        } else if (cinco == i & i == 3) {
                             diascinco[i].setSelected(false);
-                            diascinco[i]= checkprincipal;
-                            cinco=i+1;
+                            diascinco[i] = checkprincipal;
+                            combocinco[i].setEnabled(false);
+                            combocinco[i] = cbprincipal;
+                            combocinco[i].setEnabled(true);
+                            cinco = i + 1;
                             break;
-                        }else if(cinco==i & i==4){
+                        } else if (cinco == i & i == 4) {
                             diascinco[i].setSelected(false);
-                            diascinco[i]= checkprincipal;
-                            cinco=i-4;
+                            diascinco[i] = checkprincipal;
+                            combocinco[i].setEnabled(false);
+                            combocinco[i] = cbprincipal;
+                            combocinco[i].setEnabled(true);
+                            cinco = i - 4;
                             break;
                         }
                     }
                 }
                 for (int i = 0; i < 5; i++) {
-                    if(diascinco[i]!=null){
+                    if (diascinco[i] != null) {
                         System.out.println(diascinco[i].getText());
                         diascinco[i].setSelected(true);
                     }
 
                 }
-            }else{
+            } else {
                 for (int i = 0; i < 5; i++) {
-                    if(checkprincipal==diascinco[i]){
-                        diascinco[i]=null;
-                        contarcinco -=1;
+                    if (checkprincipal == diascinco[i]) {
+                        diascinco[i] = null;
+                        combocinco[i].setEnabled(false);
+                        combocinco[i] = null;
+                        contarcinco -= 1;
                         break;
                     }
                 }
-                
+
                 for (int i = 0; i < 5; i++) {
-                    if(diascinco[i]!=null){
-                        System.out.println(diascinco[i].getText());    
-                    }else{
+                    if (diascinco[i] != null) {
+                        System.out.println(diascinco[i].getText());
+                    } else {
                         System.out.println(diascinco[i]);
                     }
-                    
+
                 }
             }
         }
@@ -278,7 +349,7 @@ public class Inscripciones extends javax.swing.JFrame {
         ckviernes.setEnabled(valor);
         cksabado.setEnabled(valor);
     }
-    
+
     public void deseleccionarckdias(boolean valor) {
         cklunes.setSelected(valor);
         ckmartes.setSelected(valor);
@@ -287,8 +358,8 @@ public class Inscripciones extends javax.swing.JFrame {
         ckviernes.setSelected(valor);
         cksabado.setSelected(valor);
     }
-    
-    public void habilitarhoras(boolean valor){
+
+    public void habilitarhoras(boolean valor) {
         cbhoralunes.setEnabled(valor);
         cbhoramartes.setEnabled(valor);
         cbhoramiercoles.setEnabled(valor);
@@ -297,25 +368,34 @@ public class Inscripciones extends javax.swing.JFrame {
         cbhorasabado.setEnabled(valor);
     }
 
-    public void inicializarvariables(){
-        contardos=0; dos=0;
-        contartres=0; tres=0;
-        contarcuatro=0; cuatro=0;
-        contarcinco=0; cinco=0;
+    public void inicializarvariables() {
+        contardos = 0;
+        dos = 0;
+        contartres = 0;
+        tres = 0;
+        contarcuatro = 0;
+        cuatro = 0;
+        contarcinco = 0;
+        cinco = 0;
         for (int i = 0; i < 2; i++) {
-            diasdos[i]=null;
+            diasdos[i] = null;
+            combodos[i] = null;
         }
         for (int i = 0; i < 3; i++) {
-            diastres[i]=null;
+            diastres[i] = null;
+            combotres[i] = null;
         }
-        
+
         for (int i = 0; i < 4; i++) {
-            diascuatro[i]=null;
+            diascuatro[i] = null;
+            combocuatro[i] = null;
         }
         for (int i = 0; i < 5; i++) {
-            diascinco[i]=null;
+            diascinco[i] = null;
+            combocinco[i] = null;
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -347,7 +427,6 @@ public class Inscripciones extends javax.swing.JFrame {
         cktutor = new javax.swing.JCheckBox();
         lbltutor = new javax.swing.JLabel();
         txtnombretutor = new javax.swing.JTextField();
-        rSDateChooser1 = new rojerusan.RSDateChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel12 = new javax.swing.JLabel();
@@ -357,8 +436,6 @@ public class Inscripciones extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        rSDateChooser2 = new rojerusan.RSDateChooser();
-        rSDateChooser3 = new rojerusan.RSDateChooser();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
@@ -375,6 +452,10 @@ public class Inscripciones extends javax.swing.JFrame {
         cbhoramiercoles = new javax.swing.JComboBox<>();
         cbhorajueves = new javax.swing.JComboBox<>();
         cbhoraviernes = new javax.swing.JComboBox<>();
+        jPanelWebCam1 = new JPanelWebCam.JPanelWebCam();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        rSButtonHover1 = new rojerusan.RSButtonHover();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1117, 613));
@@ -397,7 +478,7 @@ public class Inscripciones extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Inscripción");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(557, 0, 209, 54);
+        jLabel1.setBounds(400, 0, 209, 54);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -419,11 +500,11 @@ public class Inscripciones extends javax.swing.JFrame {
 
         txtnombre.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         getContentPane().add(txtnombre);
-        txtnombre.setBounds(215, 70, 230, 25);
+        txtnombre.setBounds(215, 70, 230, 23);
 
         txtapellidos.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         getContentPane().add(txtapellidos);
-        txtapellidos.setBounds(215, 105, 230, 25);
+        txtapellidos.setBounds(215, 105, 230, 23);
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -463,27 +544,27 @@ public class Inscripciones extends javax.swing.JFrame {
 
         txtlocalidad.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         getContentPane().add(txtlocalidad);
-        txtlocalidad.setBounds(147, 227, 233, 25);
+        txtlocalidad.setBounds(147, 227, 233, 23);
 
         txtcalle.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         getContentPane().add(txtcalle);
-        txtcalle.setBounds(147, 264, 233, 25);
+        txtcalle.setBounds(147, 264, 233, 23);
 
         txtnumin.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         getContentPane().add(txtnumin);
-        txtnumin.setBounds(370, 301, 106, 25);
+        txtnumin.setBounds(370, 301, 106, 23);
 
         txtnumex.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         getContentPane().add(txtnumex);
-        txtnumex.setBounds(149, 298, 100, 25);
+        txtnumex.setBounds(149, 298, 100, 23);
 
         txttelefono.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         getContentPane().add(txttelefono);
-        txttelefono.setBounds(149, 338, 100, 25);
+        txttelefono.setBounds(149, 338, 100, 23);
 
         txtcelular.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         getContentPane().add(txtcelular);
-        txtcelular.setBounds(370, 338, 106, 25);
+        txtcelular.setBounds(370, 338, 106, 23);
 
         cktutor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cktutor.setForeground(new java.awt.Color(255, 255, 255));
@@ -504,11 +585,7 @@ public class Inscripciones extends javax.swing.JFrame {
 
         txtnombretutor.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         getContentPane().add(txtnombretutor);
-        txtnombretutor.setBounds(215, 185, 261, 25);
-
-        rSDateChooser1.setBackground(new java.awt.Color(153, 153, 153));
-        getContentPane().add(rSDateChooser1);
-        rSDateChooser1.setBounds(215, 144, 158, 32);
+        txtnombretutor.setBounds(215, 185, 261, 23);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -524,32 +601,34 @@ public class Inscripciones extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(485, 102, 583, 264);
+        jScrollPane1.setBounds(490, 180, 583, 210);
 
         jLabel12.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Buscar: AYO00");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(485, 60, 141, 31);
+        jLabel12.setBounds(490, 140, 141, 31);
 
         txtbuscar.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         getContentPane().add(txtbuscar);
-        txtbuscar.setBounds(630, 63, 97, 25);
+        txtbuscar.setBounds(630, 140, 97, 23);
 
+        jButton2.setBackground(new java.awt.Color(153, 0, 153));
         jButton2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton2.setText("Buscar");
         getContentPane().add(jButton2);
-        jButton2.setBounds(834, 64, 81, 25);
+        jButton2.setBounds(850, 140, 83, 27);
 
+        jButton3.setBackground(new java.awt.Color(255, 0, 0));
         jButton3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton3.setText("Eliminar");
         getContentPane().add(jButton3);
-        jButton3.setBounds(933, 64, 89, 25);
+        jButton3.setBounds(960, 140, 90, 27);
 
         jButton4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton4.setText("Nuevo");
         getContentPane().add(jButton4);
-        jButton4.setBounds(46, 557, 79, 25);
+        jButton4.setBounds(60, 560, 80, 27);
 
         jLabel13.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -563,21 +642,16 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(jLabel14);
         jLabel14.setBounds(361, 402, 160, 31);
 
-        rSDateChooser2.setBackground(new java.awt.Color(204, 204, 204));
-        getContentPane().add(rSDateChooser2);
-        rSDateChooser2.setBounds(165, 403, 158, 32);
-        getContentPane().add(rSDateChooser3);
-        rSDateChooser3.setBounds(525, 402, 158, 32);
-
+        jButton5.setBackground(new java.awt.Color(51, 255, 0));
         jButton5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton5.setText("Cancelar");
+        jButton5.setText("Guardar");
         getContentPane().add(jButton5);
-        jButton5.setBounds(143, 557, 95, 25);
+        jButton5.setBounds(650, 560, 91, 27);
 
         jButton6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton6.setText("Editar datos");
+        jButton6.setText("Renovar mensualidad");
         getContentPane().add(jButton6);
-        jButton6.setBounds(276, 557, 117, 25);
+        jButton6.setBounds(430, 560, 190, 27);
 
         jLabel15.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
@@ -602,7 +676,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cklunes);
-        cklunes.setBounds(80, 450, 69, 25);
+        cklunes.setBounds(80, 450, 68, 25);
 
         ckmartes.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         ckmartes.setText("Martes");
@@ -612,7 +686,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ckmartes);
-        ckmartes.setBounds(220, 450, 75, 25);
+        ckmartes.setBounds(220, 450, 74, 25);
 
         ckmiercoles.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         ckmiercoles.setText("Miércoles");
@@ -656,27 +730,45 @@ public class Inscripciones extends javax.swing.JFrame {
 
         cbhorasabado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhorasabado);
-        cbhorasabado.setBounds(820, 480, 100, 30);
+        cbhorasabado.setBounds(820, 480, 110, 30);
 
         cbhoralunes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhoralunes);
-        cbhoralunes.setBounds(75, 480, 100, 30);
+        cbhoralunes.setBounds(75, 480, 110, 30);
 
         cbhoramartes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhoramartes);
-        cbhoramartes.setBounds(220, 480, 100, 30);
+        cbhoramartes.setBounds(220, 480, 120, 30);
 
         cbhoramiercoles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhoramiercoles);
-        cbhoramiercoles.setBounds(370, 480, 100, 30);
+        cbhoramiercoles.setBounds(370, 480, 120, 30);
 
         cbhorajueves.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhorajueves);
-        cbhorajueves.setBounds(530, 480, 100, 30);
+        cbhorajueves.setBounds(530, 480, 120, 30);
 
         cbhoraviernes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhoraviernes);
-        cbhoraviernes.setBounds(680, 480, 100, 30);
+        cbhoraviernes.setBounds(680, 480, 120, 30);
+
+        jPanelWebCam1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(jPanelWebCam1);
+        jPanelWebCam1.setBounds(970, 20, 100, 100);
+
+        jButton7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jButton7.setText("Editar datos");
+        getContentPane().add(jButton7);
+        jButton7.setBounds(290, 560, 117, 25);
+
+        jButton8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jButton8.setText("Cancelar");
+        getContentPane().add(jButton8);
+        jButton8.setBounds(170, 560, 95, 25);
+
+        rSButtonHover1.setText("rSButtonHover1");
+        getContentPane().add(rSButtonHover1);
+        rSButtonHover1.setBounds(760, 550, 200, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -686,10 +778,10 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void cktutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cktutorActionPerformed
-        if(cktutor.isSelected()==true){
+        if (cktutor.isSelected() == true) {
             lbltutor.setVisible(true);
             txtnombretutor.setVisible(true);
-        }else{
+        } else {
             lbltutor.setVisible(false);
             txtnombretutor.setVisible(false);
         }
@@ -698,51 +790,55 @@ public class Inscripciones extends javax.swing.JFrame {
     private void cklunesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cklunesActionPerformed
         System.out.println(cklunes.getText());
         System.out.println(cklunes.isSelected());
-        
-            checkdias(ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes);            
+
+        checkdias(ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
+                cbhoramartes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoralunes);
 
 
     }//GEN-LAST:event_cklunesActionPerformed
 
     private void ckmartesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckmartesActionPerformed
-            checkdias(cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes);
-        
+        checkdias(cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
+                cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramartes);
+
     }//GEN-LAST:event_ckmartesActionPerformed
 
     private void ckmiercolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckmiercolesActionPerformed
-            checkdias(cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles);
-        
+        checkdias(cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
+                cbhoralunes, cbhoramartes, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramiercoles);
+
     }//GEN-LAST:event_ckmiercolesActionPerformed
 
     private void ckjuevesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckjuevesActionPerformed
-            checkdias(ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves);
-        
+        checkdias(ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
+                cbhoralunes, cbhoramiercoles, cbhoramartes, cbhoraviernes, cbhorasabado, cbhorajueves);
+
     }//GEN-LAST:event_ckjuevesActionPerformed
 
     private void ckviernesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckviernesActionPerformed
-            checkdias(ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes);
-        
+        checkdias(ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
+                cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoramartes, cbhorasabado, cbhoraviernes);
+
     }//GEN-LAST:event_ckviernesActionPerformed
 
     private void cksabadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cksabadoActionPerformed
-            checkdias(ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado);
-        
+        checkdias(ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
+                cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhoramartes, cbhorasabado);
+
     }//GEN-LAST:event_cksabadoActionPerformed
 
     private void cbdiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbdiasActionPerformed
 
         dias = cbdias.getSelectedIndex() + 1;
         deseleccionarckdias(false);
+        habilitarhoras(false);
 //        System.out.println("item = "+dias);
         inicializarvariables();
-        System.out.println("contar 2 = "+contardos);
-        System.out.println("contar 3 = "+contartres);
-        System.out.println("contar 4 = "+contarcuatro);
-        System.out.println("contar 5 = "+contarcinco);
-        
-        
-        
-        
+        System.out.println("contar 2 = " + contardos);
+        System.out.println("contar 3 = " + contartres);
+        System.out.println("contar 4 = " + contarcuatro);
+        System.out.println("contar 5 = " + contarcinco);
+
 
     }//GEN-LAST:event_cbdiasActionPerformed
 
@@ -820,6 +916,8 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -834,12 +932,11 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private JPanelWebCam.JPanelWebCam jPanelWebCam1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel lbltutor;
-    private rojerusan.RSDateChooser rSDateChooser1;
-    private rojerusan.RSDateChooser rSDateChooser2;
-    private rojerusan.RSDateChooser rSDateChooser3;
+    private rojerusan.RSButtonHover rSButtonHover1;
     private javax.swing.JTextField txtapellidos;
     private javax.swing.JTextField txtbuscar;
     private javax.swing.JTextField txtcalle;
