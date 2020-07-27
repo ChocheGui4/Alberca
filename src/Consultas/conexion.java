@@ -16,13 +16,19 @@ import javax.swing.JOptionPane;
  * @author Choche
  */
 public class conexion {
+
     private final static String login = "root";
     private final static String password = "";
-    private final static String url = "jdbc:mysql://localhost:3306/alberca";
+    private final static String url = "jdbc:mysql://localhost:3306/alfayomega";
     public static Connection conn = null;
-    public PreparedStatement s;
-    
-    
+    public static PreparedStatement s;
+
+    public static void main(String[] args) {
+        conectar();
+        insertardias("Raul", "Lopez", "1997-01-05", "San Vicente Xiloxochitla", "Abasolo", "4", "", "2461973931", "2461414585",
+                "");
+    }
+
     public static Connection conectar() {
         try {
 
@@ -43,23 +49,27 @@ public class conexion {
         return conn;
 
     }
-     public boolean  insertarDias(int numerodias,int horarioini, int horariofin) {
-        
-        
+
+    public static boolean insertardias(String nombre, String apellidos, String fecha_naci, String localidad,
+            String calle, String numero_e, String numero_i, String telefono, String celular, String nombre_tutor) {
         try {
-            conectar();
-            System.out.println("Hola entró al metodo día");
+
             //s = conn.prepareStatement("insert into Registrar_Usuario values (?,?,?,?,?)");
-            System.out.println(numerodias+" "+horarioini+" "+horariofin+" "+conn);
-            s = conn.prepareStatement("INSERT INTO dias(dias_num,horario_inicio,horario_fin) VALUES (?,?,?)");
-            System.out.println("Hola entró a la mitad del metodo");
-            
-            s.setInt(1, numerodias);
-            s.setInt(2, horarioini);
-            s.setInt(3, horariofin);
-            
+            s = conn.prepareStatement("INSERT INTO usuario(nombre,apellidos,fecha_nacimiento,localidad,calle,"
+                    + "numero_e,numero_i,telefono_1,celular_1,nombre_tutor) VALUES (?,?,?,?,?,?,?,?,?,?)");
+
+            s.setString(1, nombre);
+            s.setString(2, apellidos);
+            s.setString(3, fecha_naci);
+            s.setString(4, localidad);
+            s.setString(5, calle);
+            s.setString(6, numero_e);
+            s.setString(7, numero_i);
+            s.setString(8, telefono);
+            s.setString(9, celular);
+            s.setString(10, nombre_tutor);
+
             s.executeUpdate();
-            System.out.println("Hola inserto datos");
 
             JOptionPane.showMessageDialog(null, "Datos guardados con éxito.");
             return true;
@@ -72,6 +82,5 @@ public class conexion {
         }
 
     }
-    
-    
+
 }
