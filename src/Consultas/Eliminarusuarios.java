@@ -16,21 +16,41 @@ import javax.swing.JOptionPane;
  * @author Choche
  */
 public class Eliminarusuarios {
+
     static conexion con = new conexion();
     public static PreparedStatement s;
     public static Connection conn = null;
     private static String sSQL = "";
     public static String[] registro = new String[13];
-    
+
     public static void main(String[] args) {
-        respaldardatoselimiados(2);
+        eliminarusuario(3);
     }
+
     public static boolean eliminarusuario(int id) {
         conn = con.conectar();
-        sSQL = "delete from usuario where id_usuario=?";
+
         try {
             respaldardatoselimiados(id);
-            
+
+            s = conn.prepareStatement("INSERT INTO usuarios_eliminados(clave,nombre,apellidos,fecha_nacimiento,localidad,calle,"
+                    + "numero_e,numero_i,telefono_1,celular_1,nombre_tutor,foto) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+            System.out.println("yacasi");
+            s.setString(1, registro[1]);
+            s.setString(2, registro[2]);
+            s.setString(3, registro[3]);
+            s.setString(4, registro[4]);
+            s.setString(5, registro[5]);
+            s.setString(6, registro[6]);
+            s.setString(7, registro[7]);
+            s.setString(8, registro[8]);
+            s.setString(9, registro[9]);
+            s.setString(10, registro[10]);
+            s.setString(11, registro[11]);
+            s.setString(12, registro[12]);
+            s.executeUpdate();
+
+            sSQL = "delete from usuario where id_usuario=?";
             PreparedStatement pst = conn.prepareStatement(sSQL);
 
             pst.setInt(1, id);
@@ -38,24 +58,24 @@ public class Eliminarusuarios {
             int n = pst.executeUpdate();
 
             if (n != 0) {
-                System.out.println("se eliminó");
                 return true;
             } else {
-                System.out.println("No se pudo eliminar");
                 return false;
             }
 
+            
+
         } catch (Exception e) {
-            JOptionPane.showConfirmDialog(null, e);
+            System.out.println(e);
             return false;
         }
 
     }
-    public static String [] respaldardatoselimiados(int id){
+
+    public static void respaldardatoselimiados(int id) {
         sSQL = "select * from usuario where id_usuario ='" + id + "'";
-        
+
         conn = con.conectar();
-        System.out.println("se consultó el que se va a eliminar");
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sSQL);
@@ -75,13 +95,12 @@ public class Eliminarusuarios {
                 registro[11] = rs.getString("nombre_tutor");
                 registro[12] = rs.getString("foto");
             }
-            System.out.println("se consultó el que se va a eliminar");
 //            System.out.println("antes del return");
-            return registro;
+
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, e);
-            return null;
+
         }
     }
-    
+
 }

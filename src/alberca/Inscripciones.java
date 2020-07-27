@@ -54,7 +54,7 @@ public class Inscripciones extends javax.swing.JFrame {
         habilitarhoras(false);
         btneditardatos.setEnabled(false);
         btnrenovar.setEnabled(false);
-        btnguardar.setEnabled(false);
+//        btnguardar.setEnabled(false);
         txtidusuario.setEnabled(false);
         mostrar("");
 
