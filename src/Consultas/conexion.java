@@ -40,10 +40,10 @@ public class conexion {
                 return conn;
             }
         } catch (SQLException e) {
-            System.out.println(e);
+            System.out.println("----------"+e);
             return conn = null;
         } catch (ClassNotFoundException e) {
-            System.out.println(e);
+            System.out.println("----------"+e);
             return conn = null;
         }
         return conn;

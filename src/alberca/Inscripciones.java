@@ -13,6 +13,7 @@ import com.toedter.calendar.JDateChooser;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
@@ -58,6 +59,7 @@ public class Inscripciones extends javax.swing.JFrame {
 //        btnguardar.setEnabled(false);
         txtidusuario.setEnabled(false);
         mostrar("");
+        txtfechainicio.setDate(new Date());
 
         this.setLocationRelativeTo(null);
     }
@@ -408,6 +410,9 @@ public class Inscripciones extends javax.swing.JFrame {
         txtnumin.setText("");
         txttelefono.setText("");
         txtcelular.setText("");
+        txtfechanacimiento.setDate(StringaDate(""));
+        txtfechainicio.setDate(new Date());
+        
     }
 
     public void habilitarcamposmensualidad(boolean valor) {
@@ -453,23 +458,27 @@ public class Inscripciones extends javax.swing.JFrame {
     }
 
     public String obtenerfecha(JDateChooser jd) {
-        if (jd.getDate() != null) {
-            txtfechatermino.getJCalendar().setMinSelectableDate(txtfechainicio.getDate());
-            return formato.format(jd.getDate());
+        if (jd.getDate() == null) {
+            return "";
         } else {
-            return null;
+            Calendar calendar = Calendar.getInstance();
+            System.out.println(jd.getDate());
+            calendar.setTime(jd.getDate());
+            calendar.add(Calendar.DAY_OF_YEAR, 21);
+            if (jd.getDate() != null) {
+                txtfechatermino.getJCalendar().setMinSelectableDate(calendar.getTime());
+                return formato.format(calendar.getTime());
+            } else {
+                return null;
+            }
         }
-
     }
 
     public java.util.Date StringaDate(String fecha) {
         SimpleDateFormat formatotexto = new SimpleDateFormat("yyyy/MM/dd");
         Date fechaE = null;
-        System.out.println("se metió al método");
         try {
-            System.out.println("intentar");
             fechaE = formatotexto.parse(fecha);
-            System.out.println("entró a convertir: " + fechaE);
             return fechaE;
         } catch (Exception e) {
             System.out.println(e);
@@ -599,8 +608,8 @@ public class Inscripciones extends javax.swing.JFrame {
         txtidusuario = new javax.swing.JTextField();
         txtidultimousuario = new javax.swing.JTextField();
         txtfechainicio = new com.toedter.calendar.JDateChooser();
-        btnfecha = new javax.swing.JButton();
         txtfechatermino = new com.toedter.calendar.JDateChooser();
+        txtfechanacimiento = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1117, 613));
@@ -978,22 +987,22 @@ public class Inscripciones extends javax.swing.JFrame {
 
         txtfechainicio.setDateFormatString("yyyy/MM/dd");
         txtfechainicio.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        getContentPane().add(txtfechainicio);
-        txtfechainicio.setBounds(170, 400, 140, 30);
-
-        btnfecha.setText("jButton2");
-        btnfecha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnfechaActionPerformed(evt);
+        txtfechainicio.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                txtfechainicioPropertyChange(evt);
             }
         });
-        getContentPane().add(btnfecha);
-        btnfecha.setBounds(660, 60, 73, 23);
+        getContentPane().add(txtfechainicio);
+        txtfechainicio.setBounds(170, 400, 140, 30);
 
         txtfechatermino.setDateFormatString("yyyy/MM/dd");
         txtfechatermino.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         getContentPane().add(txtfechatermino);
         txtfechatermino.setBounds(530, 400, 140, 30);
+
+        txtfechanacimiento.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        getContentPane().add(txtfechanacimiento);
+        txtfechanacimiento.setBounds(220, 140, 150, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1143,10 +1152,9 @@ public class Inscripciones extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btneliminarActionPerformed
 
-    private void btnfechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnfechaActionPerformed
-        System.out.println("La fecha de inicio es: " + obtenerfecha(txtfechainicio));
+    private void txtfechainicioPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_txtfechainicioPropertyChange
         txtfechatermino.setDate(StringaDate(obtenerfecha(txtfechainicio)));
-    }//GEN-LAST:event_btnfechaActionPerformed
+    }//GEN-LAST:event_txtfechainicioPropertyChange
 
     /**
      * @param args the command line arguments
@@ -1205,7 +1213,6 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JButton btncancelar;
     private javax.swing.JButton btneditardatos;
     private javax.swing.JButton btneliminar;
-    private javax.swing.JButton btnfecha;
     private javax.swing.JButton btnguardar;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JButton btnrenovar;
@@ -1249,6 +1256,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JTextField txtcalle;
     private javax.swing.JTextField txtcelular;
     private com.toedter.calendar.JDateChooser txtfechainicio;
+    private com.toedter.calendar.JDateChooser txtfechanacimiento;
     private com.toedter.calendar.JDateChooser txtfechatermino;
     private javax.swing.JTextField txtidultimousuario;
     private javax.swing.JTextField txtidusuario;
