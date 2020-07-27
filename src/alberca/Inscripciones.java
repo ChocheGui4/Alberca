@@ -9,6 +9,7 @@ import Consultas.Eliminarusuarios;
 import Consultas.conexion;
 import Consultas.inscripcion;
 import Consultas.tabla;
+import com.toedter.calendar.JDateChooser;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.text.SimpleDateFormat;
@@ -420,7 +421,6 @@ public class Inscripciones extends javax.swing.JFrame {
         ckjueves.setEnabled(valor);
         ckviernes.setEnabled(valor);
         cksabado.setEnabled(valor);
-    
 
     }
 
@@ -452,8 +452,9 @@ public class Inscripciones extends javax.swing.JFrame {
         }
     }
 
-    public String obtenerfecha(RSDateChooser jd) {
+    public String obtenerfecha(JDateChooser jd) {
         if (jd.getDate() != null) {
+            txtfechatermino.getJCalendar().setMinSelectableDate(txtfechainicio.getDate());
             return formato.format(jd.getDate());
         } else {
             return null;
@@ -597,6 +598,9 @@ public class Inscripciones extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         txtidusuario = new javax.swing.JTextField();
         txtidultimousuario = new javax.swing.JTextField();
+        txtfechainicio = new com.toedter.calendar.JDateChooser();
+        btnfecha = new javax.swing.JButton();
+        txtfechatermino = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1117, 613));
@@ -972,6 +976,25 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(txtidultimousuario);
         txtidultimousuario.setBounds(290, 30, 6, 20);
 
+        txtfechainicio.setDateFormatString("yyyy/MM/dd");
+        txtfechainicio.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        getContentPane().add(txtfechainicio);
+        txtfechainicio.setBounds(170, 400, 140, 30);
+
+        btnfecha.setText("jButton2");
+        btnfecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnfechaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnfecha);
+        btnfecha.setBounds(660, 60, 73, 23);
+
+        txtfechatermino.setDateFormatString("yyyy/MM/dd");
+        txtfechatermino.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        getContentPane().add(txtfechatermino);
+        txtfechatermino.setBounds(530, 400, 140, 30);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1117,8 +1140,13 @@ public class Inscripciones extends javax.swing.JFrame {
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
         Eliminarusuarios elus = new Eliminarusuarios();
         boolean var = elus.eliminarusuario(Integer.parseInt(txtidusuario.getText()));
-        
+
     }//GEN-LAST:event_btneliminarActionPerformed
+
+    private void btnfechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnfechaActionPerformed
+        System.out.println("La fecha de inicio es: " + obtenerfecha(txtfechainicio));
+        txtfechatermino.setDate(StringaDate(obtenerfecha(txtfechainicio)));
+    }//GEN-LAST:event_btnfechaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1177,6 +1205,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JButton btncancelar;
     private javax.swing.JButton btneditardatos;
     private javax.swing.JButton btneliminar;
+    private javax.swing.JButton btnfecha;
     private javax.swing.JButton btnguardar;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JButton btnrenovar;
@@ -1219,6 +1248,8 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JTextField txtbuscar;
     private javax.swing.JTextField txtcalle;
     private javax.swing.JTextField txtcelular;
+    private com.toedter.calendar.JDateChooser txtfechainicio;
+    private com.toedter.calendar.JDateChooser txtfechatermino;
     private javax.swing.JTextField txtidultimousuario;
     private javax.swing.JTextField txtidusuario;
     private javax.swing.JTextField txtlocalidad;
