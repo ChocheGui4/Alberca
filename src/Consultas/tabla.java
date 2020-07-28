@@ -56,7 +56,6 @@ public class tabla {
                 registro[10] = rs.getString("celular_1");
                 registro[11] = rs.getString("nombre_tutor");
                 totalregistros = totalregistros + 1;
-                System.out.println("Registros");
                 modelo.addRow(registro);
 
             }
