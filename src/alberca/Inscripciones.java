@@ -36,6 +36,7 @@ public class Inscripciones extends javax.swing.JFrame {
     FondoPanel fondo = new FondoPanel();
     SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
     int dias = 1;
+    int r = 0;
     int masuno[] = new int[1];
     int unasesion[] = new int[4];
     int contardos = 0, dos = 0;
@@ -50,6 +51,11 @@ public class Inscripciones extends javax.swing.JFrame {
     int contarcinco = 0, cinco = 0;
     int mascinco[] = new int[5];
     int cincosesion[][] = new int[5][4];
+
+    //variables para horas de combos
+    String combohoras[] = new String[6];
+
+    //
     JCheckBox diasdos[] = new JCheckBox[2];
     JComboBox combodos[] = new JComboBox[2];
     JCheckBox diastres[] = new JCheckBox[3];
@@ -72,15 +78,16 @@ public class Inscripciones extends javax.swing.JFrame {
         txtidusuario.setEnabled(false);
         mostrar("");
         txtfechainicio.setDate(new Date());
-        txtfechanacimiento.setEnabled(false);
 
         this.setLocationRelativeTo(null);
     }
 
     public void checkdias(int numero, JCheckBox check1, JCheckBox check2, JCheckBox check3, JCheckBox check4, JCheckBox check5,
-            JCheckBox checkprincipal, JComboBox cb1, JComboBox cb2, JComboBox cb3, JComboBox cb4, JComboBox cb5, JComboBox cbprincipal) {
+            JCheckBox checkprincipal, JComboBox cb1, JComboBox cb2, JComboBox cb3, JComboBox cb4, JComboBox cb5,
+            JComboBox cbprincipal, JComboBox chora) {
         if (dias == 1) {
             if (checkprincipal.isSelected() == true) {
+
                 masuno[0] = numero;
                 check1.setSelected(false);
                 check2.setSelected(false);
@@ -107,7 +114,6 @@ public class Inscripciones extends javax.swing.JFrame {
                         combodos[i] = cbprincipal;
                         combodos[i].setEnabled(true);
                         masdos[i] = numero;
-                        System.out.println("masdos-> " + i + " -> " + masdos[i]);
                         break;
                     } else if (contardos == 2) {
 
@@ -119,10 +125,6 @@ public class Inscripciones extends javax.swing.JFrame {
                             combodos[i].setEnabled(true);
                             masdos[i] = numero;
                             dos = i + 1;
-                            System.out.println("Vamos a ver que pasa con los numeros  suamr");
-                            for (int j = 0; j < 2; j++) {
-                                System.out.println(masdos[j]);
-                            }
                             break;
                         } else if (dos == i & i == 1) {
                             diasdos[i].setSelected(false);
@@ -132,10 +134,6 @@ public class Inscripciones extends javax.swing.JFrame {
                             combodos[i].setEnabled(true);
                             masdos[i] = numero;
                             dos = i - 1;
-                            System.out.println("Vamos a ver que pasa con los numeros  suamr");
-                            for (int j = 0; j < 2; j++) {
-                                System.out.println(masdos[j]);
-                            }
                             break;
                         }
 
@@ -182,10 +180,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combotres[i].setEnabled(true);
                             mastres[i] = numero;
                             tres = i + 1;
-                            System.out.println("Vamos a ver que pasa con los numeros  suamr");
-                            for (int j = 0; j < 3; j++) {
-                                System.out.println(mastres[j]);
-                            }
+
                             break;
                         } else if (tres == i & i == 1) {
                             diastres[i].setSelected(false);
@@ -195,10 +190,6 @@ public class Inscripciones extends javax.swing.JFrame {
                             combotres[i].setEnabled(true);
                             mastres[i] = numero;
                             tres = i + 1;
-                            System.out.println("Vamos a ver que pasa con los numeros  suamr");
-                            for (int j = 0; j < 3; j++) {
-                                System.out.println(mastres[j]);
-                            }
                             break;
                         } else if (tres == i & i == 2) {
                             diastres[i].setSelected(false);
@@ -208,10 +199,6 @@ public class Inscripciones extends javax.swing.JFrame {
                             combotres[i].setEnabled(true);
                             mastres[i] = numero;
                             tres = i - 2;
-                            System.out.println("Vamos a ver que pasa con los numeros  suamr");
-                            for (int j = 0; j < 3; j++) {
-                                System.out.println(mastres[j]);
-                            }
                             break;
                         }
                     }
@@ -264,10 +251,6 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocuatro[i].setEnabled(true);
                             mascuatro[i] = numero;
                             cuatro = i + 1;
-                            System.out.println("Vamos a ver que pasa con los numeros  suamr");
-                            for (int j = 0; j < 4; j++) {
-                                System.out.println(mascuatro[j]);
-                            }
                             break;
                         } else if (cuatro == i & i == 1) {
                             diascuatro[i].setSelected(false);
@@ -277,10 +260,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocuatro[i].setEnabled(true);
                             mascuatro[i] = numero;
                             cuatro = i + 1;
-                            System.out.println("Vamos a ver que pasa con los numeros  suamr");
-                            for (int j = 0; j < 4; j++) {
-                                System.out.println(mascuatro[j]);
-                            }
+
                             break;
                         } else if (cuatro == i & i == 2) {
                             diascuatro[i].setSelected(false);
@@ -290,10 +270,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocuatro[i].setEnabled(true);
                             mascuatro[i] = numero;
                             cuatro = i + 1;
-                            System.out.println("Vamos a ver que pasa con los numeros  suamr");
-                            for (int j = 0; j < 4; j++) {
-                                System.out.println(mascuatro[j]);
-                            }
+
                             break;
                         } else if (cuatro == i & i == 3) {
                             diascuatro[i].setSelected(false);
@@ -303,10 +280,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocuatro[i].setEnabled(true);
                             mascuatro[i] = numero;
                             cuatro = i - 3;
-                            System.out.println("Vamos a ver que pasa con los numeros  suamr");
-                            for (int j = 0; j < 4; j++) {
-                                System.out.println(mascuatro[j]);
-                            }
+
                             break;
                         }
 
@@ -350,6 +324,7 @@ public class Inscripciones extends javax.swing.JFrame {
                         diascinco[i] = checkprincipal;
                         combocinco[i] = cbprincipal;
                         combocinco[i].setEnabled(true);
+
                         break;
                     } else if (contarcinco == 5) {
                         System.out.println("contar 5");
@@ -361,10 +336,6 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocinco[i].setEnabled(true);
                             mascinco[i] = numero;
                             cinco = i + 1;
-                            System.out.println("Vamos a ver que pasa con los numeros  suamr");
-                            for (int j = 0; j < 5; j++) {
-                                System.out.println(mascinco[j]);
-                            }
                             break;
                         } else if (cinco == i & i == 1) {
                             diascinco[i].setSelected(false);
@@ -374,10 +345,6 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocinco[i].setEnabled(true);
                             mascinco[i] = numero;
                             cinco = i + 1;
-                            System.out.println("Vamos a ver que pasa con los numeros  suamr");
-                            for (int j = 0; j < 5; j++) {
-                                System.out.println(mascinco[j]);
-                            }
                             break;
                         } else if (cinco == i & i == 2) {
                             diascinco[i].setSelected(false);
@@ -387,10 +354,6 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocinco[i].setEnabled(true);
                             mascinco[i] = numero;
                             cinco = i + 1;
-                            System.out.println("Vamos a ver que pasa con los numeros  suamr");
-                            for (int j = 0; j < 5; j++) {
-                                System.out.println(mascinco[j]);
-                            }
                             break;
                         } else if (cinco == i & i == 3) {
                             diascinco[i].setSelected(false);
@@ -400,10 +363,6 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocinco[i].setEnabled(true);
                             mascinco[i] = numero;
                             cinco = i + 1;
-                            System.out.println("Vamos a ver que pasa con los numeros  suamr");
-                            for (int j = 0; j < 5; j++) {
-                                System.out.println(mascinco[j]);
-                            }
                             break;
                         } else if (cinco == i & i == 4) {
                             diascinco[i].setSelected(false);
@@ -413,10 +372,6 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocinco[i].setEnabled(true);
                             mascinco[i] = numero;
                             cinco = i - 4;
-                            System.out.println("Vamos a ver que pasa con los numeros  suamr");
-                            for (int j = 0; j < 5; j++) {
-                                System.out.println(mascinco[j]);
-                            }
                             break;
                         }
                     }
@@ -525,6 +480,16 @@ public class Inscripciones extends javax.swing.JFrame {
 
     }
 
+    public void reiniciarcombos(int valor) {
+        cbhoralunes.setSelectedIndex(valor);
+        cbhoramartes.setSelectedIndex(valor);
+        cbhoramiercoles.setSelectedIndex(valor);
+        cbhorajueves.setSelectedIndex(valor);
+        cbhoraviernes.setSelectedIndex(valor);
+        cbhorasabado.setSelectedIndex(valor);
+
+    }
+
     public void inicializarvariables() {
         contardos = 0;
         dos = 0;
@@ -535,6 +500,7 @@ public class Inscripciones extends javax.swing.JFrame {
         cuatro = 0;
         contarcinco = 0;
         cinco = 0;
+
         for (int i = 0; i < 2; i++) {
             diasdos[i] = null;
             combodos[i] = null;
@@ -592,6 +558,19 @@ public class Inscripciones extends javax.swing.JFrame {
         }
     }
 
+    public String obtenerfechanacimiento(JDateChooser jd) {
+        if (jd.getDate() == null) {
+            return "";
+        } else {
+            if (jd.getDate() != null) {
+
+                return formato.format(jd.getDate());
+            } else {
+                return null;
+            }
+        }
+    }
+
     public java.util.Date StringaDate(String fecha) {
         SimpleDateFormat formatotexto = new SimpleDateFormat("yyyy/MM/dd");
         Date fechaE = null;
@@ -613,7 +592,7 @@ public class Inscripciones extends javax.swing.JFrame {
 
             tdatos.setModel(modelo);
             ocultar_columnas();
-            lblregistros.setText("Total de registros" + Integer.toString(tab.totalregistros));
+            lblregistros.setText("Registros: " + Integer.toString(tab.totalregistros));
 
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(rootPane, e);
@@ -756,6 +735,7 @@ public class Inscripciones extends javax.swing.JFrame {
         txtfechainicio = new com.toedter.calendar.JDateChooser();
         txtfechatermino = new com.toedter.calendar.JDateChooser();
         txtfechanacimiento = new com.toedter.calendar.JDateChooser();
+        btnhoras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1117, 613));
@@ -913,7 +893,7 @@ public class Inscripciones extends javax.swing.JFrame {
         lblregistros.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         lblregistros.setForeground(new java.awt.Color(204, 204, 204));
         getContentPane().add(lblregistros);
-        lblregistros.setBounds(880, 390, 190, 20);
+        lblregistros.setBounds(1000, 390, 70, 20);
 
         txtbuscar.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         txtbuscar.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1149,6 +1129,15 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(txtfechanacimiento);
         txtfechanacimiento.setBounds(220, 140, 150, 30);
 
+        btnhoras.setText("jButton2");
+        btnhoras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnhorasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnhoras);
+        btnhoras.setBounds(460, 430, 73, 23);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1171,38 +1160,38 @@ public class Inscripciones extends javax.swing.JFrame {
         System.out.println(cklunes.isSelected());
 
         checkdias(0, ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
-                cbhoramartes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoralunes);
+                cbhoramartes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoralunes, cbhoralunes);
 
 
     }//GEN-LAST:event_cklunesActionPerformed
 
     private void ckmartesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckmartesActionPerformed
         checkdias(1, cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
-                cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramartes);
+                cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramartes, cbhoramartes);
 
     }//GEN-LAST:event_ckmartesActionPerformed
 
     private void ckmiercolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckmiercolesActionPerformed
         checkdias(2, cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
-                cbhoralunes, cbhoramartes, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramiercoles);
+                cbhoralunes, cbhoramartes, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramiercoles, cbhoramiercoles);
 
     }//GEN-LAST:event_ckmiercolesActionPerformed
 
     private void ckjuevesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckjuevesActionPerformed
         checkdias(3, ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
-                cbhoralunes, cbhoramiercoles, cbhoramartes, cbhoraviernes, cbhorasabado, cbhorajueves);
+                cbhoralunes, cbhoramiercoles, cbhoramartes, cbhoraviernes, cbhorasabado, cbhorajueves, cbhorajueves);
 
     }//GEN-LAST:event_ckjuevesActionPerformed
 
     private void ckviernesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckviernesActionPerformed
         checkdias(4, ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
-                cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoramartes, cbhorasabado, cbhoraviernes);
+                cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoramartes, cbhorasabado, cbhoraviernes, cbhoraviernes);
 
     }//GEN-LAST:event_ckviernesActionPerformed
 
     private void cksabadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cksabadoActionPerformed
         checkdias(5, ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
-                cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhoramartes, cbhorasabado);
+                cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhoramartes, cbhorasabado, cbhorasabado);
 
     }//GEN-LAST:event_cksabadoActionPerformed
 
@@ -1220,18 +1209,20 @@ public class Inscripciones extends javax.swing.JFrame {
     private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
 //        txtfechatermino.setDate(StringaDate("2018/02/12"));
 
-        if (txtnombre.getText().equals("")) {
-            JOptionPane.showMessageDialog(this, "Los campos deben ser llenados por completo.");
+        if (txtnombre.getText().equals("")|txtapellidos.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Completa todos los campos solicitados");
         } else {
             Renovar re = new Renovar();
-
+            combohoras[0] = cbhoralunes.getItemAt(cbhoralunes.getSelectedIndex());
+            combohoras[1] = cbhoramartes.getItemAt(cbhoramartes.getSelectedIndex());
+            combohoras[2] = cbhoramiercoles.getItemAt(cbhoramiercoles.getSelectedIndex());
+            combohoras[3] = cbhorajueves.getItemAt(cbhorajueves.getSelectedIndex());
+            combohoras[4] = cbhoraviernes.getItemAt(cbhoraviernes.getSelectedIndex());
+            combohoras[5] = cbhorasabado.getItemAt(cbhorasabado.getSelectedIndex());
             if (dias == 1) {
                 re.insertarmensualidad(obtenerfechastr(txtfechainicio, masuno[0]),
                         obtenerfecha(txtfechainicio, masuno[0]), "" + dias);
-//                re.insertarmensualidad(obtenerfechastr(txtfechainicio, masuno), 
-//                        obtenerfecha(txtfechatermino, masuno), "" + cbdias.getSelectedIndex() + 1);
-                
-                
+
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTime(fechaselec);
                 calendar.add(Calendar.DAY_OF_MONTH, masuno[0]);
@@ -1241,16 +1232,12 @@ public class Inscripciones extends javax.swing.JFrame {
                     calendar.add(Calendar.DAY_OF_MONTH, 7);
                 }
                 int r = re.idmensualidad();
-                re.insertardiasmes(unasesion, masuno[0], r);
+                re.insertardiasmes(unasesion, masuno[0], r, combohoras[masuno[0]]);
             } else if (dias == 2) {
                 quicksort(masdos, 0, masdos.length - 1);
                 re.insertarmensualidad(obtenerfechastr(txtfechainicio, masdos[0]),
                         obtenerfecha(txtfechainicio, masdos[1]), "" + dias);
                 Calendar calendar = Calendar.getInstance();
-//                for (int i = 0; i < 2; i++) {
-//                    System.out.print("datos en masdos ");
-//                    System.out.println(masdos[i] + ", ");
-//                }
                 for (int i = 0; i < 2; i++) {
                     calendar.setTime(fechaselec);
                     calendar.add(Calendar.DAY_OF_MONTH, masdos[i]);
@@ -1266,15 +1253,8 @@ public class Inscripciones extends javax.swing.JFrame {
                     for (int j = 0; j < 4; j++) {
                         val[j] = dossesion[i][j];
                     }
-                    re.insertardiasmes(val, masdos[i], r);
+                    re.insertardiasmes(val, masdos[i], r, combohoras[masdos[i]]);
                 }
-//                for (int i = 0; i < 2; i++) {
-//                    System.out.print("Fechas -> ");
-//                    for (int j = 0; j < 4; j++) {
-//                        System.out.print(dossesion[i][j]+", ");
-//                    }
-//                    System.out.println("");
-//                }
 
             } else if (dias == 3) {
                 quicksort(mastres, 0, mastres.length - 1);
@@ -1296,7 +1276,7 @@ public class Inscripciones extends javax.swing.JFrame {
                     for (int j = 0; j < 4; j++) {
                         val[j] = tressesion[i][j];
                     }
-                    re.insertardiasmes(val, mastres[i], r);
+                    re.insertardiasmes(val, mastres[i], r, combohoras[mastres[i]]);
                 }
             } else if (dias == 4) {
                 quicksort(mascuatro, 0, mascuatro.length - 1);
@@ -1318,7 +1298,7 @@ public class Inscripciones extends javax.swing.JFrame {
                     for (int j = 0; j < 4; j++) {
                         val[j] = cuatrosesion[i][j];
                     }
-                    re.insertardiasmes(val, mascuatro[i], r);
+                    re.insertardiasmes(val, mascuatro[i], r, combohoras[mascuatro[i]]);
                 }
             } else if (dias == 5) {
                 quicksort(mascinco, 0, mascinco.length - 1);
@@ -1335,25 +1315,32 @@ public class Inscripciones extends javax.swing.JFrame {
                     }
                 }
                 int val[] = new int[4];
-                int r = re.idmensualidad();
+                r = re.idmensualidad();
                 for (int i = 0; i < 5; i++) {
                     for (int j = 0; j < 4; j++) {
                         val[j] = cincosesion[i][j];
                     }
-                    re.insertardiasmes(val, mascinco[i], r);
+                    re.insertardiasmes(val, mascinco[i], r, combohoras[mascinco[i]]);
                 }
 
             }
             dias = 1;
+            System.out.println("resultado de mensu: " + r);
             inscripcion ins = new inscripcion();
-//            System.out.println("La fecha de nacimiento es: " + obtenerfecha(txtfechanacimiento));
-//            System.out.println("La fecha de inicio es: " + obtenerfecha(txtfechainicio));
-//            System.out.println("La fecha de termino es: " + obtenerfecha(txtfechatermino));
-            ins.insertardias(txtnombre.getText(), txtapellidos.getText(), "1997-05-01", txtlocalidad.getText(),
+            r = re.idmensualidad();
+            ins.insertardias(txtnombre.getText(), txtapellidos.getText(), obtenerfechanacimiento(txtfechanacimiento), txtlocalidad.getText(),
                     txtcalle.getText(), txtnumex.getText(), txtnumin.getText(), txttelefono.getText(), txtcelular.getText(),
-                    txtnombretutor.getText());
+                    txtnombretutor.getText(), r);
+            reiniciarcombos(0);
+            inicializarvariables();
+            habilitarcamposdatos(true);
+            habilitarcamposmensualidad(true);
+            habilitarhoras(false);
+            deseleccionarckdias(false);
+            limpiar();
+            mostrar("");
         }
-        mostrar("");
+
 
     }//GEN-LAST:event_btnguardarActionPerformed
 
@@ -1389,6 +1376,7 @@ public class Inscripciones extends javax.swing.JFrame {
         limpiar();
         habilitarcamposmensualidad(true);
         habilitarhoras(false);
+        inicializarvariables();
         deseleccionarckdias(false);
         btneditardatos.setEnabled(false);
         btnrenovar.setEnabled(false);
@@ -1408,6 +1396,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private void btncancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelarActionPerformed
         habilitarcamposdatos(true);
         limpiar();
+        inicializarvariables();
         habilitarcamposmensualidad(true);
         habilitarhoras(false);
         deseleccionarckdias(false);
@@ -1429,6 +1418,10 @@ public class Inscripciones extends javax.swing.JFrame {
     private void txtfechainicioPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_txtfechainicioPropertyChange
         txtfechatermino.setDate(StringaDate(obtenerfecha(txtfechainicio, 0)));
     }//GEN-LAST:event_txtfechainicioPropertyChange
+
+    private void btnhorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhorasActionPerformed
+        cbhoralunes.setSelectedIndex(0);
+    }//GEN-LAST:event_btnhorasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1488,6 +1481,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JButton btneditardatos;
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardar;
+    private javax.swing.JButton btnhoras;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JButton btnrenovar;
     private javax.swing.JComboBox<String> cbdias;

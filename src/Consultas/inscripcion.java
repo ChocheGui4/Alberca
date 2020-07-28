@@ -20,17 +20,18 @@ public class inscripcion {
     static conexion con = new conexion();
     public static PreparedStatement s;
     public static Connection conn = null;
-//    public static void main(String[] args) {
-//        insertardias("Raul", "Lopez", "1997-01-05", "San Vicente Xiloxochitla", "Abasolo", "4", "", "2461973931", "2461414585",
-//                "");
-//    }
+    public static void main(String[] args) {
+        insertardias("Raul", "Lopez", "1997-01-05", "San Vicente Xiloxochitla", "Abasolo", "4", "", "2461973931", "2461414585",
+                "",1);
+    }
     public static boolean insertardias(String nombre, String apellidos, String fecha_naci, String localidad,
-            String calle, String numero_e, String numero_i, String telefono, String celular, String nombre_tutor) {
+            String calle, String numero_e, String numero_i, 
+            String telefono, String celular, String nombre_tutor, int mensualidad) {
         try {
             conn=con.conectar();
             //s = conn.prepareStatement("insert into Registrar_Usuario values (?,?,?,?,?)");
             s = conn.prepareStatement("INSERT INTO usuario(nombre,apellidos,fecha_nacimiento,localidad,calle,"
-                    + "numero_e,numero_i,telefono_1,celular_1,nombre_tutor) VALUES (?,?,?,?,?,?,?,?,?,?)");
+                    + "numero_e,numero_i,telefono_1,celular_1,nombre_tutor,mensualidad_id) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
 
             s.setString(1, nombre);
             s.setString(2, apellidos);
@@ -42,6 +43,7 @@ public class inscripcion {
             s.setString(8, telefono);
             s.setString(9, celular);
             s.setString(10, nombre_tutor);
+            s.setInt(11, mensualidad);
 
             s.executeUpdate();
 
