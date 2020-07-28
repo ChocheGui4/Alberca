@@ -36,7 +36,7 @@ public class Inscripciones extends javax.swing.JFrame {
     FondoPanel fondo = new FondoPanel();
     SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
     int dias = 1;
-    int masuno = 0;
+    int masuno[] = new int[1];
     int unasesion[] = new int[4];
     int contardos = 0, dos = 0;
     int masdos[] = new int[2];
@@ -81,7 +81,7 @@ public class Inscripciones extends javax.swing.JFrame {
             JCheckBox checkprincipal, JComboBox cb1, JComboBox cb2, JComboBox cb3, JComboBox cb4, JComboBox cb5, JComboBox cbprincipal) {
         if (dias == 1) {
             if (checkprincipal.isSelected() == true) {
-                masuno = numero;
+                masuno[0] = numero;
                 check1.setSelected(false);
                 check2.setSelected(false);
                 check3.setSelected(false);
@@ -528,7 +528,7 @@ public class Inscripciones extends javax.swing.JFrame {
     public void inicializarvariables() {
         contardos = 0;
         dos = 0;
-        masuno = 0;
+        masuno[0] = 0;
         contartres = 0;
         tres = 0;
         contarcuatro = 0;
@@ -559,14 +559,14 @@ public class Inscripciones extends javax.swing.JFrame {
         }
     }
 
-    public String obtenerfechastr(JDateChooser jd) {
+    public String obtenerfechastr(JDateChooser jd, int mas) {
         if (jd.getDate() == null) {
             return "";
         } else {
             if (jd.getDate() != null) {
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTime(jd.getDate());
-                calendar.add(Calendar.DAY_OF_YEAR, masuno);
+                calendar.add(Calendar.DAY_OF_YEAR, mas);
                 return formato.format(calendar.getTime());
             } else {
                 return null;
@@ -574,15 +574,15 @@ public class Inscripciones extends javax.swing.JFrame {
         }
     }
 
-    public String obtenerfecha(JDateChooser jd) {
+    public String obtenerfecha(JDateChooser jd, int ultimo) {
         if (jd.getDate() == null) {
             return "";
         } else {
             fechaselec = jd.getDate();
             Calendar calendar = Calendar.getInstance();
-            System.out.println(jd.getDate());
+            System.out.println("Fecha a poner ultimo -> " + jd.getDate());
             calendar.setTime(jd.getDate());
-            calendar.add(Calendar.DAY_OF_YEAR, 21);
+            calendar.add(Calendar.DAY_OF_YEAR, 21 + ultimo);
             if (jd.getDate() != null) {
                 txtfechatermino.getJCalendar().setMinSelectableDate(calendar.getTime());
                 return formato.format(calendar.getTime());
@@ -657,6 +657,38 @@ public class Inscripciones extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(11).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(11).setMinWidth(0);
         tdatos.getColumnModel().getColumn(11).setPreferredWidth(0);
+    }
+
+    public static void quicksort(int A[], int izq, int der) {
+
+        int pivote = A[izq]; // tomamos primer elemento como pivote
+        int i = izq;         // i realiza la búsqueda de izquierda a derecha
+        int j = der;         // j realiza la búsqueda de derecha a izquierda
+        int aux;
+
+        while (i < j) {                          // mientras no se crucen las búsquedas                                   
+            while (A[i] <= pivote && i < j) {
+                i++; // busca elemento mayor que pivote
+            }
+            while (A[j] > pivote) {
+                j--;           // busca elemento menor que pivote
+            }
+            if (i < j) {                        // si no se han cruzado                      
+                aux = A[i];                      // los intercambia
+                A[i] = A[j];
+                A[j] = aux;
+            }
+        }
+
+        A[izq] = A[j];      // se coloca el pivote en su lugar de forma que tendremos                                    
+        A[j] = pivote;      // los menores a su izquierda y los mayores a su derecha
+
+        if (izq < j - 1) {
+            quicksort(A, izq, j - 1);          // ordenamos subarray izquierdo
+        }
+        if (j + 1 < der) {
+            quicksort(A, j + 1, der);          // ordenamos subarray derecho
+        }
     }
 
     /**
@@ -1192,17 +1224,27 @@ public class Inscripciones extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Los campos deben ser llenados por completo.");
         } else {
             Renovar re = new Renovar();
-            re.insertarmensualidad(obtenerfechastr(txtfechainicio), obtenerfecha(txtfechatermino), "" + cbdias.getSelectedIndex() + 1);
+
             if (dias == 1) {
+                re.insertarmensualidad(obtenerfechastr(txtfechainicio, masuno[0]),
+                        obtenerfecha(txtfechainicio, masuno[0]), "" + dias);
+//                re.insertarmensualidad(obtenerfechastr(txtfechainicio, masuno), 
+//                        obtenerfecha(txtfechatermino, masuno), "" + cbdias.getSelectedIndex() + 1);
+                
+                
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTime(fechaselec);
-                calendar.add(Calendar.DAY_OF_MONTH, masuno);
+                calendar.add(Calendar.DAY_OF_MONTH, masuno[0]);
                 for (int i = 0; i < 4; i++) {
 
                     unasesion[i] = calendar.get(Calendar.DAY_OF_MONTH);
                     calendar.add(Calendar.DAY_OF_MONTH, 7);
                 }
+                re.insertardiasmes(unasesion, masuno[0], 1);
             } else if (dias == 2) {
+                quicksort(masdos, 0, masdos.length - 1);
+                re.insertarmensualidad(obtenerfechastr(txtfechainicio, masdos[0]),
+                        obtenerfecha(txtfechainicio, masdos[1]), "" + dias);
                 Calendar calendar = Calendar.getInstance();
 //                for (int i = 0; i < 2; i++) {
 //                    System.out.print("datos en masdos ");
@@ -1217,8 +1259,25 @@ public class Inscripciones extends javax.swing.JFrame {
                         calendar.add(Calendar.DAY_OF_MONTH, 7);
                     }
                 }
+                int val[] = new int[4];
+                for (int i = 0; i < 2; i++) {
+                    for (int j = 0; j < 4; j++) {
+                        val[j] = dossesion[i][j];
+                    }
+                    re.insertardiasmes(val, masdos[i], 1);
+                }
+//                for (int i = 0; i < 2; i++) {
+//                    System.out.print("Fechas -> ");
+//                    for (int j = 0; j < 4; j++) {
+//                        System.out.print(dossesion[i][j]+", ");
+//                    }
+//                    System.out.println("");
+//                }
 
             } else if (dias == 3) {
+                quicksort(mastres, 0, mastres.length - 1);
+                re.insertarmensualidad(obtenerfechastr(txtfechainicio, mastres[0]),
+                        obtenerfecha(txtfechainicio, mastres[2]), "" + dias);
                 Calendar calendar = Calendar.getInstance();
                 for (int i = 0; i < 3; i++) {
                     calendar.setTime(fechaselec);
@@ -1229,7 +1288,17 @@ public class Inscripciones extends javax.swing.JFrame {
                         calendar.add(Calendar.DAY_OF_MONTH, 7);
                     }
                 }
+                int val[] = new int[4];
+                for (int i = 0; i < 3; i++) {
+                    for (int j = 0; j < 4; j++) {
+                        val[j] = tressesion[i][j];
+                    }
+                    re.insertardiasmes(val, mastres[i], 1);
+                }
             } else if (dias == 4) {
+                quicksort(mascuatro, 0, mascuatro.length - 1);
+                re.insertarmensualidad(obtenerfechastr(txtfechainicio, mascuatro[0]),
+                        obtenerfecha(txtfechainicio, mascuatro[3]), "" + dias);
                 Calendar calendar = Calendar.getInstance();
                 for (int i = 0; i < 4; i++) {
                     calendar.setTime(fechaselec);
@@ -1240,7 +1309,17 @@ public class Inscripciones extends javax.swing.JFrame {
                         calendar.add(Calendar.DAY_OF_MONTH, 7);
                     }
                 }
+                int val[] = new int[4];
+                for (int i = 0; i < 4; i++) {
+                    for (int j = 0; j < 4; j++) {
+                        val[j] = cuatrosesion[i][j];
+                    }
+                    re.insertardiasmes(val, mascuatro[i], 1);
+                }
             } else if (dias == 5) {
+                quicksort(mascinco, 0, mascinco.length - 1);
+                re.insertarmensualidad(obtenerfechastr(txtfechainicio, mascinco[0]),
+                        obtenerfecha(txtfechainicio, mascinco[4]), "" + dias);
                 Calendar calendar = Calendar.getInstance();
                 for (int i = 0; i < 5; i++) {
                     calendar.setTime(fechaselec);
@@ -1251,7 +1330,16 @@ public class Inscripciones extends javax.swing.JFrame {
                         calendar.add(Calendar.DAY_OF_MONTH, 7);
                     }
                 }
+                int val[] = new int[4];
+                for (int i = 0; i < 5; i++) {
+                    for (int j = 0; j < 4; j++) {
+                        val[j] = cincosesion[i][j];
+                    }
+                    re.insertardiasmes(val, mascinco[i], 1);
+                }
+
             }
+            dias = 1;
             inscripcion ins = new inscripcion();
 //            System.out.println("La fecha de nacimiento es: " + obtenerfecha(txtfechanacimiento));
 //            System.out.println("La fecha de inicio es: " + obtenerfecha(txtfechainicio));
@@ -1288,6 +1376,7 @@ public class Inscripciones extends javax.swing.JFrame {
         txtcelular.setText(tdatos.getValueAt(fila, 10).toString());
         btneditardatos.setEnabled(true);
         btnrenovar.setEnabled(true);
+        btnguardar.setEnabled(false);
     }//GEN-LAST:event_tdatosMouseClicked
 
     private void btnnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnuevoActionPerformed
@@ -1298,7 +1387,8 @@ public class Inscripciones extends javax.swing.JFrame {
         deseleccionarckdias(false);
         btneditardatos.setEnabled(false);
         btnrenovar.setEnabled(false);
-        btnguardar.setEnabled(false);
+        btnguardar.setEnabled(true);
+
     }//GEN-LAST:event_btnnuevoActionPerformed
 
     private void btneditardatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditardatosActionPerformed
@@ -1311,13 +1401,14 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_txtbuscarKeyReleased
 
     private void btncancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelarActionPerformed
+        habilitarcamposdatos(true);
         limpiar();
-        inicializarvariables();
+        habilitarcamposmensualidad(true);
         habilitarhoras(false);
         deseleccionarckdias(false);
         btneditardatos.setEnabled(false);
         btnrenovar.setEnabled(false);
-        btnguardar.setEnabled(false);
+        btnguardar.setEnabled(true);
     }//GEN-LAST:event_btncancelarActionPerformed
 
     private void btnrenovarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrenovarActionPerformed
@@ -1331,7 +1422,7 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_btneliminarActionPerformed
 
     private void txtfechainicioPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_txtfechainicioPropertyChange
-        txtfechatermino.setDate(StringaDate(obtenerfecha(txtfechainicio)));
+        txtfechatermino.setDate(StringaDate(obtenerfecha(txtfechainicio, 0)));
     }//GEN-LAST:event_txtfechainicioPropertyChange
 
     /**
