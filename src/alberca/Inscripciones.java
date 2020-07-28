@@ -1240,7 +1240,8 @@ public class Inscripciones extends javax.swing.JFrame {
                     unasesion[i] = calendar.get(Calendar.DAY_OF_MONTH);
                     calendar.add(Calendar.DAY_OF_MONTH, 7);
                 }
-                re.insertardiasmes(unasesion, masuno[0], 1);
+                int r = re.idmensualidad();
+                re.insertardiasmes(unasesion, masuno[0], r);
             } else if (dias == 2) {
                 quicksort(masdos, 0, masdos.length - 1);
                 re.insertarmensualidad(obtenerfechastr(txtfechainicio, masdos[0]),
@@ -1260,11 +1261,12 @@ public class Inscripciones extends javax.swing.JFrame {
                     }
                 }
                 int val[] = new int[4];
+                int r = re.idmensualidad();
                 for (int i = 0; i < 2; i++) {
                     for (int j = 0; j < 4; j++) {
                         val[j] = dossesion[i][j];
                     }
-                    re.insertardiasmes(val, masdos[i], 1);
+                    re.insertardiasmes(val, masdos[i], r);
                 }
 //                for (int i = 0; i < 2; i++) {
 //                    System.out.print("Fechas -> ");
@@ -1289,11 +1291,12 @@ public class Inscripciones extends javax.swing.JFrame {
                     }
                 }
                 int val[] = new int[4];
+                int r = re.idmensualidad();
                 for (int i = 0; i < 3; i++) {
                     for (int j = 0; j < 4; j++) {
                         val[j] = tressesion[i][j];
                     }
-                    re.insertardiasmes(val, mastres[i], 1);
+                    re.insertardiasmes(val, mastres[i], r);
                 }
             } else if (dias == 4) {
                 quicksort(mascuatro, 0, mascuatro.length - 1);
@@ -1310,11 +1313,12 @@ public class Inscripciones extends javax.swing.JFrame {
                     }
                 }
                 int val[] = new int[4];
+                int r = re.idmensualidad();
                 for (int i = 0; i < 4; i++) {
                     for (int j = 0; j < 4; j++) {
                         val[j] = cuatrosesion[i][j];
                     }
-                    re.insertardiasmes(val, mascuatro[i], 1);
+                    re.insertardiasmes(val, mascuatro[i], r);
                 }
             } else if (dias == 5) {
                 quicksort(mascinco, 0, mascinco.length - 1);
@@ -1331,11 +1335,12 @@ public class Inscripciones extends javax.swing.JFrame {
                     }
                 }
                 int val[] = new int[4];
+                int r = re.idmensualidad();
                 for (int i = 0; i < 5; i++) {
                     for (int j = 0; j < 4; j++) {
                         val[j] = cincosesion[i][j];
                     }
-                    re.insertardiasmes(val, mascinco[i], 1);
+                    re.insertardiasmes(val, mascinco[i], r);
                 }
 
             }

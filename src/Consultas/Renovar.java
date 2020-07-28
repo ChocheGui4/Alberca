@@ -7,7 +7,9 @@ package Consultas;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,10 +23,13 @@ public class Renovar {
     public static Connection conn = null;
     public static int v[] = {2, 23, 12};
     public static int ve[] = {0, 1};
+    private static String sSQL = "";
+    public static int res = 0;
 
     public static void main(String[] args) {
 //        insertarmensualidad("2020/05/12", "2020/06/12", "8");
-        insertardiasmes(v, 2, 2);
+//        insertardiasmes(v, 2, 2);
+        idmensualidad();
     }
 
     public static boolean insertarmensualidad(String fecha_ini, String fecha_termi, String sesiones) {
@@ -49,6 +54,27 @@ public class Renovar {
 
         }
 
+    }
+
+    public static int idmensualidad() {
+        conn = con.conectar();
+
+//        System.out.println("Se metió al método");
+        sSQL = "select * from mensualidad order by id_mensualidad desc limit 1";
+//        System.out.println("Después de la consulta");
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sSQL);
+            while (rs.next()) {
+                res = rs.getInt("id_mensualidad");
+            }
+//            System.out.println("antes del return");
+            System.out.println("retorna: "+res);
+            return res;
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            return 0;
+        }
     }
 
     public static boolean insertardiasmes(int[] dias, int numero, int n) {
