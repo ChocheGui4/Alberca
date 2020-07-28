@@ -6,6 +6,7 @@
 package alberca;
 
 import Consultas.Eliminarusuarios;
+import Consultas.Renovar;
 import Consultas.conexion;
 import Consultas.inscripcion;
 import Consultas.tabla;
@@ -35,16 +36,20 @@ public class Inscripciones extends javax.swing.JFrame {
     FondoPanel fondo = new FondoPanel();
     SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
     int dias = 1;
+    int masuno = 0;
     int unasesion[] = new int[4];
     int contardos = 0, dos = 0;
     int masdos[] = new int[2];
     int dossesion[][] = new int[2][4];
     int contartres = 0, tres = 0;
     int mastres[] = new int[3];
+    int tressesion[][] = new int[3][4];
     int contarcuatro = 0, cuatro = 0;
     int mascuatro[] = new int[4];
+    int cuatrosesion[][] = new int[4][4];
     int contarcinco = 0, cinco = 0;
     int mascinco[] = new int[5];
+    int cincosesion[][] = new int[5][4];
     JCheckBox diasdos[] = new JCheckBox[2];
     JComboBox combodos[] = new JComboBox[2];
     JCheckBox diastres[] = new JCheckBox[3];
@@ -67,6 +72,7 @@ public class Inscripciones extends javax.swing.JFrame {
         txtidusuario.setEnabled(false);
         mostrar("");
         txtfechainicio.setDate(new Date());
+        txtfechanacimiento.setEnabled(false);
 
         this.setLocationRelativeTo(null);
     }
@@ -75,7 +81,7 @@ public class Inscripciones extends javax.swing.JFrame {
             JCheckBox checkprincipal, JComboBox cb1, JComboBox cb2, JComboBox cb3, JComboBox cb4, JComboBox cb5, JComboBox cbprincipal) {
         if (dias == 1) {
             if (checkprincipal.isSelected() == true) {
-
+                masuno = numero;
                 check1.setSelected(false);
                 check2.setSelected(false);
                 check3.setSelected(false);
@@ -484,7 +490,7 @@ public class Inscripciones extends javax.swing.JFrame {
         txtnumin.setEnabled(valor);
         txttelefono.setEnabled(valor);
         txtcelular.setEnabled(valor);
-//        txtfechanacimiento.setEnabled(valor);
+        txtfechanacimiento.setEnabled(valor);
 
     }
 
@@ -514,13 +520,15 @@ public class Inscripciones extends javax.swing.JFrame {
         ckjueves.setEnabled(valor);
         ckviernes.setEnabled(valor);
         cksabado.setEnabled(valor);
+        txtfechainicio.setEnabled(valor);
+        txtfechatermino.setEnabled(valor);
 
     }
 
     public void inicializarvariables() {
         contardos = 0;
         dos = 0;
-
+        masuno = 0;
         contartres = 0;
         tres = 0;
         contarcuatro = 0;
@@ -548,6 +556,21 @@ public class Inscripciones extends javax.swing.JFrame {
             diascinco[i] = null;
             combocinco[i] = null;
             mascinco[i] = 0;
+        }
+    }
+
+    public String obtenerfechastr(JDateChooser jd) {
+        if (jd.getDate() == null) {
+            return "";
+        } else {
+            if (jd.getDate() != null) {
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTime(jd.getDate());
+                calendar.add(Calendar.DAY_OF_YEAR, masuno);
+                return formato.format(calendar.getTime());
+            } else {
+                return null;
+            }
         }
     }
 
@@ -833,7 +856,6 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(txtnombretutor);
         txtnombretutor.setBounds(215, 180, 261, 30);
 
-        tdatos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tdatos.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         tdatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1169,17 +1191,65 @@ public class Inscripciones extends javax.swing.JFrame {
         if (txtnombre.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Los campos deben ser llenados por completo.");
         } else {
+            Renovar re = new Renovar();
+            re.insertarmensualidad(obtenerfechastr(txtfechainicio), obtenerfecha(txtfechatermino), "" + cbdias.getSelectedIndex() + 1);
             if (dias == 1) {
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTime(fechaselec);
+                calendar.add(Calendar.DAY_OF_MONTH, masuno);
                 for (int i = 0; i < 4; i++) {
-//                    int dayyear = calendar.get(Calendar.DAY_OF_MONTH);
-//                    System.out.println("Fechaaaaaa- y día ----: " + fechaselec + "   " + dayyear);
-                    calendar.getTime();
-//                    calendar.get(Calendar.DAY_OF_MONTH);
+
                     unasesion[i] = calendar.get(Calendar.DAY_OF_MONTH);
                     calendar.add(Calendar.DAY_OF_MONTH, 7);
-                    System.out.println(unasesion[i] + "--------");
+                }
+            } else if (dias == 2) {
+                Calendar calendar = Calendar.getInstance();
+//                for (int i = 0; i < 2; i++) {
+//                    System.out.print("datos en masdos ");
+//                    System.out.println(masdos[i] + ", ");
+//                }
+                for (int i = 0; i < 2; i++) {
+                    calendar.setTime(fechaselec);
+                    calendar.add(Calendar.DAY_OF_MONTH, masdos[i]);
+                    for (int j = 0; j < 4; j++) {
+
+                        dossesion[i][j] = calendar.get(Calendar.DAY_OF_MONTH);
+                        calendar.add(Calendar.DAY_OF_MONTH, 7);
+                    }
+                }
+
+            } else if (dias == 3) {
+                Calendar calendar = Calendar.getInstance();
+                for (int i = 0; i < 3; i++) {
+                    calendar.setTime(fechaselec);
+                    calendar.add(Calendar.DAY_OF_MONTH, mastres[i]);
+                    for (int j = 0; j < 4; j++) {
+
+                        tressesion[i][j] = calendar.get(Calendar.DAY_OF_MONTH);
+                        calendar.add(Calendar.DAY_OF_MONTH, 7);
+                    }
+                }
+            } else if (dias == 4) {
+                Calendar calendar = Calendar.getInstance();
+                for (int i = 0; i < 4; i++) {
+                    calendar.setTime(fechaselec);
+                    calendar.add(Calendar.DAY_OF_MONTH, mascuatro[i]);
+                    for (int j = 0; j < 4; j++) {
+
+                        cuatrosesion[i][j] = calendar.get(Calendar.DAY_OF_MONTH);
+                        calendar.add(Calendar.DAY_OF_MONTH, 7);
+                    }
+                }
+            } else if (dias == 5) {
+                Calendar calendar = Calendar.getInstance();
+                for (int i = 0; i < 5; i++) {
+                    calendar.setTime(fechaselec);
+                    calendar.add(Calendar.DAY_OF_MONTH, mascinco[i]);
+                    for (int j = 0; j < 4; j++) {
+
+                        cincosesion[i][j] = calendar.get(Calendar.DAY_OF_MONTH);
+                        calendar.add(Calendar.DAY_OF_MONTH, 7);
+                    }
                 }
             }
             inscripcion ins = new inscripcion();
@@ -1198,6 +1268,8 @@ public class Inscripciones extends javax.swing.JFrame {
 
         habilitarcamposdatos(false);
         habilitarcamposmensualidad(false);
+        deseleccionarckdias(false);
+        habilitarhoras(false);
 //        btneliminar.setEnabled(true);
 //        accion="editar";
 
@@ -1221,6 +1293,9 @@ public class Inscripciones extends javax.swing.JFrame {
     private void btnnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnuevoActionPerformed
         habilitarcamposdatos(true);
         limpiar();
+        habilitarcamposmensualidad(true);
+        habilitarhoras(false);
+        deseleccionarckdias(false);
         btneditardatos.setEnabled(false);
         btnrenovar.setEnabled(false);
         btnguardar.setEnabled(false);
@@ -1237,6 +1312,9 @@ public class Inscripciones extends javax.swing.JFrame {
 
     private void btncancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelarActionPerformed
         limpiar();
+        inicializarvariables();
+        habilitarhoras(false);
+        deseleccionarckdias(false);
         btneditardatos.setEnabled(false);
         btnrenovar.setEnabled(false);
         btnguardar.setEnabled(false);
@@ -1249,7 +1327,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
         Eliminarusuarios elus = new Eliminarusuarios();
         boolean var = elus.eliminarusuario(Integer.parseInt(txtidusuario.getText()));
-
+        mostrar("");
     }//GEN-LAST:event_btneliminarActionPerformed
 
     private void txtfechainicioPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_txtfechainicioPropertyChange
