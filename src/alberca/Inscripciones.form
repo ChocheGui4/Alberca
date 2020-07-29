@@ -578,29 +578,100 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="cklunes">
+    <Component class="javax.swing.JComboBox" name="cbhorasabado">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial" size="16" style="1"/>
+          <Font name="Tahoma" size="14" style="1"/>
         </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="11">
+            <StringItem index="0" value="9:00 - 10:00"/>
+            <StringItem index="1" value="10:00 - 11:00"/>
+            <StringItem index="2" value="11:00 - 12:00"/>
+            <StringItem index="3" value="12:00 - 13:00"/>
+            <StringItem index="4" value="13:00 - 14:00"/>
+            <StringItem index="5" value="14:00 - 15:00"/>
+            <StringItem index="6" value="15:00 - 16:00"/>
+            <StringItem index="7" value="16:00 - 17:00"/>
+            <StringItem index="8" value="17:00 - 18:00"/>
+            <StringItem index="9" value="18:00 - 19:00"/>
+            <StringItem index="10" value="19:00 - 20:00"/>
+          </StringArray>
         </Property>
-        <Property name="text" type="java.lang.String" value="Lunes"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cklunesActionPerformed"/>
-      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="80" y="450" width="80" height="-1"/>
+          <AbsoluteConstraints x="960" y="480" width="140" height="30"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cbhoralunes">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="1"/>
+        </Property>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="11">
+            <StringItem index="0" value="9:00 - 10:00"/>
+            <StringItem index="1" value="10:00 - 11:00"/>
+            <StringItem index="2" value="11:00 - 12:00"/>
+            <StringItem index="3" value="12:00 - 13:00"/>
+            <StringItem index="4" value="13:00 - 14:00"/>
+            <StringItem index="5" value="14:00 - 15:00"/>
+            <StringItem index="6" value="15:00 - 16:00"/>
+            <StringItem index="7" value="16:00 - 17:00"/>
+            <StringItem index="8" value="17:00 - 18:00"/>
+            <StringItem index="9" value="18:00 - 19:00"/>
+            <StringItem index="10" value="19:00 - 20:00"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="70" y="480" width="150" height="30"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cbhoramartes">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="1"/>
+        </Property>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="11">
+            <StringItem index="0" value="9:00 - 10:00"/>
+            <StringItem index="1" value="10:00 - 11:00"/>
+            <StringItem index="2" value="11:00 - 12:00"/>
+            <StringItem index="3" value="12:00 - 13:00"/>
+            <StringItem index="4" value="13:00 - 14:00"/>
+            <StringItem index="5" value="14:00 - 15:00"/>
+            <StringItem index="6" value="15:00 - 16:00"/>
+            <StringItem index="7" value="16:00 - 17:00"/>
+            <StringItem index="8" value="17:00 - 18:00"/>
+            <StringItem index="9" value="18:00 - 19:00"/>
+            <StringItem index="10" value="19:00 - 20:00"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="250" y="480" width="150" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JCheckBox" name="ckmartes">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial" size="16" style="1"/>
+          <Font name="Arial" size="18" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -612,14 +683,123 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="220" y="450" width="90" height="-1"/>
+          <AbsoluteConstraints x="250" y="450" width="140" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cbhoramiercoles">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="1"/>
+        </Property>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="11">
+            <StringItem index="0" value="9:00 - 10:00"/>
+            <StringItem index="1" value="10:00 - 11:00"/>
+            <StringItem index="2" value="11:00 - 12:00"/>
+            <StringItem index="3" value="12:00 - 13:00"/>
+            <StringItem index="4" value="13:00 - 14:00"/>
+            <StringItem index="5" value="14:00 - 15:00"/>
+            <StringItem index="6" value="15:00 - 16:00"/>
+            <StringItem index="7" value="16:00 - 17:00"/>
+            <StringItem index="8" value="17:00 - 18:00"/>
+            <StringItem index="9" value="18:00 - 19:00"/>
+            <StringItem index="10" value="19:00 - 20:00"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="430" y="480" width="140" height="30"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cbhorajueves">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="1"/>
+        </Property>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="11">
+            <StringItem index="0" value="9:00 - 10:00"/>
+            <StringItem index="1" value="10:00 - 11:00"/>
+            <StringItem index="2" value="11:00 - 12:00"/>
+            <StringItem index="3" value="12:00 - 13:00"/>
+            <StringItem index="4" value="13:00 - 14:00"/>
+            <StringItem index="5" value="14:00 - 15:00"/>
+            <StringItem index="6" value="15:00 - 16:00"/>
+            <StringItem index="7" value="16:00 - 17:00"/>
+            <StringItem index="8" value="17:00 - 18:00"/>
+            <StringItem index="9" value="18:00 - 19:00"/>
+            <StringItem index="10" value="19:00 - 20:00"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="600" y="480" width="140" height="30"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cbhoraviernes">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="1"/>
+        </Property>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="11">
+            <StringItem index="0" value="9:00 - 10:00"/>
+            <StringItem index="1" value="10:00 - 11:00"/>
+            <StringItem index="2" value="11:00 - 12:00"/>
+            <StringItem index="3" value="12:00 - 13:00"/>
+            <StringItem index="4" value="13:00 - 14:00"/>
+            <StringItem index="5" value="14:00 - 15:00"/>
+            <StringItem index="6" value="15:00 - 16:00"/>
+            <StringItem index="7" value="16:00 - 17:00"/>
+            <StringItem index="8" value="17:00 - 18:00"/>
+            <StringItem index="9" value="18:00 - 19:00"/>
+            <StringItem index="10" value="19:00 - 20:00"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="780" y="480" width="150" height="30"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="cklunes">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="18" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Lunes"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cklunesActionPerformed"/>
+      </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="70" y="450" width="150" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JCheckBox" name="ckmiercoles">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial" size="16" style="1"/>
+          <Font name="Arial" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -631,14 +811,14 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="370" y="450" width="120" height="-1"/>
+          <AbsoluteConstraints x="430" y="450" width="140" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JCheckBox" name="ckjueves">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial" size="16" style="1"/>
+          <Font name="Arial" size="18" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -650,14 +830,14 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="530" y="450" width="100" height="-1"/>
+          <AbsoluteConstraints x="600" y="450" width="140" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JCheckBox" name="ckviernes">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial" size="16" style="1"/>
+          <Font name="Arial" size="18" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -669,14 +849,14 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="680" y="450" width="100" height="-1"/>
+          <AbsoluteConstraints x="780" y="450" width="150" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JCheckBox" name="cksabado">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial" size="16" style="1"/>
+          <Font name="Arial" size="18" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -688,187 +868,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="820" y="450" width="100" height="-1"/>
-        </Constraint>
-      </Constraints>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="cbhorasabado">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="11" style="1"/>
-        </Property>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="11">
-            <StringItem index="0" value="9:00 - 10:00"/>
-            <StringItem index="1" value="10:00 - 11:00"/>
-            <StringItem index="2" value="11:00 - 12:00"/>
-            <StringItem index="3" value="12:00 - 13:00"/>
-            <StringItem index="4" value="13:00 - 14:00"/>
-            <StringItem index="5" value="14:00 - 15:00"/>
-            <StringItem index="6" value="15:00 - 16:00"/>
-            <StringItem index="7" value="16:00 - 17:00"/>
-            <StringItem index="8" value="17:00 - 18:00"/>
-            <StringItem index="9" value="18:00 - 19:00"/>
-            <StringItem index="10" value="19:00 - 20:00"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="820" y="480" width="110" height="30"/>
-        </Constraint>
-      </Constraints>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="cbhoralunes">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="11" style="1"/>
-        </Property>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="11">
-            <StringItem index="0" value="9:00 - 10:00"/>
-            <StringItem index="1" value="10:00 - 11:00"/>
-            <StringItem index="2" value="11:00 - 12:00"/>
-            <StringItem index="3" value="12:00 - 13:00"/>
-            <StringItem index="4" value="13:00 - 14:00"/>
-            <StringItem index="5" value="14:00 - 15:00"/>
-            <StringItem index="6" value="15:00 - 16:00"/>
-            <StringItem index="7" value="16:00 - 17:00"/>
-            <StringItem index="8" value="17:00 - 18:00"/>
-            <StringItem index="9" value="18:00 - 19:00"/>
-            <StringItem index="10" value="19:00 - 20:00"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="75" y="480" width="110" height="30"/>
-        </Constraint>
-      </Constraints>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="cbhoramartes">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="11" style="1"/>
-        </Property>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="11">
-            <StringItem index="0" value="9:00 - 10:00"/>
-            <StringItem index="1" value="10:00 - 11:00"/>
-            <StringItem index="2" value="11:00 - 12:00"/>
-            <StringItem index="3" value="12:00 - 13:00"/>
-            <StringItem index="4" value="13:00 - 14:00"/>
-            <StringItem index="5" value="14:00 - 15:00"/>
-            <StringItem index="6" value="15:00 - 16:00"/>
-            <StringItem index="7" value="16:00 - 17:00"/>
-            <StringItem index="8" value="17:00 - 18:00"/>
-            <StringItem index="9" value="18:00 - 19:00"/>
-            <StringItem index="10" value="19:00 - 20:00"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="220" y="480" width="120" height="30"/>
-        </Constraint>
-      </Constraints>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="cbhoramiercoles">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="11" style="1"/>
-        </Property>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="11">
-            <StringItem index="0" value="9:00 - 10:00"/>
-            <StringItem index="1" value="10:00 - 11:00"/>
-            <StringItem index="2" value="11:00 - 12:00"/>
-            <StringItem index="3" value="12:00 - 13:00"/>
-            <StringItem index="4" value="13:00 - 14:00"/>
-            <StringItem index="5" value="14:00 - 15:00"/>
-            <StringItem index="6" value="15:00 - 16:00"/>
-            <StringItem index="7" value="16:00 - 17:00"/>
-            <StringItem index="8" value="17:00 - 18:00"/>
-            <StringItem index="9" value="18:00 - 19:00"/>
-            <StringItem index="10" value="19:00 - 20:00"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="370" y="480" width="120" height="30"/>
-        </Constraint>
-      </Constraints>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="cbhorajueves">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="11" style="1"/>
-        </Property>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="11">
-            <StringItem index="0" value="9:00 - 10:00"/>
-            <StringItem index="1" value="10:00 - 11:00"/>
-            <StringItem index="2" value="11:00 - 12:00"/>
-            <StringItem index="3" value="12:00 - 13:00"/>
-            <StringItem index="4" value="13:00 - 14:00"/>
-            <StringItem index="5" value="14:00 - 15:00"/>
-            <StringItem index="6" value="15:00 - 16:00"/>
-            <StringItem index="7" value="16:00 - 17:00"/>
-            <StringItem index="8" value="17:00 - 18:00"/>
-            <StringItem index="9" value="18:00 - 19:00"/>
-            <StringItem index="10" value="19:00 - 20:00"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="530" y="480" width="120" height="30"/>
-        </Constraint>
-      </Constraints>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="cbhoraviernes">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="11" style="1"/>
-        </Property>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="11">
-            <StringItem index="0" value="9:00 - 10:00"/>
-            <StringItem index="1" value="10:00 - 11:00"/>
-            <StringItem index="2" value="11:00 - 12:00"/>
-            <StringItem index="3" value="12:00 - 13:00"/>
-            <StringItem index="4" value="13:00 - 14:00"/>
-            <StringItem index="5" value="14:00 - 15:00"/>
-            <StringItem index="6" value="15:00 - 16:00"/>
-            <StringItem index="7" value="16:00 - 17:00"/>
-            <StringItem index="8" value="17:00 - 18:00"/>
-            <StringItem index="9" value="18:00 - 19:00"/>
-            <StringItem index="10" value="19:00 - 20:00"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="680" y="480" width="120" height="30"/>
+          <AbsoluteConstraints x="960" y="450" width="130" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -1070,6 +1070,28 @@
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="490" y="140" width="141" height="31"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton2">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="99" red="ff" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="14" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ver eliminados"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+      </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="810" y="140" width="150" height="30"/>
         </Constraint>
       </Constraints>
     </Component>

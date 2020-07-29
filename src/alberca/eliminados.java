@@ -99,6 +99,7 @@ public class eliminados extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1117, 613));
@@ -133,10 +134,10 @@ public class eliminados extends javax.swing.JFrame {
         jScrollPane1.setBounds(60, 80, 970, 310);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Información de usuarios");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(60, 50, 220, 40);
+        jLabel2.setBounds(290, 50, 220, 40);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel3.setText("Centro Acuático Alfa y Omega");
@@ -154,6 +155,12 @@ public class eliminados extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1);
         jButton1.setBounds(22, 12, 122, 34);
+
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel4.setText("Información de usuarios");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(60, 50, 220, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -263,6 +270,7 @@ public class eliminados extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tdatos;
     // End of variables declaration//GEN-END:variables
