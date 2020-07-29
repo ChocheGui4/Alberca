@@ -7,28 +7,33 @@ package Consultas;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author Choche
  */
-
 public class inscripcion {
 
     static conexion con = new conexion();
     public static PreparedStatement s;
+    public static String sSQL = "";
     public static Connection conn = null;
+    public static int res = 0;
+
     public static void main(String[] args) {
         insertardias("Raul", "Lopez", "1997-01-05", "San Vicente Xiloxochitla", "Abasolo", "4", "", "2461973931", "2461414585",
-                "",1);
+                "", 1);
     }
+
     public static boolean insertardias(String nombre, String apellidos, String fecha_naci, String localidad,
-            String calle, String numero_e, String numero_i, 
+            String calle, String numero_e, String numero_i,
             String telefono, String celular, String nombre_tutor, int mensualidad) {
         try {
-            conn=con.conectar();
+            conn = con.conectar();
             //s = conn.prepareStatement("insert into Registrar_Usuario values (?,?,?,?,?)");
             s = conn.prepareStatement("INSERT INTO usuario(nombre,apellidos,fecha_nacimiento,localidad,calle,"
                     + "numero_e,numero_i,telefono_1,celular_1,nombre_tutor,mensualidad_id) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
@@ -44,6 +49,19 @@ public class inscripcion {
             s.setString(9, celular);
             s.setString(10, nombre_tutor);
             s.setInt(11, mensualidad);
+            s.executeUpdate();
+            
+            sSQL = "select * from usuario order by id_usuario desc limit 1";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sSQL);
+            while (rs.next()) {
+                res = rs.getInt("id_usuario");
+            }
+//            System.out.println("antes del return");
+//            System.out.println("retorna: " + res);
+            s = conn.prepareStatement("UPDATE usuario SET clave=? WHERE id_usuario=" + res);
+            s.setString(1, "AYO00"+res);
+            
 
             s.executeUpdate();
 

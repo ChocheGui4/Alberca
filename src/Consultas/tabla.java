@@ -29,14 +29,16 @@ public class tabla {
 //        System.out.println("Se metió al método");
 
         String[] titulos = {"ID","Clave", "Nombre", "Apellidos", "Fecha de nacimiento", "localidad", "calle", 
-                "no_interno", "no_externo", "telefono", "celular", "nombre del tutor"};
+                "no_interno", "no_externo", "telefono", "celular", "nombre del tutor",
+                "fecha de inicio", "fecha de termino", "id mes"};
 
-        String[] registro = new String[12];
+        String[] registro = new String[15];
 
         totalregistros = 0;
         modelo = new DefaultTableModel(null, titulos);
 
-        sSQL = "select * from usuario where nombre like '%" + buscar + "%' order by id_usuario";
+        sSQL = "select * from usuario join mensualidad on mensualidad.id_mensualidad ="
+                + "usuario.mensualidad_id where clave like '%" + buscar + "%' order by id_usuario";
 //        System.out.println("Después de la consulta");
         try {
             Statement st = conn.createStatement();
@@ -55,6 +57,9 @@ public class tabla {
                 registro[9] = rs.getString("telefono_1");
                 registro[10] = rs.getString("celular_1");
                 registro[11] = rs.getString("nombre_tutor");
+                registro[12] = rs.getString("fecha_ini");
+                registro[13] = rs.getString("fecha_fin");
+                registro[14] = rs.getString("mensualidad_id");
                 totalregistros = totalregistros + 1;
                 modelo.addRow(registro);
 

@@ -61,6 +61,11 @@ public class Principal extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(255, 204, 0));
         jButton2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton2.setText("Renovación");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(255, 204, 0));
         jButton3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -144,6 +149,11 @@ public class Principal extends javax.swing.JFrame {
         Inscripciones ins= new Inscripciones();
         ins.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Inscripciones ins= new Inscripciones();
+        ins.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

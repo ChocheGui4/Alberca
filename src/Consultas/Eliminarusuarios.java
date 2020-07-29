@@ -24,10 +24,10 @@ public class Eliminarusuarios {
     public static String[] registro = new String[13];
 
     public static void main(String[] args) {
-        eliminarusuario(3);
+        eliminarusuario(3,2);
     }
 
-    public static boolean eliminarusuario(int id) {
+    public static boolean eliminarusuario(int id, int mes) {
         conn = con.conectar();
 
         try {
@@ -50,10 +50,10 @@ public class Eliminarusuarios {
             s.setString(12, registro[12]);
             s.executeUpdate();
 
-            sSQL = "delete from usuario where id_usuario=?";
+            sSQL = "delete from mensualidad where id_mensualidad=?";
             PreparedStatement pst = conn.prepareStatement(sSQL);
 
-            pst.setInt(1, id);
+            pst.setInt(1, mes);
 
             int n = pst.executeUpdate();
 
