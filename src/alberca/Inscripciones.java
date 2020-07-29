@@ -86,7 +86,7 @@ public class Inscripciones extends javax.swing.JFrame {
         mostrar("");
 //        txtfechainicio.setDate(new Date());
 //        marcarcalendar(new Date());
-        marcarcalendar(StringaDate("2020-12-12"));
+        marcarcalendar(new Date());
 
         this.setLocationRelativeTo(null);
     }
@@ -99,39 +99,39 @@ public class Inscripciones extends javax.swing.JFrame {
         System.out.println("dia de la semana: " + i);
         if (i == 1) {
             calendar.setTime(fecha);
-            calendar.add(Calendar.DAY_OF_YEAR,1);
+            calendar.add(Calendar.DAY_OF_YEAR, 1);
             txtfechainicio.setDate(calendar.getTime());
-            
-            System.out.println("Hoy es lunes");
+
+            System.out.println("Hoy es domingo");
         } else if (i == 2) {
             txtfechainicio.setDate(fecha);
-            
-            System.out.println("Hoy es martes");
-        }else if (i == 3) {
+
+            System.out.println("Hoy es lunes");
+        } else if (i == 3) {
             calendar.setTime(fecha);
-            calendar.add(Calendar.DAY_OF_YEAR,-1);
+            calendar.add(Calendar.DAY_OF_YEAR, -1);
             txtfechainicio.setDate(calendar.getTime());
-            System.out.println("Hoy es miercoles");
-        }else if (i == 4) {
+            System.out.println("Hoy es martes");
+        } else if (i == 4) {
             calendar.setTime(fecha);
-            calendar.add(Calendar.DAY_OF_YEAR,-2);
+            calendar.add(Calendar.DAY_OF_YEAR, -2);
+            txtfechainicio.setDate(calendar.getTime());
+            System.out.println("Hoy es miércoles");
+        } else if (i == 5) {
+            calendar.setTime(fecha);
+            calendar.add(Calendar.DAY_OF_YEAR, -3);
             txtfechainicio.setDate(calendar.getTime());
             System.out.println("Hoy es jueves");
-        }else if (i == 5) {
+        } else if (i == 6) {
             calendar.setTime(fecha);
-            calendar.add(Calendar.DAY_OF_YEAR,-3);
+            calendar.add(Calendar.DAY_OF_YEAR, -4);
             txtfechainicio.setDate(calendar.getTime());
             System.out.println("Hoy es viernes");
-        }else if (i == 6) {
+        } else if (i == 7) {
             calendar.setTime(fecha);
-            calendar.add(Calendar.DAY_OF_YEAR,-4);
+            calendar.add(Calendar.DAY_OF_YEAR, -5);
             txtfechainicio.setDate(calendar.getTime());
-            System.out.println("Hoy es sabado");
-        }else if (i == 7) {
-            calendar.setTime(fecha);
-            calendar.add(Calendar.DAY_OF_YEAR,-5);
-            txtfechainicio.setDate(calendar.getTime());
-            System.out.println("Hoy es domingo");
+            System.out.println("Hoy es sábado");
         }
     }
 
@@ -714,7 +714,7 @@ public class Inscripciones extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(13).setMaxWidth(110);
         tdatos.getColumnModel().getColumn(13).setMinWidth(110);
         tdatos.getColumnModel().getColumn(13).setPreferredWidth(110);
-        
+
         tdatos.getColumnModel().getColumn(14).setMaxWidth(110);
         tdatos.getColumnModel().getColumn(14).setMinWidth(110);
         tdatos.getColumnModel().getColumn(14).setPreferredWidth(110);
@@ -1516,28 +1516,31 @@ public class Inscripciones extends javax.swing.JFrame {
         txttelefono.setText(tdatos.getValueAt(fila, 9).toString());
         txtcelular.setText(tdatos.getValueAt(fila, 10).toString());
         txtfechainicio.setDate(StringaDate(tdatos.getValueAt(fila, 12).toString()));
-        txtfechainicio.setDate(StringaDate(tdatos.getValueAt(fila, 13).toString()));
+//        txtfechatermino.setDate(StringaDate(tdatos.getValueAt(fila, 13).toString()));
         txtmensualidad.setText(tdatos.getValueAt(fila, 14).toString());
         btneditardatos.setEnabled(true);
         btnrenovar.setEnabled(true);
         btnguardar.setEnabled(false);
         btnguardarmodificaciones.setEnabled(false);
         btnguardarrenovacion.setEnabled(false);
+
     }//GEN-LAST:event_tdatosMouseClicked
 
     private void btnnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnuevoActionPerformed
         habilitarcamposdatopersonal(true);
         habilitarcamposdatosdireccion(true);
         limpiar();
+        reiniciarcombos(0);
         habilitarcamposmensualidad(true);
         habilitarhoras(false);
         inicializarvariables();
+        cbdias.setSelectedIndex(0);
         deseleccionarckdias(false);
         btneditardatos.setEnabled(false);
         btnrenovar.setEnabled(false);
         btnguardar.setEnabled(true);
         btnguardarmodificaciones.setEnabled(false);
-        cbdias.setSelectedIndex(0);
+        
 
 
     }//GEN-LAST:event_btnnuevoActionPerformed
@@ -1548,7 +1551,7 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_btneditardatosActionPerformed
 
     private void txtbuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscarKeyReleased
-        mostrar("AYO00"+txtbuscar.getText());
+        mostrar("AYO00" + txtbuscar.getText());
     }//GEN-LAST:event_txtbuscarKeyReleased
 
     private void btnrenovarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrenovarActionPerformed
@@ -1557,9 +1560,9 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_btnrenovarActionPerformed
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
-        if(txtmensualidad.getText().equals("")){
-            
-        }else{
+        if (txtmensualidad.getText().equals("")) {
+
+        } else {
             Eliminarusuarios elus = new Eliminarusuarios();
             boolean var = elus.eliminarusuario(Integer.parseInt(txtidusuario.getText()),
                     Integer.parseInt(txtmensualidad.getText()));
@@ -1592,7 +1595,174 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_btnguardarmodificacionesActionPerformed
 
     private void btnguardarrenovacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarrenovacionActionPerformed
-        btnguardarrenovacion.setEnabled(false);
+
+        //Empieza la renovación
+        Renovar re = new Renovar();
+        combohoras[0] = cbhoralunes.getItemAt(cbhoralunes.getSelectedIndex());
+        combohoras[1] = cbhoramartes.getItemAt(cbhoramartes.getSelectedIndex());
+        combohoras[2] = cbhoramiercoles.getItemAt(cbhoramiercoles.getSelectedIndex());
+        combohoras[3] = cbhorajueves.getItemAt(cbhorajueves.getSelectedIndex());
+        combohoras[4] = cbhoraviernes.getItemAt(cbhoraviernes.getSelectedIndex());
+        combohoras[5] = cbhorasabado.getItemAt(cbhorasabado.getSelectedIndex());
+        if (dias == 1) {
+            if (masuno[0] != -1) {
+                re.renovarrmensualidad(Integer.parseInt(txtmensualidad.getText()),
+                        obtenerfechastr(txtfechainicio, masuno[0]),
+                        obtenerfecha(txtfechainicio, masuno[0]), "" + dias);
+
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTime(fechaselec);
+                calendar.add(Calendar.DAY_OF_MONTH, masuno[0]);
+                for (int i = 0; i < 4; i++) {
+
+                    unasesion[i] = calendar.get(Calendar.DAY_OF_MONTH);
+                    calendar.add(Calendar.DAY_OF_MONTH, 7);
+                }
+                int r = re.idmensualidad();
+                re.eliminardiasmes(Integer.parseInt(txtmensualidad.getText()));
+                re.renovardiasmes(Integer.parseInt(txtmensualidad.getText()), unasesion, masuno[0], combohoras[masuno[0]]);
+                resultado = 1;
+            } else {
+                resultado = -1;
+                JOptionPane.showMessageDialog(this, "No se han seleccionado días, hazlo por favor!");
+            }
+        } else if (dias == 2) {
+            if (masdos[0] != -1 & masdos[1] != -1) {
+                quicksort(masdos, 0, masdos.length - 1);
+                re.renovarrmensualidad(Integer.parseInt(txtmensualidad.getText()),
+                        obtenerfechastr(txtfechainicio, masdos[0]),
+                        obtenerfecha(txtfechainicio, masdos[1]), "" + dias);
+                Calendar calendar = Calendar.getInstance();
+                for (int i = 0; i < 2; i++) {
+                    calendar.setTime(fechaselec);
+                    calendar.add(Calendar.DAY_OF_MONTH, masdos[i]);
+                    for (int j = 0; j < 4; j++) {
+
+                        dossesion[i][j] = calendar.get(Calendar.DAY_OF_MONTH);
+                        calendar.add(Calendar.DAY_OF_MONTH, 7);
+                    }
+                }
+                int val[] = new int[4];
+                int r = re.idmensualidad();
+                re.eliminardiasmes(Integer.parseInt(txtmensualidad.getText()));
+                for (int i = 0; i < 2; i++) {
+                    for (int j = 0; j < 4; j++) {
+                        val[j] = dossesion[i][j];
+                    }
+                    re.renovardiasmes(Integer.parseInt(txtmensualidad.getText()), val, masdos[i], combohoras[masdos[i]]);
+                }
+                resultado = 1;
+            } else {
+                resultado = -1;
+                JOptionPane.showMessageDialog(this, "No se han seleccionado todos los días, hazlo por favor!");
+            }
+        } else if (dias == 3) {
+            if (mastres[0] != -1 & mastres[1] != -1 & mastres[2] != -1) {
+
+                quicksort(mastres, 0, mastres.length - 1);
+                re.renovarrmensualidad(Integer.parseInt(txtmensualidad.getText()),
+                        obtenerfechastr(txtfechainicio, mastres[0]),
+                        obtenerfecha(txtfechainicio, mastres[2]), "" + dias);
+                Calendar calendar = Calendar.getInstance();
+                for (int i = 0; i < 3; i++) {
+                    calendar.setTime(fechaselec);
+                    calendar.add(Calendar.DAY_OF_MONTH, mastres[i]);
+                    for (int j = 0; j < 4; j++) {
+
+                        tressesion[i][j] = calendar.get(Calendar.DAY_OF_MONTH);
+                        calendar.add(Calendar.DAY_OF_MONTH, 7);
+                    }
+                }
+                int val[] = new int[4];
+                int r = re.idmensualidad();
+                re.eliminardiasmes(Integer.parseInt(txtmensualidad.getText()));
+                for (int i = 0; i < 3; i++) {
+                    for (int j = 0; j < 4; j++) {
+                        val[j] = tressesion[i][j];
+                    }
+                    re.renovardiasmes(Integer.parseInt(txtmensualidad.getText()), val, mastres[i], combohoras[mastres[i]]);
+                }
+                resultado = 1;
+            } else {
+                resultado = -1;
+                JOptionPane.showMessageDialog(this, "No se han seleccionado todos los días, hazlo por favor!");
+
+            }
+        } else if (dias == 4) {
+            if (mascuatro[0] != -1 & mascuatro[1] != -1 & mascuatro[2] != -1 & mascuatro[3] != -1) {
+                quicksort(mascuatro, 0, mascuatro.length - 1);
+                re.renovarrmensualidad(Integer.parseInt(txtmensualidad.getText()),
+                        obtenerfechastr(txtfechainicio, mascuatro[0]),
+                        obtenerfecha(txtfechainicio, mascuatro[3]), "" + dias);
+                Calendar calendar = Calendar.getInstance();
+                for (int i = 0; i < 4; i++) {
+                    calendar.setTime(fechaselec);
+                    calendar.add(Calendar.DAY_OF_MONTH, mascuatro[i]);
+                    for (int j = 0; j < 4; j++) {
+
+                        cuatrosesion[i][j] = calendar.get(Calendar.DAY_OF_MONTH);
+                        calendar.add(Calendar.DAY_OF_MONTH, 7);
+                    }
+                }
+                int val[] = new int[4];
+                int r = re.idmensualidad();
+                re.eliminardiasmes(Integer.parseInt(txtmensualidad.getText()));
+                for (int i = 0; i < 4; i++) {
+                    for (int j = 0; j < 4; j++) {
+                        val[j] = cuatrosesion[i][j];
+                    }
+                    re.renovardiasmes(Integer.parseInt(txtmensualidad.getText()), val, mascuatro[i], combohoras[mascuatro[i]]);
+                }
+                resultado = 1;
+            } else {
+                resultado = -1;
+                JOptionPane.showMessageDialog(this, "No se han seleccionado todos los días, hazlo por favor!");
+            }
+        } else if (dias == 5) {
+            if (mascinco[0] != -1 & mascinco[1] != -1 & mascinco[2] != -1 & mascinco[3] != -1 & mascinco[4] != -1) {
+                quicksort(mascinco, 0, mascinco.length - 1);
+                re.renovarrmensualidad(Integer.parseInt(txtmensualidad.getText()),
+                        obtenerfechastr(txtfechainicio, mascinco[0]),
+                        obtenerfecha(txtfechainicio, mascinco[4]), "" + dias);
+                Calendar calendar = Calendar.getInstance();
+                for (int i = 0; i < 5; i++) {
+                    calendar.setTime(fechaselec);
+                    calendar.add(Calendar.DAY_OF_MONTH, mascinco[i]);
+                    for (int j = 0; j < 4; j++) {
+
+                        cincosesion[i][j] = calendar.get(Calendar.DAY_OF_MONTH);
+                        calendar.add(Calendar.DAY_OF_MONTH, 7);
+                    }
+                }
+                int val[] = new int[4];
+                r = re.idmensualidad();
+                re.eliminardiasmes(Integer.parseInt(txtmensualidad.getText()));
+                for (int i = 0; i < 5; i++) {
+                    for (int j = 0; j < 4; j++) {
+                        val[j] = cincosesion[i][j];
+                    }
+                    re.renovardiasmes(Integer.parseInt(txtmensualidad.getText()), val, mascinco[i], combohoras[mascinco[i]]);
+                }
+                resultado = 1;
+            } else {
+                resultado = -1;
+                JOptionPane.showMessageDialog(this, "No se han seleccionado todos los días, hazlo por favor!");
+            }
+
+        }
+        if (resultado == 1) {
+            btnguardarrenovacion.setEnabled(false);
+            habilitarcamposdatopersonal(false);
+            habilitarcamposdatosdireccion(false);
+            habilitarcamposmensualidad(false);
+            deseleccionarckdias(false);
+            inicializarvariables();
+            limpiar();
+            reiniciarcombos(0);
+            habilitarhoras(false);
+            cbdias.setSelectedIndex(0);
+        }
+        //Termina la renovación
     }//GEN-LAST:event_btnguardarrenovacionActionPerformed
 
     /**
