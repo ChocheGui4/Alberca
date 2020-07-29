@@ -259,7 +259,7 @@ public class Inscripciones extends javax.swing.JFrame {
                 }
                 for (int i = 0; i < 3; i++) {
                     if (diastres[i] != null) {
-                        System.out.println(diastres[i].getText());
+//                        System.out.println(diastres[i].getText());
                         diastres[i].setSelected(true);
                     }
 
@@ -342,7 +342,7 @@ public class Inscripciones extends javax.swing.JFrame {
                 }
                 for (int i = 0; i < 4; i++) {
                     if (diascuatro[i] != null) {
-                        System.out.println(diascuatro[i].getText());
+//                        System.out.println(diascuatro[i].getText());
                         diascuatro[i].setSelected(true);
                     }
 
@@ -381,7 +381,7 @@ public class Inscripciones extends javax.swing.JFrame {
 
                         break;
                     } else if (contarcinco == 5) {
-                        System.out.println("contar 5");
+//                        System.out.println("contar 5");
                         if (cinco == i & i == 0) {
                             diascinco[i].setSelected(false);
                             diascinco[i] = checkprincipal;
@@ -432,7 +432,7 @@ public class Inscripciones extends javax.swing.JFrame {
                 }
                 for (int i = 0; i < 5; i++) {
                     if (diascinco[i] != null) {
-                        System.out.println(diascinco[i].getText());
+//                        System.out.println(diascinco[i].getText());
                         diascinco[i].setSelected(true);
                     }
 
@@ -449,14 +449,14 @@ public class Inscripciones extends javax.swing.JFrame {
                     }
                 }
 
-                for (int i = 0; i < 5; i++) {
-                    if (diascinco[i] != null) {
-                        System.out.println(diascinco[i].getText());
-                    } else {
-                        System.out.println(diascinco[i]);
-                    }
-
-                }
+//                for (int i = 0; i < 5; i++) {
+//                    if (diascinco[i] != null) {
+//                        System.out.println(diascinco[i].getText());
+//                    } else {
+//                        System.out.println(diascinco[i]);
+//                    }
+//
+//                }
             }
         }
 
@@ -610,7 +610,7 @@ public class Inscripciones extends javax.swing.JFrame {
         } else {
             fechaselec = jd.getDate();
             Calendar calendar = Calendar.getInstance();
-            System.out.println("Fecha a poner ultimo -> " + jd.getDate());
+//            System.out.println("Fecha a poner ultimo -> " + jd.getDate());
             calendar.setTime(jd.getDate());
             calendar.add(Calendar.DAY_OF_YEAR, 21 + ultimo);
             if (jd.getDate() != null) {
@@ -1259,9 +1259,6 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_cktutorActionPerformed
 
     private void cklunesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cklunesActionPerformed
-        System.out.println(cklunes.getText());
-        System.out.println(cklunes.isSelected());
-
         checkdias(0, ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
                 cbhoramartes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoralunes, cbhoralunes);
 
@@ -1461,7 +1458,6 @@ public class Inscripciones extends javax.swing.JFrame {
 
             if (resultado == 1) {
                 dias = 1;
-                System.out.println("resultado de mensu: " + r);
                 inscripcion ins = new inscripcion();
                 r = re.idmensualidad();
                 ins.insertardias(txtnombre.getText(), txtapellidos.getText(), obtenerfechanacimiento(txtfechanacimiento), txtlocalidad.getText(),
