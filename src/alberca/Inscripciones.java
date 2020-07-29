@@ -673,7 +673,7 @@ public class Inscripciones extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(1).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(1).setMinWidth(0);
         tdatos.getColumnModel().getColumn(1).setPreferredWidth(0);
-        tdatos.getColumnModel().getColumn(1);
+        
 
         tdatos.getColumnModel().getColumn(4).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(4).setMinWidth(0);
@@ -715,9 +715,11 @@ public class Inscripciones extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(13).setMinWidth(110);
         tdatos.getColumnModel().getColumn(13).setPreferredWidth(110);
 
-        tdatos.getColumnModel().getColumn(14).setMaxWidth(110);
-        tdatos.getColumnModel().getColumn(14).setMinWidth(110);
-        tdatos.getColumnModel().getColumn(14).setPreferredWidth(110);
+        tdatos.getColumnModel().getColumn(14).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(14).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(14).setPreferredWidth(0);
+        
+        
     }
 
     public static void quicksort(int A[], int izq, int der) {
@@ -828,7 +830,7 @@ public class Inscripciones extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 255));
+        jButton1.setBackground(new java.awt.Color(102, 51, 255));
         jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(204, 204, 204));
         jButton1.setText("Atrás");
@@ -965,6 +967,10 @@ public class Inscripciones extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tdatos.setFocusCycleRoot(true);
+        tdatos.setGridColor(new java.awt.Color(204, 255, 255));
+        tdatos.setSelectionBackground(new java.awt.Color(102, 255, 102));
+        tdatos.setSelectionForeground(new java.awt.Color(0, 0, 0));
         tdatos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tdatosMouseClicked(evt);
@@ -1127,26 +1133,32 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(cksabado);
         cksabado.setBounds(820, 450, 100, 27);
 
+        cbhorasabado.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         cbhorasabado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhorasabado);
         cbhorasabado.setBounds(820, 480, 110, 30);
 
+        cbhoralunes.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         cbhoralunes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhoralunes);
         cbhoralunes.setBounds(75, 480, 110, 30);
 
+        cbhoramartes.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         cbhoramartes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhoramartes);
         cbhoramartes.setBounds(220, 480, 120, 30);
 
+        cbhoramiercoles.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         cbhoramiercoles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhoramiercoles);
         cbhoramiercoles.setBounds(370, 480, 120, 30);
 
+        cbhorajueves.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         cbhorajueves.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhorajueves);
         cbhorajueves.setBounds(530, 480, 120, 30);
 
+        cbhoraviernes.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         cbhoraviernes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhoraviernes);
         cbhoraviernes.setBounds(680, 480, 120, 30);
@@ -1471,6 +1483,7 @@ public class Inscripciones extends javax.swing.JFrame {
                 deseleccionarckdias(false);
                 limpiar();
                 mostrar("");
+                marcarcalendar(new Date());
             }
         }
 
@@ -1530,6 +1543,7 @@ public class Inscripciones extends javax.swing.JFrame {
         habilitarcamposmensualidad(true);
         habilitarhoras(false);
         inicializarvariables();
+        marcarcalendar(new Date());
         cbdias.setSelectedIndex(0);
         deseleccionarckdias(false);
         btneditardatos.setEnabled(false);
@@ -1574,6 +1588,7 @@ public class Inscripciones extends javax.swing.JFrame {
             btnguardar.setEnabled(true);
             btnguardarmodificaciones.setEnabled(false);
             mostrar("");
+            marcarcalendar(new Date());
         }
     }//GEN-LAST:event_btneliminarActionPerformed
 
@@ -1588,6 +1603,8 @@ public class Inscripciones extends javax.swing.JFrame {
                 txtcelular.getText(), Integer.parseInt(txtidusuario.getText()));
         btnguardarmodificaciones.setEnabled(false);
         habilitarcamposdatosdireccion(false);
+        marcarcalendar(new Date());
+        mostrar("");
     }//GEN-LAST:event_btnguardarmodificacionesActionPerformed
 
     private void btnguardarrenovacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarrenovacionActionPerformed
