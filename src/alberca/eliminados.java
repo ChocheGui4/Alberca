@@ -60,17 +60,27 @@ public class eliminados extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(2).setMinWidth(0);
         tdatos.getColumnModel().getColumn(2).setPreferredWidth(0);
         
+        tdatos.getColumnModel().getColumn(3).setMaxWidth(230);
+        tdatos.getColumnModel().getColumn(3).setMinWidth(230);
+        tdatos.getColumnModel().getColumn(3).setPreferredWidth(230);
+        
+        
+        
         tdatos.getColumnModel().getColumn(4).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(4).setMinWidth(0);
         tdatos.getColumnModel().getColumn(4).setPreferredWidth(0);
+        
+        tdatos.getColumnModel().getColumn(5).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(5).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(5).setPreferredWidth(0);
         
         tdatos.getColumnModel().getColumn(6).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(6).setMinWidth(0);
         tdatos.getColumnModel().getColumn(6).setPreferredWidth(0);
         
-//        tdatos.getColumnModel().getColumn(7).setMaxWidth(60);
-//        tdatos.getColumnModel().getColumn(7).setMinWidth(60);
-//        tdatos.getColumnModel().getColumn(7).setPreferredWidth(60);
+        tdatos.getColumnModel().getColumn(7).setMaxWidth(300);
+        tdatos.getColumnModel().getColumn(7).setMinWidth(300);
+        tdatos.getColumnModel().getColumn(7).setPreferredWidth(300);
         
         tdatos.getColumnModel().getColumn(8).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(8).setMinWidth(0);
@@ -83,6 +93,30 @@ public class eliminados extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(10).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(10).setMinWidth(0);
         tdatos.getColumnModel().getColumn(10).setPreferredWidth(0);
+        
+        tdatos.getColumnModel().getColumn(11).setMaxWidth(100);
+        tdatos.getColumnModel().getColumn(11).setMinWidth(100);
+        tdatos.getColumnModel().getColumn(11).setPreferredWidth(100);
+        
+        tdatos.getColumnModel().getColumn(12).setMaxWidth(100);
+        tdatos.getColumnModel().getColumn(12).setMinWidth(100);
+        tdatos.getColumnModel().getColumn(12).setPreferredWidth(100);
+        tdatos.getColumnModel().getColumn(0).setResizable(false);
+        tdatos.getColumnModel().getColumn(1).setResizable(false);
+        tdatos.getColumnModel().getColumn(2).setResizable(false);
+        tdatos.getColumnModel().getColumn(3).setResizable(false);
+        tdatos.getColumnModel().getColumn(4).setResizable(false);
+        tdatos.getColumnModel().getColumn(5).setResizable(false);
+        tdatos.getColumnModel().getColumn(6).setResizable(false);
+        tdatos.getColumnModel().getColumn(7).setResizable(false);
+        tdatos.getColumnModel().getColumn(8).setResizable(false);
+        tdatos.getColumnModel().getColumn(9).setResizable(false);
+        tdatos.getColumnModel().getColumn(10).setResizable(false);
+        tdatos.getColumnModel().getColumn(11).setResizable(false);
+        tdatos.getColumnModel().getColumn(12).setResizable(false);
+        tdatos.getColumnModel().getColumn(13).setResizable(false);
+        
+        
     }
 
     /**
@@ -120,6 +154,7 @@ public class eliminados extends javax.swing.JFrame {
         ));
         tdatos.setFocusCycleRoot(true);
         tdatos.setGridColor(new java.awt.Color(204, 255, 255));
+        tdatos.setRowHeight(30);
         tdatos.setSelectionBackground(new java.awt.Color(102, 255, 102));
         tdatos.setSelectionForeground(new java.awt.Color(0, 0, 0));
         tdatos.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -130,7 +165,7 @@ public class eliminados extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tdatos);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(60, 80, 970, 310);
+        jScrollPane1.setBounds(60, 80, 970, 340);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));

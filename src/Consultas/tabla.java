@@ -102,7 +102,7 @@ public class tabla {
                 registro[4] = rs.getString("apellidos");
                 registro[5] = rs.getString("fecha_nacimiento");
                 registro[6] = rs.getString("localidad");
-                registro[7] = rs.getString("localidad")+" ";
+                registro[7] = rs.getString("localidad")+"\n";
                 registro[7] += rs.getString("calle")+" ";
                 registro[7] += rs.getString("numero_e")+" ";
                 registro[7] += rs.getString("numero_i");

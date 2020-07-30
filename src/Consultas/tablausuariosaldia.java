@@ -24,7 +24,7 @@ public class tablausuariosaldia {
     private String sSQL = "";
     public Integer totalregistros;
 
-    public DefaultTableModel usuariosaldia(String mes, String dia, String hora) {
+    public DefaultTableModel usuariosaldia(String mes, String dia, int hora) {
         conn = con.conectar();
         DefaultTableModel modelo;
 //        System.out.println("Se metió al método");
@@ -40,7 +40,7 @@ public class tablausuariosaldia {
 //                + " and horario = \"9:00 - 10:00"+"";
         sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id = mensualidad.id_mensualidad "
                 + "join dias on dias.mensualidad_id = mensualidad.id_mensualidad where "
-                + "mes_num= '"+mes+"' and dias_num = '"+dia+"' and horario='"+hora+"'order by id_usuario";
+                + "mes_num= '"+mes+"' and dias_num = '"+dia+"' and hora_num>='"+hora+"' order by hora_num";
 //        System.out.println("Después de la consulta");
         try {
             Statement st = conn.createStatement();

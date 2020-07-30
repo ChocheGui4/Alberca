@@ -12,7 +12,7 @@ import java.util.Calendar;
 import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import  javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -33,7 +33,7 @@ public class usuariosaldia extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
-    public void  mostrar() {
+    public static void  mostrar() {
         try {
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(new Date());
@@ -41,26 +41,26 @@ public class usuariosaldia extends javax.swing.JFrame {
             System.out.println("mes: " + m);
             int d = calendar.get(Calendar.DAY_OF_MONTH);
             System.out.println("dia: " + d);
-            String h = calendar.get(Calendar.HOUR_OF_DAY) + ":00 - " + (calendar.get(Calendar.HOUR_OF_DAY) + 1) + ":00";
+            int h =calendar.get(Calendar.HOUR_OF_DAY);
             System.out.println("hora: " + h);
             DefaultTableModel modelo;
             tablausuariosaldia tab = new tablausuariosaldia();
-            modelo = tab.usuariosaldia("" + m, "" + d, "" + h);
+            modelo = tab.usuariosaldia("" + m, "" + d, h);
 //            ocultar_columnas();
             tdatos.setModel(modelo);
             ocultar_columnas();
 //            lblregistros.setText("Registros: " + Integer.toString(tab.totalregistros));
 
         } catch (Exception e) {
-            JOptionPane.showConfirmDialog(rootPane, e);
+            JOptionPane.showConfirmDialog(null, e);
         }
 
     }
 
-    void ocultar_columnas() {
-//        tdatos.getColumnModel().getColumn(0).setMaxWidth(0);
-//        tdatos.getColumnModel().getColumn(0).setMinWidth(0);
-//        tdatos.getColumnModel().getColumn(0).setPreferredWidth(0);
+    static void ocultar_columnas() {
+        tdatos.getColumnModel().getColumn(0).setMaxWidth(400);
+        tdatos.getColumnModel().getColumn(0).setMinWidth(400);
+        tdatos.getColumnModel().getColumn(0).setPreferredWidth(400);
     }
 
     /**
@@ -89,20 +89,30 @@ public class usuariosaldia extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(230, 0, 819, 50);
 
+        tdatos.setBackground(new java.awt.Color(102, 255, 204));
         tdatos.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         tdatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nombre", "Fecha de inicio", "Fecha de termino", "Día", "Horario"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tdatos.setFocusCycleRoot(true);
         tdatos.setGridColor(new java.awt.Color(204, 255, 255));
+        tdatos.setRowHeight(30);
         tdatos.setSelectionBackground(new java.awt.Color(102, 255, 102));
         tdatos.setSelectionForeground(new java.awt.Color(0, 0, 0));
         tdatos.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -111,6 +121,12 @@ public class usuariosaldia extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(tdatos);
+        if (tdatos.getColumnModel().getColumnCount() > 0) {
+            tdatos.getColumnModel().getColumn(0).setPreferredWidth(200);
+            tdatos.getColumnModel().getColumn(2).setResizable(false);
+            tdatos.getColumnModel().getColumn(3).setResizable(false);
+            tdatos.getColumnModel().getColumn(4).setResizable(false);
+        }
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(20, 80, 1070, 480);
@@ -241,7 +257,7 @@ public class usuariosaldia extends javax.swing.JFrame {
                         // En él, hacemos que el hilo duerma
                         Thread.sleep(5000);
                         // Y después realizamos las operaciones
-//                        mostrar();
+                        mostrar();
                         System.out.println("Me imprimo cada segundo");
                         // Así, se da la impresión de que se ejecuta cada cierto tiempo
                     } catch (InterruptedException e) {
@@ -258,6 +274,6 @@ public class usuariosaldia extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tdatos;
+    private static javax.swing.JTable tdatos;
     // End of variables declaration//GEN-END:variables
 }
