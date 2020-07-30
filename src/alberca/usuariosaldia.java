@@ -12,7 +12,7 @@ import java.util.Calendar;
 import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import  javax.swing.JPanel;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -30,10 +30,31 @@ public class usuariosaldia extends javax.swing.JFrame {
         this.setContentPane(fondo);
         initComponents();
         mostrar();
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                // Esto se ejecuta en segundo plano una única vez
+                while (true) {
+                    // Pero usamos un truco y hacemos un ciclo infinito
+                    try {
+                        // En él, hacemos que el hilo duerma
+                        Thread.sleep(5000);
+                        // Y después realizamos las operaciones
+                        mostrar();
+                        System.out.println("Me imprimo cada segundo");
+                        // Así, se da la impresión de que se ejecuta cada cierto tiempo
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+        Thread hilo = new Thread(runnable);
+        hilo.start();
         this.setLocationRelativeTo(null);
     }
 
-    public static void  mostrar() {
+    public static void mostrar() {
         try {
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(new Date());
@@ -41,7 +62,7 @@ public class usuariosaldia extends javax.swing.JFrame {
             System.out.println("mes: " + m);
             int d = calendar.get(Calendar.DAY_OF_MONTH);
             System.out.println("dia: " + d);
-            int h =calendar.get(Calendar.HOUR_OF_DAY);
+            int h = calendar.get(Calendar.HOUR_OF_DAY);
             System.out.println("hora: " + h);
             DefaultTableModel modelo;
             tablausuariosaldia tab = new tablausuariosaldia();
@@ -76,6 +97,7 @@ public class usuariosaldia extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tdatos = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1117, 613));
@@ -142,6 +164,12 @@ public class usuariosaldia extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1);
         jButton1.setBounds(22, 12, 122, 34);
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Usuarios al día");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(20, 50, 260, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -247,32 +275,13 @@ public class usuariosaldia extends javax.swing.JFrame {
 
             }
         });
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                // Esto se ejecuta en segundo plano una única vez
-                while (true) {
-                    // Pero usamos un truco y hacemos un ciclo infinito
-                    try {
-                        // En él, hacemos que el hilo duerma
-                        Thread.sleep(5000);
-                        // Y después realizamos las operaciones
-                        mostrar();
-                        System.out.println("Me imprimo cada segundo");
-                        // Así, se da la impresión de que se ejecuta cada cierto tiempo
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        };
-        Thread hilo = new Thread(runnable);
-        hilo.start();
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private static javax.swing.JTable tdatos;
     // End of variables declaration//GEN-END:variables

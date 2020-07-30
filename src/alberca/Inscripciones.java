@@ -97,6 +97,7 @@ public class Inscripciones extends javax.swing.JFrame {
         txtidusuario.setEnabled(false);
         txtidusuario.setVisible(false);
         txtmensualidad.setVisible(false);
+        txtideliminar.setVisible(false);
         btnguardarmodificaciones.setEnabled(false);
         btnguardarrenovacion.setEnabled(false);
         mostrar("");
@@ -880,6 +881,7 @@ public class Inscripciones extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        txtideliminar = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1117, 613));
@@ -1319,6 +1321,8 @@ public class Inscripciones extends javax.swing.JFrame {
         jLabel1.setText("CENTRO ACUÁTICO ALFA & OMEGA");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(230, 0, 819, 50);
+        getContentPane().add(txtideliminar);
+        txtideliminar.setBounds(520, 110, 6, 20);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1781,18 +1785,23 @@ public class Inscripciones extends javax.swing.JFrame {
                 dias = 1;
                 inscripcion ins = new inscripcion();
                 r = re.idmensualidad();
-                ins.insertardias(txtnombre.getText(), txtapellidos.getText(), obtenerfechanacimiento(txtfechanacimiento), txtlocalidad.getText(),
+                boolean v = ins.insertardias(txtnombre.getText(), txtapellidos.getText(), obtenerfechanacimiento(txtfechanacimiento), txtlocalidad.getText(),
                         txtcalle.getText(), txtnumex.getText(), txtnumin.getText(), txttelefono.getText(), txtcelular.getText(),
                         txtnombretutor.getText(), r);
-                reiniciarcombos(0);
-                inicializarvariables();
+                if (v == true) {
+                    Eliminarusuarios elus= new Eliminarusuarios();
+                    elus.cambiardatosdetabla(Integer.parseInt(txtideliminar.getText()));
+                    reiniciarcombos(0);
+                    inicializarvariables();
 
-                habilitarcamposmensualidad(true);
-                habilitarhoras(false);
-                deseleccionarckdias(false);
-                limpiar();
-                mostrar("");
-                marcarcalendar(new Date());
+                    habilitarcamposmensualidad(true);
+                    habilitarhoras(false);
+                    deseleccionarckdias(false);
+                    limpiar();
+                    mostrar("");
+                    marcarcalendar(new Date());
+                }
+
             }
         }
 
@@ -2198,20 +2207,21 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JLabel lblregistros;
     private javax.swing.JLabel lbltutor;
     private javax.swing.JTable tdatos;
-    private javax.swing.JTextField txtapellidos;
+    public javax.swing.JTextField txtapellidos;
     private javax.swing.JTextField txtbuscar;
-    private javax.swing.JTextField txtcalle;
-    private javax.swing.JTextField txtcelular;
+    public javax.swing.JTextField txtcalle;
+    public javax.swing.JTextField txtcelular;
     private com.toedter.calendar.JDateChooser txtfechainicio;
-    private com.toedter.calendar.JDateChooser txtfechanacimiento;
+    public com.toedter.calendar.JDateChooser txtfechanacimiento;
     private com.toedter.calendar.JDateChooser txtfechatermino;
+    public javax.swing.JTextField txtideliminar;
     private javax.swing.JTextField txtidusuario;
-    private javax.swing.JTextField txtlocalidad;
+    public javax.swing.JTextField txtlocalidad;
     private javax.swing.JTextField txtmensualidad;
-    private javax.swing.JTextField txtnombre;
-    private javax.swing.JTextField txtnombretutor;
-    private javax.swing.JTextField txtnumex;
-    private javax.swing.JTextField txtnumin;
-    private javax.swing.JTextField txttelefono;
+    public javax.swing.JTextField txtnombre;
+    public javax.swing.JTextField txtnombretutor;
+    public javax.swing.JTextField txtnumex;
+    public javax.swing.JTextField txtnumin;
+    public javax.swing.JTextField txttelefono;
     // End of variables declaration//GEN-END:variables
 }

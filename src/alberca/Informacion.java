@@ -51,7 +51,7 @@ public class Informacion extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Información de usuarios");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(60, 50, 220, 40);

@@ -26,7 +26,7 @@ public class Eliminarusuarios {
     public static void main(String[] args) {
         eliminarusuario(3,2);
     }
-
+    //Traer datos de usuarios a eliminar para posteriormente hacerlo
     public static boolean eliminarusuario(int id, int mes) {
         conn = con.conectar();
 
@@ -72,7 +72,7 @@ public class Eliminarusuarios {
         }
 
     }
-
+    //Respaldamos los datos en otra tabla
     public static void respaldardatoselimiados(int id) {
         sSQL = "select * from usuario where id_usuario ='" + id + "'";
 
@@ -103,5 +103,33 @@ public class Eliminarusuarios {
 
         }
     }
+    
+     public static boolean cambiardatosdetabla(int eliminar) {
+        conn = con.conectar();
+        try {
+            sSQL = "delete from usuarios_eliminados where id_usuario=?";
+            PreparedStatement pst = conn.prepareStatement(sSQL);
 
+            pst.setInt(1, eliminar);
+
+            int n = pst.executeUpdate();
+
+            if (n != 0) {
+                System.out.println("Se eliminó al usuario");
+                return true;
+            } else {
+                System.out.println("No Se eliminó al usuario");
+                return false;
+            }
+
+            
+
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
+
+    }
+    
+    
 }

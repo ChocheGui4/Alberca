@@ -8,6 +8,8 @@ package alberca;
 import Consultas.tabla;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -29,8 +31,21 @@ public class eliminados extends javax.swing.JFrame {
 
         initComponents();
         this.setLocationRelativeTo(null);
+        btnreinscribir.setEnabled(false);
         mostrar("");
     }
+    String id="";
+    String nombre = "";
+    String apellidos = "";
+    String fecha_nacimiento = "";
+    String nombre_tutor = "";
+
+    String localidad = "";
+    String calle = "";
+    String numero_e = "";
+    String numero_i = "";
+    String telefono = "";
+    String celular = "";
 
     void mostrar(String buscar) {
         try {
@@ -59,45 +74,43 @@ public class eliminados extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(2).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(2).setMinWidth(0);
         tdatos.getColumnModel().getColumn(2).setPreferredWidth(0);
-        
+
         tdatos.getColumnModel().getColumn(3).setMaxWidth(230);
         tdatos.getColumnModel().getColumn(3).setMinWidth(230);
         tdatos.getColumnModel().getColumn(3).setPreferredWidth(230);
-        
-        
-        
+
         tdatos.getColumnModel().getColumn(4).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(4).setMinWidth(0);
         tdatos.getColumnModel().getColumn(4).setPreferredWidth(0);
-        
+
         tdatos.getColumnModel().getColumn(5).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(5).setMinWidth(0);
         tdatos.getColumnModel().getColumn(5).setPreferredWidth(0);
-        
+
         tdatos.getColumnModel().getColumn(6).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(6).setMinWidth(0);
         tdatos.getColumnModel().getColumn(6).setPreferredWidth(0);
-        
+
         tdatos.getColumnModel().getColumn(7).setMaxWidth(300);
         tdatos.getColumnModel().getColumn(7).setMinWidth(300);
         tdatos.getColumnModel().getColumn(7).setPreferredWidth(300);
-        
+
         tdatos.getColumnModel().getColumn(8).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(8).setMinWidth(0);
         tdatos.getColumnModel().getColumn(8).setPreferredWidth(0);
-        
+
         tdatos.getColumnModel().getColumn(9).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(9).setMinWidth(0);
         tdatos.getColumnModel().getColumn(9).setPreferredWidth(0);
-        
+
         tdatos.getColumnModel().getColumn(10).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(10).setMinWidth(0);
         tdatos.getColumnModel().getColumn(10).setPreferredWidth(0);
-        
+
         tdatos.getColumnModel().getColumn(11).setMaxWidth(100);
         tdatos.getColumnModel().getColumn(11).setMinWidth(100);
         tdatos.getColumnModel().getColumn(11).setPreferredWidth(100);
-        
+
         tdatos.getColumnModel().getColumn(12).setMaxWidth(100);
         tdatos.getColumnModel().getColumn(12).setMinWidth(100);
         tdatos.getColumnModel().getColumn(12).setPreferredWidth(100);
@@ -115,8 +128,7 @@ public class eliminados extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(11).setResizable(false);
         tdatos.getColumnModel().getColumn(12).setResizable(false);
         tdatos.getColumnModel().getColumn(13).setResizable(false);
-        
-        
+
     }
 
     /**
@@ -133,6 +145,7 @@ public class eliminados extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnreinscribir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1117, 613));
@@ -165,13 +178,13 @@ public class eliminados extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tdatos);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(60, 80, 970, 340);
+        jScrollPane1.setBounds(60, 130, 970, 340);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Información de usuarios");
+        jLabel2.setText("Usuarios eliminados");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(60, 50, 220, 40);
+        jLabel2.setBounds(60, 90, 220, 40);
 
         jButton1.setBackground(new java.awt.Color(102, 51, 255));
         jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -191,10 +204,36 @@ public class eliminados extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(230, 0, 819, 50);
 
+        btnreinscribir.setBackground(new java.awt.Color(51, 255, 0));
+        btnreinscribir.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnreinscribir.setText("Reinscribir");
+        btnreinscribir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnreinscribirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnreinscribir);
+        btnreinscribir.setBounds(60, 490, 120, 40);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void tdatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tdatosMouseClicked
+        btnreinscribir.setEnabled(true);
+        int fila = tdatos.rowAtPoint(evt.getPoint());
+        id = tdatos.getValueAt(fila, 0).toString();
+        nombre = tdatos.getValueAt(fila, 2).toString();
+        apellidos = tdatos.getValueAt(fila, 4).toString();
+        fecha_nacimiento = tdatos.getValueAt(fila, 5).toString();
+        nombre_tutor = tdatos.getValueAt(fila, 13).toString();
+
+        localidad = tdatos.getValueAt(fila, 6).toString();
+        calle = tdatos.getValueAt(fila, 8).toString();
+        numero_e = tdatos.getValueAt(fila, 9).toString();
+        numero_i = tdatos.getValueAt(fila, 10).toString();
+        telefono = tdatos.getValueAt(fila, 11).toString();
+        celular = tdatos.getValueAt(fila, 12).toString();
+
 //        habilitarcamposdatopersonal(false);
 //        habilitarcamposdatosdireccion(false);
 //        habilitarcamposmensualidad(false);
@@ -237,10 +276,40 @@ public class eliminados extends javax.swing.JFrame {
 //        btnguardarmodificaciones.setEnabled(false);
 //        btnguardarrenovacion.setEnabled(false);
     }//GEN-LAST:event_tdatosMouseClicked
+    public java.util.Date StringaDate(String fecha) {
+        SimpleDateFormat formatotexto = new SimpleDateFormat("yyyy-MM-dd");
+        Date fechaE = null;
+        try {
+            fechaE = formatotexto.parse(fecha);
+            return fechaE;
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        }
 
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.setVisible(false);
+
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnreinscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreinscribirActionPerformed
+        Inscripciones ins = new Inscripciones();
+        ins.txtideliminar.setText(id);
+        ins.txtnombre.setText(nombre);
+        ins.txtapellidos.setText(apellidos);
+        ins.txtfechanacimiento.setDate(StringaDate(fecha_nacimiento));
+        ins.txtnombretutor.setText(nombre_tutor);
+        ins.txtlocalidad.setText(localidad);
+        ins.txtcalle.setText(calle);
+        ins.txtnumex.setText(numero_e);
+        ins.txtnumin.setText(numero_i);
+        ins.txttelefono.setText(telefono);
+        ins.txtcelular.setText(celular);
+        ins.setVisible(true);
+        
+        this.setVisible(false);
+    }//GEN-LAST:event_btnreinscribirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,6 +365,7 @@ public class eliminados extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnreinscribir;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
