@@ -75,6 +75,7 @@ public class Principal extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(255, 0, 0));
         jButton4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("USUARIOS ELIMINADOS");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,12 +89,22 @@ public class Principal extends javax.swing.JFrame {
 
         jButton5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton5.setText("Salir");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton5);
         jButton5.setBounds(861, 566, 324, 41);
 
         jButton6.setBackground(new java.awt.Color(255, 204, 0));
         jButton6.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton6.setText("USUARIOS AL DÍA");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton6);
         jButton6.setBounds(470, 210, 330, 55);
 
@@ -125,6 +136,15 @@ public class Principal extends javax.swing.JFrame {
         eliminados elimi = new eliminados();
         elimi.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        usuariosaldia usual = new usuariosaldia();
+        usual.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -17,20 +17,21 @@ import javax.swing.table.DefaultTableModel;
  * @author Choche
  */
 public class tablainformacion {
-     static conexion con = new conexion();
+
+    static conexion con = new conexion();
     public static PreparedStatement s;
     public static Connection conn = null;
     private String sSQL = "";
     public Integer totalregistros;
-    
+
     public DefaultTableModel mostrarinformacion(String buscar) {
-        conn=con.conectar();
+        conn = con.conectar();
         DefaultTableModel modelo;
 //        System.out.println("Se metió al método");
 
-        String[] titulos = {"Clave", "Nombre", "Apellidos", "Fecha de nacimiento", "localidad", "calle", 
-                "no_interno", "no_externo", "telefono", "celular", "nombre del tutor",
-                "fecha de inicio", "fecha de termino", "id mes"};
+        String[] titulos = {"Clave", "Nombre", "Apellidos", "Fecha de nacimiento", "localidad", "calle",
+            "no_interno", "no_externo", "telefono", "celular", "nombre del tutor",
+            "fecha de inicio", "fecha de termino", "id mes"};
 
         String[] registro = new String[14];
 
@@ -71,5 +72,5 @@ public class tablainformacion {
             return null;
         }
     }
-    
+
 }

@@ -38,22 +38,37 @@ public class Inscripciones extends javax.swing.JFrame {
     FondoPanel fondo = new FondoPanel();
     SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
     int dias = 1;
+    int diacero = 0, diauno = 1, diados = 2, diatres = 3, diacuatro = 4, diacinco = 5;
     int resultado = -1;
     int r = 0;
-    int masuno[] = {-1};
+    //Capturar mes
+    int unasesionmes[] = new int[4];
+    int dossesionmes[][] = new int[2][4];
+    int tressesionmes[][] = new int[3][4];
+    int cuatrosesionmes[][] = new int[4][4];
+    int cincosesionmes[][] = new int[5][4];
+
+    //Capturar numero de dias
     int unasesion[] = new int[4];
+    int dossesion[][] = new int[2][4];
+    int tressesion[][] = new int[3][4];
+    int cuatrosesion[][] = new int[4][4];
+    int cincosesion[][] = new int[5][4];
+
+    //
+    int masuno[] = {-1};
+
     int contardos = 0, dos = 0;
     int masdos[] = {-1, -1};
-    int dossesion[][] = new int[2][4];
+
     int contartres = 0, tres = 0;
     int mastres[] = {-1, -1, -1};
-    int tressesion[][] = new int[3][4];
+
     int contarcuatro = 0, cuatro = 0;
     int mascuatro[] = {-1, -1, -1, -1};
-    int cuatrosesion[][] = new int[4][4];
+
     int contarcinco = 0, cinco = 0;
     int mascinco[] = {-1, -1, -1, -1, -1};
-    int cincosesion[][] = new int[5][4];
 
     //variables para horas de combos
     String combohoras[] = new String[6];
@@ -70,6 +85,7 @@ public class Inscripciones extends javax.swing.JFrame {
     public Date fechaselec = null;
 
     public Inscripciones() {
+        Calendar calendario = Calendar.getInstance();
         this.setContentPane(fondo);
         initComponents();
         lbltutor.setVisible(false);
@@ -84,12 +100,8 @@ public class Inscripciones extends javax.swing.JFrame {
         btnguardarmodificaciones.setEnabled(false);
         btnguardarrenovacion.setEnabled(false);
         mostrar("");
-//        txtfechainicio.setDate(new Date());
-//        marcarcalendar(new Date());
         marcarcalendar(new Date());
-        cklunes.setText("Martesssss");
-        System.out.println(cklunes.getText());
-
+        System.out.println(calendario.get(Calendar.HOUR_OF_DAY)+":00 - "+(calendario.get(Calendar.HOUR_OF_DAY)+1)+":00");
         this.setLocationRelativeTo(null);
     }
 
@@ -98,52 +110,94 @@ public class Inscripciones extends javax.swing.JFrame {
         calendar.setTime(fecha);
 //        calendar.add(Calendar.DAY_OF_MONTH, masuno[0]);
         int i = calendar.get(Calendar.DAY_OF_WEEK);
+        deseleccionarckdias(false);
+        habilitarhoras(false);
+        inicializarvariables();
+        cbdias.setSelectedIndex(0);
         System.out.println("dia de la semana: " + i);
+        txtfechainicio.getJCalendar().setMinSelectableDate(new Date());
         if (i == 1) {
-            calendar.setTime(fecha);
-            calendar.add(Calendar.DAY_OF_YEAR, 1);
-            txtfechainicio.setDate(calendar.getTime());
-
+//            calendar.setTime(fecha);
+//            calendar.add(Calendar.DAY_OF_YEAR, 1);
+//            txtfechainicio.setDate(calendar.getTime());
+            txtfechainicio.setDate(fecha);
             System.out.println("Hoy es domingo");
         } else if (i == 2) {
+//            txtfechainicio.setDate(fecha);
             txtfechainicio.setDate(fecha);
 
             System.out.println("Hoy es lunes");
+            escogerdias(0, 1, 2, 3, 4, 5);
+            darnombredias("Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
         } else if (i == 3) {
-            calendar.setTime(fecha);
-            calendar.add(Calendar.DAY_OF_YEAR, -1);
-            txtfechainicio.setDate(calendar.getTime());
+//            calendar.setTime(fecha);
+//            calendar.add(Calendar.DAY_OF_YEAR, -1);
+//            txtfechainicio.setDate(calendar.getTime());
+            txtfechainicio.setDate(fecha);
             System.out.println("Hoy es martes");
+            escogerdias(1, 2, 3, 4, 5, 0);
+            darnombredias("Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Lunes");
         } else if (i == 4) {
-            calendar.setTime(fecha);
-            calendar.add(Calendar.DAY_OF_YEAR, -2);
-            txtfechainicio.setDate(calendar.getTime());
+//            calendar.setTime(fecha);
+//            calendar.add(Calendar.DAY_OF_YEAR, -2);
+//            txtfechainicio.setDate(calendar.getTime());
+            txtfechainicio.setDate(fecha);
             System.out.println("Hoy es miércoles");
+            escogerdias(2, 3, 4, 5, 0, 1);
+            darnombredias("Miércoles", "Jueves", "Viernes", "Sábado", "Lunes", "Martes");
         } else if (i == 5) {
-            calendar.setTime(fecha);
-            calendar.add(Calendar.DAY_OF_YEAR, -3);
-            txtfechainicio.setDate(calendar.getTime());
+//            calendar.setTime(fecha);
+//            calendar.add(Calendar.DAY_OF_YEAR, -3);
+//            txtfechainicio.setDate(calendar.getTime());
+            txtfechainicio.setDate(fecha);
             System.out.println("Hoy es jueves");
+            escogerdias(3, 4, 5, 0, 1, 2);
+            darnombredias("Jueves", "Viernes", "Sábado", "Lunes", "Martes", "Miércoles");
         } else if (i == 6) {
-            calendar.setTime(fecha);
-            calendar.add(Calendar.DAY_OF_YEAR, -4);
-            txtfechainicio.setDate(calendar.getTime());
+//            calendar.setTime(fecha);
+//            calendar.add(Calendar.DAY_OF_YEAR, -4);
+//            txtfechainicio.setDate(calendar.getTime());
+            txtfechainicio.setDate(fecha);
             System.out.println("Hoy es viernes");
+            escogerdias(4, 5, 0, 1, 2, 3);
+            darnombredias("Viernes", "Sábado", "Lunes", "Martes", "Miércoles", "Jueves");
         } else if (i == 7) {
-            calendar.setTime(fecha);
-            calendar.add(Calendar.DAY_OF_YEAR, -5);
-            txtfechainicio.setDate(calendar.getTime());
+//            calendar.setTime(fecha);
+//            calendar.add(Calendar.DAY_OF_YEAR, -5);
+//            txtfechainicio.setDate(calendar.getTime());
+            txtfechainicio.setDate(fecha);
             System.out.println("Hoy es sábado");
+            escogerdias(5, 0, 1, 2, 3, 4);
+            darnombredias("Sábado", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes");
         }
     }
 
-    public void checkdias(int numero, JCheckBox check1, JCheckBox check2, JCheckBox check3, JCheckBox check4, JCheckBox check5,
+    public void escogerdias(int cero, int uno, int dos, int tres, int cuatro, int cinco) {
+        diacero = cero;
+        diauno = uno;
+        diados = dos;
+        diatres = tres;
+        diacuatro = cuatro;
+        diacinco = cinco;
+    }
+
+    public void darnombredias(String uno, String dos, String tres, String cuatro, String cinco, String seis) {
+        cklunes.setText(uno);
+        ckmartes.setText(dos);
+        ckmiercoles.setText(tres);
+        ckjueves.setText(cuatro);
+        ckviernes.setText(cinco);
+        cksabado.setText(seis);
+    }
+
+    public void checkdias(int numero, int m, JCheckBox check1, JCheckBox check2, JCheckBox check3, JCheckBox check4, JCheckBox check5,
             JCheckBox checkprincipal, JComboBox cb1, JComboBox cb2, JComboBox cb3, JComboBox cb4, JComboBox cb5,
             JComboBox cbprincipal, JComboBox chora) {
         if (dias == 1) {
             if (checkprincipal.isSelected() == true) {
 
-                masuno[0] = numero;
+                masuno[0] = m;
+                System.out.println("mas uno -> " + masuno[0]);
                 check1.setSelected(false);
                 check2.setSelected(false);
                 check3.setSelected(false);
@@ -169,7 +223,7 @@ public class Inscripciones extends javax.swing.JFrame {
                         diasdos[i] = checkprincipal;
                         combodos[i] = cbprincipal;
                         combodos[i].setEnabled(true);
-                        masdos[i] = numero;
+                        masdos[i] = m;
                         break;
                     } else if (contardos == 2) {
 
@@ -179,7 +233,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combodos[i].setEnabled(false);
                             combodos[i] = cbprincipal;
                             combodos[i].setEnabled(true);
-                            masdos[i] = numero;
+                            masdos[i] = m;
                             dos = i + 1;
                             break;
                         } else if (dos == i & i == 1) {
@@ -188,7 +242,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combodos[i].setEnabled(false);
                             combodos[i] = cbprincipal;
                             combodos[i].setEnabled(true);
-                            masdos[i] = numero;
+                            masdos[i] = m;
                             dos = i - 1;
                             break;
                         }
@@ -222,7 +276,7 @@ public class Inscripciones extends javax.swing.JFrame {
 
                     if (diastres[i] == null) {
                         contartres += 1;
-                        mastres[i] = numero;
+                        mastres[i] = m;
                         diastres[i] = checkprincipal;
                         combotres[i] = cbprincipal;
                         combotres[i].setEnabled(true);
@@ -234,7 +288,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combotres[i].setEnabled(false);
                             combotres[i] = cbprincipal;
                             combotres[i].setEnabled(true);
-                            mastres[i] = numero;
+                            mastres[i] = m;
                             tres = i + 1;
 
                             break;
@@ -244,7 +298,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combotres[i].setEnabled(false);
                             combotres[i] = cbprincipal;
                             combotres[i].setEnabled(true);
-                            mastres[i] = numero;
+                            mastres[i] = m;
                             tres = i + 1;
                             break;
                         } else if (tres == i & i == 2) {
@@ -253,7 +307,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combotres[i].setEnabled(false);
                             combotres[i] = cbprincipal;
                             combotres[i].setEnabled(true);
-                            mastres[i] = numero;
+                            mastres[i] = m;
                             tres = i - 2;
                             break;
                         }
@@ -293,7 +347,7 @@ public class Inscripciones extends javax.swing.JFrame {
 
                     if (diascuatro[i] == null) {
                         contarcuatro += 1;
-                        mascuatro[i] = numero;
+                        mascuatro[i] = m;
                         diascuatro[i] = checkprincipal;
                         combocuatro[i] = cbprincipal;
                         combocuatro[i].setEnabled(true);
@@ -305,7 +359,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocuatro[i].setEnabled(false);
                             combocuatro[i] = cbprincipal;
                             combocuatro[i].setEnabled(true);
-                            mascuatro[i] = numero;
+                            mascuatro[i] = m;
                             cuatro = i + 1;
                             break;
                         } else if (cuatro == i & i == 1) {
@@ -314,7 +368,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocuatro[i].setEnabled(false);
                             combocuatro[i] = cbprincipal;
                             combocuatro[i].setEnabled(true);
-                            mascuatro[i] = numero;
+                            mascuatro[i] = m;
                             cuatro = i + 1;
 
                             break;
@@ -324,7 +378,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocuatro[i].setEnabled(false);
                             combocuatro[i] = cbprincipal;
                             combocuatro[i].setEnabled(true);
-                            mascuatro[i] = numero;
+                            mascuatro[i] = m;
                             cuatro = i + 1;
 
                             break;
@@ -334,7 +388,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocuatro[i].setEnabled(false);
                             combocuatro[i] = cbprincipal;
                             combocuatro[i].setEnabled(true);
-                            mascuatro[i] = numero;
+                            mascuatro[i] = m;
                             cuatro = i - 3;
 
                             break;
@@ -376,7 +430,7 @@ public class Inscripciones extends javax.swing.JFrame {
 
                     if (diascinco[i] == null) {
                         contarcinco += 1;
-                        mascinco[i] = numero;
+                        mascinco[i] = m;
                         diascinco[i] = checkprincipal;
                         combocinco[i] = cbprincipal;
                         combocinco[i].setEnabled(true);
@@ -390,7 +444,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocinco[i].setEnabled(false);
                             combocinco[i] = cbprincipal;
                             combocinco[i].setEnabled(true);
-                            mascinco[i] = numero;
+                            mascinco[i] = m;
                             cinco = i + 1;
                             break;
                         } else if (cinco == i & i == 1) {
@@ -399,7 +453,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocinco[i].setEnabled(false);
                             combocinco[i] = cbprincipal;
                             combocinco[i].setEnabled(true);
-                            mascinco[i] = numero;
+                            mascinco[i] = m;
                             cinco = i + 1;
                             break;
                         } else if (cinco == i & i == 2) {
@@ -408,7 +462,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocinco[i].setEnabled(false);
                             combocinco[i] = cbprincipal;
                             combocinco[i].setEnabled(true);
-                            mascinco[i] = numero;
+                            mascinco[i] = m;
                             cinco = i + 1;
                             break;
                         } else if (cinco == i & i == 3) {
@@ -417,7 +471,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocinco[i].setEnabled(false);
                             combocinco[i] = cbprincipal;
                             combocinco[i].setEnabled(true);
-                            mascinco[i] = numero;
+                            mascinco[i] = m;
                             cinco = i + 1;
                             break;
                         } else if (cinco == i & i == 4) {
@@ -426,7 +480,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocinco[i].setEnabled(false);
                             combocinco[i] = cbprincipal;
                             combocinco[i].setEnabled(true);
-                            mascinco[i] = numero;
+                            mascinco[i] = m;
                             cinco = i - 4;
                             break;
                         }
@@ -595,6 +649,7 @@ public class Inscripciones extends javax.swing.JFrame {
         if (jd.getDate() == null) {
             return "";
         } else {
+            System.out.println("suma que es igual que ultimo... " + mas);
             if (jd.getDate() != null) {
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTime(jd.getDate());
@@ -610,6 +665,7 @@ public class Inscripciones extends javax.swing.JFrame {
         if (jd.getDate() == null) {
             return "";
         } else {
+            System.out.println("ultimo....: " + ultimo);
             fechaselec = jd.getDate();
             Calendar calendar = Calendar.getInstance();
 //            System.out.println("Fecha a poner ultimo -> " + jd.getDate());
@@ -675,7 +731,6 @@ public class Inscripciones extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(1).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(1).setMinWidth(0);
         tdatos.getColumnModel().getColumn(1).setPreferredWidth(0);
-        
 
         tdatos.getColumnModel().getColumn(4).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(4).setMinWidth(0);
@@ -720,8 +775,7 @@ public class Inscripciones extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(14).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(14).setMinWidth(0);
         tdatos.getColumnModel().getColumn(14).setPreferredWidth(0);
-        
-        
+
     }
 
     public static void quicksort(int A[], int izq, int der) {
@@ -766,7 +820,6 @@ public class Inscripciones extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         lblnombre = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -826,6 +879,7 @@ public class Inscripciones extends javax.swing.JFrame {
         txtmensualidad = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1117, 613));
@@ -844,12 +898,6 @@ public class Inscripciones extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1);
         jButton1.setBounds(22, 12, 122, 34);
-
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel1.setText("Inscripción");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(400, 0, 209, 54);
 
         lblnombre.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblnombre.setForeground(new java.awt.Color(204, 204, 204));
@@ -1086,7 +1134,7 @@ public class Inscripciones extends javax.swing.JFrame {
         cbhoramartes.setBounds(250, 480, 150, 30);
 
         ckmartes.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        ckmartes.setForeground(new java.awt.Color(204, 204, 204));
+        ckmartes.setForeground(new java.awt.Color(255, 255, 255));
         ckmartes.setText("Martes");
         ckmartes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1112,7 +1160,7 @@ public class Inscripciones extends javax.swing.JFrame {
         cbhoraviernes.setBounds(780, 480, 150, 30);
 
         cklunes.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        cklunes.setForeground(new java.awt.Color(204, 204, 204));
+        cklunes.setForeground(new java.awt.Color(255, 255, 255));
         cklunes.setText("Lunes");
         cklunes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1122,8 +1170,8 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(cklunes);
         cklunes.setBounds(70, 450, 150, 31);
 
-        ckmiercoles.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        ckmiercoles.setForeground(new java.awt.Color(204, 204, 204));
+        ckmiercoles.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        ckmiercoles.setForeground(new java.awt.Color(255, 255, 255));
         ckmiercoles.setText("Miércoles");
         ckmiercoles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1131,10 +1179,10 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ckmiercoles);
-        ckmiercoles.setBounds(430, 450, 140, 25);
+        ckmiercoles.setBounds(430, 450, 140, 31);
 
         ckjueves.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        ckjueves.setForeground(new java.awt.Color(204, 204, 204));
+        ckjueves.setForeground(new java.awt.Color(255, 255, 255));
         ckjueves.setText("Jueves");
         ckjueves.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1145,7 +1193,7 @@ public class Inscripciones extends javax.swing.JFrame {
         ckjueves.setBounds(600, 450, 140, 31);
 
         ckviernes.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        ckviernes.setForeground(new java.awt.Color(204, 204, 204));
+        ckviernes.setForeground(new java.awt.Color(255, 255, 255));
         ckviernes.setText("Viernes");
         ckviernes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1156,7 +1204,7 @@ public class Inscripciones extends javax.swing.JFrame {
         ckviernes.setBounds(780, 450, 150, 31);
 
         cksabado.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        cksabado.setForeground(new java.awt.Color(204, 204, 204));
+        cksabado.setForeground(new java.awt.Color(255, 255, 255));
         cksabado.setText("Sábado");
         cksabado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1194,7 +1242,7 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(jLabel17);
         jLabel17.setBounds(1010, 120, 50, 20);
         getContentPane().add(txtidusuario);
-        txtidusuario.setBounds(220, 30, 50, 20);
+        txtidusuario.setBounds(460, 110, 50, 20);
 
         txtfechainicio.setDateFormatString("yyyy/MM/dd");
         txtfechainicio.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -1246,7 +1294,7 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(btnguardarrenovacion);
         btnguardarrenovacion.setBounds(800, 550, 110, 40);
         getContentPane().add(txtmensualidad);
-        txtmensualidad.setBounds(290, 30, 6, 20);
+        txtmensualidad.setBounds(460, 80, 20, 20);
 
         jLabel18.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(204, 204, 204));
@@ -1265,6 +1313,12 @@ public class Inscripciones extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2);
         jButton2.setBounds(810, 140, 150, 30);
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("CENTRO ACUÁTICO ALFA & OMEGA");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(230, 0, 819, 50);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1286,39 +1340,225 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_cktutorActionPerformed
 
     private void cklunesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cklunesActionPerformed
-        checkdias(0, ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
+//        if (diacero == 0) {
+//            System.out.println("Es Lunes");
+//            checkdias(diacero, 0, ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
+//                    cbhoramartes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoralunes, cbhoralunes);
+//        } else if (diacero == 1) {
+//            System.out.println("Es Martes");
+//            checkdias(diauno, 1, ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
+//                    cbhoramartes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoralunes, cbhoralunes);
+//        } else if (diacero == 2) {
+//            System.out.println("Es Miércoles");
+//            checkdias(diados, 2, ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
+//                    cbhoramartes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoralunes, cbhoralunes);
+//        } else if (diacero == 3) {
+//            System.out.println("Es Jueves");
+//            checkdias(diatres, 3, ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
+//                    cbhoramartes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoralunes, cbhoralunes);
+//
+//        } else if (diacero == 4) {
+//            System.out.println("Es Viernes");
+//            checkdias(diacuatro,4, ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
+//                    cbhoramartes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoralunes, cbhoralunes);
+//
+//        } else if (diacero == 5) {
+//            System.out.println("Es Sábado");
+//            checkdias(diacinco, 5, ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
+//                    cbhoramartes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoralunes, cbhoralunes);
+//
+//        }
+        System.out.println("diacero: " + diacero);
+        checkdias(diacero, 0, ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
                 cbhoramartes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoralunes, cbhoralunes);
 
+//        checkdias(diacero, ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
+//                cbhoramartes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoralunes, cbhoralunes);
 
     }//GEN-LAST:event_cklunesActionPerformed
 
     private void ckmartesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckmartesActionPerformed
-        checkdias(1, cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
+//        if (diauno == 0) {
+//            System.out.println("Es Lunes");
+//            checkdias(diacero, 0, cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
+//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramartes, cbhoramartes);
+//        } else if (diauno == 1) {
+//            System.out.println("Es Martes");
+//            checkdias(diauno, 1, cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
+//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramartes, cbhoramartes);
+//        } else if (diauno == 2) {
+//            System.out.println("Es Miércoles");
+//            checkdias(diados, 2, cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
+//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramartes, cbhoramartes);
+//        } else if (diauno == 3) {
+//            System.out.println("Es Jueves");
+//            checkdias(diatres, 3, cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
+//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramartes, cbhoramartes);
+//
+//        } else if (diauno == 4) {
+//            System.out.println("Es Viernes");
+//            checkdias(diacuatro, 4, cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
+//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramartes, cbhoramartes);
+//
+//        } else if (diauno == 5) {
+//            System.out.println("Es Sabado");
+//            checkdias(diacinco, 5, cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
+//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramartes, cbhoramartes);
+//
+//        }
+        System.out.println("diauno: " + diauno);
+        checkdias(diauno, 1, cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
                 cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramartes, cbhoramartes);
+//        checkdias(diauno, cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
+//                cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramartes, cbhoramartes);
 
     }//GEN-LAST:event_ckmartesActionPerformed
 
     private void ckmiercolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckmiercolesActionPerformed
-        checkdias(2, cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
+//        if (diados == 0) {
+//            System.out.println("Es Lunes");
+//            checkdias(diacero, 0, cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
+//                    cbhoralunes, cbhoramartes, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramiercoles, cbhoramiercoles);
+//        } else if (diados == 1) {
+//            System.out.println("Es Martes");
+//            checkdias(diauno, 1, cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
+//                    cbhoralunes, cbhoramartes, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramiercoles, cbhoramiercoles);
+//        } else if (diados == 2) {
+//            System.out.println("Es Miércoles");
+//            checkdias(diados, 2, cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
+//                    cbhoralunes, cbhoramartes, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramiercoles, cbhoramiercoles);
+//        } else if (diados == 3) {
+//            System.out.println("Es Jueves");
+//            checkdias(diatres, 3, cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
+//                    cbhoralunes, cbhoramartes, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramiercoles, cbhoramiercoles);
+//
+//        } else if (diados == 4) {
+//            System.out.println("Es Viernes");
+//            checkdias(diacuatro, 4, cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
+//                    cbhoralunes, cbhoramartes, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramiercoles, cbhoramiercoles);
+//
+//        } else if (diados == 5) {
+//            System.out.println("Es Sábado");
+//            checkdias(diacinco, 5, cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
+//                    cbhoralunes, cbhoramartes, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramiercoles, cbhoramiercoles);
+//
+//        }
+        System.out.println("diados: " + diados);
+        checkdias(diados, 2, cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
                 cbhoralunes, cbhoramartes, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramiercoles, cbhoramiercoles);
+//        checkdias(diados, cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
+//                cbhoralunes, cbhoramartes, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramiercoles, cbhoramiercoles);
 
     }//GEN-LAST:event_ckmiercolesActionPerformed
 
     private void ckjuevesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckjuevesActionPerformed
-        checkdias(3, ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
+//        if (diatres == 0) {
+//            System.out.println("Es Lunes");
+//            checkdias(diacero, 0, ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
+//                    cbhoralunes, cbhoramiercoles, cbhoramartes, cbhoraviernes, cbhorasabado, cbhorajueves, cbhorajueves);
+//        } else if (diatres == 1) {
+//            System.out.println("Es Martes");
+//            checkdias(diauno, 1, ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
+//                    cbhoralunes, cbhoramiercoles, cbhoramartes, cbhoraviernes, cbhorasabado, cbhorajueves, cbhorajueves);
+//        } else if (diatres == 2) {
+//            System.out.println("Es Miércoles");
+//            checkdias(diados, 2, ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
+//                    cbhoralunes, cbhoramiercoles, cbhoramartes, cbhoraviernes, cbhorasabado, cbhorajueves, cbhorajueves);
+//        } else if (diatres == 3) {
+//            System.out.println("Es Jueves");
+//            checkdias(diatres, 3, ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
+//                    cbhoralunes, cbhoramiercoles, cbhoramartes, cbhoraviernes, cbhorasabado, cbhorajueves, cbhorajueves);
+//
+//        } else if (diatres == 4) {
+//            System.out.println("Es Viernes");
+//            checkdias(diacuatro, 4, ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
+//                    cbhoralunes, cbhoramiercoles, cbhoramartes, cbhoraviernes, cbhorasabado, cbhorajueves, cbhorajueves);
+//
+//        } else if (diatres == 5) {
+//            System.out.println("Es Sábado");
+//            checkdias(diacinco, 5, ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
+//                    cbhoralunes, cbhoramiercoles, cbhoramartes, cbhoraviernes, cbhorasabado, cbhorajueves, cbhorajueves);
+//
+//        }
+        System.out.println("diatres: " + diatres);
+        checkdias(diatres, 3, ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
                 cbhoralunes, cbhoramiercoles, cbhoramartes, cbhoraviernes, cbhorasabado, cbhorajueves, cbhorajueves);
+//        checkdias(diatres, ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
+//                cbhoralunes, cbhoramiercoles, cbhoramartes, cbhoraviernes, cbhorasabado, cbhorajueves, cbhorajueves);
 
     }//GEN-LAST:event_ckjuevesActionPerformed
 
     private void ckviernesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckviernesActionPerformed
-        checkdias(4, ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
+//        if (diacuatro == 0) {
+//            System.out.println("Es Lunes");
+//            checkdias(diacero, 0, ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
+//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoramartes, cbhorasabado, cbhoraviernes, cbhoraviernes);
+//        } else if (diacuatro == 1) {
+//            System.out.println("Es Martes");
+//            checkdias(diauno, 1, ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
+//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoramartes, cbhorasabado, cbhoraviernes, cbhoraviernes);
+//        } else if (diacuatro == 2) {
+//            System.out.println("Es Miércoles");
+//            checkdias(diados, 2, ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
+//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoramartes, cbhorasabado, cbhoraviernes, cbhoraviernes);
+//        } else if (diacuatro == 3) {
+//            System.out.println("Es Jueves");
+//            checkdias(diatres, 3, ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
+//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoramartes, cbhorasabado, cbhoraviernes, cbhoraviernes);
+//
+//        } else if (diacuatro == 4) {
+//            System.out.println("Es Viernes");
+//            checkdias(diacuatro, 4, ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
+//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoramartes, cbhorasabado, cbhoraviernes, cbhoraviernes);
+//
+//        } else if (diacuatro == 5) {
+//            System.out.println("Es Sábado");
+//            checkdias(diacinco, 5, ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
+//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoramartes, cbhorasabado, cbhoraviernes, cbhoraviernes);
+//
+//        }
+        System.out.println("diacuatro: " + diacuatro);
+        checkdias(diacuatro, 4, ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
                 cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoramartes, cbhorasabado, cbhoraviernes, cbhoraviernes);
+//        checkdias(diacuatro, ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
+//                cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoramartes, cbhorasabado, cbhoraviernes, cbhoraviernes);
 
     }//GEN-LAST:event_ckviernesActionPerformed
 
     private void cksabadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cksabadoActionPerformed
-        checkdias(5, ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
+//        if (diacinco == 0) {
+//            System.out.println("Es Lunes");
+//            checkdias(diacero, 0, ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
+//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhoramartes, cbhorasabado, cbhorasabado);
+//        } else if (diacinco == 1) {
+//            System.out.println("Es Martes");
+//            checkdias(diauno, 1, ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
+//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhoramartes, cbhorasabado, cbhorasabado);
+//        } else if (diacinco == 2) {
+//            System.out.println("Es Miércoles");
+//            checkdias(diados, 2, ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
+//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhoramartes, cbhorasabado, cbhorasabado);
+//        } else if (diacinco == 3) {
+//            System.out.println("Es Jueves");
+//            checkdias(diatres, 3, ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
+//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhoramartes, cbhorasabado, cbhorasabado);
+//
+//        } else if (diacinco == 4) {
+//            System.out.println("Es Viernes");
+//            checkdias(diacuatro, 4, ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
+//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhoramartes, cbhorasabado, cbhorasabado);
+//
+//        } else if (diacinco == 5) {
+//            System.out.println("Es Sábado");
+//            checkdias(diacinco, 5, ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
+//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhoramartes, cbhorasabado, cbhorasabado);
+//
+//        }
+        System.out.println("diacinco: " + diacinco);
+        checkdias(diacinco, 5, ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
                 cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhoramartes, cbhorasabado, cbhorasabado);
+//        checkdias(diacinco, ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
+//                cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhoramartes, cbhorasabado, cbhorasabado);
 
     }//GEN-LAST:event_cksabadoActionPerformed
 
@@ -1353,14 +1593,15 @@ public class Inscripciones extends javax.swing.JFrame {
 
                     Calendar calendar = Calendar.getInstance();
                     calendar.setTime(fechaselec);
-                    calendar.add(Calendar.DAY_OF_MONTH, masuno[0]);
+                    calendar.add(Calendar.DAY_OF_MONTH, 0);
                     for (int i = 0; i < 4; i++) {
 
                         unasesion[i] = calendar.get(Calendar.DAY_OF_MONTH);
+                        unasesionmes[i] = calendar.get(Calendar.MONTH) + 1;
                         calendar.add(Calendar.DAY_OF_MONTH, 7);
                     }
                     int r = re.idmensualidad();
-                    re.insertardiasmes(unasesion, masuno[0], r, combohoras[masuno[0]]);
+                    re.insertardiasmes(unasesion, unasesionmes, masuno[0], r, combohoras[masuno[0]]);
                     resultado = 1;
                 } else {
                     resultado = -1;
@@ -1369,7 +1610,8 @@ public class Inscripciones extends javax.swing.JFrame {
             } else if (dias == 2) {
                 if (masdos[0] != -1 & masdos[1] != -1) {
                     quicksort(masdos, 0, masdos.length - 1);
-                    re.insertarmensualidad(obtenerfechastr(txtfechainicio, masdos[0]),
+                    System.out.println(masdos[1] + " >>>>");
+                    re.insertarmensualidad(obtenerfechastr(txtfechainicio, 0),
                             obtenerfecha(txtfechainicio, masdos[1]), "" + dias);
                     Calendar calendar = Calendar.getInstance();
                     for (int i = 0; i < 2; i++) {
@@ -1378,16 +1620,19 @@ public class Inscripciones extends javax.swing.JFrame {
                         for (int j = 0; j < 4; j++) {
 
                             dossesion[i][j] = calendar.get(Calendar.DAY_OF_MONTH);
+                            dossesionmes[i][j] = calendar.get(Calendar.MONTH) + 1;
                             calendar.add(Calendar.DAY_OF_MONTH, 7);
                         }
                     }
                     int val[] = new int[4];
+                    int mess[] = new int[4];
                     int r = re.idmensualidad();
                     for (int i = 0; i < 2; i++) {
                         for (int j = 0; j < 4; j++) {
                             val[j] = dossesion[i][j];
+                            mess[j] = dossesionmes[i][j];
                         }
-                        re.insertardiasmes(val, masdos[i], r, combohoras[masdos[i]]);
+                        re.insertardiasmes(val, mess, masdos[i], r, combohoras[masdos[i]]);
                     }
                     resultado = 1;
                 } else {
@@ -1398,7 +1643,7 @@ public class Inscripciones extends javax.swing.JFrame {
                 if (mastres[0] != -1 & mastres[1] != -1 & mastres[2] != -1) {
 
                     quicksort(mastres, 0, mastres.length - 1);
-                    re.insertarmensualidad(obtenerfechastr(txtfechainicio, mastres[0]),
+                    re.insertarmensualidad(obtenerfechastr(txtfechainicio, 0),
                             obtenerfecha(txtfechainicio, mastres[2]), "" + dias);
                     Calendar calendar = Calendar.getInstance();
                     for (int i = 0; i < 3; i++) {
@@ -1407,16 +1652,19 @@ public class Inscripciones extends javax.swing.JFrame {
                         for (int j = 0; j < 4; j++) {
 
                             tressesion[i][j] = calendar.get(Calendar.DAY_OF_MONTH);
+                            tressesionmes[i][j] = calendar.get(Calendar.MONTH) + 1;
                             calendar.add(Calendar.DAY_OF_MONTH, 7);
                         }
                     }
                     int val[] = new int[4];
+                    int mess[] = new int[4];
                     int r = re.idmensualidad();
                     for (int i = 0; i < 3; i++) {
                         for (int j = 0; j < 4; j++) {
                             val[j] = tressesion[i][j];
+                            mess[j] = tressesionmes[i][j];
                         }
-                        re.insertardiasmes(val, mastres[i], r, combohoras[mastres[i]]);
+                        re.insertardiasmes(val, mess, mastres[i], r, combohoras[mastres[i]]);
                     }
                     resultado = 1;
                 } else {
@@ -1427,7 +1675,7 @@ public class Inscripciones extends javax.swing.JFrame {
             } else if (dias == 4) {
                 if (mascuatro[0] != -1 & mascuatro[1] != -1 & mascuatro[2] != -1 & mascuatro[3] != -1) {
                     quicksort(mascuatro, 0, mascuatro.length - 1);
-                    re.insertarmensualidad(obtenerfechastr(txtfechainicio, mascuatro[0]),
+                    re.insertarmensualidad(obtenerfechastr(txtfechainicio, 0),
                             obtenerfecha(txtfechainicio, mascuatro[3]), "" + dias);
                     Calendar calendar = Calendar.getInstance();
                     for (int i = 0; i < 4; i++) {
@@ -1436,16 +1684,19 @@ public class Inscripciones extends javax.swing.JFrame {
                         for (int j = 0; j < 4; j++) {
 
                             cuatrosesion[i][j] = calendar.get(Calendar.DAY_OF_MONTH);
+                            cuatrosesionmes[i][j] = calendar.get(Calendar.MONTH) + 1;
                             calendar.add(Calendar.DAY_OF_MONTH, 7);
                         }
                     }
                     int val[] = new int[4];
+                    int mess[] = new int[4];
                     int r = re.idmensualidad();
                     for (int i = 0; i < 4; i++) {
                         for (int j = 0; j < 4; j++) {
                             val[j] = cuatrosesion[i][j];
+                            mess[j] = cuatrosesionmes[i][j];
                         }
-                        re.insertardiasmes(val, mascuatro[i], r, combohoras[mascuatro[i]]);
+                        re.insertardiasmes(val, mess, mascuatro[i], r, combohoras[mascuatro[i]]);
                     }
                     resultado = 1;
                 } else {
@@ -1455,7 +1706,7 @@ public class Inscripciones extends javax.swing.JFrame {
             } else if (dias == 5) {
                 if (mascinco[0] != -1 & mascinco[1] != -1 & mascinco[2] != -1 & mascinco[3] != -1 & mascinco[4] != -1) {
                     quicksort(mascinco, 0, mascinco.length - 1);
-                    re.insertarmensualidad(obtenerfechastr(txtfechainicio, mascinco[0]),
+                    re.insertarmensualidad(obtenerfechastr(txtfechainicio, 0),
                             obtenerfecha(txtfechainicio, mascinco[4]), "" + dias);
                     Calendar calendar = Calendar.getInstance();
                     for (int i = 0; i < 5; i++) {
@@ -1464,16 +1715,19 @@ public class Inscripciones extends javax.swing.JFrame {
                         for (int j = 0; j < 4; j++) {
 
                             cincosesion[i][j] = calendar.get(Calendar.DAY_OF_MONTH);
+                            cincosesion[i][j] = calendar.get(Calendar.MONTH) + 1;
                             calendar.add(Calendar.DAY_OF_MONTH, 7);
                         }
                     }
                     int val[] = new int[4];
+                    int mess[] = new int[4];
                     r = re.idmensualidad();
                     for (int i = 0; i < 5; i++) {
                         for (int j = 0; j < 4; j++) {
                             val[j] = cincosesion[i][j];
+                            mess[j] = cincosesionmes[i][j];
                         }
-                        re.insertardiasmes(val, mascinco[i], r, combohoras[mascinco[i]]);
+                        re.insertardiasmes(val, mess, mascinco[i], r, combohoras[mascinco[i]]);
                     }
                     resultado = 1;
                 } else {
@@ -1565,7 +1819,6 @@ public class Inscripciones extends javax.swing.JFrame {
         btnrenovar.setEnabled(false);
         btnguardar.setEnabled(true);
         btnguardarmodificaciones.setEnabled(false);
-        
 
 
     }//GEN-LAST:event_btnnuevoActionPerformed
@@ -1609,7 +1862,12 @@ public class Inscripciones extends javax.swing.JFrame {
 
     private void txtfechainicioPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_txtfechainicioPropertyChange
         txtfechatermino.setDate(StringaDate(obtenerfecha(txtfechainicio, 0)));
-//        marcarcalendar(txtfechainicio.getDate());
+
+//        marcarcalendar(new Date());
+        if (txtfechainicio.getDate() != null) {
+            marcarcalendar(txtfechainicio.getDate());
+        }
+
     }//GEN-LAST:event_txtfechainicioPropertyChange
 
     private void btnguardarmodificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarmodificacionesActionPerformed
@@ -1797,7 +2055,7 @@ public class Inscripciones extends javax.swing.JFrame {
         eliminados elimi = new eliminados();
         elimi.setVisible(true);
         this.setVisible(false);
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
