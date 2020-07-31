@@ -41,16 +41,23 @@ public class Inscripciones extends javax.swing.JFrame {
     int diacero = 0, diauno = 1, diados = 2, diatres = 3, diacuatro = 4, diacinco = 5;
     int resultado = -1;
     int r = 0;
-    
+
+    //Número de días de la semanna
+    int dia0 = 0;
+    int dia1 = 0;
+    int dia2 = 0;
+    int dia3 = 0;
+    int dia4 = 0;
+    int dia5 = 0;
+
     //Capturar fechas para insertar nombres
-    int diamasuno []=new int[1];
-    int diamasdos []=new int[2];
-    int diamastres []=new int[3];
-    int diamascuatro []=new int[4];
-    int diamascinco []=new int[5];
-    int diamasseis []=new int[6];
-    
-    
+    int diamasuno[] = new int[1];
+    int diamasdos[] = new int[2];
+    int diamastres[] = new int[3];
+    int diamascuatro[] = new int[4];
+    int diamascinco[] = new int[5];
+    int diamasseis[] = new int[6];
+
     //Capturar mes
     int unasesionmes[] = new int[4];
     int dossesionmes[][] = new int[2][4];
@@ -149,7 +156,15 @@ public class Inscripciones extends javax.swing.JFrame {
 
             System.out.println("Hoy es lunes");
             escogerdias(0, 1, 2, 3, 4, 5);
+            dia0 = 0;
+            dia1 = 1;
+            dia2 = 2;
+            dia3 = 3;
+            dia4 = 4;
+            dia5 = 5;
+
             darnombredias("Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
+
         } else if (i == 3) {
 //            calendar.setTime(fecha);
 //            calendar.add(Calendar.DAY_OF_YEAR, -1);
@@ -157,6 +172,12 @@ public class Inscripciones extends javax.swing.JFrame {
             txtfechainicio.setDate(fecha);
             System.out.println("Hoy es martes");
             escogerdias(1, 2, 3, 4, 5, 0);
+            dia0 = 0;
+            dia1 = 1;
+            dia2 = 2;
+            dia3 = 3;
+            dia4 = 4;
+            dia5 = 6;
             darnombredias("Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Lunes");
         } else if (i == 4) {
 //            calendar.setTime(fecha);
@@ -165,6 +186,12 @@ public class Inscripciones extends javax.swing.JFrame {
             txtfechainicio.setDate(fecha);
             System.out.println("Hoy es miércoles");
             escogerdias(2, 3, 4, 5, 0, 1);
+            dia0 = 0;
+            dia1 = 1;
+            dia2 = 2;
+            dia3 = 3;
+            dia4 = 5;
+            dia5 = 6;
             darnombredias("Miércoles", "Jueves", "Viernes", "Sábado", "Lunes", "Martes");
         } else if (i == 5) {
 //            calendar.setTime(fecha);
@@ -173,6 +200,12 @@ public class Inscripciones extends javax.swing.JFrame {
             txtfechainicio.setDate(fecha);
             System.out.println("Hoy es jueves");
             escogerdias(3, 4, 5, 0, 1, 2);
+            dia0 = 0;
+            dia1 = 1;
+            dia2 = 2;
+            dia3 = 4;
+            dia4 = 5;
+            dia5 = 6;
             darnombredias("Jueves", "Viernes", "Sábado", "Lunes", "Martes", "Miércoles");
         } else if (i == 6) {
 //            calendar.setTime(fecha);
@@ -181,6 +214,12 @@ public class Inscripciones extends javax.swing.JFrame {
             txtfechainicio.setDate(fecha);
             System.out.println("Hoy es viernes");
             escogerdias(4, 5, 0, 1, 2, 3);
+            dia0 = 0;
+            dia1 = 1;
+            dia2 = 3;
+            dia3 = 4;
+            dia4 = 5;
+            dia5 = 6;
             darnombredias("Viernes", "Sábado", "Lunes", "Martes", "Miércoles", "Jueves");
         } else if (i == 7) {
 //            calendar.setTime(fecha);
@@ -189,8 +228,17 @@ public class Inscripciones extends javax.swing.JFrame {
             txtfechainicio.setDate(fecha);
             System.out.println("Hoy es sábado");
             escogerdias(5, 0, 1, 2, 3, 4);
+            dia0 = 0;
+            dia1 = 2;
+            dia2 = 3;
+            dia3 = 4;
+            dia4 = 5;
+            dia5 = 6;
             darnombredias("Sábado", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes");
         }
+//        cklunes.setSelected(true);
+//        cklunes.setEnabled(false);
+//        cbhoralunes.setEnabled(true);
     }
 
     public void escogerdias(int cero, int uno, int dos, int tres, int cuatro, int cinco) {
@@ -216,7 +264,7 @@ public class Inscripciones extends javax.swing.JFrame {
             JComboBox cbprincipal, JComboBox chora) {
         if (dias == 1) {
             if (checkprincipal.isSelected() == true) {
-                diamasuno[0]=numero;
+                diamasuno[0] = numero;
                 masuno[0] = m;
                 System.out.println("mas uno -> " + masuno[0]);
                 check1.setSelected(false);
@@ -244,7 +292,7 @@ public class Inscripciones extends javax.swing.JFrame {
                         diasdos[i] = checkprincipal;
                         combodos[i] = cbprincipal;
                         combodos[i].setEnabled(true);
-                        diamasdos[i]=numero;
+                        diamasdos[i] = numero;
                         masdos[i] = m;
                         break;
                     } else if (contardos == 2) {
@@ -255,7 +303,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combodos[i].setEnabled(false);
                             combodos[i] = cbprincipal;
                             combodos[i].setEnabled(true);
-                            diamasdos[i]=numero;
+                            diamasdos[i] = numero;
                             masdos[i] = m;
                             dos = i + 1;
                             break;
@@ -265,7 +313,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combodos[i].setEnabled(false);
                             combodos[i] = cbprincipal;
                             combodos[i].setEnabled(true);
-                            diamasdos[i]=numero;
+                            diamasdos[i] = numero;
                             masdos[i] = m;
                             dos = i - 1;
                             break;
@@ -277,7 +325,7 @@ public class Inscripciones extends javax.swing.JFrame {
                 for (int i = 0; i < 2; i++) {
                     if (checkprincipal == diasdos[i]) {
                         diasdos[i] = null;
-                        diamasdos[i]=-1;
+                        diamasdos[i] = -1;
                         masdos[i] = -1;
                         combodos[i].setEnabled(false);
                         combodos[i] = null;
@@ -301,7 +349,7 @@ public class Inscripciones extends javax.swing.JFrame {
 
                     if (diastres[i] == null) {
                         contartres += 1;
-                        diamastres[i]=numero;
+                        diamastres[i] = numero;
                         mastres[i] = m;
                         diastres[i] = checkprincipal;
                         combotres[i] = cbprincipal;
@@ -314,7 +362,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combotres[i].setEnabled(false);
                             combotres[i] = cbprincipal;
                             combotres[i].setEnabled(true);
-                            diamastres[i]=numero;
+                            diamastres[i] = numero;
                             mastres[i] = m;
                             tres = i + 1;
 
@@ -325,7 +373,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combotres[i].setEnabled(false);
                             combotres[i] = cbprincipal;
                             combotres[i].setEnabled(true);
-                            diamastres[i]=numero;
+                            diamastres[i] = numero;
                             mastres[i] = m;
                             tres = i + 1;
                             break;
@@ -335,7 +383,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combotres[i].setEnabled(false);
                             combotres[i] = cbprincipal;
                             combotres[i].setEnabled(true);
-                            diamastres[i]=numero;
+                            diamastres[i] = numero;
                             mastres[i] = m;
                             tres = i - 2;
                             break;
@@ -355,7 +403,7 @@ public class Inscripciones extends javax.swing.JFrame {
                         diastres[i] = null;
                         combotres[i].setEnabled(false);
                         combotres[i] = null;
-                        diamastres[i]=-1;
+                        diamastres[i] = -1;
                         mastres[i] = -1;
                         contartres -= 1;
                         break;
@@ -377,7 +425,7 @@ public class Inscripciones extends javax.swing.JFrame {
 
                     if (diascuatro[i] == null) {
                         contarcuatro += 1;
-                        diamascuatro[i]=numero;
+                        diamascuatro[i] = numero;
                         mascuatro[i] = m;
                         diascuatro[i] = checkprincipal;
                         combocuatro[i] = cbprincipal;
@@ -390,7 +438,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocuatro[i].setEnabled(false);
                             combocuatro[i] = cbprincipal;
                             combocuatro[i].setEnabled(true);
-                            diamascuatro[i]=numero;
+                            diamascuatro[i] = numero;
                             mascuatro[i] = m;
                             cuatro = i + 1;
                             break;
@@ -400,7 +448,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocuatro[i].setEnabled(false);
                             combocuatro[i] = cbprincipal;
                             combocuatro[i].setEnabled(true);
-                            diamascuatro[i]=numero;
+                            diamascuatro[i] = numero;
                             mascuatro[i] = m;
                             cuatro = i + 1;
 
@@ -411,7 +459,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocuatro[i].setEnabled(false);
                             combocuatro[i] = cbprincipal;
                             combocuatro[i].setEnabled(true);
-                            diamascuatro[i]=numero;
+                            diamascuatro[i] = numero;
                             mascuatro[i] = m;
                             cuatro = i + 1;
 
@@ -422,7 +470,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocuatro[i].setEnabled(false);
                             combocuatro[i] = cbprincipal;
                             combocuatro[i].setEnabled(true);
-                            diamascuatro[i]=numero;
+                            diamascuatro[i] = numero;
                             mascuatro[i] = m;
                             cuatro = i - 3;
 
@@ -444,7 +492,7 @@ public class Inscripciones extends javax.swing.JFrame {
                         diascuatro[i] = null;
                         combocuatro[i].setEnabled(false);
                         combocuatro[i] = null;
-                        diamascuatro[i]=-1;
+                        diamascuatro[i] = -1;
                         mascuatro[i] = -1;
                         contarcuatro -= 1;
                         break;
@@ -466,7 +514,7 @@ public class Inscripciones extends javax.swing.JFrame {
 
                     if (diascinco[i] == null) {
                         contarcinco += 1;
-                        diamascinco[i]=numero;
+                        diamascinco[i] = numero;
                         mascinco[i] = m;
                         diascinco[i] = checkprincipal;
                         combocinco[i] = cbprincipal;
@@ -481,7 +529,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocinco[i].setEnabled(false);
                             combocinco[i] = cbprincipal;
                             combocinco[i].setEnabled(true);
-                            diamascinco[i]=numero;
+                            diamascinco[i] = numero;
                             mascinco[i] = m;
                             cinco = i + 1;
                             break;
@@ -491,7 +539,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocinco[i].setEnabled(false);
                             combocinco[i] = cbprincipal;
                             combocinco[i].setEnabled(true);
-                            diamascinco[i]=numero;
+                            diamascinco[i] = numero;
                             mascinco[i] = m;
                             cinco = i + 1;
                             break;
@@ -501,7 +549,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocinco[i].setEnabled(false);
                             combocinco[i] = cbprincipal;
                             combocinco[i].setEnabled(true);
-                            diamascinco[i]=numero;
+                            diamascinco[i] = numero;
                             mascinco[i] = m;
                             cinco = i + 1;
                             break;
@@ -511,7 +559,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocinco[i].setEnabled(false);
                             combocinco[i] = cbprincipal;
                             combocinco[i].setEnabled(true);
-                            diamascinco[i]=numero;
+                            diamascinco[i] = numero;
                             mascinco[i] = m;
                             cinco = i + 1;
                             break;
@@ -521,7 +569,7 @@ public class Inscripciones extends javax.swing.JFrame {
                             combocinco[i].setEnabled(false);
                             combocinco[i] = cbprincipal;
                             combocinco[i].setEnabled(true);
-                            diamascinco[i]=numero;
+                            diamascinco[i] = numero;
                             mascinco[i] = m;
                             cinco = i - 4;
                             break;
@@ -541,7 +589,7 @@ public class Inscripciones extends javax.swing.JFrame {
                         diascinco[i] = null;
                         combocinco[i].setEnabled(false);
                         combocinco[i] = null;
-                        diamascinco[i]=-1;
+                        diamascinco[i] = -1;
                         mascinco[i] = -1;
                         contarcinco -= 1;
                         break;
@@ -1424,7 +1472,7 @@ public class Inscripciones extends javax.swing.JFrame {
 //
 //        }
         System.out.println("diacero: " + diacero);
-        checkdias(diacero, 0, ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
+        checkdias(diacero, dia0, ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
                 cbhoramartes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoralunes, cbhoralunes);
 
 //        checkdias(diacero, ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
@@ -1462,7 +1510,7 @@ public class Inscripciones extends javax.swing.JFrame {
 //
 //        }
         System.out.println("diauno: " + diauno);
-        checkdias(diauno, 1, cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
+        checkdias(diauno, dia1, cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
                 cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramartes, cbhoramartes);
 //        checkdias(diauno, cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
 //                cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramartes, cbhoramartes);
@@ -1499,7 +1547,7 @@ public class Inscripciones extends javax.swing.JFrame {
 //
 //        }
         System.out.println("diados: " + diados);
-        checkdias(diados, 2, cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
+        checkdias(diados, dia2, cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
                 cbhoralunes, cbhoramartes, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramiercoles, cbhoramiercoles);
 //        checkdias(diados, cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
 //                cbhoralunes, cbhoramartes, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramiercoles, cbhoramiercoles);
@@ -1536,7 +1584,7 @@ public class Inscripciones extends javax.swing.JFrame {
 //
 //        }
         System.out.println("diatres: " + diatres);
-        checkdias(diatres, 3, ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
+        checkdias(diatres, dia3, ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
                 cbhoralunes, cbhoramiercoles, cbhoramartes, cbhoraviernes, cbhorasabado, cbhorajueves, cbhorajueves);
 //        checkdias(diatres, ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
 //                cbhoralunes, cbhoramiercoles, cbhoramartes, cbhoraviernes, cbhorasabado, cbhorajueves, cbhorajueves);
@@ -1573,7 +1621,7 @@ public class Inscripciones extends javax.swing.JFrame {
 //
 //        }
         System.out.println("diacuatro: " + diacuatro);
-        checkdias(diacuatro, 4, ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
+        checkdias(diacuatro, dia4, ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
                 cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoramartes, cbhorasabado, cbhoraviernes, cbhoraviernes);
 //        checkdias(diacuatro, ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
 //                cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoramartes, cbhorasabado, cbhoraviernes, cbhoraviernes);
@@ -1610,7 +1658,7 @@ public class Inscripciones extends javax.swing.JFrame {
 //
 //        }
         System.out.println("diacinco: " + diacinco);
-        checkdias(diacinco, 5, ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
+        checkdias(diacinco, dia5, ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
                 cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhoramartes, cbhorasabado, cbhorasabado);
 //        checkdias(diacinco, ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
 //                cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhoramartes, cbhorasabado, cbhorasabado);
