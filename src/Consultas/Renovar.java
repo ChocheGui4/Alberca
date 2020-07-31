@@ -69,7 +69,7 @@ public class Renovar {
                 res = rs.getInt("id_mensualidad");
             }
 //            System.out.println("antes del return");
-            System.out.println("retorna: " + res);
+//            System.out.println("retorna: " + res);
             return res;
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, e);

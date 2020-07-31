@@ -41,7 +41,7 @@ public class usuariosaldia extends javax.swing.JFrame {
                         Thread.sleep(5000);
                         // Y después realizamos las operaciones
                         mostrar();
-                        System.out.println("Me imprimo cada segundo");
+//                        System.out.println("Me imprimo cada segundo");
                         // Así, se da la impresión de que se ejecuta cada cierto tiempo
                     } catch (InterruptedException e) {
                         e.printStackTrace();

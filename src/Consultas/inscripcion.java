@@ -36,7 +36,7 @@ public class inscripcion {
             conn = con.conectar();
             //s = conn.prepareStatement("insert into Registrar_Usuario values (?,?,?,?,?)");
             if (clave == null) {
-                System.out.println("miraaaaaaa id anterior vacio");
+//                System.out.println("miraaaaaaa id anterior vacio");
                 s = conn.prepareStatement("INSERT INTO usuario(nombre,apellidos,fecha_nacimiento,localidad,calle,"
                         + "numero_e,numero_i,telefono_1,celular_1,nombre_tutor,mensualidad_id)"
                         + " VALUES (?,?,?,?,?,?,?,?,?,?,?)");
@@ -64,8 +64,8 @@ public class inscripcion {
                 s.executeUpdate();
             } else {
                 
-                System.out.println("No miraaaaaaa id anterior No vacio");
-                System.out.println("Claveeeeee: "+clave);
+//                System.out.println("No miraaaaaaa id anterior No vacio");
+//                System.out.println("Claveeeeee: "+clave);
                 s = conn.prepareStatement("UPDATE usuario SET nombre=?,apellidos=?,fecha_nacimiento=?"
                         + ",localidad=?,calle=?,numero_e=?,numero_i=?,telefono_1=?,celular_1=?,nombre_tutor=?,"
                         + "mensualidad_id=? WHERE id_usuario=" + id);

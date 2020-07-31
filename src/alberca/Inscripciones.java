@@ -100,6 +100,8 @@ public class Inscripciones extends javax.swing.JFrame {
         txteliminar.setVisible(false);
         btnguardarmodificaciones.setEnabled(false);
         btnguardarrenovacion.setEnabled(false);
+//        cbclaves.setEnabled(false);
+//        cbidus.setEnabled(false);
         mostrar("");
         marcarcalendar(new Date());
         llenarclaves();
@@ -424,14 +426,14 @@ public class Inscripciones extends javax.swing.JFrame {
                     }
                 }
 
-                for (int i = 0; i < 4; i++) {
-                    if (diascuatro[i] != null) {
-                        System.out.println(diascuatro[i].getText());
-                    } else {
-                        System.out.println(diascuatro[i]);
-                    }
-
-                }
+//                for (int i = 0; i < 4; i++) {
+//                    if (diascuatro[i] != null) {
+//                        System.out.println(diascuatro[i].getText());
+//                    } else {
+//                        System.out.println(diascuatro[i]);
+//                    }
+//
+//                }
             }
         } else if (dias == 5) {
             if (checkprincipal.isSelected() == true) {
@@ -658,7 +660,7 @@ public class Inscripciones extends javax.swing.JFrame {
         if (jd.getDate() == null) {
             return "";
         } else {
-            System.out.println("suma que es igual que ultimo... " + mas);
+//            System.out.println("suma que es igual que ultimo... " + mas);
             if (jd.getDate() != null) {
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTime(jd.getDate());
@@ -674,7 +676,7 @@ public class Inscripciones extends javax.swing.JFrame {
         if (jd.getDate() == null) {
             return "";
         } else {
-            System.out.println("ultimo....: " + ultimo);
+//            System.out.println("ultimo....: " + ultimo);
             fechaselec = jd.getDate();
             Calendar calendar = Calendar.getInstance();
 //            System.out.println("Fecha a poner ultimo -> " + jd.getDate());
@@ -891,7 +893,6 @@ public class Inscripciones extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         cbclaves = new javax.swing.JComboBox<>();
         txteliminar = new javax.swing.JTextField();
-        txtidanterior = new javax.swing.JTextField();
         cbidus = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1033,6 +1034,7 @@ public class Inscripciones extends javax.swing.JFrame {
         ));
         tdatos.setFocusCycleRoot(true);
         tdatos.setGridColor(new java.awt.Color(204, 255, 255));
+        tdatos.setRowHeight(20);
         tdatos.setSelectionBackground(new java.awt.Color(102, 255, 102));
         tdatos.setSelectionForeground(new java.awt.Color(0, 0, 0));
         tdatos.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1337,8 +1339,6 @@ public class Inscripciones extends javax.swing.JFrame {
         cbclaves.setBounds(460, 60, 130, 20);
         getContentPane().add(txteliminar);
         txteliminar.setBounds(590, 100, 6, 20);
-        getContentPane().add(txtidanterior);
-        txtidanterior.setBounds(620, 100, 59, 20);
 
         getContentPane().add(cbidus);
         cbidus.setBounds(610, 60, 28, 20);
@@ -1641,7 +1641,7 @@ public class Inscripciones extends javax.swing.JFrame {
             } else if (dias == 2) {
                 if (masdos[0] != -1 & masdos[1] != -1) {
                     quicksort(masdos, 0, masdos.length - 1);
-                    System.out.println(masdos[1] + " >>>>");
+//                    System.out.println(masdos[1] + " >>>>");
                     re.insertarmensualidad(obtenerfechastr(txtfechainicio, 0),
                             obtenerfecha(txtfechainicio, masdos[1]), "" + dias);
                     Calendar calendar = Calendar.getInstance();
@@ -1799,23 +1799,23 @@ public class Inscripciones extends javax.swing.JFrame {
                 }
 
             }
-            System.out.println("A mitad");
+//            System.out.println("A mitad");
             if (resultado == 1) {
                 dias = 1;
                 inscripcion ins = new inscripcion();
                 r = re.idmensualidad();
-                System.out.println("antes de::::::::::");
+//                System.out.println("antes de::::::::::");
                 boolean v = ins.insertardias(cbidus.getItemAt(0), cbclaves.getItemAt(0), txtnombre.getText(), txtapellidos.getText(), obtenerfechanacimiento(txtfechanacimiento), txtlocalidad.getText(),
                         txtcalle.getText(), txtnumex.getText(), txtnumin.getText(), txttelefono.getText(), txtcelular.getText(),
                         txtnombretutor.getText(), r);
                 if (v == true) {
                     if (txteliminar.getText().equals("")) {
-                        System.out.println("---------------------------------------vacío el de eliminar");
+//                        System.out.println("---------------------------------------vacío el de eliminar");
                     } else {
 
                         Eliminarusuarios elus = new Eliminarusuarios();
                         elus.cambiardatosdetabla(Integer.parseInt(txteliminar.getText()));
-                        System.out.println("------------------------------------------Se eliminó en la tabla de usuarios eliminados");
+//                        System.out.println("------------------------------------------Se eliminó en la tabla de usuarios eliminados");
                     }
                     reiniciarcombos(0);
                     inicializarvariables();
@@ -2265,7 +2265,6 @@ public class Inscripciones extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser txtfechainicio;
     public com.toedter.calendar.JDateChooser txtfechanacimiento;
     private com.toedter.calendar.JDateChooser txtfechatermino;
-    public javax.swing.JTextField txtidanterior;
     private javax.swing.JTextField txtidusuario;
     public javax.swing.JTextField txtlocalidad;
     private javax.swing.JTextField txtmensualidad;

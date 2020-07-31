@@ -20,18 +20,18 @@ public class insertardias {
         
         
         try {
-            System.out.println("Hola entró al metodo día");
+//            System.out.println("Hola entró al metodo día");
             //s = conn.prepareStatement("insert into Registrar_Usuario values (?,?,?,?,?)");
-            System.out.println(numerodias+" "+horarioini+" "+horariofin+" ");
+//            System.out.println(numerodias+" "+horarioini+" "+horariofin+" ");
             s = con.conn.prepareStatement("INSERT INTO dias(dias_num,horario_inicio,horario_fin) VALUES (?,?,?)");
-            System.out.println("Hola entró a la mitad del metodo");
+//            System.out.println("Hola entró a la mitad del metodo");
             
             s.setInt(2, numerodias);
             s.setInt(3, horarioini);
             s.setInt(4, horariofin);
             
             s.executeUpdate();
-            System.out.println("Hola inserto datos");
+//            System.out.println("Hola inserto datos");
 
             JOptionPane.showMessageDialog(null, "Datos guardados con éxito.");
             return true;

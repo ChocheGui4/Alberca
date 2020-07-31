@@ -37,7 +37,6 @@ public class Eliminarusuarios {
             s = conn.prepareStatement("INSERT INTO usuarios_eliminados(nombre,apellidos,"
                     + "fecha_nacimiento,localidad,calle,numero_e,numero_i,telefono_1,celular_1,"
                     + "nombre_tutor,foto) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
-            System.out.println("yacasi");
             s.setString(1, registro[0]);
             s.setString(2, registro[1]);
             s.setString(3, registro[2]);
@@ -51,11 +50,9 @@ public class Eliminarusuarios {
             s.setString(11, registro[10]);
 
             s.executeUpdate();
-            System.out.println("Pasó.........Pasó...............Pasó::: "+id);
             s = conn.prepareStatement("UPDATE usuario SET nombre='',apellidos='',fecha_nacimiento=''"
                     + ",localidad='',calle='',numero_e='',numero_i='',telefono_1='',celular_1='',nombre_tutor='',"
                     + "mensualidad_id=null,foto='' WHERE id_usuario=" + id);
-            System.out.println("Después de la consulta");
             s.executeUpdate();
             
             sSQL = "delete from mensualidad where id_mensualidad=?";
@@ -103,7 +100,6 @@ public class Eliminarusuarios {
                 registro[10] = rs.getString("foto");
             }
 //            System.out.println("antes del return");
-            JOptionPane.showMessageDialog(null, "Se respaldo");
 
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, e);
