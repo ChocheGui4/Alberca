@@ -97,13 +97,21 @@ public class Inscripciones extends javax.swing.JFrame {
         txtidusuario.setEnabled(false);
         txtidusuario.setVisible(false);
         txtmensualidad.setVisible(false);
-        txtideliminar.setVisible(false);
+        txteliminar.setVisible(false);
         btnguardarmodificaciones.setEnabled(false);
         btnguardarrenovacion.setEnabled(false);
         mostrar("");
         marcarcalendar(new Date());
+        llenarclaves();
+        System.out.println("es: " + cbclaves.getItemCount());
         System.out.println(calendario.get(Calendar.HOUR_OF_DAY) + ":00 - " + (calendario.get(Calendar.HOUR_OF_DAY) + 1) + ":00");
         this.setLocationRelativeTo(null);
+    }
+
+    public void llenarclaves() {
+        tabla tb = new tabla();
+        tb.consultarclaves(cbclaves);
+        tb.consultarids(cbidus);
     }
 
     public void marcarcalendar(Date fecha) {
@@ -881,7 +889,10 @@ public class Inscripciones extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        txtideliminar = new javax.swing.JTextField();
+        cbclaves = new javax.swing.JComboBox<>();
+        txteliminar = new javax.swing.JTextField();
+        txtidanterior = new javax.swing.JTextField();
+        cbidus = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1117, 613));
@@ -1321,8 +1332,16 @@ public class Inscripciones extends javax.swing.JFrame {
         jLabel1.setText("CENTRO ACUÁTICO ALFA & OMEGA");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(230, 0, 819, 50);
-        getContentPane().add(txtideliminar);
-        txtideliminar.setBounds(520, 110, 6, 20);
+
+        getContentPane().add(cbclaves);
+        cbclaves.setBounds(460, 60, 130, 20);
+        getContentPane().add(txteliminar);
+        txteliminar.setBounds(590, 100, 6, 20);
+        getContentPane().add(txtidanterior);
+        txtidanterior.setBounds(620, 100, 59, 20);
+
+        getContentPane().add(cbidus);
+        cbidus.setBounds(610, 60, 28, 20);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1780,17 +1799,24 @@ public class Inscripciones extends javax.swing.JFrame {
                 }
 
             }
-
+            System.out.println("A mitad");
             if (resultado == 1) {
                 dias = 1;
                 inscripcion ins = new inscripcion();
                 r = re.idmensualidad();
-                boolean v = ins.insertardias(txtnombre.getText(), txtapellidos.getText(), obtenerfechanacimiento(txtfechanacimiento), txtlocalidad.getText(),
+                System.out.println("antes de::::::::::");
+                boolean v = ins.insertardias(cbidus.getItemAt(0), cbclaves.getItemAt(0), txtnombre.getText(), txtapellidos.getText(), obtenerfechanacimiento(txtfechanacimiento), txtlocalidad.getText(),
                         txtcalle.getText(), txtnumex.getText(), txtnumin.getText(), txttelefono.getText(), txtcelular.getText(),
                         txtnombretutor.getText(), r);
                 if (v == true) {
-                    Eliminarusuarios elus= new Eliminarusuarios();
-                    elus.cambiardatosdetabla(Integer.parseInt(txtideliminar.getText()));
+                    if (txteliminar.getText().equals("")) {
+                        System.out.println("---------------------------------------vacío el de eliminar");
+                    } else {
+
+                        Eliminarusuarios elus = new Eliminarusuarios();
+                        elus.cambiardatosdetabla(Integer.parseInt(txteliminar.getText()));
+                        System.out.println("------------------------------------------Se eliminó en la tabla de usuarios eliminados");
+                    }
                     reiniciarcombos(0);
                     inicializarvariables();
 
@@ -1799,6 +1825,9 @@ public class Inscripciones extends javax.swing.JFrame {
                     deseleccionarckdias(false);
                     limpiar();
                     mostrar("");
+                    cbclaves.removeAllItems();
+                    cbidus.removeAllItems();
+                    llenarclaves();
                     marcarcalendar(new Date());
                 }
 
@@ -1878,7 +1907,25 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_btneditardatosActionPerformed
 
     private void txtbuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscarKeyReleased
-        mostrar("AYO00" + txtbuscar.getText());
+        if (txtbuscar.getText().equals("")) {
+            mostrar("AYO00" + txtbuscar.getText());
+        } else {
+            if (txtbuscar.getText().charAt(0) == '0'
+                    | txtbuscar.getText().charAt(0) == '1'
+                    | txtbuscar.getText().charAt(0) == '2'
+                    | txtbuscar.getText().charAt(0) == '3'
+                    | txtbuscar.getText().charAt(0) == '4'
+                    | txtbuscar.getText().charAt(0) == '5'
+                    | txtbuscar.getText().charAt(0) == '6'
+                    | txtbuscar.getText().charAt(0) == '7'
+                    | txtbuscar.getText().charAt(0) == '8'
+                    | txtbuscar.getText().charAt(0) == '9') {
+                mostrar("AYO00" + txtbuscar.getText());
+            } else {
+                mostrar(txtbuscar.getText());
+            }
+        }
+
     }//GEN-LAST:event_txtbuscarKeyReleased
 
     private void btnrenovarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrenovarActionPerformed
@@ -1887,26 +1934,27 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_btnrenovarActionPerformed
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
-        if (txtmensualidad.getText().equals("")) {
 
-        } else {
-            Eliminarusuarios elus = new Eliminarusuarios();
-            boolean var = elus.eliminarusuario(Integer.parseInt(txtidusuario.getText()),
-                    Integer.parseInt(txtmensualidad.getText()));
-            habilitarcamposdatopersonal(true);
-            habilitarcamposdatosdireccion(true);
-            limpiar();
-            habilitarcamposmensualidad(true);
-            habilitarhoras(false);
-            inicializarvariables();
-            deseleccionarckdias(false);
-            btneditardatos.setEnabled(false);
-            btnrenovar.setEnabled(false);
-            btnguardar.setEnabled(true);
-            btnguardarmodificaciones.setEnabled(false);
-            mostrar("");
-            marcarcalendar(new Date());
-        }
+        Eliminarusuarios elus = new Eliminarusuarios();
+        boolean var = elus.eliminarusuario(Integer.parseInt(txtidusuario.getText()),
+                Integer.parseInt(txtmensualidad.getText()));
+        habilitarcamposdatopersonal(true);
+        habilitarcamposdatosdireccion(true);
+        limpiar();
+        habilitarcamposmensualidad(true);
+        habilitarhoras(false);
+        inicializarvariables();
+        deseleccionarckdias(false);
+        btneditardatos.setEnabled(false);
+        btnrenovar.setEnabled(false);
+        btnguardar.setEnabled(true);
+        btnguardarmodificaciones.setEnabled(false);
+        mostrar("");
+        marcarcalendar(new Date());
+        cbclaves.removeAllItems();
+        cbidus.removeAllItems();
+        llenarclaves();
+
     }//GEN-LAST:event_btneliminarActionPerformed
 
     private void txtfechainicioPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_txtfechainicioPropertyChange
@@ -2168,6 +2216,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JButton btnguardarrenovacion;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JButton btnrenovar;
+    private javax.swing.JComboBox<String> cbclaves;
     private javax.swing.JComboBox<String> cbdias;
     private javax.swing.JComboBox<String> cbhorajueves;
     private javax.swing.JComboBox<String> cbhoralunes;
@@ -2175,6 +2224,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbhoramiercoles;
     private javax.swing.JComboBox<String> cbhorasabado;
     private javax.swing.JComboBox<String> cbhoraviernes;
+    private javax.swing.JComboBox<String> cbidus;
     private javax.swing.JCheckBox ckjueves;
     private javax.swing.JCheckBox cklunes;
     private javax.swing.JCheckBox ckmartes;
@@ -2211,10 +2261,11 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JTextField txtbuscar;
     public javax.swing.JTextField txtcalle;
     public javax.swing.JTextField txtcelular;
+    public javax.swing.JTextField txteliminar;
     private com.toedter.calendar.JDateChooser txtfechainicio;
     public com.toedter.calendar.JDateChooser txtfechanacimiento;
     private com.toedter.calendar.JDateChooser txtfechatermino;
-    public javax.swing.JTextField txtideliminar;
+    public javax.swing.JTextField txtidanterior;
     private javax.swing.JTextField txtidusuario;
     public javax.swing.JTextField txtlocalidad;
     private javax.swing.JTextField txtmensualidad;

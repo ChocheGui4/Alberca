@@ -35,6 +35,7 @@ public class eliminados extends javax.swing.JFrame {
         mostrar("");
     }
     String id="";
+    String idanterior="";
     String nombre = "";
     String apellidos = "";
     String fecha_nacimiento = "";
@@ -71,14 +72,15 @@ public class eliminados extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(1).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(1).setMinWidth(0);
         tdatos.getColumnModel().getColumn(1).setPreferredWidth(0);
-        tdatos.getColumnModel().getColumn(2).setMaxWidth(0);
-        tdatos.getColumnModel().getColumn(2).setMinWidth(0);
-        tdatos.getColumnModel().getColumn(2).setPreferredWidth(0);
 
-        tdatos.getColumnModel().getColumn(3).setMaxWidth(230);
-        tdatos.getColumnModel().getColumn(3).setMinWidth(230);
-        tdatos.getColumnModel().getColumn(3).setPreferredWidth(230);
+        tdatos.getColumnModel().getColumn(2).setMaxWidth(230);
+        tdatos.getColumnModel().getColumn(2).setMinWidth(230);
+        tdatos.getColumnModel().getColumn(2).setPreferredWidth(230);
 
+        tdatos.getColumnModel().getColumn(3).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(3).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(3).setPreferredWidth(0);
+        
         tdatos.getColumnModel().getColumn(4).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(4).setMinWidth(0);
         tdatos.getColumnModel().getColumn(4).setPreferredWidth(0);
@@ -87,13 +89,13 @@ public class eliminados extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(5).setMinWidth(0);
         tdatos.getColumnModel().getColumn(5).setPreferredWidth(0);
 
-        tdatos.getColumnModel().getColumn(6).setMaxWidth(0);
-        tdatos.getColumnModel().getColumn(6).setMinWidth(0);
-        tdatos.getColumnModel().getColumn(6).setPreferredWidth(0);
+        tdatos.getColumnModel().getColumn(6).setMaxWidth(300);
+        tdatos.getColumnModel().getColumn(6).setMinWidth(300);
+        tdatos.getColumnModel().getColumn(6).setPreferredWidth(300);
 
-        tdatos.getColumnModel().getColumn(7).setMaxWidth(300);
-        tdatos.getColumnModel().getColumn(7).setMinWidth(300);
-        tdatos.getColumnModel().getColumn(7).setPreferredWidth(300);
+        tdatos.getColumnModel().getColumn(7).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(7).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(7).setPreferredWidth(0);
 
         tdatos.getColumnModel().getColumn(8).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(8).setMinWidth(0);
@@ -103,17 +105,14 @@ public class eliminados extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(9).setMinWidth(0);
         tdatos.getColumnModel().getColumn(9).setPreferredWidth(0);
 
-        tdatos.getColumnModel().getColumn(10).setMaxWidth(0);
-        tdatos.getColumnModel().getColumn(10).setMinWidth(0);
-        tdatos.getColumnModel().getColumn(10).setPreferredWidth(0);
+        tdatos.getColumnModel().getColumn(10).setMaxWidth(100);
+        tdatos.getColumnModel().getColumn(10).setMinWidth(100);
+        tdatos.getColumnModel().getColumn(10).setPreferredWidth(100);
 
         tdatos.getColumnModel().getColumn(11).setMaxWidth(100);
         tdatos.getColumnModel().getColumn(11).setMinWidth(100);
         tdatos.getColumnModel().getColumn(11).setPreferredWidth(100);
-
-        tdatos.getColumnModel().getColumn(12).setMaxWidth(100);
-        tdatos.getColumnModel().getColumn(12).setMinWidth(100);
-        tdatos.getColumnModel().getColumn(12).setPreferredWidth(100);
+        
         tdatos.getColumnModel().getColumn(0).setResizable(false);
         tdatos.getColumnModel().getColumn(1).setResizable(false);
         tdatos.getColumnModel().getColumn(2).setResizable(false);
@@ -127,7 +126,6 @@ public class eliminados extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(10).setResizable(false);
         tdatos.getColumnModel().getColumn(11).setResizable(false);
         tdatos.getColumnModel().getColumn(12).setResizable(false);
-        tdatos.getColumnModel().getColumn(13).setResizable(false);
 
     }
 
@@ -222,17 +220,18 @@ public class eliminados extends javax.swing.JFrame {
         btnreinscribir.setEnabled(true);
         int fila = tdatos.rowAtPoint(evt.getPoint());
         id = tdatos.getValueAt(fila, 0).toString();
-        nombre = tdatos.getValueAt(fila, 2).toString();
-        apellidos = tdatos.getValueAt(fila, 4).toString();
-        fecha_nacimiento = tdatos.getValueAt(fila, 5).toString();
-        nombre_tutor = tdatos.getValueAt(fila, 13).toString();
+        
+        nombre = tdatos.getValueAt(fila, 1).toString();
+        apellidos = tdatos.getValueAt(fila, 3).toString();
+        fecha_nacimiento = tdatos.getValueAt(fila, 4).toString();
+        nombre_tutor = tdatos.getValueAt(fila, 12).toString();
 
-        localidad = tdatos.getValueAt(fila, 6).toString();
-        calle = tdatos.getValueAt(fila, 8).toString();
-        numero_e = tdatos.getValueAt(fila, 9).toString();
-        numero_i = tdatos.getValueAt(fila, 10).toString();
-        telefono = tdatos.getValueAt(fila, 11).toString();
-        celular = tdatos.getValueAt(fila, 12).toString();
+        localidad = tdatos.getValueAt(fila, 5).toString();
+        calle = tdatos.getValueAt(fila, 7).toString();
+        numero_e = tdatos.getValueAt(fila, 8).toString();
+        numero_i = tdatos.getValueAt(fila, 9).toString();
+        telefono = tdatos.getValueAt(fila, 10).toString();
+        celular = tdatos.getValueAt(fila, 11).toString();
 
 //        habilitarcamposdatopersonal(false);
 //        habilitarcamposdatosdireccion(false);
@@ -295,7 +294,8 @@ public class eliminados extends javax.swing.JFrame {
 
     private void btnreinscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreinscribirActionPerformed
         Inscripciones ins = new Inscripciones();
-        ins.txtideliminar.setText(id);
+        ins.txteliminar.setText(id);
+        
         ins.txtnombre.setText(nombre);
         ins.txtapellidos.setText(apellidos);
         ins.txtfechanacimiento.setDate(StringaDate(fecha_nacimiento));

@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -39,7 +40,7 @@ public class tabla {
         modelo = new DefaultTableModel(null, titulos);
 
         sSQL = "select * from usuario join mensualidad on mensualidad.id_mensualidad ="
-                + "usuario.mensualidad_id where clave like '%" + buscar + "%' order by id_usuario";
+                + "usuario.mensualidad_id where clave like '%" + buscar + "%' or nombre like '%" + buscar + "%' order by id_usuario";
 //        System.out.println("Después de la consulta");
         try {
             Statement st = conn.createStatement();
@@ -79,11 +80,11 @@ public class tabla {
         DefaultTableModel modelo;
 //        System.out.println("Se metió al método");
 
-        String[] titulos = {"ID","Clave", "Nombre","Nombre completo", "Apellidos", "Fecha de nacimiento",
+        String[] titulos = {"ID","Nombre","Nombre completo", "Apellidos", "Fecha de nacimiento",
             "localidad","Dirección", "calle", "N. interior", "No. exterior",
             "telefono", "celular", "nombre del tutor"};
 
-        String[] registro = new String[14];
+        String[] registro = new String[13];
 
         totalregistros = 0;
         modelo = new DefaultTableModel(null, titulos);
@@ -96,29 +97,74 @@ public class tabla {
 
             while (rs.next()) {
                 registro[0] = rs.getString("id_usuario");
-                registro[1] = rs.getString("clave");
+                registro[1] = rs.getString("nombre");
                 registro[2] = rs.getString("nombre");
-                registro[3] = rs.getString("nombre");
-                registro[3] += rs.getString("apellidos");
-                registro[4] = rs.getString("apellidos");
-                registro[5] = rs.getString("fecha_nacimiento");
-                registro[6] = rs.getString("localidad");
-                registro[7] = rs.getString("localidad")+" ";
-                registro[7] += rs.getString("calle")+" ";
-                registro[7] += rs.getString("numero_e")+" ";
-                registro[7] += rs.getString("numero_i");
-                registro[8] = rs.getString("calle");
-                registro[9] = rs.getString("numero_e");
-                registro[10] = rs.getString("numero_i");
-                registro[11] = rs.getString("telefono_1");
-                registro[12] = rs.getString("celular_1");
-                registro[13] = rs.getString("nombre_tutor");
+                registro[2] += rs.getString("apellidos");
+                registro[3] = rs.getString("apellidos");
+                registro[4] = rs.getString("fecha_nacimiento");
+                registro[5] = rs.getString("localidad");
+                registro[6] = rs.getString("localidad")+" ";
+                registro[6] += rs.getString("calle")+" ";
+                registro[6] += rs.getString("numero_e")+" ";
+                registro[6] += rs.getString("numero_i");
+                registro[7] = rs.getString("calle");
+                registro[8] = rs.getString("numero_e");
+                registro[9] = rs.getString("numero_i");
+                registro[10] = rs.getString("telefono_1");
+                registro[11] = rs.getString("celular_1");
+                registro[12] = rs.getString("nombre_tutor");
                 totalregistros = totalregistros + 1;
                 modelo.addRow(registro);
 
             }
 //            System.out.println("antes del return");
             return modelo;
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            return null;
+        }
+    }
+    
+    //Mostrar claves disponibles
+    public JComboBox consultarclaves(JComboBox combo1) {
+        conn=con.conectar();
+//        System.out.println("Se metió al método");
+
+
+        sSQL = "select * from usuario where nombre='' order by clave";
+//        System.out.println("Después de la consulta");
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sSQL);
+
+            while (rs.next()) {
+                combo1.addItem(rs.getString("clave"));
+
+            }
+//            System.out.println("antes del return");
+            return combo1;
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            return null;
+        }
+    }
+    public JComboBox consultarids(JComboBox combo2) {
+        conn=con.conectar();
+//        System.out.println("Se metió al método");
+
+
+        sSQL = "select * from usuario where nombre='' order by clave";
+//        System.out.println("Después de la consulta");
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sSQL);
+
+            while (rs.next()) {
+                combo2.addItem(rs.getString("id_usuario"));
+
+            }
+//            System.out.println("antes del return");
+            return combo2;
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, e);
             return null;

@@ -24,8 +24,9 @@ public class Eliminarusuarios {
     public static String[] registro = new String[13];
 
     public static void main(String[] args) {
-        eliminarusuario(3,2);
+        eliminarusuario(3, 2);
     }
+
     //Traer datos de usuarios a eliminar para posteriormente hacerlo
     public static boolean eliminarusuario(int id, int mes) {
         conn = con.conectar();
@@ -33,23 +34,30 @@ public class Eliminarusuarios {
         try {
             respaldardatoselimiados(id);
 
-            s = conn.prepareStatement("INSERT INTO usuarios_eliminados(clave,nombre,apellidos,fecha_nacimiento,localidad,calle,"
-                    + "numero_e,numero_i,telefono_1,celular_1,nombre_tutor,foto) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+            s = conn.prepareStatement("INSERT INTO usuarios_eliminados(nombre,apellidos,"
+                    + "fecha_nacimiento,localidad,calle,numero_e,numero_i,telefono_1,celular_1,"
+                    + "nombre_tutor,foto) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
             System.out.println("yacasi");
-            s.setString(1, registro[1]);
-            s.setString(2, registro[2]);
-            s.setString(3, registro[3]);
-            s.setString(4, registro[4]);
-            s.setString(5, registro[5]);
-            s.setString(6, registro[6]);
-            s.setString(7, registro[7]);
-            s.setString(8, registro[8]);
-            s.setString(9, registro[9]);
-            s.setString(10, registro[10]);
-            s.setString(11, registro[11]);
-            s.setString(12, registro[12]);
-            s.executeUpdate();
+            s.setString(1, registro[0]);
+            s.setString(2, registro[1]);
+            s.setString(3, registro[2]);
+            s.setString(4, registro[3]);
+            s.setString(5, registro[4]);
+            s.setString(6, registro[5]);
+            s.setString(7, registro[6]);
+            s.setString(8, registro[7]);
+            s.setString(9, registro[8]);
+            s.setString(10, registro[9]);
+            s.setString(11, registro[10]);
 
+            s.executeUpdate();
+            System.out.println("Pasó.........Pasó...............Pasó::: "+id);
+            s = conn.prepareStatement("UPDATE usuario SET nombre='',apellidos='',fecha_nacimiento=''"
+                    + ",localidad='',calle='',numero_e='',numero_i='',telefono_1='',celular_1='',nombre_tutor='',"
+                    + "mensualidad_id=null,foto='' WHERE id_usuario=" + id);
+            System.out.println("Después de la consulta");
+            s.executeUpdate();
+            
             sSQL = "delete from mensualidad where id_mensualidad=?";
             PreparedStatement pst = conn.prepareStatement(sSQL);
 
@@ -63,7 +71,6 @@ public class Eliminarusuarios {
             } else {
                 return false;
             }
-
             
 
         } catch (Exception e) {
@@ -72,6 +79,7 @@ public class Eliminarusuarios {
         }
 
     }
+
     //Respaldamos los datos en otra tabla
     public static void respaldardatoselimiados(int id) {
         sSQL = "select * from usuario where id_usuario ='" + id + "'";
@@ -82,29 +90,28 @@ public class Eliminarusuarios {
             ResultSet rs = st.executeQuery(sSQL);
 
             while (rs.next()) {
-                registro[0] = rs.getString("id_usuario");
-                registro[1] = rs.getString("clave");
-                registro[2] = rs.getString("nombre");
-                registro[3] = rs.getString("apellidos");
-                registro[4] = rs.getString("fecha_nacimiento");
-                registro[5] = rs.getString("localidad");
-                registro[6] = rs.getString("calle");
-                registro[7] = rs.getString("numero_e");
-                registro[8] = rs.getString("numero_i");
-                registro[9] = rs.getString("telefono_1");
-                registro[10] = rs.getString("celular_1");
-                registro[11] = rs.getString("nombre_tutor");
-                registro[12] = rs.getString("foto");
+                registro[0] = rs.getString("nombre");
+                registro[1] = rs.getString("apellidos");
+                registro[2] = rs.getString("fecha_nacimiento");
+                registro[3] = rs.getString("localidad");
+                registro[4] = rs.getString("calle");
+                registro[5] = rs.getString("numero_e");
+                registro[6] = rs.getString("numero_i");
+                registro[7] = rs.getString("telefono_1");
+                registro[8] = rs.getString("celular_1");
+                registro[9] = rs.getString("nombre_tutor");
+                registro[10] = rs.getString("foto");
             }
 //            System.out.println("antes del return");
+            JOptionPane.showMessageDialog(null, "Se respaldo");
 
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, e);
 
         }
     }
-    
-     public static boolean cambiardatosdetabla(int eliminar) {
+
+    public static boolean cambiardatosdetabla(int eliminar) {
         conn = con.conectar();
         try {
             sSQL = "delete from usuarios_eliminados where id_usuario=?";
@@ -122,14 +129,11 @@ public class Eliminarusuarios {
                 return false;
             }
 
-            
-
         } catch (Exception e) {
             System.out.println(e);
             return false;
         }
 
     }
-    
-    
+
 }
