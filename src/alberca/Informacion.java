@@ -6,27 +6,99 @@
 package alberca;
 //
 
+import Consultas.Render;
+import Consultas.tabla;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
+import java.awt.Color;
+import java.awt.Component;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 
 /**
  *
  * @author Choche
  */
-public class Informacion extends javax.swing.JFrame {
+public class Informacion extends javax.swing.JFrame  {
 
     /**
      * Creates new form Informacion
      */
     FondoPanel fondo = new FondoPanel();
+//    Render re=new Render();
 
     public Informacion() {
         this.setContentPane(fondo);
 
         initComponents();
         this.setLocationRelativeTo(null);
+        mostrar("");
+//        tdatos.setDefaultRenderer(tdatos.getColumnClass(0), re);
+    }
+
+    void mostrar(String buscar) {
+        try {
+            DefaultTableModel modelo;
+            tabla tab = new tabla();
+            modelo = tab.mostrardatoscompletos(buscar);
+
+            tdatos.setModel(modelo);
+            ocultar_columnas();
+//            lblregistros.setText("Registros: " + Integer.toString(tab.totalregistros));
+
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(rootPane, e);
+        }
+
+    }
+    
+
+    void ocultar_columnas() {
+        
+        tdatos.getColumnModel().getColumn(0).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(0).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(0).setPreferredWidth(0);
+        
+        tdatos.getColumnModel().getColumn(4).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(4).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(4).setPreferredWidth(0);
+        
+        tdatos.getColumnModel().getColumn(5).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(5).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(5).setPreferredWidth(0);
+        
+        tdatos.getColumnModel().getColumn(6).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(6).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(6).setPreferredWidth(0);
+        tdatos.getColumnModel().getColumn(7).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(7).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(7).setPreferredWidth(0);
+        tdatos.getColumnModel().getColumn(8).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(8).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(8).setPreferredWidth(0);
+        tdatos.getColumnModel().getColumn(14).setMaxWidth(70);
+        tdatos.getColumnModel().getColumn(14).setMinWidth(70);
+        tdatos.getColumnModel().getColumn(14).setPreferredWidth(70);
+        
+        tdatos.getColumnModel().getColumn(1).setResizable(false);
+        tdatos.getColumnModel().getColumn(2).setResizable(false);
+        tdatos.getColumnModel().getColumn(3).setResizable(false);
+        tdatos.getColumnModel().getColumn(4).setResizable(false);
+        tdatos.getColumnModel().getColumn(5).setResizable(false);
+        tdatos.getColumnModel().getColumn(6).setResizable(false);
+        tdatos.getColumnModel().getColumn(7).setResizable(false);
+        tdatos.getColumnModel().getColumn(8).setResizable(false);
+        tdatos.getColumnModel().getColumn(9).setResizable(false);
+        tdatos.getColumnModel().getColumn(10).setResizable(false);
+        tdatos.getColumnModel().getColumn(11).setResizable(false);
+        tdatos.getColumnModel().getColumn(12).setResizable(false);
+        tdatos.getColumnModel().getColumn(13).setResizable(false);
+        tdatos.getColumnModel().getColumn(14).setResizable(false);
     }
 
     /**
@@ -39,10 +111,13 @@ public class Informacion extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tdatos = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        txtbuscar = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1117, 613));
@@ -54,9 +129,16 @@ public class Informacion extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Información de usuarios");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(60, 50, 220, 40);
+        jLabel1.setBounds(60, 90, 220, 40);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jLabel18.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel18.setText("Buscar: ");
+        getContentPane().add(jLabel18);
+        jLabel18.setBounds(800, 90, 80, 31);
+
+        tdatos.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tdatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -67,10 +149,13 @@ public class Informacion extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        tdatos.setRowHeight(30);
+        tdatos.setSelectionBackground(new java.awt.Color(102, 255, 102));
+        tdatos.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane1.setViewportView(tdatos);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(60, 80, 960, 402);
+        jScrollPane1.setBounds(60, 130, 960, 402);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -90,12 +175,54 @@ public class Informacion extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(22, 12, 122, 34);
 
+        txtbuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtbuscarKeyReleased(evt);
+            }
+        });
+        getContentPane().add(txtbuscar);
+        txtbuscar.setBounds(870, 90, 150, 30);
+
+        jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(560, 560, 73, 23);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtbuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscarKeyReleased
+        if (txtbuscar.getText().equals("")) {
+            mostrar("AYO00" + txtbuscar.getText());
+        } else {
+            if (txtbuscar.getText().charAt(0) == '0'
+                    | txtbuscar.getText().charAt(0) == '1'
+                    | txtbuscar.getText().charAt(0) == '2'
+                    | txtbuscar.getText().charAt(0) == '3'
+                    | txtbuscar.getText().charAt(0) == '4'
+                    | txtbuscar.getText().charAt(0) == '5'
+                    | txtbuscar.getText().charAt(0) == '6'
+                    | txtbuscar.getText().charAt(0) == '7'
+                    | txtbuscar.getText().charAt(0) == '8'
+                    | txtbuscar.getText().charAt(0) == '9') {
+                mostrar("AYO00" + txtbuscar.getText());
+            } else {
+                mostrar(txtbuscar.getText());
+            }
+        }
+    }//GEN-LAST:event_txtbuscarKeyReleased
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,9 +279,13 @@ public class Informacion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tdatos;
+    private javax.swing.JTextField txtbuscar;
     // End of variables declaration//GEN-END:variables
 }
+

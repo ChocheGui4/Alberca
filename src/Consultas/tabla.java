@@ -170,4 +170,56 @@ public class tabla {
             return null;
         }
     }
+    
+    //Mostrar datos completos de usuarios
+    public DefaultTableModel mostrardatoscompletos(String buscar) {
+        conn=con.conectar();
+        DefaultTableModel modelo;
+//        System.out.println("Se metió al método");
+
+        String[] titulos = {"ID","Clave", "Nombre", "Apellidos", "Fecha de nacimiento", "localidad", "calle", 
+                "no_interno", "no_externo", "telefono", "celular", "nombre del tutor",
+                "fecha de inicio", "fecha de termino", "Mes/Día"};
+
+        String[] registro = new String[15];
+
+        totalregistros = 0;
+        modelo = new DefaultTableModel(null, titulos);
+
+        sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id = mensualidad.id_mensualidad"
+                + " join dias on dias.mensualidad_id = mensualidad.id_mensualidad where clave like"
+                + " '%" + buscar + "%' or nombre like '%" + buscar + "%' order by id_dias";
+//        System.out.println("Después de la consulta");
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sSQL);
+
+            while (rs.next()) {
+                registro[0] = rs.getString("id_usuario");
+                registro[1] = rs.getString("clave");
+                registro[2] = rs.getString("nombre");
+                registro[3] = rs.getString("apellidos");
+                registro[4] = rs.getString("fecha_nacimiento");
+                registro[5] = rs.getString("localidad");
+                registro[6] = rs.getString("calle");
+                registro[7] = rs.getString("numero_e");
+                registro[8] = rs.getString("numero_i");
+                registro[9] = rs.getString("telefono_1");
+                registro[10] = rs.getString("celular_1");
+                registro[11] = rs.getString("nombre_tutor");
+                registro[12] = rs.getString("fecha_ini");
+                registro[13] = rs.getString("fecha_fin");
+                registro[14] = rs.getString("mes_num")+"/";
+                registro[14] += rs.getString("dias_num");
+                totalregistros = totalregistros + 1;
+                modelo.addRow(registro);
+
+            }
+//            System.out.println("antes del return");
+            return modelo;
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            return null;
+        }
+    }
 }
