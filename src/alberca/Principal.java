@@ -23,6 +23,9 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         this.setContentPane(fondo);
         initComponents();
+//        usuariosaldia usal=new usuariosaldia();
+//        usal.mostrar();
+         
         
         this.setLocationRelativeTo(null);
     }
@@ -152,7 +155,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        recuperardias rec= new recuperardias();
+        rec.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

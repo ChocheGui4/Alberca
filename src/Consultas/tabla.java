@@ -18,26 +18,34 @@ import javax.swing.table.DefaultTableModel;
  * @author Choche
  */
 public class tabla {
+
     static conexion con = new conexion();
     public static PreparedStatement s;
     public static Connection conn = null;
     private String sSQL = "";
     public Integer totalregistros;
-    
+
     //Método para mostrar usuarios totales del centro acuático
     public DefaultTableModel mostrar(String buscar) {
-        conn=con.conectar();
+        conn = con.conectar();
         DefaultTableModel modelo;
 //        System.out.println("Se metió al método");
 
-        String[] titulos = {"ID","Clave", "Nombre", "Apellidos", "Fecha de nacimiento", "localidad", "calle", 
-                "no_interno", "no_externo", "telefono", "celular", "nombre del tutor",
-                "fecha de inicio", "fecha de termino", "id mes"};
+        String[] titulos = {"ID", "Clave", "Nombre", "Apellidos", "Fecha de nacimiento", "localidad", "calle",
+            "no_interno", "no_externo", "telefono", "celular", "nombre del tutor",
+            "fecha de inicio", "fecha de termino", "id mes"};
 
         String[] registro = new String[15];
 
         totalregistros = 0;
-        modelo = new DefaultTableModel(null, titulos);
+        modelo = new DefaultTableModel(null, titulos) {
+            @Override
+            public boolean isCellEditable(int fila, int columna) {
+                return false;
+
+            }
+
+        };
 
         sSQL = "select * from usuario join mensualidad on mensualidad.id_mensualidad ="
                 + "usuario.mensualidad_id where clave like '%" + buscar + "%' or nombre like '%" + buscar + "%' order by id_usuario";
@@ -73,21 +81,28 @@ public class tabla {
             return null;
         }
     }
-    
+
     //Método para mostrar usuarios eliminados del centro acuático
     public DefaultTableModel mostrareliminados(String buscar) {
-        conn=con.conectar();
+        conn = con.conectar();
         DefaultTableModel modelo;
 //        System.out.println("Se metió al método");
 
-        String[] titulos = {"ID","Nombre","Nombre completo", "Apellidos", "Fecha de nacimiento",
-            "localidad","Dirección", "calle", "N. interior", "No. exterior",
+        String[] titulos = {"ID", "Nombre", "Nombre completo", "Apellidos", "Fecha de nacimiento",
+            "localidad", "Dirección", "calle", "N. interior", "No. exterior",
             "telefono", "celular", "nombre del tutor"};
 
         String[] registro = new String[13];
 
         totalregistros = 0;
-        modelo = new DefaultTableModel(null, titulos);
+        modelo = new DefaultTableModel(null, titulos) {
+            @Override
+            public boolean isCellEditable(int fila, int columna) {
+                return false;
+
+            }
+
+        };
 
         sSQL = "select * from usuarios_eliminados where nombre like '%" + buscar + "%' order by id_usuario";
 //        System.out.println("Después de la consulta");
@@ -103,9 +118,9 @@ public class tabla {
                 registro[3] = rs.getString("apellidos");
                 registro[4] = rs.getString("fecha_nacimiento");
                 registro[5] = rs.getString("localidad");
-                registro[6] = rs.getString("localidad")+" ";
-                registro[6] += rs.getString("calle")+" ";
-                registro[6] += rs.getString("numero_e")+" ";
+                registro[6] = rs.getString("localidad") + " ";
+                registro[6] += rs.getString("calle") + " ";
+                registro[6] += rs.getString("numero_e") + " ";
                 registro[6] += rs.getString("numero_i");
                 registro[7] = rs.getString("calle");
                 registro[8] = rs.getString("numero_e");
@@ -124,12 +139,11 @@ public class tabla {
             return null;
         }
     }
-    
+
     //Mostrar claves disponibles
     public JComboBox consultarclaves(JComboBox combo1) {
-        conn=con.conectar();
+        conn = con.conectar();
 //        System.out.println("Se metió al método");
-
 
         sSQL = "select * from usuario where nombre='' order by clave";
 //        System.out.println("Después de la consulta");
@@ -148,10 +162,10 @@ public class tabla {
             return null;
         }
     }
-    public JComboBox consultarids(JComboBox combo2) {
-        conn=con.conectar();
-//        System.out.println("Se metió al método");
 
+    public JComboBox consultarids(JComboBox combo2) {
+        conn = con.conectar();
+//        System.out.println("Se metió al método");
 
         sSQL = "select * from usuario where nombre='' order by clave";
 //        System.out.println("Después de la consulta");
@@ -170,21 +184,28 @@ public class tabla {
             return null;
         }
     }
-    
+
     //Mostrar datos completos de usuarios
     public DefaultTableModel mostrardatoscompletos(String buscar) {
-        conn=con.conectar();
+        conn = con.conectar();
         DefaultTableModel modelo;
 //        System.out.println("Se metió al método");
 
-        String[] titulos = {"ID","Clave", "Nombre", "Apellidos", "Fecha de nacimiento", "localidad", "calle", 
-                "no_interno", "no_externo", "telefono", "celular", "nombre del tutor",
-                "fecha de inicio", "fecha de termino", "Mes/Día"};
+        String[] titulos = {"ID", "Clave", "Nombre", "Apellidos", "Fecha de nacimiento", "localidad", "calle",
+            "no_interno", "no_externo", "telefono", "celular", "nombre del tutor",
+            "fecha de inicio", "fecha de termino", "Mes/Día"};
 
         String[] registro = new String[15];
 
         totalregistros = 0;
-        modelo = new DefaultTableModel(null, titulos);
+        modelo = new DefaultTableModel(null, titulos) {
+            @Override
+            public boolean isCellEditable(int fila, int columna) {
+                return false;
+
+            }
+
+        };
 
         sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id = mensualidad.id_mensualidad"
                 + " join dias on dias.mensualidad_id = mensualidad.id_mensualidad where clave like"
@@ -209,8 +230,62 @@ public class tabla {
                 registro[11] = rs.getString("nombre_tutor");
                 registro[12] = rs.getString("fecha_ini");
                 registro[13] = rs.getString("fecha_fin");
-                registro[14] = rs.getString("mes_num")+"/";
+                registro[14] = "<html>";
+                registro[14] += rs.getString("dias_nombre");
+                registro[14] += "<br>";
+                registro[14] += rs.getString("mes_num") + "/";
                 registro[14] += rs.getString("dias_num");
+                registro[14] += "</html>";
+                totalregistros = totalregistros + 1;
+                modelo.addRow(registro);
+
+            }
+//            System.out.println("antes del return");
+            return modelo;
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            return null;
+        }
+    }
+
+    //Mostrar datos de usuario para recuperar día perdido
+    public DefaultTableModel mostrarusuariosdiaperdido(String buscar) {
+        conn = con.conectar();
+        DefaultTableModel modelo;
+//        System.out.println("Se metió al método");
+
+        String[] titulos = {"ID", "Clave", "Nombre", "Apellidos", "localidad", "Sesiones",
+            "fecha de inicio", "fecha de termino","id mes"};
+
+        String[] registro = new String[9];
+
+        totalregistros = 0;
+        modelo = new DefaultTableModel(null, titulos) {
+            @Override
+            public boolean isCellEditable(int fila, int columna) {
+                return false;
+
+            }
+
+        };
+
+        sSQL = "select * from usuario join mensualidad on mensualidad.id_mensualidad ="
+                + "usuario.mensualidad_id where clave like '%" + buscar + "%' or nombre like '%" + buscar + "%' order by id_usuario";
+//        System.out.println("Después de la consulta");
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sSQL);
+
+            while (rs.next()) {
+                registro[0] = rs.getString("id_usuario");
+                registro[1] = rs.getString("clave");
+                registro[2] = rs.getString("nombre");
+                registro[3] = rs.getString("apellidos");
+                registro[4] = rs.getString("localidad");
+                registro[5] = rs.getString("sesiones");
+                registro[6] = rs.getString("fecha_ini");
+                registro[7] = rs.getString("fecha_fin");
+                registro[8] = rs.getString("mensualidad_id");
                 totalregistros = totalregistros + 1;
                 modelo.addRow(registro);
 

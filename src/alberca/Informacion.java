@@ -63,7 +63,13 @@ public class Informacion extends javax.swing.JFrame  {
         tdatos.getColumnModel().getColumn(0).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(0).setMinWidth(0);
         tdatos.getColumnModel().getColumn(0).setPreferredWidth(0);
+        tdatos.getColumnModel().getColumn(1).setMaxWidth(80);
+        tdatos.getColumnModel().getColumn(1).setMinWidth(80);
+        tdatos.getColumnModel().getColumn(1).setPreferredWidth(80);
         
+        tdatos.getColumnModel().getColumn(3).setMaxWidth(200);
+        tdatos.getColumnModel().getColumn(3).setMinWidth(200);
+        tdatos.getColumnModel().getColumn(3).setPreferredWidth(200);
         tdatos.getColumnModel().getColumn(4).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(4).setMinWidth(0);
         tdatos.getColumnModel().getColumn(4).setPreferredWidth(0);
@@ -81,9 +87,17 @@ public class Informacion extends javax.swing.JFrame  {
         tdatos.getColumnModel().getColumn(8).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(8).setMinWidth(0);
         tdatos.getColumnModel().getColumn(8).setPreferredWidth(0);
-        tdatos.getColumnModel().getColumn(14).setMaxWidth(70);
-        tdatos.getColumnModel().getColumn(14).setMinWidth(70);
-        tdatos.getColumnModel().getColumn(14).setPreferredWidth(70);
+        
+        tdatos.getColumnModel().getColumn(12).setMaxWidth(90);
+        tdatos.getColumnModel().getColumn(12).setMinWidth(90);
+        tdatos.getColumnModel().getColumn(12).setPreferredWidth(90);
+        tdatos.getColumnModel().getColumn(13).setMaxWidth(90);
+        tdatos.getColumnModel().getColumn(13).setMinWidth(90);
+        tdatos.getColumnModel().getColumn(13).setPreferredWidth(90);
+        
+        tdatos.getColumnModel().getColumn(14).setMaxWidth(85);
+        tdatos.getColumnModel().getColumn(14).setMinWidth(85);
+        tdatos.getColumnModel().getColumn(14).setPreferredWidth(85);
         
         tdatos.getColumnModel().getColumn(1).setResizable(false);
         tdatos.getColumnModel().getColumn(2).setResizable(false);
@@ -149,7 +163,7 @@ public class Informacion extends javax.swing.JFrame  {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tdatos.setRowHeight(30);
+        tdatos.setRowHeight(40);
         tdatos.setSelectionBackground(new java.awt.Color(102, 255, 102));
         tdatos.setSelectionForeground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(tdatos);

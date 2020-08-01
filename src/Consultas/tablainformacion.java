@@ -36,7 +36,14 @@ public class tablainformacion {
         String[] registro = new String[14];
 
         totalregistros = 0;
-        modelo = new DefaultTableModel(null, titulos);
+        modelo = new DefaultTableModel(null, titulos){
+            @Override
+            public boolean isCellEditable(int fila, int columna) {
+                return false;
+
+            }
+
+        };
 
         sSQL = "select * from usuario join mensualidad on mensualidad.id_mensualidad ="
                 + "usuario.mensualidad_id where clave like '%" + buscar + "%' order by id_usuario";

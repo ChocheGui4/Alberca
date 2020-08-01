@@ -38,6 +38,7 @@ public class usuariosaldia extends javax.swing.JFrame {
                     // Pero usamos un truco y hacemos un ciclo infinito
                     try {
                         // En él, hacemos que el hilo duerma
+                        
                         Thread.sleep(5000);
                         // Y después realizamos las operaciones
                         mostrar();
@@ -132,6 +133,7 @@ public class usuariosaldia extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tdatos.setColumnSelectionAllowed(true);
         tdatos.setFocusCycleRoot(true);
         tdatos.setGridColor(new java.awt.Color(204, 255, 255));
         tdatos.setRowHeight(30);

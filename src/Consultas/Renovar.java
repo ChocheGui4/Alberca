@@ -230,16 +230,19 @@ public class Renovar {
 
     }
 
-    public static boolean renovardiasmes(int mensualidad, int[] dias, int numero, String horario) {
+    public static boolean renovardiasmes(int mensualidad, int[] dias,int mes, int numero, String horario, int hora) {
         try {
             conn = con.conectar();
 
             if (numero == 0) {
                 for (int i = 0; i < dias.length; i++) {
-                    s = conn.prepareStatement("INSERT INTO dias(dias_nombre,dias_num,horario,mensualidad_id) VALUES (?,?,?,?)");
+                    s = conn.prepareStatement("INSERT INTO dias(dias_nombre,dias_num,mes_num,horario,hora_num,"
+                            + "mensualidad_id) VALUES (?,?,?,?,?,?)");
                     s.setString(1, "Lunes");
                     s.setString(2, "" + dias[i]);
+                    s.setString(3, "" + mes);
                     s.setString(3, horario);
+                    s.setInt(3, hora);
                     s.setInt(4, mensualidad);
                     s.executeUpdate();
                 }
