@@ -138,6 +138,7 @@ public class Informacion extends javax.swing.JFrame  {
         jButton1 = new javax.swing.JButton();
         txtbuscar = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1117, 613));
@@ -155,7 +156,7 @@ public class Informacion extends javax.swing.JFrame  {
         jLabel18.setForeground(new java.awt.Color(204, 204, 204));
         jLabel18.setText("Buscar: AYO00");
         getContentPane().add(jLabel18);
-        jLabel18.setBounds(780, 90, 140, 31);
+        jLabel18.setBounds(790, 100, 140, 31);
 
         tdatos.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         tdatos.setModel(new javax.swing.table.DefaultTableModel(
@@ -175,7 +176,7 @@ public class Informacion extends javax.swing.JFrame  {
         jScrollPane1.setViewportView(tdatos);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(30, 130, 1050, 402);
+        jScrollPane1.setBounds(30, 142, 1050, 390);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -201,7 +202,7 @@ public class Informacion extends javax.swing.JFrame  {
             }
         });
         getContentPane().add(txtbuscar);
-        txtbuscar.setBounds(930, 90, 150, 30);
+        txtbuscar.setBounds(930, 100, 150, 30);
 
         jButton2.setText("jButton2");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -211,6 +212,11 @@ public class Informacion extends javax.swing.JFrame  {
         });
         getContentPane().add(jButton2);
         jButton2.setBounds(560, 560, 73, 23);
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(990, 0, 100, 100);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -302,6 +308,7 @@ public class Informacion extends javax.swing.JFrame  {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tdatos;

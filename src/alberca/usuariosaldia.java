@@ -99,6 +99,7 @@ public class usuariosaldia extends javax.swing.JFrame {
         tdatos = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1117, 613));
@@ -153,7 +154,7 @@ public class usuariosaldia extends javax.swing.JFrame {
         }
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(20, 80, 1070, 480);
+        jScrollPane1.setBounds(20, 110, 1070, 450);
 
         jButton1.setBackground(new java.awt.Color(102, 51, 255));
         jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -171,7 +172,12 @@ public class usuariosaldia extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Usuarios al día");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(20, 50, 260, 40);
+        jLabel2.setBounds(20, 70, 260, 40);
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(1000, 0, 100, 100);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -284,6 +290,7 @@ public class usuariosaldia extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private static javax.swing.JTable tdatos;
     // End of variables declaration//GEN-END:variables

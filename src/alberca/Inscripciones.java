@@ -976,6 +976,7 @@ public class Inscripciones extends javax.swing.JFrame {
         cbclaves = new javax.swing.JComboBox<>();
         txteliminar = new javax.swing.JTextField();
         cbidus = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1117, 613));
@@ -1358,7 +1359,7 @@ public class Inscripciones extends javax.swing.JFrame {
 
         jPanelWebCam1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(jPanelWebCam1);
-        jPanelWebCam1.setBounds(970, 20, 100, 100);
+        jPanelWebCam1.setBounds(970, 30, 100, 90);
 
         btneditardatos.setBackground(new java.awt.Color(255, 153, 0));
         btneditardatos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -1469,6 +1470,11 @@ public class Inscripciones extends javax.swing.JFrame {
 
         getContentPane().add(cbidus);
         cbidus.setBounds(610, 60, 28, 20);
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(740, 40, 90, 90);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -2608,6 +2614,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

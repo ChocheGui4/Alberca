@@ -38,6 +38,7 @@ public class recuperardias extends javax.swing.JFrame {
         mostrar("");
         btnrecuperar.setEnabled(false);
         this.setLocationRelativeTo(null);
+        cbrecuperarid.setVisible(false);
 
     }
 
@@ -128,6 +129,8 @@ public class recuperardias extends javax.swing.JFrame {
         btnrecuperar = new javax.swing.JButton();
         lblnombre1 = new javax.swing.JLabel();
         cbnombredias = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1117, 613));
@@ -160,7 +163,7 @@ public class recuperardias extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tdatos);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(60, 270, 1000, 250);
+        jScrollPane1.setBounds(60, 300, 1000, 250);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -184,54 +187,54 @@ public class recuperardias extends javax.swing.JFrame {
         lblnombre.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre.setText("Buscar: AYO00");
         getContentPane().add(lblnombre);
-        lblnombre.setBounds(60, 240, 170, 31);
+        lblnombre.setBounds(60, 260, 170, 31);
 
         lblnombre2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblnombre2.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre2.setText("Apellidos:");
         getContentPane().add(lblnombre2);
-        lblnombre2.setBounds(60, 120, 107, 31);
+        lblnombre2.setBounds(60, 130, 107, 31);
 
         lblnombre3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblnombre3.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre3.setText("Fecha de inicio:");
         getContentPane().add(lblnombre3);
-        lblnombre3.setBounds(60, 160, 160, 31);
+        lblnombre3.setBounds(60, 170, 160, 31);
 
         lblnombre4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblnombre4.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre4.setText("Nombre:");
         getContentPane().add(lblnombre4);
-        lblnombre4.setBounds(60, 80, 107, 31);
+        lblnombre4.setBounds(60, 100, 107, 31);
 
         lblnombreset.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblnombreset.setForeground(new java.awt.Color(204, 204, 204));
         lblnombreset.setText("Dato");
         getContentPane().add(lblnombreset);
-        lblnombreset.setBounds(240, 80, 210, 31);
+        lblnombreset.setBounds(240, 100, 210, 31);
 
         lblapellidosset.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblapellidosset.setForeground(new java.awt.Color(204, 204, 204));
         lblapellidosset.setText("Dato");
         getContentPane().add(lblapellidosset);
-        lblapellidosset.setBounds(240, 120, 210, 31);
+        lblapellidosset.setBounds(240, 130, 210, 31);
 
         lblfechainicioset.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblfechainicioset.setForeground(new java.awt.Color(204, 204, 204));
         lblfechainicioset.setText("Dato");
         getContentPane().add(lblfechainicioset);
-        lblfechainicioset.setBounds(240, 160, 210, 31);
+        lblfechainicioset.setBounds(240, 170, 210, 31);
 
         lblnombre8.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblnombre8.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre8.setText("Nueva sesión:");
         getContentPane().add(lblnombre8);
-        lblnombre8.setBounds(490, 160, 210, 31);
+        lblnombre8.setBounds(490, 190, 210, 31);
 
         txtfechamaxima.setDateFormatString("yyyy/MM/dd");
         txtfechamaxima.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         getContentPane().add(txtfechamaxima);
-        txtfechamaxima.setBounds(700, 160, 180, 30);
+        txtfechamaxima.setBounds(690, 190, 180, 30);
 
         cbrecuperarnombres.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         cbrecuperarnombres.addActionListener(new java.awt.event.ActionListener() {
@@ -240,27 +243,27 @@ public class recuperardias extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cbrecuperarnombres);
-        cbrecuperarnombres.setBounds(700, 90, 350, 30);
+        cbrecuperarnombres.setBounds(700, 120, 350, 30);
 
         getContentPane().add(cbrecuperarid);
-        cbrecuperarid.setBounds(990, 30, 70, 30);
+        cbrecuperarid.setBounds(930, 240, 70, 30);
 
         lblfechaterminoset.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblfechaterminoset.setForeground(new java.awt.Color(204, 204, 204));
         lblfechaterminoset.setText("Dato");
         getContentPane().add(lblfechaterminoset);
-        lblfechaterminoset.setBounds(240, 200, 210, 31);
+        lblfechaterminoset.setBounds(240, 210, 210, 31);
 
         lblnombre10.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblnombre10.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre10.setText("Sesión a recuperar:");
         getContentPane().add(lblnombre10);
-        lblnombre10.setBounds(490, 90, 210, 31);
+        lblnombre10.setBounds(490, 120, 210, 31);
 
         cbhorario.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         cbhorario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhorario);
-        cbhorario.setBounds(900, 160, 150, 30);
+        cbhorario.setBounds(900, 190, 150, 30);
 
         txtbuscar.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         txtbuscar.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -269,7 +272,7 @@ public class recuperardias extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtbuscar);
-        txtbuscar.setBounds(200, 240, 97, 30);
+        txtbuscar.setBounds(200, 260, 120, 30);
 
         btnrecuperar.setBackground(new java.awt.Color(51, 255, 0));
         btnrecuperar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -280,19 +283,30 @@ public class recuperardias extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnrecuperar);
-        btnrecuperar.setBounds(670, 210, 160, 40);
+        btnrecuperar.setBounds(670, 240, 160, 40);
 
         lblnombre1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblnombre1.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre1.setText("Fecha de termino:");
         getContentPane().add(lblnombre1);
-        lblnombre1.setBounds(60, 200, 170, 31);
+        lblnombre1.setBounds(60, 210, 170, 31);
 
         cbnombredias.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         cbnombredias.setForeground(new java.awt.Color(204, 204, 204));
         cbnombredias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         getContentPane().add(cbnombredias);
-        cbnombredias.setBounds(470, 70, 590, 190);
+        cbnombredias.setBounds(470, 100, 590, 190);
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(990, 0, 100, 100);
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Recuperar días");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(470, 70, 220, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -447,6 +461,8 @@ public class recuperardias extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> cbrecuperarnombres;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblapellidosset;
     private javax.swing.JLabel lblfechainicioset;

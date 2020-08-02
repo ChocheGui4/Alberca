@@ -28,6 +28,7 @@ public class Principal extends javax.swing.JFrame {
          
         
         this.setLocationRelativeTo(null);
+        lblimagen.setVisible(false);
     }
 
     /**
@@ -47,6 +48,8 @@ public class Principal extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        lblimagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1267, 643));
@@ -126,6 +129,16 @@ public class Principal extends javax.swing.JFrame {
         });
         getContentPane().add(jButton7);
         jButton7.setBounds(830, 110, 317, 55);
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(1150, 0, 100, 100);
+
+        lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/IMG-20200801-WA0011.jpg"))); // NOI18N
+        getContentPane().add(lblimagen);
+        lblimagen.setBounds(0, 40, 1270, 590);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -218,6 +231,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblimagen;
     // End of variables declaration//GEN-END:variables
 }

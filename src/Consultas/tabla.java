@@ -104,7 +104,8 @@ public class tabla {
 
         };
 
-        sSQL = "select * from usuarios_eliminados where nombre like '%" + buscar + "%' order by id_usuario";
+        sSQL = "select * from usuarios_eliminados where nombre like '%" + buscar + "%' and nombre!=''"
+                + " order by id_usuario";
 //        System.out.println("Después de la consulta");
         try {
             Statement st = conn.createStatement();

@@ -144,6 +144,9 @@ public class eliminados extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnreinscribir = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        txtbuscar = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1117, 613));
@@ -176,13 +179,13 @@ public class eliminados extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tdatos);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(60, 130, 970, 340);
+        jScrollPane1.setBounds(60, 160, 1010, 340);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Usuarios eliminados");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(60, 90, 220, 40);
+        jLabel2.setBounds(60, 120, 220, 40);
 
         jButton1.setBackground(new java.awt.Color(102, 51, 255));
         jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -211,7 +214,26 @@ public class eliminados extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnreinscribir);
-        btnreinscribir.setBounds(60, 490, 120, 40);
+        btnreinscribir.setBounds(60, 520, 120, 40);
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(990, 0, 100, 100);
+
+        txtbuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtbuscarKeyReleased(evt);
+            }
+        });
+        getContentPane().add(txtbuscar);
+        txtbuscar.setBounds(920, 120, 150, 30);
+
+        jLabel18.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel18.setText("Buscar: AYO00");
+        getContentPane().add(jLabel18);
+        jLabel18.setBounds(780, 120, 140, 31);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -311,6 +333,10 @@ public class eliminados extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnreinscribirActionPerformed
 
+    private void txtbuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscarKeyReleased
+        mostrar(txtbuscar.getText());
+    }//GEN-LAST:event_txtbuscarKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -368,8 +394,11 @@ public class eliminados extends javax.swing.JFrame {
     private javax.swing.JButton btnreinscribir;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tdatos;
+    private javax.swing.JTextField txtbuscar;
     // End of variables declaration//GEN-END:variables
 }
