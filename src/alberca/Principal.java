@@ -52,7 +52,7 @@ public class Principal extends javax.swing.JFrame {
         lblimagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1270, 643));
+        setMinimumSize(new java.awt.Dimension(1270, 661));
         setResizable(false);
         getContentPane().setLayout(null);
 
