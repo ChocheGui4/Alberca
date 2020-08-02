@@ -193,14 +193,19 @@ public class tabla {
 
         String[] titulos = {"ID", "Clave", "Nombre", "Apellidos", "Fecha de nacimiento", "localidad", "calle",
             "no_interno", "no_externo", "telefono", "celular", "nombre del tutor",
-            "fecha de inicio", "fecha de termino", "Mes/Día"};
+            "fecha de inicio", "fecha de termino", "Mes/Día", "Horario"};
 
-        String[] registro = new String[15];
+        String[] registro = new String[16];
 
         totalregistros = 0;
         modelo = new DefaultTableModel(null, titulos) {
             @Override
             public boolean isCellEditable(int fila, int columna) {
+//                if (columna == 11) {
+//                    return true;
+//                } else {
+//                    return false;
+//                }
                 return false;
 
             }
@@ -218,7 +223,8 @@ public class tabla {
             while (rs.next()) {
                 registro[0] = rs.getString("id_usuario");
                 registro[1] = rs.getString("clave");
-                registro[2] = rs.getString("nombre");
+                registro[2] = rs.getString("nombre") + " ";
+                registro[2] += rs.getString("apellidos");
                 registro[3] = rs.getString("apellidos");
                 registro[4] = rs.getString("fecha_nacimiento");
                 registro[5] = rs.getString("localidad");
@@ -236,6 +242,7 @@ public class tabla {
                 registro[14] += rs.getString("mes_num") + "/";
                 registro[14] += rs.getString("dias_num");
                 registro[14] += "</html>";
+                registro[15] = rs.getString("horario");
                 totalregistros = totalregistros + 1;
                 modelo.addRow(registro);
 
@@ -255,7 +262,7 @@ public class tabla {
 //        System.out.println("Se metió al método");
 
         String[] titulos = {"ID", "Clave", "Nombre", "Apellidos", "localidad", "Sesiones",
-            "fecha de inicio", "fecha de termino","id mes"};
+            "fecha de inicio", "fecha de termino", "id mes"};
 
         String[] registro = new String[9];
 

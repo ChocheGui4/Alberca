@@ -67,9 +67,13 @@ public class Informacion extends javax.swing.JFrame  {
         tdatos.getColumnModel().getColumn(1).setMinWidth(80);
         tdatos.getColumnModel().getColumn(1).setPreferredWidth(80);
         
-        tdatos.getColumnModel().getColumn(3).setMaxWidth(200);
-        tdatos.getColumnModel().getColumn(3).setMinWidth(200);
-        tdatos.getColumnModel().getColumn(3).setPreferredWidth(200);
+        tdatos.getColumnModel().getColumn(2).setMaxWidth(250);
+        tdatos.getColumnModel().getColumn(2).setMinWidth(250);
+        tdatos.getColumnModel().getColumn(2).setPreferredWidth(250);
+        
+        tdatos.getColumnModel().getColumn(3).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(3).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(3).setPreferredWidth(0);
         tdatos.getColumnModel().getColumn(4).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(4).setMinWidth(0);
         tdatos.getColumnModel().getColumn(4).setPreferredWidth(0);
@@ -87,12 +91,14 @@ public class Informacion extends javax.swing.JFrame  {
         tdatos.getColumnModel().getColumn(8).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(8).setMinWidth(0);
         tdatos.getColumnModel().getColumn(8).setPreferredWidth(0);
-        
-        tdatos.getColumnModel().getColumn(12).setMaxWidth(90);
-        tdatos.getColumnModel().getColumn(12).setMinWidth(90);
-        tdatos.getColumnModel().getColumn(12).setPreferredWidth(90);
-        tdatos.getColumnModel().getColumn(13).setMaxWidth(90);
-        tdatos.getColumnModel().getColumn(13).setMinWidth(90);
+        tdatos.getColumnModel().getColumn(10).setMaxWidth(90);
+        tdatos.getColumnModel().getColumn(10).setMinWidth(90);
+        tdatos.getColumnModel().getColumn(10).setPreferredWidth(90);
+        tdatos.getColumnModel().getColumn(12).setMaxWidth(110);
+        tdatos.getColumnModel().getColumn(12).setMinWidth(110);
+        tdatos.getColumnModel().getColumn(12).setPreferredWidth(110);
+        tdatos.getColumnModel().getColumn(13).setMaxWidth(110);
+        tdatos.getColumnModel().getColumn(13).setMinWidth(110);
         tdatos.getColumnModel().getColumn(13).setPreferredWidth(90);
         
         tdatos.getColumnModel().getColumn(14).setMaxWidth(85);
@@ -147,9 +153,9 @@ public class Informacion extends javax.swing.JFrame  {
 
         jLabel18.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel18.setText("Buscar: ");
+        jLabel18.setText("Buscar: AYO00");
         getContentPane().add(jLabel18);
-        jLabel18.setBounds(800, 90, 80, 31);
+        jLabel18.setBounds(780, 90, 140, 31);
 
         tdatos.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         tdatos.setModel(new javax.swing.table.DefaultTableModel(
@@ -169,7 +175,7 @@ public class Informacion extends javax.swing.JFrame  {
         jScrollPane1.setViewportView(tdatos);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(60, 130, 960, 402);
+        jScrollPane1.setBounds(30, 130, 1050, 402);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -195,7 +201,7 @@ public class Informacion extends javax.swing.JFrame  {
             }
         });
         getContentPane().add(txtbuscar);
-        txtbuscar.setBounds(870, 90, 150, 30);
+        txtbuscar.setBounds(930, 90, 150, 30);
 
         jButton2.setText("jButton2");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
