@@ -27,7 +27,7 @@ public class eliminados extends javax.swing.JFrame {
     FondoPanel fondo = new FondoPanel();
 
     public eliminados() {
-        this.setContentPane(fondo);
+//        this.setContentPane(fondo);
 
         initComponents();
         this.setLocationRelativeTo(null);
@@ -147,6 +147,7 @@ public class eliminados extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtbuscar = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
+        lblimagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1117, 613));
@@ -234,6 +235,11 @@ public class eliminados extends javax.swing.JFrame {
         jLabel18.setText("Buscar: AYO00");
         getContentPane().add(jLabel18);
         jLabel18.setBounds(780, 120, 140, 31);
+
+        lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
+        getContentPane().add(lblimagen);
+        lblimagen.setBounds(0, 0, 1270, 630);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -398,6 +404,7 @@ public class eliminados extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblimagen;
     private javax.swing.JTable tdatos;
     private javax.swing.JTextField txtbuscar;
     // End of variables declaration//GEN-END:variables

@@ -27,7 +27,7 @@ public class usuariosaldia extends javax.swing.JFrame {
     FondoPanel fondo = new FondoPanel();
 
     public usuariosaldia() {
-        this.setContentPane(fondo);
+//        this.setContentPane(fondo);
         initComponents();
         mostrar();
         Runnable runnable = new Runnable() {
@@ -100,6 +100,7 @@ public class usuariosaldia extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        lblimagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1117, 613));
@@ -113,7 +114,7 @@ public class usuariosaldia extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(230, 0, 819, 50);
 
-        tdatos.setBackground(new java.awt.Color(102, 255, 204));
+        tdatos.setBackground(new java.awt.Color(102, 255, 102));
         tdatos.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         tdatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -178,6 +179,11 @@ public class usuariosaldia extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(1000, 0, 100, 100);
+
+        lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
+        getContentPane().add(lblimagen);
+        lblimagen.setBounds(0, 0, 1270, 630);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -292,6 +298,7 @@ public class usuariosaldia extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblimagen;
     private static javax.swing.JTable tdatos;
     // End of variables declaration//GEN-END:variables
 }

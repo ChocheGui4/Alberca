@@ -33,7 +33,7 @@ public class recuperardias extends javax.swing.JFrame {
     String fecha = null;
 
     public recuperardias() {
-        this.setContentPane(fondo);
+//        this.setContentPane(fondo);
         initComponents();
         mostrar("");
         btnrecuperar.setEnabled(false);
@@ -131,6 +131,7 @@ public class recuperardias extends javax.swing.JFrame {
         cbnombredias = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        lblimagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1117, 613));
@@ -308,6 +309,11 @@ public class recuperardias extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(470, 70, 220, 40);
 
+        lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
+        getContentPane().add(lblimagen);
+        lblimagen.setBounds(0, 0, 1270, 630);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -467,6 +473,7 @@ public class recuperardias extends javax.swing.JFrame {
     private javax.swing.JLabel lblapellidosset;
     private javax.swing.JLabel lblfechainicioset;
     private javax.swing.JLabel lblfechaterminoset;
+    private javax.swing.JLabel lblimagen;
     private javax.swing.JLabel lblnombre;
     private javax.swing.JLabel lblnombre1;
     private javax.swing.JLabel lblnombre10;

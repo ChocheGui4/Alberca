@@ -103,7 +103,7 @@ public class Inscripciones extends javax.swing.JFrame {
 
     public Inscripciones() {
         Calendar calendario = Calendar.getInstance();
-        this.setContentPane(fondo);
+//        this.setContentPane(fondo);
         initComponents();
         lbltutor.setVisible(false);
         txtnombretutor.setVisible(false);
@@ -978,6 +978,7 @@ public class Inscripciones extends javax.swing.JFrame {
         txteliminar = new javax.swing.JTextField();
         cbidus = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
+        lblimagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1117, 613));
@@ -1476,6 +1477,11 @@ public class Inscripciones extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
         getContentPane().add(jLabel2);
         jLabel2.setBounds(740, 40, 90, 90);
+
+        lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
+        getContentPane().add(lblimagen);
+        lblimagen.setBounds(0, 0, 1270, 630);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -2652,6 +2658,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lblclave;
+    private javax.swing.JLabel lblimagen;
     private javax.swing.JLabel lblnombre;
     private javax.swing.JLabel lblregistros;
     private javax.swing.JLabel lbltutor;
