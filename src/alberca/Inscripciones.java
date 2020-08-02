@@ -981,7 +981,7 @@ public class Inscripciones extends javax.swing.JFrame {
         lblimagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1117, 613));
+        setMinimumSize(new java.awt.Dimension(1270, 613));
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(null);
@@ -1175,7 +1175,7 @@ public class Inscripciones extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tdatos);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(490, 180, 583, 210);
+        jScrollPane1.setBounds(530, 180, 710, 210);
 
         lblregistros.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         lblregistros.setForeground(new java.awt.Color(204, 204, 204));
@@ -1189,7 +1189,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtbuscar);
-        txtbuscar.setBounds(630, 140, 97, 30);
+        txtbuscar.setBounds(667, 140, 110, 30);
 
         btneliminar.setBackground(new java.awt.Color(255, 0, 0));
         btneliminar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -1201,7 +1201,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btneliminar);
-        btneliminar.setBounds(970, 140, 100, 30);
+        btneliminar.setBounds(1140, 130, 100, 40);
 
         btnnuevo.setBackground(new java.awt.Color(255, 204, 0));
         btnnuevo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -1212,7 +1212,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnnuevo);
-        btnnuevo.setBounds(60, 550, 90, 40);
+        btnnuevo.setBounds(80, 550, 90, 40);
 
         jLabel13.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(204, 204, 204));
@@ -1235,7 +1235,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnguardar);
-        btnguardar.setBounds(160, 550, 140, 40);
+        btnguardar.setBounds(190, 550, 140, 40);
 
         btnrenovar.setBackground(new java.awt.Color(255, 153, 0));
         btnrenovar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -1246,7 +1246,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnrenovar);
-        btnrenovar.setBounds(590, 550, 200, 40);
+        btnrenovar.setBounds(770, 550, 200, 40);
 
         jLabel15.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(204, 204, 204));
@@ -1361,7 +1361,7 @@ public class Inscripciones extends javax.swing.JFrame {
 
         jPanelWebCam1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(jPanelWebCam1);
-        jPanelWebCam1.setBounds(970, 30, 100, 90);
+        jPanelWebCam1.setBounds(1140, 20, 100, 90);
 
         btneditardatos.setBackground(new java.awt.Color(255, 153, 0));
         btneditardatos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -1372,20 +1372,21 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btneditardatos);
-        btneditardatos.setBounds(320, 550, 130, 40);
+        btneditardatos.setBounds(420, 550, 130, 40);
 
         lblclave.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblclave.setForeground(new java.awt.Color(204, 204, 204));
         lblclave.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblclave.setText("AYO00");
         getContentPane().add(lblclave);
-        lblclave.setBounds(550, 140, 90, 31);
+        lblclave.setBounds(590, 140, 90, 31);
 
-        jLabel17.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("Foto");
         getContentPane().add(jLabel17);
-        jLabel17.setBounds(1010, 120, 50, 20);
+        jLabel17.setBounds(1160, 0, 50, 20);
         getContentPane().add(txtidusuario);
         txtidusuario.setBounds(460, 110, 50, 20);
 
@@ -1418,15 +1419,15 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnguardarmodificaciones);
-        btnguardarmodificaciones.setBounds(460, 550, 110, 40);
+        btnguardarmodificaciones.setBounds(570, 550, 110, 40);
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         getContentPane().add(jSeparator1);
-        jSeparator1.setBounds(580, 540, 30, 60);
+        jSeparator1.setBounds(720, 540, 30, 60);
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
         getContentPane().add(jSeparator2);
-        jSeparator2.setBounds(310, 540, 30, 60);
+        jSeparator2.setBounds(370, 540, 30, 60);
 
         btnguardarrenovacion.setBackground(new java.awt.Color(51, 255, 0));
         btnguardarrenovacion.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -1437,7 +1438,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnguardarrenovacion);
-        btnguardarrenovacion.setBounds(800, 550, 110, 40);
+        btnguardarrenovacion.setBounds(990, 550, 110, 40);
         getContentPane().add(txtmensualidad);
         txtmensualidad.setBounds(460, 80, 20, 20);
 
@@ -1445,7 +1446,7 @@ public class Inscripciones extends javax.swing.JFrame {
         jLabel18.setForeground(new java.awt.Color(204, 204, 204));
         jLabel18.setText("Buscar: ");
         getContentPane().add(jLabel18);
-        jLabel18.setBounds(490, 140, 141, 31);
+        jLabel18.setBounds(530, 140, 141, 31);
 
         jButton2.setBackground(new java.awt.Color(255, 153, 0));
         jButton2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -1457,7 +1458,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(810, 140, 150, 30);
+        jButton2.setBounds(970, 130, 150, 40);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -1476,12 +1477,12 @@ public class Inscripciones extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(740, 40, 90, 90);
+        jLabel2.setBounds(1160, 490, 90, 90);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
         getContentPane().add(lblimagen);
-        lblimagen.setBounds(0, 0, 1270, 630);
+        lblimagen.setBounds(0, 0, 1280, 630);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

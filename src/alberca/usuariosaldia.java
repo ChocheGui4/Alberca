@@ -103,7 +103,7 @@ public class usuariosaldia extends javax.swing.JFrame {
         lblimagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1117, 613));
+        setMinimumSize(new java.awt.Dimension(1270, 613));
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(null);
@@ -112,7 +112,7 @@ public class usuariosaldia extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("CENTRO ACUÁTICO ALFA & OMEGA");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(230, 0, 819, 50);
+        jLabel1.setBounds(320, 10, 819, 50);
 
         tdatos.setBackground(new java.awt.Color(102, 255, 102));
         tdatos.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
@@ -155,7 +155,7 @@ public class usuariosaldia extends javax.swing.JFrame {
         }
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(20, 110, 1070, 450);
+        jScrollPane1.setBounds(40, 140, 1180, 440);
 
         jButton1.setBackground(new java.awt.Color(102, 51, 255));
         jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -169,16 +169,16 @@ public class usuariosaldia extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(22, 12, 122, 34);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Usuarios al día");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(20, 70, 260, 40);
+        jLabel2.setBounds(40, 90, 260, 40);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(1000, 0, 100, 100);
+        jLabel3.setBounds(1140, 0, 100, 100);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N

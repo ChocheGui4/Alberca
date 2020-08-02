@@ -134,7 +134,7 @@ public class recuperardias extends javax.swing.JFrame {
         lblimagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1117, 613));
+        setMinimumSize(new java.awt.Dimension(1270, 613));
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(null);
@@ -164,13 +164,13 @@ public class recuperardias extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tdatos);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(60, 300, 1000, 250);
+        jScrollPane1.setBounds(60, 300, 1160, 250);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("CENTRO ACUÁTICO ALFA & OMEGA");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(230, 0, 819, 50);
+        jLabel1.setBounds(330, 0, 819, 50);
 
         jButton1.setBackground(new java.awt.Color(102, 51, 255));
         jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -212,7 +212,7 @@ public class recuperardias extends javax.swing.JFrame {
         lblnombreset.setForeground(new java.awt.Color(204, 204, 204));
         lblnombreset.setText("Dato");
         getContentPane().add(lblnombreset);
-        lblnombreset.setBounds(240, 100, 210, 31);
+        lblnombreset.setBounds(240, 100, 240, 31);
 
         lblapellidosset.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblapellidosset.setForeground(new java.awt.Color(204, 204, 204));
@@ -230,12 +230,12 @@ public class recuperardias extends javax.swing.JFrame {
         lblnombre8.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre8.setText("Nueva sesión:");
         getContentPane().add(lblnombre8);
-        lblnombre8.setBounds(490, 190, 210, 31);
+        lblnombre8.setBounds(610, 190, 210, 31);
 
         txtfechamaxima.setDateFormatString("yyyy/MM/dd");
         txtfechamaxima.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         getContentPane().add(txtfechamaxima);
-        txtfechamaxima.setBounds(690, 190, 180, 30);
+        txtfechamaxima.setBounds(830, 190, 180, 30);
 
         cbrecuperarnombres.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         cbrecuperarnombres.addActionListener(new java.awt.event.ActionListener() {
@@ -244,10 +244,10 @@ public class recuperardias extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cbrecuperarnombres);
-        cbrecuperarnombres.setBounds(700, 120, 350, 30);
+        cbrecuperarnombres.setBounds(840, 120, 350, 30);
 
         getContentPane().add(cbrecuperarid);
-        cbrecuperarid.setBounds(930, 240, 70, 30);
+        cbrecuperarid.setBounds(1070, 240, 70, 30);
 
         lblfechaterminoset.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblfechaterminoset.setForeground(new java.awt.Color(204, 204, 204));
@@ -259,12 +259,12 @@ public class recuperardias extends javax.swing.JFrame {
         lblnombre10.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre10.setText("Sesión a recuperar:");
         getContentPane().add(lblnombre10);
-        lblnombre10.setBounds(490, 120, 210, 31);
+        lblnombre10.setBounds(610, 120, 210, 31);
 
         cbhorario.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         cbhorario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhorario);
-        cbhorario.setBounds(900, 190, 150, 30);
+        cbhorario.setBounds(1040, 190, 150, 30);
 
         txtbuscar.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         txtbuscar.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -284,7 +284,7 @@ public class recuperardias extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnrecuperar);
-        btnrecuperar.setBounds(670, 240, 160, 40);
+        btnrecuperar.setBounds(810, 240, 160, 40);
 
         lblnombre1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblnombre1.setForeground(new java.awt.Color(204, 204, 204));
@@ -296,18 +296,18 @@ public class recuperardias extends javax.swing.JFrame {
         cbnombredias.setForeground(new java.awt.Color(204, 204, 204));
         cbnombredias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         getContentPane().add(cbnombredias);
-        cbnombredias.setBounds(470, 100, 590, 190);
+        cbnombredias.setBounds(560, 100, 660, 190);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(990, 0, 100, 100);
+        jLabel3.setBounds(1140, 0, 100, 100);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Recuperar días");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(470, 70, 220, 40);
+        jLabel2.setBounds(560, 70, 220, 40);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N

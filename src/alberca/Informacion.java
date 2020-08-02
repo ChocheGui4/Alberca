@@ -67,9 +67,9 @@ public class Informacion extends javax.swing.JFrame  {
         tdatos.getColumnModel().getColumn(1).setMinWidth(80);
         tdatos.getColumnModel().getColumn(1).setPreferredWidth(80);
         
-        tdatos.getColumnModel().getColumn(2).setMaxWidth(250);
-        tdatos.getColumnModel().getColumn(2).setMinWidth(250);
-        tdatos.getColumnModel().getColumn(2).setPreferredWidth(250);
+        tdatos.getColumnModel().getColumn(2).setMaxWidth(280);
+        tdatos.getColumnModel().getColumn(2).setMinWidth(280);
+        tdatos.getColumnModel().getColumn(2).setPreferredWidth(280);
         
         tdatos.getColumnModel().getColumn(3).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(3).setMinWidth(0);
@@ -104,6 +104,9 @@ public class Informacion extends javax.swing.JFrame  {
         tdatos.getColumnModel().getColumn(14).setMaxWidth(85);
         tdatos.getColumnModel().getColumn(14).setMinWidth(85);
         tdatos.getColumnModel().getColumn(14).setPreferredWidth(85);
+        tdatos.getColumnModel().getColumn(15).setMaxWidth(100);
+        tdatos.getColumnModel().getColumn(15).setMinWidth(100);
+        tdatos.getColumnModel().getColumn(15).setPreferredWidth(100);
         
         tdatos.getColumnModel().getColumn(1).setResizable(false);
         tdatos.getColumnModel().getColumn(2).setResizable(false);
@@ -141,22 +144,22 @@ public class Informacion extends javax.swing.JFrame  {
         lblimagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1117, 613));
+        setMinimumSize(new java.awt.Dimension(1270, 613));
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Información de usuarios");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(60, 90, 220, 40);
+        jLabel1.setBounds(40, 100, 300, 40);
 
         jLabel18.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(204, 204, 204));
         jLabel18.setText("Buscar: AYO00");
         getContentPane().add(jLabel18);
-        jLabel18.setBounds(790, 100, 140, 31);
+        jLabel18.setBounds(920, 110, 140, 31);
 
         tdatos.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         tdatos.setModel(new javax.swing.table.DefaultTableModel(
@@ -176,7 +179,7 @@ public class Informacion extends javax.swing.JFrame  {
         jScrollPane1.setViewportView(tdatos);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(30, 142, 1050, 390);
+        jScrollPane1.setBounds(40, 142, 1190, 390);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -202,12 +205,12 @@ public class Informacion extends javax.swing.JFrame  {
             }
         });
         getContentPane().add(txtbuscar);
-        txtbuscar.setBounds(930, 100, 150, 30);
+        txtbuscar.setBounds(1060, 110, 170, 30);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(990, 0, 100, 100);
+        jLabel2.setBounds(1140, 0, 100, 100);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
