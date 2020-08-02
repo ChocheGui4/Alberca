@@ -115,7 +115,7 @@ public class usuariosaldia extends javax.swing.JFrame {
         jLabel1.setBounds(320, 10, 819, 50);
 
         tdatos.setBackground(new java.awt.Color(102, 255, 102));
-        tdatos.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        tdatos.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         tdatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -157,9 +157,9 @@ public class usuariosaldia extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(40, 140, 1180, 440);
 
-        jButton1.setBackground(new java.awt.Color(102, 51, 255));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(204, 204, 204));
+        jButton1.setBackground(new java.awt.Color(0, 153, 204));
+        jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Atrás");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,9 +167,9 @@ public class usuariosaldia extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(22, 12, 122, 34);
+        jButton1.setBounds(22, 12, 130, 40);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Usuarios al día");
         getContentPane().add(jLabel2);

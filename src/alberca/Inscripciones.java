@@ -986,9 +986,9 @@ public class Inscripciones extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jButton1.setBackground(new java.awt.Color(102, 51, 255));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(204, 204, 204));
+        jButton1.setBackground(new java.awt.Color(0, 153, 204));
+        jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Atrás");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -996,133 +996,133 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(22, 12, 122, 34);
+        jButton1.setBounds(22, 12, 130, 40);
 
-        lblnombre.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblnombre.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         lblnombre.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre.setText("Nombre:");
         getContentPane().add(lblnombre);
         lblnombre.setBounds(22, 64, 107, 31);
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setText("Apellidos:");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(22, 102, 107, 31);
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(204, 204, 204));
         jLabel4.setText("Fecha de inicio:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(22, 403, 139, 25);
+        jLabel4.setBounds(22, 403, 170, 25);
 
-        txtnombre.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtnombre.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtnombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtnombreKeyTyped(evt);
             }
         });
         getContentPane().add(txtnombre);
-        txtnombre.setBounds(220, 60, 230, 30);
+        txtnombre.setBounds(230, 60, 290, 30);
 
-        txtapellidos.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtapellidos.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtapellidos.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtapellidosKeyTyped(evt);
             }
         });
         getContentPane().add(txtapellidos);
-        txtapellidos.setBounds(220, 100, 230, 30);
+        txtapellidos.setBounds(230, 100, 290, 30);
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 204, 204));
         jLabel5.setText("Localidad:");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(22, 224, 107, 31);
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setText("Calle:");
         getContentPane().add(jLabel6);
         jLabel6.setBounds(22, 261, 107, 31);
 
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("No. exterior:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(22, 298, 117, 31);
+        jLabel7.setBounds(22, 298, 140, 31);
 
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel8.setText("No. interior:*");
+        jLabel8.setText("No. interior:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(259, 298, 120, 31);
+        jLabel8.setBounds(280, 300, 140, 31);
 
-        jLabel9.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(204, 204, 204));
         jLabel9.setText("Teléfono:");
         getContentPane().add(jLabel9);
         jLabel9.setBounds(22, 335, 107, 31);
 
-        jLabel10.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 204));
         jLabel10.setText("Celular:");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(259, 335, 107, 31);
+        jLabel10.setBounds(280, 340, 107, 31);
 
-        txtlocalidad.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtlocalidad.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtlocalidad.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtlocalidadKeyTyped(evt);
             }
         });
         getContentPane().add(txtlocalidad);
-        txtlocalidad.setBounds(147, 222, 233, 30);
+        txtlocalidad.setBounds(147, 222, 290, 30);
 
-        txtcalle.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtcalle.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtcalle.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtcalleKeyTyped(evt);
             }
         });
         getContentPane().add(txtcalle);
-        txtcalle.setBounds(147, 259, 233, 30);
+        txtcalle.setBounds(147, 259, 290, 30);
 
-        txtnumin.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtnumin.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtnumin.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtnuminKeyTyped(evt);
             }
         });
         getContentPane().add(txtnumin);
-        txtnumin.setBounds(380, 300, 106, 30);
+        txtnumin.setBounds(400, 300, 120, 30);
 
-        txtnumex.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtnumex.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtnumex.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtnumexKeyTyped(evt);
             }
         });
         getContentPane().add(txtnumex);
-        txtnumex.setBounds(150, 300, 100, 30);
+        txtnumex.setBounds(150, 300, 120, 30);
 
-        txttelefono.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txttelefono.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txttelefono.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txttelefonoKeyTyped(evt);
             }
         });
         getContentPane().add(txttelefono);
-        txttelefono.setBounds(150, 340, 100, 30);
+        txttelefono.setBounds(150, 340, 120, 30);
 
-        txtcelular.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtcelular.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtcelular.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtcelularKeyTyped(evt);
             }
         });
         getContentPane().add(txtcelular);
-        txtcelular.setBounds(380, 340, 106, 30);
+        txtcelular.setBounds(400, 340, 120, 30);
 
         cktutor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cktutor.setForeground(new java.awt.Color(255, 255, 255));
@@ -1133,24 +1133,24 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cktutor);
-        cktutor.setBounds(391, 144, 59, 25);
+        cktutor.setBounds(460, 140, 59, 25);
 
-        lbltutor.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lbltutor.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         lbltutor.setForeground(new java.awt.Color(204, 204, 204));
         lbltutor.setText("Nombre del tutor:");
         getContentPane().add(lbltutor);
-        lbltutor.setBounds(22, 182, 155, 31);
+        lbltutor.setBounds(22, 182, 180, 31);
 
-        txtnombretutor.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtnombretutor.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtnombretutor.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtnombretutorKeyTyped(evt);
             }
         });
         getContentPane().add(txtnombretutor);
-        txtnombretutor.setBounds(215, 180, 261, 30);
+        txtnombretutor.setBounds(230, 180, 290, 30);
 
-        tdatos.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tdatos.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
         tdatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -1175,19 +1175,19 @@ public class Inscripciones extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tdatos);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(530, 180, 710, 210);
+        jScrollPane1.setBounds(530, 180, 720, 210);
 
-        txtbuscar.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtbuscar.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtbuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtbuscarKeyReleased(evt);
             }
         });
         getContentPane().add(txtbuscar);
-        txtbuscar.setBounds(667, 140, 110, 30);
+        txtbuscar.setBounds(680, 140, 140, 30);
 
         btneliminar.setBackground(new java.awt.Color(255, 0, 0));
-        btneliminar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btneliminar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btneliminar.setForeground(new java.awt.Color(204, 204, 204));
         btneliminar.setText("Eliminar");
         btneliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -1196,10 +1196,10 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btneliminar);
-        btneliminar.setBounds(1140, 130, 100, 40);
+        btneliminar.setBounds(1130, 120, 120, 50);
 
         btnnuevo.setBackground(new java.awt.Color(255, 204, 0));
-        btnnuevo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnnuevo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnnuevo.setText("Nuevo");
         btnnuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1207,22 +1207,22 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnnuevo);
-        btnnuevo.setBounds(80, 550, 90, 40);
+        btnnuevo.setBounds(50, 540, 110, 50);
 
-        jLabel13.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(204, 204, 204));
         jLabel13.setText("Fecha de nacimiento:");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(22, 144, 189, 31);
+        jLabel13.setBounds(22, 144, 210, 31);
 
-        jLabel14.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(204, 204, 204));
         jLabel14.setText("Fecha de termino:");
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(430, 400, 160, 31);
+        jLabel14.setBounds(430, 400, 171, 31);
 
         btnguardar.setBackground(new java.awt.Color(51, 255, 0));
-        btnguardar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnguardar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnguardar.setText("Guardar nuevo");
         btnguardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1230,10 +1230,10 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnguardar);
-        btnguardar.setBounds(190, 550, 140, 40);
+        btnguardar.setBounds(180, 540, 170, 50);
 
         btnrenovar.setBackground(new java.awt.Color(255, 153, 0));
-        btnrenovar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnrenovar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnrenovar.setText("Renovar mensualidad");
         btnrenovar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1241,13 +1241,13 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnrenovar);
-        btnrenovar.setBounds(770, 550, 200, 40);
+        btnrenovar.setBounds(760, 540, 240, 50);
 
-        jLabel15.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(204, 204, 204));
         jLabel15.setText("Sesiones por semana:");
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(880, 400, 206, 25);
+        jLabel15.setBounds(870, 400, 230, 25);
 
         cbdias.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cbdias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
@@ -1274,7 +1274,7 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(cbhoramartes);
         cbhoramartes.setBounds(260, 480, 150, 30);
 
-        ckmartes.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        ckmartes.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         ckmartes.setForeground(new java.awt.Color(255, 255, 255));
         ckmartes.setText("Martes");
         ckmartes.addActionListener(new java.awt.event.ActionListener() {
@@ -1283,7 +1283,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ckmartes);
-        ckmartes.setBounds(260, 450, 140, 31);
+        ckmartes.setBounds(260, 450, 150, 33);
 
         cbhoramiercoles.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cbhoramiercoles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
@@ -1300,7 +1300,7 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(cbhoraviernes);
         cbhoraviernes.setBounds(810, 480, 150, 30);
 
-        cklunes.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        cklunes.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         cklunes.setForeground(new java.awt.Color(255, 255, 255));
         cklunes.setText("Lunes");
         cklunes.addActionListener(new java.awt.event.ActionListener() {
@@ -1309,9 +1309,9 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cklunes);
-        cklunes.setBounds(70, 450, 150, 31);
+        cklunes.setBounds(70, 450, 150, 33);
 
-        ckmiercoles.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        ckmiercoles.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         ckmiercoles.setForeground(new java.awt.Color(255, 255, 255));
         ckmiercoles.setText("Miércoles");
         ckmiercoles.addActionListener(new java.awt.event.ActionListener() {
@@ -1320,9 +1320,9 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ckmiercoles);
-        ckmiercoles.setBounds(440, 450, 140, 31);
+        ckmiercoles.setBounds(440, 450, 140, 33);
 
-        ckjueves.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        ckjueves.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         ckjueves.setForeground(new java.awt.Color(255, 255, 255));
         ckjueves.setText("Jueves");
         ckjueves.addActionListener(new java.awt.event.ActionListener() {
@@ -1331,9 +1331,9 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ckjueves);
-        ckjueves.setBounds(620, 450, 140, 31);
+        ckjueves.setBounds(620, 450, 140, 33);
 
-        ckviernes.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        ckviernes.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         ckviernes.setForeground(new java.awt.Color(255, 255, 255));
         ckviernes.setText("Viernes");
         ckviernes.addActionListener(new java.awt.event.ActionListener() {
@@ -1342,9 +1342,9 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ckviernes);
-        ckviernes.setBounds(810, 450, 150, 31);
+        ckviernes.setBounds(810, 450, 150, 33);
 
-        cksabado.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        cksabado.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         cksabado.setForeground(new java.awt.Color(255, 255, 255));
         cksabado.setText("Sábado");
         cksabado.addActionListener(new java.awt.event.ActionListener() {
@@ -1353,14 +1353,14 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cksabado);
-        cksabado.setBounds(1010, 450, 130, 31);
+        cksabado.setBounds(1010, 450, 140, 33);
 
         jPanelWebCam1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(jPanelWebCam1);
-        jPanelWebCam1.setBounds(1140, 20, 100, 90);
+        jPanelWebCam1.setBounds(1150, 20, 100, 90);
 
         btneditardatos.setBackground(new java.awt.Color(255, 153, 0));
-        btneditardatos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btneditardatos.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btneditardatos.setText("Editar datos");
         btneditardatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1368,14 +1368,14 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btneditardatos);
-        btneditardatos.setBounds(420, 550, 130, 40);
+        btneditardatos.setBounds(410, 540, 140, 50);
 
-        lblclave.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblclave.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         lblclave.setForeground(new java.awt.Color(204, 204, 204));
         lblclave.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblclave.setText("AYO00");
         getContentPane().add(lblclave);
-        lblclave.setBounds(590, 140, 90, 31);
+        lblclave.setBounds(600, 140, 80, 31);
 
         jLabel17.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(204, 204, 204));
@@ -1384,30 +1384,30 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(jLabel17);
         jLabel17.setBounds(1160, 0, 50, 20);
         getContentPane().add(txtidusuario);
-        txtidusuario.setBounds(460, 110, 50, 20);
+        txtidusuario.setBounds(570, 120, 50, 20);
 
         txtfechainicio.setDateFormatString("yyyy/MM/dd");
-        txtfechainicio.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        txtfechainicio.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         txtfechainicio.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 txtfechainicioPropertyChange(evt);
             }
         });
         getContentPane().add(txtfechainicio);
-        txtfechainicio.setBounds(170, 400, 180, 30);
+        txtfechainicio.setBounds(180, 400, 180, 30);
 
         txtfechatermino.setDateFormatString("yyyy/MM/dd");
-        txtfechatermino.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        txtfechatermino.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         getContentPane().add(txtfechatermino);
-        txtfechatermino.setBounds(590, 400, 170, 30);
+        txtfechatermino.setBounds(610, 400, 170, 30);
 
         txtfechanacimiento.setDateFormatString("yyyy/MM/dd");
-        txtfechanacimiento.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        txtfechanacimiento.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         getContentPane().add(txtfechanacimiento);
-        txtfechanacimiento.setBounds(220, 140, 150, 30);
+        txtfechanacimiento.setBounds(230, 140, 190, 30);
 
         btnguardarmodificaciones.setBackground(new java.awt.Color(51, 255, 0));
-        btnguardarmodificaciones.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnguardarmodificaciones.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnguardarmodificaciones.setText("Guardar");
         btnguardarmodificaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1415,7 +1415,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnguardarmodificaciones);
-        btnguardarmodificaciones.setBounds(570, 550, 110, 40);
+        btnguardarmodificaciones.setBounds(570, 540, 120, 50);
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         getContentPane().add(jSeparator1);
@@ -1426,7 +1426,7 @@ public class Inscripciones extends javax.swing.JFrame {
         jSeparator2.setBounds(370, 540, 30, 60);
 
         btnguardarrenovacion.setBackground(new java.awt.Color(51, 255, 0));
-        btnguardarrenovacion.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnguardarrenovacion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnguardarrenovacion.setText("Guardar");
         btnguardarrenovacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1434,18 +1434,18 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnguardarrenovacion);
-        btnguardarrenovacion.setBounds(990, 550, 110, 40);
+        btnguardarrenovacion.setBounds(1020, 540, 130, 50);
         getContentPane().add(txtmensualidad);
-        txtmensualidad.setBounds(460, 80, 20, 20);
+        txtmensualidad.setBounds(570, 90, 20, 20);
 
-        jLabel18.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(204, 204, 204));
         jLabel18.setText("Buscar: ");
         getContentPane().add(jLabel18);
         jLabel18.setBounds(530, 140, 141, 31);
 
         jButton2.setBackground(new java.awt.Color(255, 153, 0));
-        jButton2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Ver eliminados");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -1454,7 +1454,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(970, 130, 150, 40);
+        jButton2.setBounds(940, 120, 170, 50);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -1463,17 +1463,17 @@ public class Inscripciones extends javax.swing.JFrame {
         jLabel1.setBounds(230, 0, 819, 50);
 
         getContentPane().add(cbclaves);
-        cbclaves.setBounds(460, 60, 130, 20);
+        cbclaves.setBounds(570, 70, 130, 20);
         getContentPane().add(txteliminar);
-        txteliminar.setBounds(590, 100, 6, 20);
+        txteliminar.setBounds(700, 110, 6, 20);
 
         getContentPane().add(cbidus);
-        cbidus.setBounds(610, 60, 28, 20);
+        cbidus.setBounds(720, 70, 28, 20);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(1160, 490, 90, 90);
+        jLabel2.setBounds(1170, 490, 90, 90);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
@@ -1994,7 +1994,7 @@ public class Inscripciones extends javax.swing.JFrame {
                     elus.cambiardatosdetabla(Integer.parseInt(txteliminar.getText()));
                     //                        System.out.println("------------------------------------------Se eliminó en la tabla de usuarios eliminados");
                 }
-
+                JOptionPane.showMessageDialog(null, "<html><span style=\"font-size:2em\">Se agregó con éxito</span></html>");
                 habilitarcamposmensualidad(true);
                 habilitarhoras(false);
                 deseleccionarckdias(false);
@@ -2439,6 +2439,7 @@ public class Inscripciones extends javax.swing.JFrame {
 
         }
         if (resultado == 1) {
+            JOptionPane.showMessageDialog(null, "<html><span style=\"font-size:2em\">Se renovó la mensualidad con éxito</span></html>");
             btnguardarrenovacion.setEnabled(false);
             habilitarcamposdatopersonal(false);
             habilitarcamposdatosdireccion(false);

@@ -85,7 +85,7 @@ public class inscripcion {
             
             
 
-            JOptionPane.showMessageDialog(null, "Datos guardados con éxito.");
+//            JOptionPane.showMessageDialog(null, "Datos guardados con éxito.");
             return true;
 
         } catch (SQLException e) {

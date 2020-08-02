@@ -141,7 +141,7 @@ public class recuperar {
                     s.executeUpdate();
 
             }
-            JOptionPane.showMessageDialog(null, "Se actualizó el día correctamente");
+            JOptionPane.showMessageDialog(null, "<html><span style=\"font-size:2em\">Se actualizó el día <br> correctamente</span></html>");
 //            s = conn.prepareStatement("INSERT INTO dias(dias_num) VALUES (?)");
 //
 //            s.setString(1, fecha_ini);

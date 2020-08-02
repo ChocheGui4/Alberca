@@ -5,6 +5,8 @@
  */
 package Consultas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Choche
@@ -13,14 +15,7 @@ public class pruebas {
     public static int v[]={3,5,1,0,2};
     public static void main(String[] args) {
         
-        for (int i = 0; i < 5; i++) {
-            System.out.println("vector antes: "+v[i]);
-        }
-        quicksort(v, 0, v.length-1);
-        System.out.println("");
-        for (int i = 0; i < 5; i++) {
-            System.out.println("vector despues: "+v[i]);
-        }
+        JOptionPane.showMessageDialog(null, "<html><span style=\"font-size:2em\">Se renovó la mensualidad<br> con éxito</span></html>");
         
     }
     public static void quicksort(int A[], int izq, int der) {

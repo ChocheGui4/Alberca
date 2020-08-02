@@ -172,9 +172,9 @@ public class recuperardias extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(330, 0, 819, 50);
 
-        jButton1.setBackground(new java.awt.Color(102, 51, 255));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(204, 204, 204));
+        jButton1.setBackground(new java.awt.Color(0, 153, 204));
+        jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Atrás");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,27 +182,27 @@ public class recuperardias extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(22, 12, 122, 34);
+        jButton1.setBounds(22, 12, 130, 40);
 
-        lblnombre.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblnombre.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         lblnombre.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre.setText("Buscar: AYO00");
         getContentPane().add(lblnombre);
         lblnombre.setBounds(60, 260, 170, 31);
 
-        lblnombre2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblnombre2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         lblnombre2.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre2.setText("Apellidos:");
         getContentPane().add(lblnombre2);
         lblnombre2.setBounds(60, 130, 107, 31);
 
-        lblnombre3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblnombre3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         lblnombre3.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre3.setText("Fecha de inicio:");
         getContentPane().add(lblnombre3);
         lblnombre3.setBounds(60, 170, 160, 31);
 
-        lblnombre4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblnombre4.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         lblnombre4.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre4.setText("Nombre:");
         getContentPane().add(lblnombre4);
@@ -226,7 +226,7 @@ public class recuperardias extends javax.swing.JFrame {
         getContentPane().add(lblfechainicioset);
         lblfechainicioset.setBounds(240, 170, 210, 31);
 
-        lblnombre8.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblnombre8.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         lblnombre8.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre8.setText("Nueva sesión:");
         getContentPane().add(lblnombre8);
@@ -255,7 +255,7 @@ public class recuperardias extends javax.swing.JFrame {
         getContentPane().add(lblfechaterminoset);
         lblfechaterminoset.setBounds(240, 210, 210, 31);
 
-        lblnombre10.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblnombre10.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         lblnombre10.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre10.setText("Sesión a recuperar:");
         getContentPane().add(lblnombre10);
@@ -266,17 +266,17 @@ public class recuperardias extends javax.swing.JFrame {
         getContentPane().add(cbhorario);
         cbhorario.setBounds(1040, 190, 150, 30);
 
-        txtbuscar.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtbuscar.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtbuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtbuscarKeyReleased(evt);
             }
         });
         getContentPane().add(txtbuscar);
-        txtbuscar.setBounds(200, 260, 120, 30);
+        txtbuscar.setBounds(210, 260, 160, 30);
 
         btnrecuperar.setBackground(new java.awt.Color(51, 255, 0));
-        btnrecuperar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnrecuperar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnrecuperar.setText("Recuperar día");
         btnrecuperar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -284,13 +284,13 @@ public class recuperardias extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnrecuperar);
-        btnrecuperar.setBounds(810, 240, 160, 40);
+        btnrecuperar.setBounds(810, 230, 180, 50);
 
-        lblnombre1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        lblnombre1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         lblnombre1.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre1.setText("Fecha de termino:");
         getContentPane().add(lblnombre1);
-        lblnombre1.setBounds(60, 210, 170, 31);
+        lblnombre1.setBounds(60, 210, 190, 31);
 
         cbnombredias.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         cbnombredias.setForeground(new java.awt.Color(204, 204, 204));
@@ -303,7 +303,7 @@ public class recuperardias extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(1140, 0, 100, 100);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Recuperar días");
         getContentPane().add(jLabel2);

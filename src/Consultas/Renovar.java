@@ -170,6 +170,7 @@ public class Renovar {
 //            s.setString(3, sesiones);
 //
 //            s.executeUpdate();
+            
             return true;
 
         } catch (SQLException e) {
@@ -298,7 +299,7 @@ public class Renovar {
                 }
 
             }
-            JOptionPane.showMessageDialog(null, "Se renovó la mensualidad");
+            JOptionPane.showMessageDialog(null, "<html><span style=\"font-size:2em\">Se renovó la mensualidad</span></html>");
 
 //            s = conn.prepareStatement("INSERT INTO dias(dias_num) VALUES (?)");
 //

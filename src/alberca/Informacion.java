@@ -91,9 +91,12 @@ public class Informacion extends javax.swing.JFrame  {
         tdatos.getColumnModel().getColumn(8).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(8).setMinWidth(0);
         tdatos.getColumnModel().getColumn(8).setPreferredWidth(0);
-        tdatos.getColumnModel().getColumn(10).setMaxWidth(90);
-        tdatos.getColumnModel().getColumn(10).setMinWidth(90);
-        tdatos.getColumnModel().getColumn(10).setPreferredWidth(90);
+        tdatos.getColumnModel().getColumn(9).setMaxWidth(100);
+        tdatos.getColumnModel().getColumn(9).setMinWidth(100);
+        tdatos.getColumnModel().getColumn(9).setPreferredWidth(100);
+        tdatos.getColumnModel().getColumn(10).setMaxWidth(100);
+        tdatos.getColumnModel().getColumn(10).setMinWidth(100);
+        tdatos.getColumnModel().getColumn(10).setPreferredWidth(100);
         tdatos.getColumnModel().getColumn(12).setMaxWidth(110);
         tdatos.getColumnModel().getColumn(12).setMinWidth(110);
         tdatos.getColumnModel().getColumn(12).setPreferredWidth(110);
@@ -149,19 +152,19 @@ public class Informacion extends javax.swing.JFrame  {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Información de usuarios");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(40, 100, 300, 40);
 
-        jLabel18.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(204, 204, 204));
         jLabel18.setText("Buscar: AYO00");
         getContentPane().add(jLabel18);
-        jLabel18.setBounds(920, 110, 140, 31);
+        jLabel18.setBounds(880, 110, 180, 31);
 
-        tdatos.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tdatos.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
         tdatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -187,9 +190,9 @@ public class Informacion extends javax.swing.JFrame  {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(230, 0, 819, 50);
 
-        jButton1.setBackground(new java.awt.Color(102, 51, 255));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(204, 204, 204));
+        jButton1.setBackground(new java.awt.Color(0, 153, 204));
+        jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Atrás");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -197,8 +200,9 @@ public class Informacion extends javax.swing.JFrame  {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(22, 12, 122, 34);
+        jButton1.setBounds(22, 12, 122, 40);
 
+        txtbuscar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         txtbuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtbuscarKeyReleased(evt);

@@ -98,15 +98,15 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(jSeparator1);
         jSeparator1.setBounds(97, 348, 1090, 14);
 
-        jButton5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton5.setText("Salir");
+        jButton5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton5.setText("SALIR");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton5);
-        jButton5.setBounds(861, 566, 324, 41);
+        jButton5.setBounds(900, 560, 260, 50);
 
         jButton6.setBackground(new java.awt.Color(255, 204, 0));
         jButton6.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N

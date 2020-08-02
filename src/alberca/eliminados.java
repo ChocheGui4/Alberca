@@ -182,15 +182,15 @@ public class eliminados extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(60, 160, 1160, 340);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Usuarios eliminados");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(60, 120, 230, 40);
+        jLabel2.setBounds(60, 120, 270, 40);
 
-        jButton1.setBackground(new java.awt.Color(102, 51, 255));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(204, 204, 204));
+        jButton1.setBackground(new java.awt.Color(0, 153, 204));
+        jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Atrás");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,7 +198,7 @@ public class eliminados extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(22, 12, 122, 34);
+        jButton1.setBounds(22, 12, 122, 40);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -230,11 +230,11 @@ public class eliminados extends javax.swing.JFrame {
         getContentPane().add(txtbuscar);
         txtbuscar.setBounds(1070, 120, 150, 30);
 
-        jLabel18.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(204, 204, 204));
         jLabel18.setText("Buscar: AYO00");
         getContentPane().add(jLabel18);
-        jLabel18.setBounds(930, 120, 140, 31);
+        jLabel18.setBounds(890, 120, 180, 31);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N

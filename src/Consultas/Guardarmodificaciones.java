@@ -36,7 +36,7 @@ public class Guardarmodificaciones {
 
             s.executeUpdate();
 
-            JOptionPane.showMessageDialog(null, "Datos actualizados");
+            JOptionPane.showMessageDialog(null, "<html><span style=\"font-size:2em\">Datos actualizados</span></html>");
         } catch (SQLException e) {
             System.out.println("Error: " + e.getMessage());
 
