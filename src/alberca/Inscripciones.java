@@ -13,6 +13,7 @@ import Consultas.tabla;
 import com.toedter.calendar.JDateChooser;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -124,9 +125,9 @@ public class Inscripciones extends javax.swing.JFrame {
         System.out.println("es: " + cbclaves.getItemCount());
         System.out.println(calendario.get(Calendar.HOUR_OF_DAY) + ":00 - " + (calendario.get(Calendar.HOUR_OF_DAY) + 1) + ":00");
         this.setLocationRelativeTo(null);
-        ((JTextField) this.txtfechanacimiento.getDateEditor()).setEditable(false); 
-        ((JTextField) this.txtfechainicio.getDateEditor()).setEditable(false); 
-        ((JTextField) this.txtfechatermino.getDateEditor()).setEditable(false); 
+        ((JTextField) this.txtfechanacimiento.getDateEditor()).setEditable(false);
+        ((JTextField) this.txtfechainicio.getDateEditor()).setEditable(false);
+        ((JTextField) this.txtfechatermino.getDateEditor()).setEditable(false);
     }
 
     public void llenarclaves() {
@@ -2012,7 +2013,7 @@ public class Inscripciones extends javax.swing.JFrame {
             if (cktutor.isSelected()) {
                 if (txtnombretutor.getText().equals("")) {
                     JOptionPane.showMessageDialog(this, "Completa todos los campos solicitados");
-                }else{
+                } else {
                     guardar();
                 }
             } else {
@@ -2492,6 +2493,12 @@ public class Inscripciones extends javax.swing.JFrame {
         if (txtnombre.getText().length() == 34) {
             evt.consume();
         }
+        if (!Character.isLetter(evt.getKeyChar())
+                & !(evt.getKeyChar() == KeyEvent.VK_SPACE)
+                & !(evt.getKeyChar() == KeyEvent.VK_BACK_SPACE)) {
+            evt.consume();
+//      lblErrorLetra.setText("Escribe solo letras");
+        }
 
     }//GEN-LAST:event_txtnombreKeyTyped
 
@@ -2499,17 +2506,35 @@ public class Inscripciones extends javax.swing.JFrame {
         if (txtapellidos.getText().length() == 34) {
             evt.consume();
         }
+        if (!Character.isLetter(evt.getKeyChar())
+                & !(evt.getKeyChar() == KeyEvent.VK_SPACE)
+                & !(evt.getKeyChar() == KeyEvent.VK_BACK_SPACE)) {
+            evt.consume();
+//      lblErrorLetra.setText("Escribe solo letras");
+        }
     }//GEN-LAST:event_txtapellidosKeyTyped
 
     private void txtnombretutorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnombretutorKeyTyped
         if (txtnombretutor.getText().length() == 34) {
             evt.consume();
         }
+        if (!Character.isLetter(evt.getKeyChar())
+                & !(evt.getKeyChar() == KeyEvent.VK_SPACE)
+                & !(evt.getKeyChar() == KeyEvent.VK_BACK_SPACE)) {
+            evt.consume();
+//      lblErrorLetra.setText("Escribe solo letras");
+        }
     }//GEN-LAST:event_txtnombretutorKeyTyped
 
     private void txtlocalidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtlocalidadKeyTyped
         if (txtlocalidad.getText().length() == 34) {
             evt.consume();
+        }
+        if (!Character.isLetter(evt.getKeyChar())
+                & !(evt.getKeyChar() == KeyEvent.VK_SPACE)
+                & !(evt.getKeyChar() == KeyEvent.VK_BACK_SPACE)) {
+            evt.consume();
+//      lblErrorLetra.setText("Escribe solo letras");
         }
     }//GEN-LAST:event_txtlocalidadKeyTyped
 
