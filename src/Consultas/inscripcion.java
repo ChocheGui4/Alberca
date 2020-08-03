@@ -31,15 +31,15 @@ public class inscripcion {
 
     public static boolean insertardias(String id, String clave, String nombre, String apellidos, String fecha_naci, String localidad,
             String calle, String numero_e, String numero_i,
-            String telefono, String celular, String nombre_tutor, int mensualidad) {
+            String telefono, String celular, String nombre_tutor, int mensualidad, String foto) {
         try {
             conn = con.conectar();
             //s = conn.prepareStatement("insert into Registrar_Usuario values (?,?,?,?,?)");
             if (clave == null) {
 //                System.out.println("miraaaaaaa id anterior vacio");
                 s = conn.prepareStatement("INSERT INTO usuario(nombre,apellidos,fecha_nacimiento,localidad,calle,"
-                        + "numero_e,numero_i,telefono_1,celular_1,nombre_tutor,mensualidad_id)"
-                        + " VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+                        + "numero_e,numero_i,telefono_1,celular_1,nombre_tutor,mensualidad_id,foto)"
+                        + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
                 s.setString(1, nombre);
                 s.setString(2, apellidos);
                 s.setString(3, fecha_naci);
@@ -51,6 +51,7 @@ public class inscripcion {
                 s.setString(9, celular);
                 s.setString(10, nombre_tutor);
                 s.setInt(11, mensualidad);
+                s.setString(12, foto);
                 s.executeUpdate();
                 sSQL = "select * from usuario order by id_usuario desc limit 1";
                 Statement st = conn.createStatement();

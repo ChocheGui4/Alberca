@@ -16,6 +16,7 @@ public class pruebas {
     public static void main(String[] args) {
         
         JOptionPane.showMessageDialog(null, "<html><span style=\"font-size:2em\">Se renovó la mensualidad<br> con éxito</span></html>");
+        JOptionPane.showMessageDialog(null, "<html><span style=\"font-size:2em\">Se agregó con éxito</span></html>");
         
     }
     public static void quicksort(int A[], int izq, int der) {

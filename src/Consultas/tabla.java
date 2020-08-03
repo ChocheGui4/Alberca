@@ -24,6 +24,30 @@ public class tabla {
     public static Connection conn = null;
     private String sSQL = "";
     public Integer totalregistros;
+    
+    //Capturar imagen
+    public byte[] mostrarimagen(int id) {
+        conn = con.conectar();
+       
+
+        sSQL = "select * from usuario where id_usuario='"+id+"'";
+//        System.out.println("Después de la consulta");
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sSQL);
+            byte[] image=null;
+            while (rs.next()) {
+                image = rs.getBytes("foto");
+                
+
+            }
+            System.out.println("foto retorna");
+            return image;
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            return null;
+        }
+    }
 
     //Método para mostrar usuarios totales del centro acuático
     public DefaultTableModel mostrar(String buscar) {

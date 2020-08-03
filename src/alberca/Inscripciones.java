@@ -14,9 +14,12 @@ import com.toedter.calendar.JDateChooser;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -37,6 +40,7 @@ public class Inscripciones extends javax.swing.JFrame {
      */
     FondoPanel fondo = new FondoPanel();
     SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+    byte[] image;
     int dias = 1;
     int diacero = 0, diauno = 1, diados = 2, diatres = 3, diacuatro = 4, diacinco = 5;
     int resultado = -1;
@@ -119,6 +123,7 @@ public class Inscripciones extends javax.swing.JFrame {
         btnguardarrenovacion.setEnabled(false);
         cbclaves.setVisible(false);
         cbidus.setVisible(false);
+        btnfoto.setVisible(false);
         mostrar("");
         marcarcalendar(new Date());
         llenarclaves();
@@ -957,10 +962,9 @@ public class Inscripciones extends javax.swing.JFrame {
         ckjueves = new javax.swing.JCheckBox();
         ckviernes = new javax.swing.JCheckBox();
         cksabado = new javax.swing.JCheckBox();
-        jPanelWebCam1 = new JPanelWebCam.JPanelWebCam();
+        jpcfoto = new JPanelWebCam.JPanelWebCam();
         btneditardatos = new javax.swing.JButton();
         lblclave = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
         txtidusuario = new javax.swing.JTextField();
         txtfechainicio = new com.toedter.calendar.JDateChooser();
         txtfechatermino = new com.toedter.calendar.JDateChooser();
@@ -976,6 +980,7 @@ public class Inscripciones extends javax.swing.JFrame {
         cbclaves = new javax.swing.JComboBox<>();
         txteliminar = new javax.swing.JTextField();
         cbidus = new javax.swing.JComboBox<>();
+        btnfoto = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         lblimagen = new javax.swing.JLabel();
         lblregistros = new javax.swing.JLabel();
@@ -1188,7 +1193,7 @@ public class Inscripciones extends javax.swing.JFrame {
 
         btneliminar.setBackground(new java.awt.Color(255, 0, 0));
         btneliminar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        btneliminar.setForeground(new java.awt.Color(204, 204, 204));
+        btneliminar.setForeground(new java.awt.Color(255, 255, 255));
         btneliminar.setText("Eliminar");
         btneliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1198,7 +1203,7 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(btneliminar);
         btneliminar.setBounds(1130, 120, 120, 50);
 
-        btnnuevo.setBackground(new java.awt.Color(255, 204, 0));
+        btnnuevo.setBackground(new java.awt.Color(255, 231, 0));
         btnnuevo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnnuevo.setText("Nuevo");
         btnnuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -1355,11 +1360,17 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(cksabado);
         cksabado.setBounds(1010, 450, 140, 33);
 
-        jPanelWebCam1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(jPanelWebCam1);
-        jPanelWebCam1.setBounds(1150, 20, 100, 90);
+        jpcfoto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jpcfoto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jpcfotoMouseClicked(evt);
+            }
+        });
+        jpcfoto.setLayout(null);
+        getContentPane().add(jpcfoto);
+        jpcfoto.setBounds(1130, 10, 120, 100);
 
-        btneditardatos.setBackground(new java.awt.Color(255, 153, 0));
+        btneditardatos.setBackground(new java.awt.Color(255, 204, 0));
         btneditardatos.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btneditardatos.setText("Editar datos");
         btneditardatos.addActionListener(new java.awt.event.ActionListener() {
@@ -1376,13 +1387,6 @@ public class Inscripciones extends javax.swing.JFrame {
         lblclave.setText("AYO00");
         getContentPane().add(lblclave);
         lblclave.setBounds(600, 140, 80, 31);
-
-        jLabel17.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("Foto");
-        getContentPane().add(jLabel17);
-        jLabel17.setBounds(1160, 0, 50, 20);
         getContentPane().add(txtidusuario);
         txtidusuario.setBounds(570, 120, 50, 20);
 
@@ -1469,6 +1473,17 @@ public class Inscripciones extends javax.swing.JFrame {
 
         getContentPane().add(cbidus);
         cbidus.setBounds(720, 70, 28, 20);
+
+        btnfoto.setBackground(new java.awt.Color(51, 255, 0));
+        btnfoto.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btnfoto.setText("Guardar foto");
+        btnfoto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnfotoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnfoto);
+        btnfoto.setBounds(940, 50, 170, 50);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
@@ -1984,7 +1999,7 @@ public class Inscripciones extends javax.swing.JFrame {
             //                System.out.println("antes de::::::::::");
             boolean v = ins.insertardias(cbidus.getItemAt(0), cbclaves.getItemAt(0), txtnombre.getText(), txtapellidos.getText(), obtenerfechanacimiento(txtfechanacimiento), txtlocalidad.getText(),
                     txtcalle.getText(), txtnumex.getText(), txtnumin.getText(), txttelefono.getText(), txtcelular.getText(),
-                    txtnombretutor.getText(), r);
+                    txtnombretutor.getText(), r, "");
             if (v == true) {
                 if (txteliminar.getText().equals("")) {
                     //                        System.out.println("---------------------------------------vacío el de eliminar");
@@ -2004,6 +2019,8 @@ public class Inscripciones extends javax.swing.JFrame {
                 mostrar("");
                 cbclaves.removeAllItems();
                 cbidus.removeAllItems();
+//                btnfoto.setEnabled(false);
+//                jpcfoto.setImagenNull();
                 llenarclaves();
                 marcarcalendar(new Date());
             }
@@ -2016,11 +2033,13 @@ public class Inscripciones extends javax.swing.JFrame {
         if (txtnombre.getText().equals("") | txtapellidos.getText().equals("") | txtfechanacimiento.getDate() == null
                 | txtlocalidad.getText().equals("") | txtcalle.getText().equals("") | txtnumex.getText().equals("")
                 | txttelefono.getText().equals("") | txtcelular.getText().equals("")) {
-            JOptionPane.showMessageDialog(this, "Completa todos los campos solicitados");
+            JOptionPane.showMessageDialog(this, "<html><span style=\"font-size:2em\">Completa los datos solicitados"
+                        + "<br>por favor</span></html>");
         } else {
             if (cktutor.isSelected()) {
                 if (txtnombretutor.getText().equals("")) {
-                    JOptionPane.showMessageDialog(this, "Completa todos los campos solicitados");
+                    JOptionPane.showMessageDialog(this, "<html><span style=\"font-size:2em\">Completa todos los campos"
+                        + "<br>por favor</span></html>");
                 } else {
                     guardar();
                 }
@@ -2040,8 +2059,12 @@ public class Inscripciones extends javax.swing.JFrame {
         habilitarhoras(false);
 //        btneliminar.setEnabled(true);
 //        accion="editar";
-
+        tabla t=new tabla();
+        
         int fila = tdatos.rowAtPoint(evt.getPoint());
+//        byte[] imagen;
+//        imagen=t.mostrarimagen(Integer.parseInt(tdatos.getValueAt(fila, 0).toString()));
+//        jpcfoto.setImagen(imagen);
         txtidusuario.setText(tdatos.getValueAt(fila, 0).toString());
         txtnombre.setText(tdatos.getValueAt(fila, 2).toString());
         txtapellidos.setText(tdatos.getValueAt(fila, 3).toString());
@@ -2092,6 +2115,7 @@ public class Inscripciones extends javax.swing.JFrame {
         btnrenovar.setEnabled(false);
         btnguardar.setEnabled(true);
         btnguardarmodificaciones.setEnabled(false);
+        jpcfoto.setImagenNull();
 
 
     }//GEN-LAST:event_btnnuevoActionPerformed
@@ -2099,6 +2123,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private void btneditardatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditardatosActionPerformed
         habilitarcamposdatosdireccion(true);
         btnguardarmodificaciones.setEnabled(true);
+//        btnfoto.setEnabled(true);
     }//GEN-LAST:event_btneditardatosActionPerformed
 
     private void txtbuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscarKeyReleased
@@ -2167,6 +2192,7 @@ public class Inscripciones extends javax.swing.JFrame {
         gm.Actualizar(txtlocalidad.getText(), txtcalle.getText(), txtnumex.getText(), txtnumin.getText(), txttelefono.getText(),
                 txtcelular.getText(), Integer.parseInt(txtidusuario.getText()));
         btnguardarmodificaciones.setEnabled(false);
+//        btnfoto.setEnabled(false);
         habilitarcamposdatosdireccion(false);
         marcarcalendar(new Date());
         mostrar("");
@@ -2250,7 +2276,8 @@ public class Inscripciones extends javax.swing.JFrame {
 //                re.renovardiasmes(Integer.parseInt(txtmensualidad.getText()), unasesion, masuno[0], combohoras[masuno[0]]);
             } else {
                 resultado = -1;
-                JOptionPane.showMessageDialog(this, "No se han seleccionado días, hazlo por favor!");
+                JOptionPane.showMessageDialog(this, "<html><span style=\"font-size:2em\">No se han seleccionado días "
+                        + "<br>por favor hazlo</span></html>");
             }
         } else if (dias == 2) {
             if (masdos[0] != -1 & masdos[1] != -1) {
@@ -2295,7 +2322,8 @@ public class Inscripciones extends javax.swing.JFrame {
                 resultado = 1;
             } else {
                 resultado = -1;
-                JOptionPane.showMessageDialog(this, "No se han seleccionado todos los días, hazlo por favor!");
+                JOptionPane.showMessageDialog(this, "<html><span style=\"font-size:2em\">No se han seleccionado todos días "
+                        + "<br>por favor hazlo</span></html>");
             }
         } else if (dias == 3) {
             if (mastres[0] != -1 & mastres[1] != -1 & mastres[2] != -1) {
@@ -2341,7 +2369,8 @@ public class Inscripciones extends javax.swing.JFrame {
                 resultado = 1;
             } else {
                 resultado = -1;
-                JOptionPane.showMessageDialog(this, "No se han seleccionado todos los días, hazlo por favor!");
+                JOptionPane.showMessageDialog(this, "<html><span style=\"font-size:2em\">No se han seleccionado todos días "
+                        + "<br>por favor hazlo</span></html>");
 
             }
         } else if (dias == 4) {
@@ -2389,7 +2418,8 @@ public class Inscripciones extends javax.swing.JFrame {
                 resultado = 1;
             } else {
                 resultado = -1;
-                JOptionPane.showMessageDialog(this, "No se han seleccionado todos los días, hazlo por favor!");
+                JOptionPane.showMessageDialog(this, "<html><span style=\"font-size:2em\">No se han seleccionado todos días "
+                        + "<br>por favor hazlo</span></html>");
             }
         } else if (dias == 5) {
             if (mascinco[0] != -1 & mascinco[1] != -1 & mascinco[2] != -1 & mascinco[3] != -1 & mascinco[4] != -1) {
@@ -2434,7 +2464,7 @@ public class Inscripciones extends javax.swing.JFrame {
                 resultado = 1;
             } else {
                 resultado = -1;
-                JOptionPane.showMessageDialog(this, "No se han seleccionado todos los días, hazlo por favor!");
+                JOptionPane.showMessageDialog(this, "<html><span style=\"font-size:2em\">No se han seleccionado días <br>por favor hazlo</span></html>");
             }
 
         }
@@ -2553,6 +2583,26 @@ public class Inscripciones extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtcalleKeyTyped
 
+    private void btnfotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnfotoActionPerformed
+//        System.out.println("foto antes: "+image);
+//        System.out.println(jpcfoto.getImage());
+//        
+//        File fi=new File("C:\\Users\\Choche\\Desktop");
+//        BufferedImage j=jpcfoto.getImage();
+//        try {
+//            ImageIO.write(j, "jpg", fi);
+//        } catch (Exception e) {
+//        }
+//        System.out.println("foto: "+image);
+        
+    }//GEN-LAST:event_btnfotoActionPerformed
+
+    private void jpcfotoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpcfotoMouseClicked
+//        byte[] image = jpcfoto.getBytes();
+//        System.out.println("foto: "+image);
+//        btnfoto.setEnabled(true);
+    }//GEN-LAST:event_jpcfotoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -2618,6 +2668,7 @@ public class Inscripciones extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btneditardatos;
     private javax.swing.JButton btneliminar;
+    private javax.swing.JButton btnfoto;
     private javax.swing.JButton btnguardar;
     private javax.swing.JButton btnguardarmodificaciones;
     private javax.swing.JButton btnguardarrenovacion;
@@ -2646,7 +2697,6 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -2656,10 +2706,10 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private JPanelWebCam.JPanelWebCam jPanelWebCam1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private JPanelWebCam.JPanelWebCam jpcfoto;
     private javax.swing.JLabel lblclave;
     private javax.swing.JLabel lblimagen;
     private javax.swing.JLabel lblnombre;

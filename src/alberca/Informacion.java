@@ -67,9 +67,9 @@ public class Informacion extends javax.swing.JFrame  {
         tdatos.getColumnModel().getColumn(1).setMinWidth(80);
         tdatos.getColumnModel().getColumn(1).setPreferredWidth(80);
         
-        tdatos.getColumnModel().getColumn(2).setMaxWidth(280);
-        tdatos.getColumnModel().getColumn(2).setMinWidth(280);
-        tdatos.getColumnModel().getColumn(2).setPreferredWidth(280);
+        tdatos.getColumnModel().getColumn(2).setMaxWidth(260);
+        tdatos.getColumnModel().getColumn(2).setMinWidth(260);
+        tdatos.getColumnModel().getColumn(2).setPreferredWidth(260);
         
         tdatos.getColumnModel().getColumn(3).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(3).setMinWidth(0);
@@ -107,9 +107,9 @@ public class Informacion extends javax.swing.JFrame  {
         tdatos.getColumnModel().getColumn(14).setMaxWidth(85);
         tdatos.getColumnModel().getColumn(14).setMinWidth(85);
         tdatos.getColumnModel().getColumn(14).setPreferredWidth(85);
-        tdatos.getColumnModel().getColumn(15).setMaxWidth(100);
-        tdatos.getColumnModel().getColumn(15).setMinWidth(100);
-        tdatos.getColumnModel().getColumn(15).setPreferredWidth(100);
+        tdatos.getColumnModel().getColumn(15).setMaxWidth(110);
+        tdatos.getColumnModel().getColumn(15).setMinWidth(110);
+        tdatos.getColumnModel().getColumn(15).setPreferredWidth(110);
         
         tdatos.getColumnModel().getColumn(1).setResizable(false);
         tdatos.getColumnModel().getColumn(2).setResizable(false);

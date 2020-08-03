@@ -80,9 +80,10 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CENTRO ACUÁTICO ALFA & OMEGA");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(330, 10, 819, 50);
+        jLabel1.setBounds(300, 10, 730, 50);
 
         jButton4.setBackground(new java.awt.Color(255, 0, 0));
         jButton4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
