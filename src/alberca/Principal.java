@@ -56,7 +56,7 @@ public class Principal extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jButton1.setBackground(new java.awt.Color(255, 204, 0));
+        jButton1.setBackground(new java.awt.Color(0, 153, 204));
         jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton1.setText("INSCRIPCIÓN Y RENOVACIÓN");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -67,7 +67,7 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(140, 110, 297, 55);
 
-        jButton3.setBackground(new java.awt.Color(255, 204, 0));
+        jButton3.setBackground(new java.awt.Color(0, 153, 204));
         jButton3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton3.setText("RECUPERAR DÍAS PERDIDOS");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -109,7 +109,7 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(jButton5);
         jButton5.setBounds(900, 560, 260, 50);
 
-        jButton6.setBackground(new java.awt.Color(255, 204, 0));
+        jButton6.setBackground(new java.awt.Color(0, 153, 204));
         jButton6.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton6.setText("USUARIOS AL DÍA");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -120,7 +120,7 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(jButton6);
         jButton6.setBounds(480, 210, 330, 55);
 
-        jButton7.setBackground(new java.awt.Color(255, 204, 0));
+        jButton7.setBackground(new java.awt.Color(0, 153, 204));
         jButton7.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton7.setText("VER DATOS DE USUARIO");
         jButton7.addActionListener(new java.awt.event.ActionListener() {

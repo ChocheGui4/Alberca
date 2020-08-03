@@ -1203,7 +1203,7 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(btneliminar);
         btneliminar.setBounds(1130, 120, 120, 50);
 
-        btnnuevo.setBackground(new java.awt.Color(255, 231, 0));
+        btnnuevo.setBackground(new java.awt.Color(0, 153, 204));
         btnnuevo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnnuevo.setText("Nuevo");
         btnnuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -1237,7 +1237,7 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(btnguardar);
         btnguardar.setBounds(180, 540, 170, 50);
 
-        btnrenovar.setBackground(new java.awt.Color(255, 153, 0));
+        btnrenovar.setBackground(new java.awt.Color(0, 153, 204));
         btnrenovar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnrenovar.setText("Renovar mensualidad");
         btnrenovar.addActionListener(new java.awt.event.ActionListener() {
@@ -1370,7 +1370,7 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(jpcfoto);
         jpcfoto.setBounds(1130, 10, 120, 100);
 
-        btneditardatos.setBackground(new java.awt.Color(255, 204, 0));
+        btneditardatos.setBackground(new java.awt.Color(0, 153, 204));
         btneditardatos.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btneditardatos.setText("Editar datos");
         btneditardatos.addActionListener(new java.awt.event.ActionListener() {
@@ -1448,7 +1448,7 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(jLabel18);
         jLabel18.setBounds(530, 140, 141, 31);
 
-        jButton2.setBackground(new java.awt.Color(255, 153, 0));
+        jButton2.setBackground(new java.awt.Color(0, 153, 204));
         jButton2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Ver eliminados");
