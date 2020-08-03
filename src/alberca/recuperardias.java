@@ -210,19 +210,16 @@ public class recuperardias extends javax.swing.JFrame {
 
         lblnombreset.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblnombreset.setForeground(new java.awt.Color(204, 204, 204));
-        lblnombreset.setText("Dato");
         getContentPane().add(lblnombreset);
         lblnombreset.setBounds(240, 100, 240, 31);
 
         lblapellidosset.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblapellidosset.setForeground(new java.awt.Color(204, 204, 204));
-        lblapellidosset.setText("Dato");
         getContentPane().add(lblapellidosset);
         lblapellidosset.setBounds(240, 130, 210, 31);
 
         lblfechainicioset.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblfechainicioset.setForeground(new java.awt.Color(204, 204, 204));
-        lblfechainicioset.setText("Dato");
         getContentPane().add(lblfechainicioset);
         lblfechainicioset.setBounds(240, 170, 210, 31);
 
@@ -251,7 +248,6 @@ public class recuperardias extends javax.swing.JFrame {
 
         lblfechaterminoset.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblfechaterminoset.setForeground(new java.awt.Color(204, 204, 204));
-        lblfechaterminoset.setText("Dato");
         getContentPane().add(lblfechaterminoset);
         lblfechaterminoset.setBounds(240, 210, 210, 31);
 
@@ -329,7 +325,7 @@ public class recuperardias extends javax.swing.JFrame {
         cbrecuperarid.removeAllItems();
         recu.traerdiasarecuperar(cbrecuperarnombres, id);
         recu.traerdiasarecuperarid(cbrecuperarid, id);
-        fecha = tdatos.getValueAt(fila, 6).toString();
+        fecha = tdatos.getValueAt(fila, 7).toString();
         txtfechamaxima.setDate(StringaDate(fecha));
         //Primera opción
         txtfechamaxima.getJCalendar().setMinSelectableDate(new Date());
@@ -339,8 +335,8 @@ public class recuperardias extends javax.swing.JFrame {
 //        txtfechamaxima.getJCalendar().setMaxSelectableDate(txtfechamaxima.getDate());
         lblnombreset.setText(tdatos.getValueAt(fila, 2).toString());
         lblapellidosset.setText(tdatos.getValueAt(fila, 3).toString());
-        lblfechainicioset.setText(tdatos.getValueAt(fila, 5).toString());
-        lblfechaterminoset.setText(tdatos.getValueAt(fila, 6).toString());
+        lblfechainicioset.setText(tdatos.getValueAt(fila, 6).toString());
+        lblfechaterminoset.setText(tdatos.getValueAt(fila, 7).toString());
 
     }//GEN-LAST:event_tdatosMouseClicked
 

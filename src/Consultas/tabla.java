@@ -314,7 +314,7 @@ public class tabla {
                 registro[2] = rs.getString("nombre");
                 registro[3] = rs.getString("apellidos");
                 registro[4] = rs.getString("localidad");
-                registro[5] = rs.getString("sesiones");
+                registro[5] = ""+(rs.getInt("sesiones")*4);
                 registro[6] = rs.getString("fecha_ini");
                 registro[7] = rs.getString("fecha_fin");
                 registro[8] = rs.getString("mensualidad_id");
