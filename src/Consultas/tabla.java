@@ -24,21 +24,26 @@ public class tabla {
     public static Connection conn = null;
     private String sSQL = "";
     public Integer totalregistros;
-    
+
+    public static void main(String[] args) {
+        tabla tab = new tabla();
+        tab.contarhorarios(8,"Lunes",1);
+//
+//        tab.contarhorarios(8);
+    }
+
     //Capturar imagen
     public byte[] mostrarimagen(int id) {
         conn = con.conectar();
-       
 
-        sSQL = "select * from usuario where id_usuario='"+id+"'";
+        sSQL = "select * from usuario where id_usuario='" + id + "'";
 //        System.out.println("Después de la consulta");
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sSQL);
-            byte[] image=null;
+            byte[] image = null;
             while (rs.next()) {
                 image = rs.getBytes("foto");
-                
 
             }
             System.out.println("foto retorna");
@@ -159,6 +164,108 @@ public class tabla {
             }
 //            System.out.println("antes del return");
             return modelo;
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            return null;
+        }
+    }
+
+    //Llnar horarios
+    public JComboBox mostrarhorarios(JComboBox combo1, String dia, int maestro) {
+        conn = con.conectar();
+//        System.out.println("Se metió al método");
+
+        sSQL = "select * from horario order by hora_num";
+//        System.out.println("Después de la consulta");
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sSQL);
+            int val = 0, cont = 1;
+            while (rs.next()) {
+                
+                val = contarhorarios(cont, dia, maestro);
+                if ((val / 4) < 5) {
+                    combo1.addItem(rs.getString("horario"));
+                }
+                cont+=1;
+
+            }
+//            System.out.println("antes del return");
+            return combo1;
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            return null;
+        }
+    }
+
+    //Contar horarios disponibles
+    public int contarhorarios(int id, String dia, int maestro) {
+        conn = con.conectar();
+//        System.out.println("Se metió al método");
+
+        sSQL = " select count(*) as hola from maestros join dias on"
+                + " dias.maestros_id = maestros.id_maestros join horario on"
+                + " dias.horario_id = horario.id_horario where id_horario='" + id + "' "
+                + "and dias_nombre='"+dia+"' and maestros_id='"+maestro+"'";
+//        System.out.println("Después de la consulta");
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sSQL);
+            int numero = 1;
+            while (rs.next()) {
+                numero = rs.getInt("hola");
+//                JOptionPane.showConfirmDialog(null, "Resultado: " + rs.getInt("hola"));
+            }
+
+//            System.out.println("antes del return");
+//            return combo1;
+            return numero;
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            return 0;
+        }
+    }
+
+    //Llenar maestros
+    public JComboBox mostrarmaestros(JComboBox combo1) {
+        conn = con.conectar();
+//        System.out.println("Se metió al método");
+
+        sSQL = "select * from maestros order by id_maestros";
+//        System.out.println("Después de la consulta");
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sSQL);
+
+            while (rs.next()) {
+                combo1.addItem(rs.getString("nombre") + " " + rs.getString("apellidos"));
+
+            }
+//            System.out.println("antes del return");
+            return combo1;
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            return null;
+        }
+    }
+
+    //Llenar id de horario
+    public JComboBox mostraridhorario(JComboBox combo1) {
+        conn = con.conectar();
+//        System.out.println("Se metió al método");
+
+        sSQL = "select * from horario order by hora_num";
+//        System.out.println("Después de la consulta");
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sSQL);
+
+            while (rs.next()) {
+                combo1.addItem(rs.getString("id_horario"));
+
+            }
+//            System.out.println("antes del return");
+            return combo1;
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, e);
             return null;
@@ -314,7 +421,7 @@ public class tabla {
                 registro[2] = rs.getString("nombre");
                 registro[3] = rs.getString("apellidos");
                 registro[4] = rs.getString("localidad");
-                registro[5] = ""+(rs.getInt("sesiones")*4);
+                registro[5] = "" + (rs.getInt("sesiones") * 4);
                 registro[6] = rs.getString("fecha_ini");
                 registro[7] = rs.getString("fecha_fin");
                 registro[8] = rs.getString("mensualidad_id");

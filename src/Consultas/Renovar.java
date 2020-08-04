@@ -77,87 +77,80 @@ public class Renovar {
         }
     }
 
-    public static boolean insertardiasmes(int[] dias, int[] mes, int numero, int n, String horario, int hora) {
+    public static boolean insertardiasmes(int[] dias, int[] mes, int numero, int n, int horario_id) {
         try {
             conn = con.conectar();
             //s = conn.prepareStatement("insert into Registrar_Usuario values (?,?,?,?,?)");
 
             if (numero == 0) {
                 for (int i = 0; i < dias.length; i++) {
-                    s = conn.prepareStatement("INSERT INTO dias(dias_nombre,dias_num,mes_num,horario,hora_num,mensualidad_id)"
-                            + " VALUES (?,?,?,?,?,?)");
+                    s = conn.prepareStatement("INSERT INTO dias(dias_nombre,dias_num,mes_num,horario_id,mensualidad_id)"
+                            + " VALUES (?,?,?,?,?)");
                     s.setString(1, "Lunes");
                     s.setString(2, "" + dias[i]);
                     s.setString(3, "" + mes[i]);
-                    s.setString(4, horario);
-                    s.setInt(5, hora);
-                    s.setInt(6, n);
+                    s.setInt(4, horario_id);
+                    s.setInt(5, n);
                     s.executeUpdate();
                 }
 
             } else if (numero == 1) {
                 for (int i = 0; i < dias.length; i++) {
-                    s = conn.prepareStatement("INSERT INTO dias(dias_nombre,dias_num,mes_num,horario,hora_num,mensualidad_id)"
-                            + " VALUES (?,?,?,?,?,?)");
+                   s = conn.prepareStatement("INSERT INTO dias(dias_nombre,dias_num,mes_num,horario_id,mensualidad_id)"
+                            + " VALUES (?,?,?,?,?)");
                     s.setString(1, "Martes");
                     s.setString(2, "" + dias[i]);
                     s.setString(3, "" + mes[i]);
-                    s.setString(4, horario);
-                    s.setInt(5, hora);
-                    s.setInt(6, n);
-
+                    s.setInt(4, horario_id);
+                    s.setInt(5, n);
                     s.executeUpdate();
                 }
 
             } else if (numero == 2) {
                 for (int i = 0; i < dias.length; i++) {
-                    s = conn.prepareStatement("INSERT INTO dias(dias_nombre,dias_num,mes_num,horario,hora_num,mensualidad_id)"
-                            + " VALUES (?,?,?,?,?,?)");
+                   s = conn.prepareStatement("INSERT INTO dias(dias_nombre,dias_num,mes_num,horario_id,mensualidad_id)"
+                            + " VALUES (?,?,?,?,?)");
                     s.setString(1, "Miercoles");
                     s.setString(2, "" + dias[i]);
                     s.setString(3, "" + mes[i]);
-                    s.setString(4, horario);
-                    s.setInt(5, hora);
-                    s.setInt(6, n);
+                    s.setInt(4, horario_id);
+                    s.setInt(5, n);
                     s.executeUpdate();
                 }
 
             } else if (numero == 3) {
                 for (int i = 0; i < dias.length; i++) {
-                    s = conn.prepareStatement("INSERT INTO dias(dias_nombre,dias_num,mes_num,horario,hora_num,mensualidad_id)"
-                            + " VALUES (?,?,?,?,?,?)");
+                   s = conn.prepareStatement("INSERT INTO dias(dias_nombre,dias_num,mes_num,horario_id,mensualidad_id)"
+                            + " VALUES (?,?,?,?,?)");
                     s.setString(1, "Jueves");
                     s.setString(2, "" + dias[i]);
                     s.setString(3, "" + mes[i]);
-                    s.setString(4, horario);
-                    s.setInt(5, hora);
-                    s.setInt(6, n);
+                    s.setInt(4, horario_id);
+                    s.setInt(5, n);
                     s.executeUpdate();
                 }
 
             } else if (numero == 4) {
                 for (int i = 0; i < dias.length; i++) {
-                    s = conn.prepareStatement("INSERT INTO dias(dias_nombre,dias_num,mes_num,horario,hora_num,mensualidad_id)"
-                            + " VALUES (?,?,?,?,?,?)");
+                   s = conn.prepareStatement("INSERT INTO dias(dias_nombre,dias_num,mes_num,horario_id,mensualidad_id)"
+                            + " VALUES (?,?,?,?,?)");
                     s.setString(1, "Viernes");
                     s.setString(2, "" + dias[i]);
                     s.setString(3, "" + mes[i]);
-                    s.setString(4, horario);
-                    s.setInt(5, hora);
-                    s.setInt(6, n);
+                    s.setInt(4, horario_id);
+                    s.setInt(5, n);
                     s.executeUpdate();
                 }
 
             } else if (numero == 5) {
                 for (int i = 0; i < dias.length; i++) {
-                    s = conn.prepareStatement("INSERT INTO dias(dias_nombre,dias_num,mes_num,horario,hora_num,mensualidad_id)"
-                            + " VALUES (?,?,?,?,?,?)");
+                   s = conn.prepareStatement("INSERT INTO dias(dias_nombre,dias_num,mes_num,horario_id,mensualidad_id)"
+                            + " VALUES (?,?,?,?,?)");
                     s.setString(1, "Sabado");
                     s.setString(2, "" + dias[i]);
                     s.setString(3, "" + mes[i]);
-                    s.setString(4, horario);
-                    s.setInt(5, hora);
-                    s.setInt(6, n);
+                    s.setInt(4, horario_id);
+                    s.setInt(5, n);
                     s.executeUpdate();
                 }
 
