@@ -104,9 +104,11 @@ public class Inscripciones extends javax.swing.JFrame {
     JCheckBox diascinco[] = new JCheckBox[5];
     JComboBox combocinco[] = new JComboBox[5];
     public Date fechaselec = null;
+    tabla tab = new tabla();
 
     public Inscripciones() {
         Calendar calendario = Calendar.getInstance();
+
 //        this.setContentPane(fondo);
         initComponents();
         lbltutor.setVisible(false);
@@ -127,18 +129,19 @@ public class Inscripciones extends javax.swing.JFrame {
         mostrar("");
         marcarcalendar(new Date());
         llenarclaves();
+        tab.mostraridhorario(cbidhorario);
+        tab.mostrarmaestros(cbmaestros);
         System.out.println("es: " + cbclaves.getItemCount());
         System.out.println(calendario.get(Calendar.HOUR_OF_DAY) + ":00 - " + (calendario.get(Calendar.HOUR_OF_DAY) + 1) + ":00");
         this.setLocationRelativeTo(null);
-        ((JTextField) this.txtfechanacimiento.getDateEditor()).setEditable(false);
         ((JTextField) this.txtfechainicio.getDateEditor()).setEditable(false);
         ((JTextField) this.txtfechatermino.getDateEditor()).setEditable(false);
     }
 
     public void llenarclaves() {
-        tabla tb = new tabla();
-        tb.consultarclaves(cbclaves);
-        tb.consultarids(cbidus);
+
+        tab.consultarclaves(cbclaves);
+        tab.consultarids(cbidus);
     }
 
     public void marcarcalendar(Date fecha) {
@@ -170,7 +173,6 @@ public class Inscripciones extends javax.swing.JFrame {
             dia3 = 3;
             dia4 = 4;
             dia5 = 5;
-            
 
             darnombredias("Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
 
@@ -649,7 +651,6 @@ public class Inscripciones extends javax.swing.JFrame {
         txtnombre.setEnabled(valor);
         txtapellidos.setEnabled(valor);
         txtnombretutor.setEnabled(valor);
-        txtfechanacimiento.setEnabled(valor);
 
     }
 
@@ -677,7 +678,6 @@ public class Inscripciones extends javax.swing.JFrame {
         txtnumin.setText("");
         txttelefono.setText("");
         txtcelular.setText("");
-        txtfechanacimiento.setDate(StringaDate(""));
         txtfechainicio.setDate(new Date());
         cktutor.setSelected(false);
         cktutor.setEnabled(true);
@@ -810,9 +810,9 @@ public class Inscripciones extends javax.swing.JFrame {
     void mostrar(String buscar) {
         try {
             DefaultTableModel modelo;
-            tabla tab = new tabla();
+
             modelo = tab.mostrar(buscar);
-            
+
 //            tab.mostrarhorarios(cbhoralunes,"Lunes",1);
 //            tab.mostrarhorarios(cbhoramartes,"Martes",1);
 //            tab.mostrarhorarios(cbhoramiercoles,"Miercoles",1);
@@ -824,8 +824,6 @@ public class Inscripciones extends javax.swing.JFrame {
 //            tab.mostrarhorarios(cbhorajueves);
 //            tab.mostrarhorarios(cbhoraviernes);
 //            tab.mostrarhorarios(cbhorasabado);
-            tab.mostraridhorario(cbidhorario);
-            tab.mostrarmaestros(cbmaestros);
             tdatos.setModel(modelo);
             ocultar_columnas();
             lblregistros.setText("Registros: " + Integer.toString(tab.totalregistros));
@@ -982,7 +980,6 @@ public class Inscripciones extends javax.swing.JFrame {
         txtidusuario = new javax.swing.JTextField();
         txtfechainicio = new com.toedter.calendar.JDateChooser();
         txtfechatermino = new com.toedter.calendar.JDateChooser();
-        txtfechanacimiento = new com.toedter.calendar.JDateChooser();
         btnguardarmodificaciones = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
@@ -998,6 +995,7 @@ public class Inscripciones extends javax.swing.JFrame {
         cbidhorario = new javax.swing.JComboBox<>();
         cbmaestros = new javax.swing.JComboBox<>();
         txtidmaestro = new javax.swing.JTextField();
+        cbedad = new javax.swing.JComboBox<>();
         lblimagen = new javax.swing.JLabel();
         lblregistros = new javax.swing.JLabel();
 
@@ -1154,7 +1152,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cktutor);
-        cktutor.setBounds(460, 140, 59, 25);
+        cktutor.setBounds(449, 140, 70, 25);
 
         lbltutor.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         lbltutor.setForeground(new java.awt.Color(204, 204, 204));
@@ -1232,7 +1230,7 @@ public class Inscripciones extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel13.setText("Fecha de nacimiento:");
+        jLabel13.setText("Edad:");
         getContentPane().add(jLabel13);
         jLabel13.setBounds(22, 144, 210, 31);
 
@@ -1421,11 +1419,6 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(txtfechatermino);
         txtfechatermino.setBounds(610, 400, 170, 30);
 
-        txtfechanacimiento.setDateFormatString("yyyy/MM/dd");
-        txtfechanacimiento.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        getContentPane().add(txtfechanacimiento);
-        txtfechanacimiento.setBounds(230, 140, 190, 30);
-
         btnguardarmodificaciones.setBackground(new java.awt.Color(51, 255, 0));
         btnguardarmodificaciones.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnguardarmodificaciones.setText("Guardar");
@@ -1509,6 +1502,11 @@ public class Inscripciones extends javax.swing.JFrame {
         cbmaestros.setBounds(540, 60, 420, 30);
         getContentPane().add(txtidmaestro);
         txtidmaestro.setBounds(970, 60, 70, 30);
+
+        cbedad.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        cbedad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99" }));
+        getContentPane().add(cbedad);
+        cbedad.setBounds(230, 140, 80, 30);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
@@ -1873,7 +1871,7 @@ public class Inscripciones extends javax.swing.JFrame {
                         val[j] = dossesion[i][j];
                         mess[j] = dossesionmes[i][j];
                     }
-                    
+
                     re.insertardiasmes(val, mess, diamasdos[i], r, Integer.parseInt(combohoras[masdos[i]]));
                 }
                 resultado = 1;
@@ -1906,7 +1904,7 @@ public class Inscripciones extends javax.swing.JFrame {
                         val[j] = tressesion[i][j];
                         mess[j] = tressesionmes[i][j];
                     }
-                   
+
                     re.insertardiasmes(val, mess, diamastres[i], r, Integer.parseInt(combohoras[mastres[i]]));
                 }
                 resultado = 1;
@@ -1939,7 +1937,7 @@ public class Inscripciones extends javax.swing.JFrame {
                         val[j] = cuatrosesion[i][j];
                         mess[j] = cuatrosesionmes[i][j];
                     }
-                   
+
                     re.insertardiasmes(val, mess, diamascuatro[i], r, Integer.parseInt(combohoras[mascuatro[i]]));
                 }
                 resultado = 1;
@@ -1971,7 +1969,7 @@ public class Inscripciones extends javax.swing.JFrame {
                         val[j] = cincosesion[i][j];
                         mess[j] = cincosesionmes[i][j];
                     }
-                   
+
                     re.insertardiasmes(val, mess, diamascinco[i], r, Integer.parseInt(combohoras[mascinco[i]]));
                 }
                 resultado = 1;
@@ -1986,8 +1984,12 @@ public class Inscripciones extends javax.swing.JFrame {
             dias = 1;
             inscripcion ins = new inscripcion();
             r = re.idmensualidad();
+            //Calcular edad
+
+            //
             //                System.out.println("antes de::::::::::");
-            boolean v = ins.insertardias(cbidus.getItemAt(0), cbclaves.getItemAt(0), txtnombre.getText(), txtapellidos.getText(), obtenerfechanacimiento(txtfechanacimiento), txtlocalidad.getText(),
+            boolean v = ins.insertardias(cbidus.getItemAt(0), cbclaves.getItemAt(0), txtnombre.getText(),
+                    txtapellidos.getText(), cbedad.getItemAt(cbedad.getSelectedIndex()), txtlocalidad.getText(),
                     txtcalle.getText(), txtnumex.getText(), txtnumin.getText(), txttelefono.getText(), txtcelular.getText(),
                     txtnombretutor.getText(), r, "");
             if (v == true) {
@@ -2020,7 +2022,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
 //        txtfechatermino.setDate(StringaDate("2018/02/12"));
 
-        if (txtnombre.getText().equals("") | txtapellidos.getText().equals("") | txtfechanacimiento.getDate() == null
+        if (txtnombre.getText().equals("") | txtapellidos.getText().equals("") | cbmaestros.getSelectedIndex() == 0
                 | txtlocalidad.getText().equals("") | txtcalle.getText().equals("") | txtnumex.getText().equals("")
                 | txttelefono.getText().equals("") | txtcelular.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "<html><span style=\"font-size:2em\">Completa los datos solicitados"
@@ -2049,7 +2051,7 @@ public class Inscripciones extends javax.swing.JFrame {
         habilitarhoras(false);
 //        btneliminar.setEnabled(true);
 //        accion="editar";
-        tabla t = new tabla();
+        
 
         int fila = tdatos.rowAtPoint(evt.getPoint());
 //        byte[] imagen;
@@ -2059,7 +2061,7 @@ public class Inscripciones extends javax.swing.JFrame {
         txtnombre.setText(tdatos.getValueAt(fila, 2).toString());
         txtapellidos.setText(tdatos.getValueAt(fila, 3).toString());
 //        txtfechatermino.setDate(StringaDate("2018/02/12"));
-        txtfechanacimiento.setDate(StringaDate(tdatos.getValueAt(fila, 4).toString()));
+        cbedad.setSelectedIndex(Integer.parseInt(tdatos.getValueAt(fila, 4).toString()) - 1);
         if (tdatos.getValueAt(fila, 11).toString().equals("")) {
             cktutor.setEnabled(false);
             cktutor.setSelected(false);
@@ -2071,6 +2073,7 @@ public class Inscripciones extends javax.swing.JFrame {
             txtnombretutor.setEnabled(false);
             cktutor.setSelected(true);
             cktutor.setEnabled(false);
+
         }
 
         txtlocalidad.setText(tdatos.getValueAt(fila, 5).toString());
@@ -2087,6 +2090,7 @@ public class Inscripciones extends javax.swing.JFrame {
         btnguardar.setEnabled(false);
         btnguardarmodificaciones.setEnabled(false);
         btnguardarrenovacion.setEnabled(false);
+        cbedad.setEnabled(false);
 
     }//GEN-LAST:event_tdatosMouseClicked
 
@@ -2105,6 +2109,8 @@ public class Inscripciones extends javax.swing.JFrame {
         btnrenovar.setEnabled(false);
         btnguardar.setEnabled(true);
         btnguardarmodificaciones.setEnabled(false);
+        cbedad.setSelectedIndex(0);
+        cbedad.setEnabled(true);
         jpcfoto.setImagenNull();
 
 
@@ -2655,6 +2661,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JButton btnrenovar;
     private javax.swing.JComboBox<String> cbclaves;
     private javax.swing.JComboBox<String> cbdias;
+    private javax.swing.JComboBox<String> cbedad;
     private javax.swing.JComboBox<String> cbhorajueves;
     private javax.swing.JComboBox<String> cbhoralunes;
     private javax.swing.JComboBox<String> cbhoramartes;
@@ -2703,7 +2710,6 @@ public class Inscripciones extends javax.swing.JFrame {
     public javax.swing.JTextField txtcelular;
     public javax.swing.JTextField txteliminar;
     private com.toedter.calendar.JDateChooser txtfechainicio;
-    public com.toedter.calendar.JDateChooser txtfechanacimiento;
     private com.toedter.calendar.JDateChooser txtfechatermino;
     private javax.swing.JTextField txtidmaestro;
     private javax.swing.JTextField txtidusuario;

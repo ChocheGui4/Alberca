@@ -29,7 +29,7 @@ public class inscripcion {
 //                "", 1);
     }
 
-    public static boolean insertardias(String id, String clave, String nombre, String apellidos, String fecha_naci, String localidad,
+    public static boolean insertardias(String id, String clave, String nombre, String apellidos, String edad, String localidad,
             String calle, String numero_e, String numero_i,
             String telefono, String celular, String nombre_tutor, int mensualidad, String foto) {
         try {
@@ -37,12 +37,12 @@ public class inscripcion {
             //s = conn.prepareStatement("insert into Registrar_Usuario values (?,?,?,?,?)");
             if (clave == null) {
 //                System.out.println("miraaaaaaa id anterior vacio");
-                s = conn.prepareStatement("INSERT INTO usuario(nombre,apellidos,fecha_nacimiento,localidad,calle,"
+                s = conn.prepareStatement("INSERT INTO usuario(nombre,apellidos,edad,localidad,calle,"
                         + "numero_e,numero_i,telefono_1,celular_1,nombre_tutor,mensualidad_id,foto)"
                         + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
                 s.setString(1, nombre);
                 s.setString(2, apellidos);
-                s.setString(3, fecha_naci);
+                s.setString(3, edad);
                 s.setString(4, localidad);
                 s.setString(5, calle);
                 s.setString(6, numero_e);
@@ -67,12 +67,12 @@ public class inscripcion {
                 
 //                System.out.println("No miraaaaaaa id anterior No vacio");
 //                System.out.println("Claveeeeee: "+clave);
-                s = conn.prepareStatement("UPDATE usuario SET nombre=?,apellidos=?,fecha_nacimiento=?"
+                s = conn.prepareStatement("UPDATE usuario SET nombre=?,apellidos=?,edad=?"
                         + ",localidad=?,calle=?,numero_e=?,numero_i=?,telefono_1=?,celular_1=?,nombre_tutor=?,"
                         + "mensualidad_id=? WHERE id_usuario=" + id);
                 s.setString(1, nombre);
                 s.setString(2, apellidos);
-                s.setString(3, fecha_naci);
+                s.setString(3, edad);
                 s.setString(4, localidad);
                 s.setString(5, calle);
                 s.setString(6, numero_e);

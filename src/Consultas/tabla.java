@@ -60,7 +60,7 @@ public class tabla {
         DefaultTableModel modelo;
 //        System.out.println("Se metió al método");
 
-        String[] titulos = {"ID", "Clave", "Nombre", "Apellidos", "Fecha de nacimiento", "localidad", "calle",
+        String[] titulos = {"ID", "Clave", "Nombre", "Apellidos", "Edad", "localidad", "calle",
             "no_interno", "no_externo", "telefono", "celular", "nombre del tutor",
             "fecha de inicio", "fecha de termino", "id mes"};
 
@@ -88,7 +88,7 @@ public class tabla {
                 registro[1] = rs.getString("clave");
                 registro[2] = rs.getString("nombre");
                 registro[3] = rs.getString("apellidos");
-                registro[4] = rs.getString("fecha_nacimiento");
+                registro[4] = rs.getString("edad");
                 registro[5] = rs.getString("localidad");
                 registro[6] = rs.getString("calle");
                 registro[7] = rs.getString("numero_e");
