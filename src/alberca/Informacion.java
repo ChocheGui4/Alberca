@@ -189,7 +189,7 @@ public class Informacion extends javax.swing.JFrame  {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("CENTRO ACUÁTICO ALFA & OMEGA");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(230, 0, 819, 50);
+        jLabel3.setBounds(310, 0, 819, 50);
 
         jButton1.setBackground(new java.awt.Color(0, 153, 204));
         jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
