@@ -143,6 +143,7 @@ public class Informacion extends javax.swing.JFrame  {
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         txtbuscar = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         lblimagen = new javax.swing.JLabel();
 
@@ -182,7 +183,7 @@ public class Informacion extends javax.swing.JFrame  {
         jScrollPane1.setViewportView(tdatos);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(40, 142, 1190, 390);
+        jScrollPane1.setBounds(40, 142, 1190, 410);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -210,6 +211,12 @@ public class Informacion extends javax.swing.JFrame  {
         });
         getContentPane().add(txtbuscar);
         txtbuscar.setBounds(1060, 110, 170, 30);
+
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Coordinador: Alfonso Sánchez Piedras");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(770, 550, 450, 50);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
@@ -308,6 +315,7 @@ public class Informacion extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblimagen;
     private javax.swing.JTable tdatos;

@@ -83,6 +83,12 @@ public class usuariosaldia extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(0).setMaxWidth(400);
         tdatos.getColumnModel().getColumn(0).setMinWidth(400);
         tdatos.getColumnModel().getColumn(0).setPreferredWidth(400);
+        tdatos.getColumnModel().getColumn(0).setResizable(false);
+        tdatos.getColumnModel().getColumn(1).setResizable(false);
+        tdatos.getColumnModel().getColumn(2).setResizable(false);
+        tdatos.getColumnModel().getColumn(3).setResizable(false);
+        tdatos.getColumnModel().getColumn(4).setResizable(false);
+        tdatos.getColumnModel().getColumn(5).setResizable(false);
     }
 
     /**
@@ -99,6 +105,7 @@ public class usuariosaldia extends javax.swing.JFrame {
         tdatos = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         lblimagen = new javax.swing.JLabel();
 
@@ -155,7 +162,7 @@ public class usuariosaldia extends javax.swing.JFrame {
         }
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(40, 140, 1180, 440);
+        jScrollPane1.setBounds(40, 140, 1180, 430);
 
         jButton1.setBackground(new java.awt.Color(0, 153, 204));
         jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -174,6 +181,12 @@ public class usuariosaldia extends javax.swing.JFrame {
         jLabel2.setText("Usuarios al día");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(40, 90, 260, 40);
+
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Coordinador: Alfonso Sánchez Piedras");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(780, 560, 450, 50);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
@@ -297,6 +310,7 @@ public class usuariosaldia extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblimagen;
     private static javax.swing.JTable tdatos;

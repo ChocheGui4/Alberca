@@ -146,6 +146,7 @@ public class eliminados extends javax.swing.JFrame {
         btnreinscribir = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         txtbuscar = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         lblimagen = new javax.swing.JLabel();
 
@@ -229,6 +230,12 @@ public class eliminados extends javax.swing.JFrame {
         });
         getContentPane().add(txtbuscar);
         txtbuscar.setBounds(1070, 120, 150, 30);
+
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Coordinador: Alfonso Sánchez Piedras");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(770, 490, 450, 50);
 
         jLabel18.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(204, 204, 204));
@@ -403,6 +410,7 @@ public class eliminados extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblimagen;
     private javax.swing.JTable tdatos;

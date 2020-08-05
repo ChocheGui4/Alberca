@@ -151,6 +151,7 @@ public class recuperardias extends javax.swing.JFrame {
         cbnombredias = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         cbidhorario = new javax.swing.JComboBox<>();
         lblimagen = new javax.swing.JLabel();
 
@@ -326,6 +327,12 @@ public class recuperardias extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(560, 70, 220, 40);
 
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Coordinador: Alfonso Sánchez Piedras");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(770, 540, 450, 60);
+
         cbidhorario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11" }));
         getContentPane().add(cbidhorario);
         cbidhorario.setBounds(1200, 190, 70, 30);
@@ -482,6 +489,7 @@ public class recuperardias extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblapellidosset;
     private javax.swing.JLabel lblfechainicioset;
