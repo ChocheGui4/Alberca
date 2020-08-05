@@ -63,7 +63,8 @@ public class Eliminarusuarios {
             int n = pst.executeUpdate();
 
             if (n != 0) {
-                JOptionPane.showMessageDialog(null, "<html><span style=\"font-size:2em\">Se eliminó con éxito</span></html>");
+                JOptionPane.showMessageDialog(null, "<html><span style=\"font-size:2em\">Se eliminó con éxito</span></html>",
+                        "Eliminación", JOptionPane.INFORMATION_MESSAGE);
                 return true;
             } else {
                 return false;

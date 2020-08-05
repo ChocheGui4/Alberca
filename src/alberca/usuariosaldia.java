@@ -39,7 +39,7 @@ public class usuariosaldia extends javax.swing.JFrame {
                     try {
                         // En él, hacemos que el hilo duerma
                         
-                        Thread.sleep(5000);
+                        Thread.sleep(60000);
                         // Y después realizamos las operaciones
                         mostrar();
 //                        System.out.println("Me imprimo cada segundo");

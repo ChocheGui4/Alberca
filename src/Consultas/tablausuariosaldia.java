@@ -29,9 +29,9 @@ public class tablausuariosaldia {
         DefaultTableModel modelo;
 //        System.out.println("Se metió al método");
 
-        String[] titulos = {"Nombre", "Fecha de inicio", "Fecha de termino", "Día", "Horario"};
+        String[] titulos = {"Nombre","Edad", "Fecha de inicio", "Fecha de termino", "Día", "Horario"};
 
-        String[] registro = new String[5];
+        String[] registro = new String[6];
 
         totalregistros = 0;
         modelo = new DefaultTableModel(null, titulos){
@@ -57,11 +57,12 @@ public class tablausuariosaldia {
             while (rs.next()) {
                 registro[0] = rs.getString("nombre")+" ";
                 registro[0] += rs.getString("apellidos");
-                registro[1] = rs.getString("fecha_ini");
-                registro[2] = rs.getString("fecha_fin");
-                registro[3] = rs.getString("dias_nombre")+" ";
-                registro[3] += rs.getString("dias_num");
-                registro[4] = rs.getString("horario");
+                registro[1] = rs.getString("edad");
+                registro[2] = rs.getString("fecha_ini");
+                registro[3] = rs.getString("fecha_fin");
+                registro[4] = rs.getString("dias_nombre")+" ";
+                registro[4] += rs.getString("dias_num");
+                registro[5] = rs.getString("horario");
                 totalregistros = totalregistros + 1;
                 modelo.addRow(registro);
 

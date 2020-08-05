@@ -62,9 +62,9 @@ public class tabla {
 
         String[] titulos = {"ID", "Clave", "Nombre", "Apellidos", "Edad", "localidad", "calle",
             "no_interno", "no_externo", "telefono", "celular", "nombre del tutor",
-            "fecha de inicio", "fecha de termino", "id mes"};
+            "fecha de inicio", "fecha de termino", "id mes","id maestro"};
 
-        String[] registro = new String[15];
+        String[] registro = new String[16];
 
         totalregistros = 0;
         modelo = new DefaultTableModel(null, titulos) {
@@ -77,7 +77,9 @@ public class tabla {
         };
 
         sSQL = "select * from usuario join mensualidad on mensualidad.id_mensualidad ="
-                + "usuario.mensualidad_id where clave like '%" + buscar + "%' or nombre like '%" + buscar + "%' order by id_usuario";
+                + "usuario.mensualidad_id join dias on dias.mensualidad_id = mensualidad.id_mensualidad"
+                + " where clave like '%" + buscar + "%' or nombre like '%" + buscar + "%' group by nombre "
+                + "order by id_usuario";
 //        System.out.println("Después de la consulta");
         try {
             Statement st = conn.createStatement();
@@ -99,6 +101,7 @@ public class tabla {
                 registro[12] = rs.getString("fecha_ini");
                 registro[13] = rs.getString("fecha_fin");
                 registro[14] = rs.getString("mensualidad_id");
+                registro[15] = rs.getString("maestros_id");
                 totalregistros = totalregistros + 1;
                 modelo.addRow(registro);
 
@@ -368,8 +371,9 @@ public class tabla {
         };
 
         sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id = mensualidad.id_mensualidad"
-                + " join dias on dias.mensualidad_id = mensualidad.id_mensualidad where clave like"
-                + " '%" + buscar + "%' or nombre like '%" + buscar + "%' order by id_dias";
+                + " join dias on dias.mensualidad_id = mensualidad.id_mensualidad join horario on dias.horario_id = "
+                + "horario.id_horario where clave like '%" + buscar + "%' or nombre like '%" + buscar + "%' "
+                + "order by clave";
 //        System.out.println("Después de la consulta");
         try {
             Statement st = conn.createStatement();
@@ -381,7 +385,7 @@ public class tabla {
                 registro[2] = rs.getString("nombre") + " ";
                 registro[2] += rs.getString("apellidos");
                 registro[3] = rs.getString("apellidos");
-                registro[4] = rs.getString("fecha_nacimiento");
+                registro[4] = rs.getString("edad");
                 registro[5] = rs.getString("localidad");
                 registro[6] = rs.getString("calle");
                 registro[7] = rs.getString("numero_e");
@@ -432,7 +436,8 @@ public class tabla {
         };
 
         sSQL = "select * from usuario join mensualidad on mensualidad.id_mensualidad ="
-                + "usuario.mensualidad_id where clave like '%" + buscar + "%' or nombre like '%" + buscar + "%' order by id_usuario";
+                + "usuario.mensualidad_id where clave like '%" + buscar + "%' or nombre"
+                + " like '%" + buscar + "%' order by id_usuario";
 //        System.out.println("Después de la consulta");
         try {
             Statement st = conn.createStatement();

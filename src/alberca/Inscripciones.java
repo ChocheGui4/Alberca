@@ -885,10 +885,29 @@ public class Inscripciones extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(13).setMaxWidth(110);
         tdatos.getColumnModel().getColumn(13).setMinWidth(110);
         tdatos.getColumnModel().getColumn(13).setPreferredWidth(110);
+        
+        tdatos.getColumnModel().getColumn(15).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(15).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(15).setPreferredWidth(0);
 
         tdatos.getColumnModel().getColumn(14).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(14).setMinWidth(0);
         tdatos.getColumnModel().getColumn(14).setPreferredWidth(0);
+        tdatos.getColumnModel().getColumn(1).setResizable(false);
+        tdatos.getColumnModel().getColumn(2).setResizable(false);
+        tdatos.getColumnModel().getColumn(3).setResizable(false);
+        tdatos.getColumnModel().getColumn(4).setResizable(false);
+        tdatos.getColumnModel().getColumn(5).setResizable(false);
+        tdatos.getColumnModel().getColumn(6).setResizable(false);
+        tdatos.getColumnModel().getColumn(7).setResizable(false);
+        tdatos.getColumnModel().getColumn(8).setResizable(false);
+        tdatos.getColumnModel().getColumn(9).setResizable(false);
+        tdatos.getColumnModel().getColumn(10).setResizable(false);
+        tdatos.getColumnModel().getColumn(11).setResizable(false);
+        tdatos.getColumnModel().getColumn(12).setResizable(false);
+        tdatos.getColumnModel().getColumn(13).setResizable(false);
+        tdatos.getColumnModel().getColumn(14).setResizable(false);
+        tdatos.getColumnModel().getColumn(15).setResizable(false);
 
     }
 
@@ -1003,7 +1022,7 @@ public class Inscripciones extends javax.swing.JFrame {
         lblregistros = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1270, 613));
+        setMinimumSize(new java.awt.Dimension(1270, 630));
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(null);
@@ -1036,7 +1055,7 @@ public class Inscripciones extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(204, 204, 204));
         jLabel4.setText("Fecha de inicio:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(22, 403, 170, 25);
+        jLabel4.setBounds(20, 390, 170, 25);
 
         txtnombre.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtnombre.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1229,7 +1248,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnnuevo);
-        btnnuevo.setBounds(50, 540, 110, 50);
+        btnnuevo.setBounds(50, 560, 110, 50);
 
         jLabel13.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(204, 204, 204));
@@ -1241,7 +1260,7 @@ public class Inscripciones extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(204, 204, 204));
         jLabel14.setText("Fecha de termino:");
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(430, 400, 171, 31);
+        jLabel14.setBounds(20, 420, 171, 31);
 
         btnguardar.setBackground(new java.awt.Color(51, 255, 0));
         btnguardar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -1252,7 +1271,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnguardar);
-        btnguardar.setBounds(180, 540, 170, 50);
+        btnguardar.setBounds(180, 560, 170, 50);
 
         btnrenovar.setBackground(new java.awt.Color(0, 153, 204));
         btnrenovar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -1263,13 +1282,13 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnrenovar);
-        btnrenovar.setBounds(760, 540, 240, 50);
+        btnrenovar.setBounds(760, 560, 240, 50);
 
         jLabel15.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(204, 204, 204));
         jLabel15.setText("Sesiones por semana:");
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(870, 400, 230, 25);
+        jLabel15.setBounds(390, 410, 230, 25);
 
         cbdias.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cbdias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
@@ -1279,22 +1298,22 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cbdias);
-        cbdias.setBounds(1080, 400, 70, 30);
+        cbdias.setBounds(610, 410, 70, 30);
 
         cbhorasabado.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cbhorasabado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhorasabado);
-        cbhorasabado.setBounds(1010, 480, 140, 30);
+        cbhorasabado.setBounds(1010, 500, 140, 30);
 
         cbhoralunes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cbhoralunes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhoralunes);
-        cbhoralunes.setBounds(70, 480, 150, 30);
+        cbhoralunes.setBounds(70, 500, 150, 30);
 
         cbhoramartes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cbhoramartes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhoramartes);
-        cbhoramartes.setBounds(260, 480, 150, 30);
+        cbhoramartes.setBounds(260, 500, 150, 30);
 
         ckmartes.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         ckmartes.setForeground(new java.awt.Color(255, 255, 255));
@@ -1305,22 +1324,22 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ckmartes);
-        ckmartes.setBounds(260, 450, 150, 33);
+        ckmartes.setBounds(260, 470, 150, 33);
 
         cbhoramiercoles.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cbhoramiercoles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhoramiercoles);
-        cbhoramiercoles.setBounds(440, 480, 140, 30);
+        cbhoramiercoles.setBounds(440, 500, 140, 30);
 
         cbhorajueves.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cbhorajueves.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhorajueves);
-        cbhorajueves.setBounds(620, 480, 140, 30);
+        cbhorajueves.setBounds(620, 500, 140, 30);
 
         cbhoraviernes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cbhoraviernes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhoraviernes);
-        cbhoraviernes.setBounds(810, 480, 150, 30);
+        cbhoraviernes.setBounds(810, 500, 150, 30);
 
         cklunes.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         cklunes.setForeground(new java.awt.Color(255, 255, 255));
@@ -1331,7 +1350,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cklunes);
-        cklunes.setBounds(70, 450, 150, 33);
+        cklunes.setBounds(70, 470, 150, 33);
 
         ckmiercoles.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         ckmiercoles.setForeground(new java.awt.Color(255, 255, 255));
@@ -1342,7 +1361,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ckmiercoles);
-        ckmiercoles.setBounds(440, 450, 140, 33);
+        ckmiercoles.setBounds(440, 470, 140, 33);
 
         ckjueves.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         ckjueves.setForeground(new java.awt.Color(255, 255, 255));
@@ -1353,7 +1372,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ckjueves);
-        ckjueves.setBounds(620, 450, 140, 33);
+        ckjueves.setBounds(620, 470, 140, 33);
 
         ckviernes.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         ckviernes.setForeground(new java.awt.Color(255, 255, 255));
@@ -1364,7 +1383,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ckviernes);
-        ckviernes.setBounds(810, 450, 150, 33);
+        ckviernes.setBounds(810, 470, 150, 33);
 
         cksabado.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         cksabado.setForeground(new java.awt.Color(255, 255, 255));
@@ -1375,7 +1394,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cksabado);
-        cksabado.setBounds(1010, 450, 140, 33);
+        cksabado.setBounds(1010, 470, 140, 33);
 
         jpcfoto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jpcfoto.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1396,7 +1415,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btneditardatos);
-        btneditardatos.setBounds(410, 540, 140, 50);
+        btneditardatos.setBounds(410, 560, 140, 50);
 
         lblclave.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         lblclave.setForeground(new java.awt.Color(204, 204, 204));
@@ -1415,12 +1434,12 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtfechainicio);
-        txtfechainicio.setBounds(180, 400, 180, 30);
+        txtfechainicio.setBounds(200, 390, 180, 30);
 
         txtfechatermino.setDateFormatString("yyyy/MM/dd");
         txtfechatermino.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         getContentPane().add(txtfechatermino);
-        txtfechatermino.setBounds(610, 400, 170, 30);
+        txtfechatermino.setBounds(200, 420, 180, 30);
 
         btnguardarmodificaciones.setBackground(new java.awt.Color(51, 255, 0));
         btnguardarmodificaciones.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -1431,15 +1450,15 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnguardarmodificaciones);
-        btnguardarmodificaciones.setBounds(570, 540, 120, 50);
+        btnguardarmodificaciones.setBounds(570, 560, 120, 50);
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         getContentPane().add(jSeparator1);
-        jSeparator1.setBounds(720, 540, 30, 60);
+        jSeparator1.setBounds(720, 560, 30, 60);
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
         getContentPane().add(jSeparator2);
-        jSeparator2.setBounds(370, 540, 30, 60);
+        jSeparator2.setBounds(370, 560, 30, 60);
 
         btnguardarrenovacion.setBackground(new java.awt.Color(51, 255, 0));
         btnguardarrenovacion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -1450,7 +1469,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnguardarrenovacion);
-        btnguardarrenovacion.setBounds(1020, 540, 130, 50);
+        btnguardarrenovacion.setBounds(1020, 560, 130, 50);
         getContentPane().add(txtmensualidad);
         txtmensualidad.setBounds(840, 130, 20, 20);
 
@@ -1479,12 +1498,12 @@ public class Inscripciones extends javax.swing.JFrame {
         jLabel1.setBounds(230, 0, 819, 50);
 
         getContentPane().add(cbclaves);
-        cbclaves.setBounds(1130, 400, 130, 20);
+        cbclaves.setBounds(1140, 420, 130, 20);
         getContentPane().add(txteliminar);
         txteliminar.setBounds(910, 140, 20, 20);
 
         getContentPane().add(cbidus);
-        cbidus.setBounds(1220, 430, 28, 20);
+        cbidus.setBounds(1240, 440, 28, 20);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
@@ -1492,7 +1511,7 @@ public class Inscripciones extends javax.swing.JFrame {
         jLabel2.setBounds(1170, 490, 90, 90);
 
         getContentPane().add(cbidhorario);
-        cbidhorario.setBounds(790, 400, 70, 30);
+        cbidhorario.setBounds(1200, 460, 70, 30);
 
         cbmaestros.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         cbmaestros.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona instructor" }));
@@ -1502,7 +1521,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cbmaestros);
-        cbmaestros.setBounds(540, 60, 420, 30);
+        cbmaestros.setBounds(700, 410, 420, 30);
 
         cbedad.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         cbedad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99" }));
@@ -1510,7 +1529,7 @@ public class Inscripciones extends javax.swing.JFrame {
         cbedad.setBounds(230, 140, 80, 30);
 
         getContentPane().add(cbidmaestro);
-        cbidmaestro.setBounds(990, 60, 80, 30);
+        cbidmaestro.setBounds(1120, 400, 80, 30);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
@@ -1774,6 +1793,7 @@ public class Inscripciones extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_cbdiasActionPerformed
+    
     public void guardar() {
         Renovar re = new Renovar();
         if (diacero == 0) {
@@ -1849,7 +1869,9 @@ public class Inscripciones extends javax.swing.JFrame {
                 resultado = 1;
             } else {
                 resultado = -1;
-                JOptionPane.showMessageDialog(this, "No se han seleccionado días, hazlo por favor!");
+                JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">No se han seleccionado"
+                        + " todos los días<br>hazlo por favor</span></html>",
+                        "Escoger horario",JOptionPane.WARNING_MESSAGE);
             }
         } else if (dias == 2) {
             if (masdos[0] != -1 & masdos[1] != -1) {
@@ -1883,7 +1905,9 @@ public class Inscripciones extends javax.swing.JFrame {
                 resultado = 1;
             } else {
                 resultado = -1;
-                JOptionPane.showMessageDialog(this, "No se han seleccionado todos los días, hazlo por favor!");
+                JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">No se han seleccionado"
+                        + " todos los días<br>hazlo por favor</span></html>",
+                        "Escoger horario",JOptionPane.WARNING_MESSAGE);
             }
         } else if (dias == 3) {
             if (mastres[0] != -1 & mastres[1] != -1 & mastres[2] != -1) {
@@ -1917,7 +1941,9 @@ public class Inscripciones extends javax.swing.JFrame {
                 resultado = 1;
             } else {
                 resultado = -1;
-                JOptionPane.showMessageDialog(this, "No se han seleccionado todos los días, hazlo por favor!");
+                JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">No se han seleccionado"
+                        + " todos los días<br>hazlo por favor</span></html>",
+                        "Escoger horario",JOptionPane.WARNING_MESSAGE);
 
             }
         } else if (dias == 4) {
@@ -1951,7 +1977,9 @@ public class Inscripciones extends javax.swing.JFrame {
                 resultado = 1;
             } else {
                 resultado = -1;
-                JOptionPane.showMessageDialog(this, "No se han seleccionado todos los días, hazlo por favor!");
+                JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">No se han seleccionado"
+                        + " todos los días<br>hazlo por favor</span></html>",
+                        "Escoger horario",JOptionPane.WARNING_MESSAGE);
             }
         } else if (dias == 5) {
             if (mascinco[0] != -1 & mascinco[1] != -1 & mascinco[2] != -1 & mascinco[3] != -1 & mascinco[4] != -1) {
@@ -1984,7 +2012,9 @@ public class Inscripciones extends javax.swing.JFrame {
                 resultado = 1;
             } else {
                 resultado = -1;
-                JOptionPane.showMessageDialog(this, "No se han seleccionado todos los días, hazlo por favor!");
+                JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">No se han seleccionado"
+                        + " todos los días<br>hazlo por favor</span></html>",
+                        "Escoger horario",JOptionPane.WARNING_MESSAGE);
             }
 
         }
@@ -2010,7 +2040,8 @@ public class Inscripciones extends javax.swing.JFrame {
                     elus.cambiardatosdetabla(Integer.parseInt(txteliminar.getText()));
                     //                        System.out.println("------------------------------------------Se eliminó en la tabla de usuarios eliminados");
                 }
-                JOptionPane.showMessageDialog(null, "<html><span style=\"font-size:2em\">Se agregó con éxito</span></html>");
+                JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">Se agregó con éxito</span></html>",
+                        "Éxito",JOptionPane.INFORMATION_MESSAGE);
                 habilitarcamposmensualidad(true);
                 habilitarhoras(false);
                 deseleccionarckdias(false);
@@ -2036,13 +2067,13 @@ public class Inscripciones extends javax.swing.JFrame {
         if (txtnombre.getText().equals("") | txtapellidos.getText().equals("") | cbmaestros.getSelectedIndex() == 0
                 | txtlocalidad.getText().equals("") | txtcalle.getText().equals("") | txtnumex.getText().equals("")
                 | txttelefono.getText().equals("") | txtcelular.getText().equals("")) {
-            JOptionPane.showMessageDialog(this, "<html><span style=\"font-size:2em\">Completa los datos solicitados"
-                    + "<br>por favor</span></html>");
+            JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">Completa los datos solicitados"
+                    + "<br>por favor</span></html>","Llenar campos",JOptionPane.INFORMATION_MESSAGE);
         } else {
             if (cktutor.isSelected()) {
                 if (txtnombretutor.getText().equals("")) {
-                    JOptionPane.showMessageDialog(this, "<html><span style=\"font-size:2em\">Completa todos los campos"
-                            + "<br>por favor</span></html>");
+                    JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">Completa todos los campos"
+                            + "<br>por favor</span></html>","Llenar campos",JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     guardar();
                 }
@@ -2095,6 +2126,7 @@ public class Inscripciones extends javax.swing.JFrame {
         txtfechainicio.setDate(StringaDate(tdatos.getValueAt(fila, 12).toString()));
 //        txtfechatermino.setDate(StringaDate(tdatos.getValueAt(fila, 13).toString()));
         txtmensualidad.setText(tdatos.getValueAt(fila, 14).toString());
+        cbmaestros.setSelectedIndex(Integer.parseInt(tdatos.getValueAt(fila, 15).toString()));
         btneditardatos.setEnabled(true);
         btnrenovar.setEnabled(true);
         btnguardar.setEnabled(false);
@@ -2160,6 +2192,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private void btnrenovarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrenovarActionPerformed
         habilitarcamposmensualidad(true);
         btnguardarrenovacion.setEnabled(true);
+        cbmaestros.setEnabled(true);
     }//GEN-LAST:event_btnrenovarActionPerformed
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
@@ -2212,50 +2245,50 @@ public class Inscripciones extends javax.swing.JFrame {
         //Empieza la renovación
         Renovar re = new Renovar();
         if (diacero == 0) {
-            combohoras[0] = cbhoralunes.getItemAt(cbhoralunes.getSelectedIndex());
-            combohoras[1] = cbhoramartes.getItemAt(cbhoramartes.getSelectedIndex());
-            combohoras[2] = cbhoramiercoles.getItemAt(cbhoramiercoles.getSelectedIndex());
-            combohoras[3] = cbhorajueves.getItemAt(cbhorajueves.getSelectedIndex());
-            combohoras[4] = cbhoraviernes.getItemAt(cbhoraviernes.getSelectedIndex());
-            combohoras[5] = cbhorasabado.getItemAt(cbhorasabado.getSelectedIndex());
+            combohoras[0] = cbidhorario.getItemAt(cbhoralunes.getSelectedIndex());
+            combohoras[1] = cbidhorario.getItemAt(cbhoramartes.getSelectedIndex());
+            combohoras[2] = cbidhorario.getItemAt(cbhoramiercoles.getSelectedIndex());
+            combohoras[3] = cbidhorario.getItemAt(cbhorajueves.getSelectedIndex());
+            combohoras[4] = cbidhorario.getItemAt(cbhoraviernes.getSelectedIndex());
+            combohoras[5] = cbidhorario.getItemAt(cbhorasabado.getSelectedIndex());
         } else if (diacero == 1) {
-            combohoras[0] = cbhoralunes.getItemAt(cbhoralunes.getSelectedIndex());
-            combohoras[1] = cbhoramartes.getItemAt(cbhoramartes.getSelectedIndex());
-            combohoras[2] = cbhoramiercoles.getItemAt(cbhoramiercoles.getSelectedIndex());
-            combohoras[3] = cbhorajueves.getItemAt(cbhorajueves.getSelectedIndex());
-            combohoras[4] = cbhoraviernes.getItemAt(cbhoraviernes.getSelectedIndex());
-            combohoras[6] = cbhorasabado.getItemAt(cbhorasabado.getSelectedIndex());
+            combohoras[0] = cbidhorario.getItemAt(cbhoralunes.getSelectedIndex());
+            combohoras[1] = cbidhorario.getItemAt(cbhoramartes.getSelectedIndex());
+            combohoras[2] = cbidhorario.getItemAt(cbhoramiercoles.getSelectedIndex());
+            combohoras[3] = cbidhorario.getItemAt(cbhorajueves.getSelectedIndex());
+            combohoras[4] = cbidhorario.getItemAt(cbhoraviernes.getSelectedIndex());
+            combohoras[6] = cbidhorario.getItemAt(cbhorasabado.getSelectedIndex());
         } else if (diacero == 2) {
-            combohoras[0] = cbhoralunes.getItemAt(cbhoralunes.getSelectedIndex());
-            combohoras[1] = cbhoramartes.getItemAt(cbhoramartes.getSelectedIndex());
-            combohoras[2] = cbhoramiercoles.getItemAt(cbhoramiercoles.getSelectedIndex());
-            combohoras[3] = cbhorajueves.getItemAt(cbhorajueves.getSelectedIndex());
-            combohoras[5] = cbhoraviernes.getItemAt(cbhoraviernes.getSelectedIndex());
-            combohoras[6] = cbhorasabado.getItemAt(cbhorasabado.getSelectedIndex());
+            combohoras[0] = cbidhorario.getItemAt(cbhoralunes.getSelectedIndex());
+            combohoras[1] = cbidhorario.getItemAt(cbhoramartes.getSelectedIndex());
+            combohoras[2] = cbidhorario.getItemAt(cbhoramiercoles.getSelectedIndex());
+            combohoras[3] = cbidhorario.getItemAt(cbhorajueves.getSelectedIndex());
+            combohoras[5] = cbidhorario.getItemAt(cbhoraviernes.getSelectedIndex());
+            combohoras[6] = cbidhorario.getItemAt(cbhorasabado.getSelectedIndex());
         } else if (diacero == 3) {
-            combohoras[0] = cbhoralunes.getItemAt(cbhoralunes.getSelectedIndex());
-            combohoras[1] = cbhoramartes.getItemAt(cbhoramartes.getSelectedIndex());
-            combohoras[2] = cbhoramiercoles.getItemAt(cbhoramiercoles.getSelectedIndex());
-            combohoras[4] = cbhorajueves.getItemAt(cbhorajueves.getSelectedIndex());
-            combohoras[5] = cbhoraviernes.getItemAt(cbhoraviernes.getSelectedIndex());
-            combohoras[6] = cbhorasabado.getItemAt(cbhorasabado.getSelectedIndex());
+            combohoras[0] = cbidhorario.getItemAt(cbhoralunes.getSelectedIndex());
+            combohoras[1] = cbidhorario.getItemAt(cbhoramartes.getSelectedIndex());
+            combohoras[2] = cbidhorario.getItemAt(cbhoramiercoles.getSelectedIndex());
+            combohoras[4] = cbidhorario.getItemAt(cbhorajueves.getSelectedIndex());
+            combohoras[5] = cbidhorario.getItemAt(cbhoraviernes.getSelectedIndex());
+            combohoras[6] = cbidhorario.getItemAt(cbhorasabado.getSelectedIndex());
         } else if (diacero == 4) {
-            combohoras[0] = cbhoralunes.getItemAt(cbhoralunes.getSelectedIndex());
-            combohoras[1] = cbhoramartes.getItemAt(cbhoramartes.getSelectedIndex());
-            combohoras[3] = cbhoramiercoles.getItemAt(cbhoramiercoles.getSelectedIndex());
-            combohoras[4] = cbhorajueves.getItemAt(cbhorajueves.getSelectedIndex());
-            combohoras[5] = cbhoraviernes.getItemAt(cbhoraviernes.getSelectedIndex());
-            combohoras[6] = cbhorasabado.getItemAt(cbhorasabado.getSelectedIndex());
+            combohoras[0] = cbidhorario.getItemAt(cbhoralunes.getSelectedIndex());
+            combohoras[1] = cbidhorario.getItemAt(cbhoramartes.getSelectedIndex());
+            combohoras[3] = cbidhorario.getItemAt(cbhoramiercoles.getSelectedIndex());
+            combohoras[4] = cbidhorario.getItemAt(cbhorajueves.getSelectedIndex());
+            combohoras[5] = cbidhorario.getItemAt(cbhoraviernes.getSelectedIndex());
+            combohoras[6] = cbidhorario.getItemAt(cbhorasabado.getSelectedIndex());
         } else if (diacero == 5) {
-            combohoras[0] = cbhoralunes.getItemAt(cbhoralunes.getSelectedIndex());
-            combohoras[2] = cbhoramartes.getItemAt(cbhoramartes.getSelectedIndex());
-            combohoras[3] = cbhoramiercoles.getItemAt(cbhoramiercoles.getSelectedIndex());
-            combohoras[4] = cbhorajueves.getItemAt(cbhorajueves.getSelectedIndex());
-            combohoras[5] = cbhoraviernes.getItemAt(cbhoraviernes.getSelectedIndex());
-            combohoras[6] = cbhorasabado.getItemAt(cbhorasabado.getSelectedIndex());
+            combohoras[0] = cbidhorario.getItemAt(cbhoralunes.getSelectedIndex());
+            combohoras[2] = cbidhorario.getItemAt(cbhoramartes.getSelectedIndex());
+            combohoras[3] = cbidhorario.getItemAt(cbhoramiercoles.getSelectedIndex());
+            combohoras[4] = cbidhorario.getItemAt(cbhorajueves.getSelectedIndex());
+            combohoras[5] = cbidhorario.getItemAt(cbhoraviernes.getSelectedIndex());
+            combohoras[6] = cbidhorario.getItemAt(cbhorasabado.getSelectedIndex());
         }
         if (dias == 1) {
-            if (masuno[0] != -1) {
+            if (masuno[0] != -1&cbmaestros.getSelectedIndex()!=0) {
                 re.renovarrmensualidad(Integer.parseInt(txtmensualidad.getText()),
                         obtenerfechastr(txtfechainicio, masuno[0]),
                         obtenerfecha(txtfechainicio, masuno[0]), "" + dias);
@@ -2279,6 +2312,7 @@ public class Inscripciones extends javax.swing.JFrame {
 //                }
 //                int nm = Integer.parseInt(valor);
                 re.eliminardiasmes(Integer.parseInt(txtmensualidad.getText()));
+                System.out.println("combo tiene: "+combohoras[masuno[0]]);
                 re.insertardiasmes(unasesion, unasesionmes, diamasuno[0], Integer.parseInt(txtmensualidad.getText()),
                         Integer.parseInt(combohoras[masuno[0]]),
                         Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex() - 1)));
@@ -2286,11 +2320,12 @@ public class Inscripciones extends javax.swing.JFrame {
 //                re.renovardiasmes(Integer.parseInt(txtmensualidad.getText()), unasesion, masuno[0], combohoras[masuno[0]]);
             } else {
                 resultado = -1;
-                JOptionPane.showMessageDialog(this, "<html><span style=\"font-size:2em\">No se han seleccionado días "
-                        + "<br>por favor hazlo</span></html>");
+                JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">No se han seleccionado días "
+                        + "<br>por favor hazlo</span></html>",
+                        "Actualizar mensualidad", JOptionPane.WARNING_MESSAGE);
             }
         } else if (dias == 2) {
-            if (masdos[0] != -1 & masdos[1] != -1) {
+            if (masdos[0] != -1 & masdos[1] != -1&cbmaestros.getSelectedIndex()!=0) {
                 quicksort(masdos, 0, masdos.length - 1);
 //                    System.out.println(masdos[1] + " >>>>");
                 re.renovarrmensualidad(Integer.parseInt(txtmensualidad.getText()),
@@ -2334,11 +2369,12 @@ public class Inscripciones extends javax.swing.JFrame {
                 resultado = 1;
             } else {
                 resultado = -1;
-                JOptionPane.showMessageDialog(this, "<html><span style=\"font-size:2em\">No se han seleccionado todos días "
-                        + "<br>por favor hazlo</span></html>");
+                JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">No se han seleccionado todos días "
+                        + "<br>por favor hazlo</span></html>",
+                        "Actualizar mensualidad", JOptionPane.WARNING_MESSAGE);
             }
         } else if (dias == 3) {
-            if (mastres[0] != -1 & mastres[1] != -1 & mastres[2] != -1) {
+            if (mastres[0] != -1 & mastres[1] != -1 & mastres[2] != -1&cbmaestros.getSelectedIndex()!=0) {
 
                 quicksort(mastres, 0, mastres.length - 1);
 //                re.insertarmensualidad(obtenerfechastr(txtfechainicio, 0),
@@ -2382,12 +2418,13 @@ public class Inscripciones extends javax.swing.JFrame {
                 resultado = 1;
             } else {
                 resultado = -1;
-                JOptionPane.showMessageDialog(this, "<html><span style=\"font-size:2em\">No se han seleccionado todos días "
-                        + "<br>por favor hazlo</span></html>");
+                JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">No se han seleccionado todos días "
+                        + "<br>por favor hazlo</span></html>",
+                        "Actualizar mensualidad", JOptionPane.WARNING_MESSAGE);
 
             }
         } else if (dias == 4) {
-            if (mascuatro[0] != -1 & mascuatro[1] != -1 & mascuatro[2] != -1 & mascuatro[3] != -1) {
+            if (mascuatro[0] != -1 & mascuatro[1] != -1 & mascuatro[2] != -1 & mascuatro[3] != -1&cbmaestros.getSelectedIndex()!=0) {
                 quicksort(mascuatro, 0, mascuatro.length - 1);
 //                re.insertarmensualidad(obtenerfechastr(txtfechainicio, 0),
 //                        obtenerfecha(txtfechainicio, mascuatro[3]), "" + dias);
@@ -2432,11 +2469,13 @@ public class Inscripciones extends javax.swing.JFrame {
                 resultado = 1;
             } else {
                 resultado = -1;
-                JOptionPane.showMessageDialog(this, "<html><span style=\"font-size:2em\">No se han seleccionado todos días "
-                        + "<br>por favor hazlo</span></html>");
+                JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">No se han seleccionado todos días "
+                        + "<br>por favor hazlo</span></html>",
+                        "Actualizar mensualidad", JOptionPane.WARNING_MESSAGE);
             }
         } else if (dias == 5) {
-            if (mascinco[0] != -1 & mascinco[1] != -1 & mascinco[2] != -1 & mascinco[3] != -1 & mascinco[4] != -1) {
+            if (mascinco[0] != -1 & mascinco[1] != -1 & mascinco[2] != -1 & mascinco[3] != -1 & mascinco[4] != -1&
+                    cbmaestros.getSelectedIndex()!=0) {
                 quicksort(mascinco, 0, mascinco.length - 1);
 //                re.insertarmensualidad(obtenerfechastr(txtfechainicio, 0),
 //                        obtenerfecha(txtfechainicio, mascinco[4]), "" + dias);
@@ -2479,7 +2518,9 @@ public class Inscripciones extends javax.swing.JFrame {
                 resultado = 1;
             } else {
                 resultado = -1;
-                JOptionPane.showMessageDialog(this, "<html><span style=\"font-size:2em\">No se han seleccionado días <br>por favor hazlo</span></html>");
+                JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">No se han seleccionado días"
+                        + " <br>por favor hazlo</span></html>",
+                        "Actualizar mensualidad", JOptionPane.WARNING_MESSAGE);
             }
 
         }
@@ -2500,6 +2541,7 @@ public class Inscripciones extends javax.swing.JFrame {
             mostrar("");
             cbclaves.removeAllItems();
             cbidus.removeAllItems();
+            cbmaestros.setEnabled(false);
             llenarclaves();
         }
         //Termina la renovación
