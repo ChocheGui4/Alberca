@@ -38,7 +38,7 @@ public class eliminados extends javax.swing.JFrame {
     String idanterior="";
     String nombre = "";
     String apellidos = "";
-    String fecha_nacimiento = "";
+    int edad = 0;
     String nombre_tutor = "";
 
     String localidad = "";
@@ -251,7 +251,7 @@ public class eliminados extends javax.swing.JFrame {
         
         nombre = tdatos.getValueAt(fila, 1).toString();
         apellidos = tdatos.getValueAt(fila, 3).toString();
-        fecha_nacimiento = tdatos.getValueAt(fila, 4).toString();
+        edad = Integer.parseInt(tdatos.getValueAt(fila, 4).toString());
         nombre_tutor = tdatos.getValueAt(fila, 12).toString();
 
         localidad = tdatos.getValueAt(fila, 5).toString();
@@ -326,7 +326,7 @@ public class eliminados extends javax.swing.JFrame {
         
         ins.txtnombre.setText(nombre);
         ins.txtapellidos.setText(apellidos);
-        ins.txtfechanacimiento.setDate(StringaDate(fecha_nacimiento));
+        ins.cbedad.setSelectedIndex(edad-1);
         ins.txtnombretutor.setText(nombre_tutor);
         ins.txtlocalidad.setText(localidad);
         ins.txtcalle.setText(calle);

@@ -35,7 +35,7 @@ public class Eliminarusuarios {
             respaldardatoselimiados(id);
 
             s = conn.prepareStatement("INSERT INTO usuarios_eliminados(nombre,apellidos,"
-                    + "fecha_nacimiento,localidad,calle,numero_e,numero_i,telefono_1,celular_1,"
+                    + "edad,localidad,calle,numero_e,numero_i,telefono_1,celular_1,"
                     + "nombre_tutor,foto) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
             s.setString(1, registro[0]);
             s.setString(2, registro[1]);
@@ -50,7 +50,7 @@ public class Eliminarusuarios {
             s.setString(11, registro[10]);
 
             s.executeUpdate();
-            s = conn.prepareStatement("UPDATE usuario SET nombre='',apellidos='',fecha_nacimiento=''"
+            s = conn.prepareStatement("UPDATE usuario SET nombre='',apellidos='',edad=''"
                     + ",localidad='',calle='',numero_e='',numero_i='',telefono_1='',celular_1='',nombre_tutor='',"
                     + "mensualidad_id=null,foto='' WHERE id_usuario=" + id);
             s.executeUpdate();
@@ -89,7 +89,7 @@ public class Eliminarusuarios {
             while (rs.next()) {
                 registro[0] = rs.getString("nombre");
                 registro[1] = rs.getString("apellidos");
-                registro[2] = rs.getString("fecha_nacimiento");
+                registro[2] = rs.getString("edad");
                 registro[3] = rs.getString("localidad");
                 registro[4] = rs.getString("calle");
                 registro[5] = rs.getString("numero_e");

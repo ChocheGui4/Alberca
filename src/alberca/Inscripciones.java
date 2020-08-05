@@ -1845,7 +1845,7 @@ public class Inscripciones extends javax.swing.JFrame {
 //                }
 //                int nm = Integer.parseInt(valor);
                 re.insertardiasmes(unasesion, unasesionmes, diamasuno[0], r, Integer.parseInt(combohoras[masuno[0]]),
-                        Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex()-1)));
+                        Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex() - 1)));
                 resultado = 1;
             } else {
                 resultado = -1;
@@ -1878,7 +1878,7 @@ public class Inscripciones extends javax.swing.JFrame {
                     }
 
                     re.insertardiasmes(val, mess, diamasdos[i], r, Integer.parseInt(combohoras[masdos[i]]),
-                            Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex()-1)));
+                            Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex() - 1)));
                 }
                 resultado = 1;
             } else {
@@ -1912,7 +1912,7 @@ public class Inscripciones extends javax.swing.JFrame {
                     }
 
                     re.insertardiasmes(val, mess, diamastres[i], r, Integer.parseInt(combohoras[mastres[i]]),
-                            Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex()-1)));
+                            Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex() - 1)));
                 }
                 resultado = 1;
             } else {
@@ -1946,7 +1946,7 @@ public class Inscripciones extends javax.swing.JFrame {
                     }
 
                     re.insertardiasmes(val, mess, diamascuatro[i], r, Integer.parseInt(combohoras[mascuatro[i]]),
-                            Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex()-1)));
+                            Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex() - 1)));
                 }
                 resultado = 1;
             } else {
@@ -1979,7 +1979,7 @@ public class Inscripciones extends javax.swing.JFrame {
                     }
 
                     re.insertardiasmes(val, mess, diamascinco[i], r, Integer.parseInt(combohoras[mascinco[i]]),
-                            Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex()-1)));
+                            Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex() - 1)));
                 }
                 resultado = 1;
             } else {
@@ -2062,7 +2062,6 @@ public class Inscripciones extends javax.swing.JFrame {
         habilitarhoras(false);
 //        btneliminar.setEnabled(true);
 //        accion="editar";
-        
 
         int fila = tdatos.rowAtPoint(evt.getPoint());
 //        byte[] imagen;
@@ -2084,7 +2083,6 @@ public class Inscripciones extends javax.swing.JFrame {
             txtnombretutor.setEnabled(false);
             cktutor.setSelected(true);
             cktutor.setEnabled(false);
-            
 
         }
 
@@ -2272,17 +2270,18 @@ public class Inscripciones extends javax.swing.JFrame {
                     calendar.add(Calendar.DAY_OF_MONTH, 7);
                 }
                 int r = re.idmensualidad();
-                String valor = "";
-                String cha = "" + combohoras[masuno[0]].charAt(0) + combohoras[masuno[0]].charAt(1);
-                if (cha.charAt(0) == '9') {
-                    valor = "9";
-                } else {
-                    valor = cha;
-                }
-                int nm = Integer.parseInt(valor);
+//                String valor = "";
+//                String cha = "" + combohoras[masuno[0]].charAt(0) + combohoras[masuno[0]].charAt(1);
+//                if (cha.charAt(0) == '9') {
+//                    valor = "9";
+//                } else {
+//                    valor = cha;
+//                }
+//                int nm = Integer.parseInt(valor);
                 re.eliminardiasmes(Integer.parseInt(txtmensualidad.getText()));
                 re.insertardiasmes(unasesion, unasesionmes, diamasuno[0], Integer.parseInt(txtmensualidad.getText()),
-                        combohoras[masuno[0]], nm);
+                        Integer.parseInt(combohoras[masuno[0]]),
+                        Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex() - 1)));
                 resultado = 1;
 //                re.renovardiasmes(Integer.parseInt(txtmensualidad.getText()), unasesion, masuno[0], combohoras[masuno[0]]);
             } else {
@@ -2319,16 +2318,18 @@ public class Inscripciones extends javax.swing.JFrame {
                         val[j] = dossesion[i][j];
                         mess[j] = dossesionmes[i][j];
                     }
-                    String valor = "";
-                    String cha = "" + combohoras[masdos[i]].charAt(0) + combohoras[masdos[i]].charAt(1);
-                    if (cha.charAt(0) == '9') {
-                        valor = "9";
-                    } else {
-                        valor = cha;
-                    }
-                    int nm = Integer.parseInt(valor);
+//                    String valor = "";
+//                    String cha = "" + combohoras[masdos[i]].charAt(0) + combohoras[masdos[i]].charAt(1);
+//                    if (cha.charAt(0) == '9') {
+//                        valor = "9";
+//                    } else {
+//                        valor = cha;
+//                    }
+//                    int nm = Integer.parseInt(valor);
 //                    re.renovardiasmes(Integer.parseInt(txtmensualidad.getText()), val, masdos[i], combohoras[masdos[i]]);
-                    re.insertardiasmes(val, mess, diamasdos[i], Integer.parseInt(txtmensualidad.getText()), combohoras[masdos[i]], nm);
+                    re.insertardiasmes(val, mess, diamasdos[i], Integer.parseInt(txtmensualidad.getText()),
+                            Integer.parseInt(combohoras[masdos[i]]),
+                            Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex() - 1)));
                 }
                 resultado = 1;
             } else {
@@ -2365,16 +2366,17 @@ public class Inscripciones extends javax.swing.JFrame {
                         val[j] = tressesion[i][j];
                         mess[j] = tressesionmes[i][j];
                     }
-                    String valor = "";
-                    String cha = "" + combohoras[mastres[i]].charAt(0) + combohoras[mastres[i]].charAt(1);
-                    if (cha.charAt(0) == '9') {
-                        valor = "9";
-                    } else {
-                        valor = cha;
-                    }
-                    int nm = Integer.parseInt(valor);
+//                    String valor = "";
+//                    String cha = "" + combohoras[mastres[i]].charAt(0) + combohoras[mastres[i]].charAt(1);
+//                    if (cha.charAt(0) == '9') {
+//                        valor = "9";
+//                    } else {
+//                        valor = cha;
+//                    }
+//                    int nm = Integer.parseInt(valor);
                     re.insertardiasmes(val, mess, diamastres[i], Integer.parseInt(txtmensualidad.getText()),
-                            combohoras[mastres[i]], nm);
+                            Integer.parseInt(combohoras[mastres[i]]),
+                            Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex() - 1)));
 //                    re.renovardiasmes(Integer.parseInt(txtmensualidad.getText()), val, mastres[i], combohoras[mastres[i]]);
                 }
                 resultado = 1;
@@ -2424,7 +2426,8 @@ public class Inscripciones extends javax.swing.JFrame {
                     int nm = Integer.parseInt(valor);
 //                     re.renovardiasmes(Integer.parseInt(txtmensualidad.getText()), val, mascuatro[i], combohoras[mascuatro[i]]);
                     re.insertardiasmes(val, mess, diamascuatro[i], Integer.parseInt(txtmensualidad.getText()),
-                            combohoras[mascuatro[i]], nm);
+                            Integer.parseInt(combohoras[mascuatro[i]]),
+                            Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex() - 1)));
                 }
                 resultado = 1;
             } else {
@@ -2470,7 +2473,8 @@ public class Inscripciones extends javax.swing.JFrame {
                     int nm = Integer.parseInt(valor);
 //                    re.renovardiasmes(Integer.parseInt(txtmensualidad.getText()), val, mascinco[i], combohoras[mascinco[i]]);
                     re.insertardiasmes(val, mess, diamascinco[i], Integer.parseInt(txtmensualidad.getText()),
-                            combohoras[mascinco[i]], nm);
+                            Integer.parseInt(combohoras[mascinco[i]]),
+                            Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex() - 1)));
                 }
                 resultado = 1;
             } else {
@@ -2601,7 +2605,7 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_jpcfotoMouseClicked
 
     private void cbmaestrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbmaestrosActionPerformed
-        
+
     }//GEN-LAST:event_cbmaestrosActionPerformed
 
     /**
@@ -2676,7 +2680,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JButton btnrenovar;
     private javax.swing.JComboBox<String> cbclaves;
     private javax.swing.JComboBox<String> cbdias;
-    private javax.swing.JComboBox<String> cbedad;
+    public javax.swing.JComboBox<String> cbedad;
     private javax.swing.JComboBox<String> cbhorajueves;
     private javax.swing.JComboBox<String> cbhoralunes;
     private javax.swing.JComboBox<String> cbhoramartes;
