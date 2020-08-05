@@ -248,6 +248,29 @@ public class tabla {
             return null;
         }
     }
+    
+    //Llenar id de maestro
+    public JComboBox mostraridmaestros(JComboBox combo1) {
+        conn = con.conectar();
+//        System.out.println("Se metió al método");
+
+        sSQL = "select * from maestros order by id_maestros";
+//        System.out.println("Después de la consulta");
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sSQL);
+
+            while (rs.next()) {
+                combo1.addItem(rs.getString("id_maestros"));
+
+            }
+//            System.out.println("antes del return");
+            return combo1;
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            return null;
+        }
+    }
 
     //Llenar id de horario
     public JComboBox mostraridhorario(JComboBox combo1) {

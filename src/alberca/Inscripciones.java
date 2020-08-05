@@ -125,12 +125,15 @@ public class Inscripciones extends javax.swing.JFrame {
         btnguardarrenovacion.setEnabled(false);
         cbclaves.setVisible(false);
         cbidus.setVisible(false);
+        cbidmaestro.setVisible(false);
+        cbidhorario.setVisible(false);
 //        btnfoto.setVisible(false);
         mostrar("");
         marcarcalendar(new Date());
         llenarclaves();
         tab.mostraridhorario(cbidhorario);
         tab.mostrarmaestros(cbmaestros);
+        tab.mostraridmaestros(cbidmaestro);
         System.out.println("es: " + cbclaves.getItemCount());
         System.out.println(calendario.get(Calendar.HOUR_OF_DAY) + ":00 - " + (calendario.get(Calendar.HOUR_OF_DAY) + 1) + ":00");
         this.setLocationRelativeTo(null);
@@ -994,8 +997,8 @@ public class Inscripciones extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         cbidhorario = new javax.swing.JComboBox<>();
         cbmaestros = new javax.swing.JComboBox<>();
-        txtidmaestro = new javax.swing.JTextField();
         cbedad = new javax.swing.JComboBox<>();
+        cbidmaestro = new javax.swing.JComboBox<>();
         lblimagen = new javax.swing.JLabel();
         lblregistros = new javax.swing.JLabel();
 
@@ -1500,13 +1503,14 @@ public class Inscripciones extends javax.swing.JFrame {
         });
         getContentPane().add(cbmaestros);
         cbmaestros.setBounds(540, 60, 420, 30);
-        getContentPane().add(txtidmaestro);
-        txtidmaestro.setBounds(970, 60, 70, 30);
 
         cbedad.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         cbedad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99" }));
         getContentPane().add(cbedad);
         cbedad.setBounds(230, 140, 80, 30);
+
+        getContentPane().add(cbidmaestro);
+        cbidmaestro.setBounds(990, 60, 80, 30);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
@@ -1840,7 +1844,8 @@ public class Inscripciones extends javax.swing.JFrame {
 //                    valor = cha;
 //                }
 //                int nm = Integer.parseInt(valor);
-                re.insertardiasmes(unasesion, unasesionmes, diamasuno[0], r, Integer.parseInt(combohoras[masuno[0]]));
+                re.insertardiasmes(unasesion, unasesionmes, diamasuno[0], r, Integer.parseInt(combohoras[masuno[0]]),
+                        Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex()-1)));
                 resultado = 1;
             } else {
                 resultado = -1;
@@ -1872,7 +1877,8 @@ public class Inscripciones extends javax.swing.JFrame {
                         mess[j] = dossesionmes[i][j];
                     }
 
-                    re.insertardiasmes(val, mess, diamasdos[i], r, Integer.parseInt(combohoras[masdos[i]]));
+                    re.insertardiasmes(val, mess, diamasdos[i], r, Integer.parseInt(combohoras[masdos[i]]),
+                            Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex()-1)));
                 }
                 resultado = 1;
             } else {
@@ -1905,7 +1911,8 @@ public class Inscripciones extends javax.swing.JFrame {
                         mess[j] = tressesionmes[i][j];
                     }
 
-                    re.insertardiasmes(val, mess, diamastres[i], r, Integer.parseInt(combohoras[mastres[i]]));
+                    re.insertardiasmes(val, mess, diamastres[i], r, Integer.parseInt(combohoras[mastres[i]]),
+                            Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex()-1)));
                 }
                 resultado = 1;
             } else {
@@ -1938,7 +1945,8 @@ public class Inscripciones extends javax.swing.JFrame {
                         mess[j] = cuatrosesionmes[i][j];
                     }
 
-                    re.insertardiasmes(val, mess, diamascuatro[i], r, Integer.parseInt(combohoras[mascuatro[i]]));
+                    re.insertardiasmes(val, mess, diamascuatro[i], r, Integer.parseInt(combohoras[mascuatro[i]]),
+                            Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex()-1)));
                 }
                 resultado = 1;
             } else {
@@ -1970,7 +1978,8 @@ public class Inscripciones extends javax.swing.JFrame {
                         mess[j] = cincosesionmes[i][j];
                     }
 
-                    re.insertardiasmes(val, mess, diamascinco[i], r, Integer.parseInt(combohoras[mascinco[i]]));
+                    re.insertardiasmes(val, mess, diamascinco[i], r, Integer.parseInt(combohoras[mascinco[i]]),
+                            Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex()-1)));
                 }
                 resultado = 1;
             } else {
@@ -2011,6 +2020,8 @@ public class Inscripciones extends javax.swing.JFrame {
                 mostrar("");
                 cbclaves.removeAllItems();
                 cbidus.removeAllItems();
+                cbmaestros.setSelectedIndex(0);
+                cbedad.setSelectedIndex(0);
 //                btnfoto.setEnabled(false);
 //                jpcfoto.setImagenNull();
                 llenarclaves();
@@ -2073,6 +2084,7 @@ public class Inscripciones extends javax.swing.JFrame {
             txtnombretutor.setEnabled(false);
             cktutor.setSelected(true);
             cktutor.setEnabled(false);
+            
 
         }
 
@@ -2090,6 +2102,7 @@ public class Inscripciones extends javax.swing.JFrame {
         btnguardar.setEnabled(false);
         btnguardarmodificaciones.setEnabled(false);
         btnguardarrenovacion.setEnabled(false);
+        cbmaestros.setEnabled(false);
         cbedad.setEnabled(false);
 
     }//GEN-LAST:event_tdatosMouseClicked
@@ -2110,7 +2123,9 @@ public class Inscripciones extends javax.swing.JFrame {
         btnguardar.setEnabled(true);
         btnguardarmodificaciones.setEnabled(false);
         cbedad.setSelectedIndex(0);
+        cbmaestros.setSelectedIndex(0);
         cbedad.setEnabled(true);
+        cbmaestros.setEnabled(true);
         jpcfoto.setImagenNull();
 
 
@@ -2586,7 +2601,7 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_jpcfotoMouseClicked
 
     private void cbmaestrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbmaestrosActionPerformed
-        System.out.println("Valio");
+        
     }//GEN-LAST:event_cbmaestrosActionPerformed
 
     /**
@@ -2669,6 +2684,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbhorasabado;
     private javax.swing.JComboBox<String> cbhoraviernes;
     private javax.swing.JComboBox<String> cbidhorario;
+    private javax.swing.JComboBox<String> cbidmaestro;
     private javax.swing.JComboBox<String> cbidus;
     private javax.swing.JComboBox<String> cbmaestros;
     private javax.swing.JCheckBox ckjueves;
@@ -2711,7 +2727,6 @@ public class Inscripciones extends javax.swing.JFrame {
     public javax.swing.JTextField txteliminar;
     private com.toedter.calendar.JDateChooser txtfechainicio;
     private com.toedter.calendar.JDateChooser txtfechatermino;
-    private javax.swing.JTextField txtidmaestro;
     private javax.swing.JTextField txtidusuario;
     public javax.swing.JTextField txtlocalidad;
     private javax.swing.JTextField txtmensualidad;
