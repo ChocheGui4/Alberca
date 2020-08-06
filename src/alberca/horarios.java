@@ -483,6 +483,7 @@ public class horarios extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
         lblimagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -3647,10 +3648,16 @@ public class horarios extends javax.swing.JFrame {
         getContentPane().add(jLabel43);
         jLabel43.setBounds(1150, 0, 100, 100);
 
+        jLabel19.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("Horarios disponibles");
+        getContentPane().add(jLabel19);
+        jLabel19.setBounds(160, 70, 310, 40);
+
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
         getContentPane().add(lblimagen);
-        lblimagen.setBounds(0, 0, 1280, 630);
+        lblimagen.setBounds(0, 0, 1280, 650);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -3706,6 +3713,7 @@ public class horarios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

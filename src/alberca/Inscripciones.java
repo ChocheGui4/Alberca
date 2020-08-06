@@ -845,6 +845,10 @@ public class Inscripciones extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(1).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(1).setMinWidth(0);
         tdatos.getColumnModel().getColumn(1).setPreferredWidth(0);
+        
+        tdatos.getColumnModel().getColumn(2).setMaxWidth(200);
+        tdatos.getColumnModel().getColumn(2).setMinWidth(200);
+        tdatos.getColumnModel().getColumn(2).setPreferredWidth(200);
 
         tdatos.getColumnModel().getColumn(4).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(4).setMinWidth(0);
@@ -878,9 +882,9 @@ public class Inscripciones extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(11).setMinWidth(0);
         tdatos.getColumnModel().getColumn(11).setPreferredWidth(0);
 
-        tdatos.getColumnModel().getColumn(12).setMaxWidth(100);
-        tdatos.getColumnModel().getColumn(12).setMinWidth(100);
-        tdatos.getColumnModel().getColumn(12).setPreferredWidth(100);
+        tdatos.getColumnModel().getColumn(12).setMaxWidth(110);
+        tdatos.getColumnModel().getColumn(12).setMinWidth(110);
+        tdatos.getColumnModel().getColumn(12).setPreferredWidth(110);
 
         tdatos.getColumnModel().getColumn(13).setMaxWidth(110);
         tdatos.getColumnModel().getColumn(13).setMinWidth(110);
@@ -1055,7 +1059,7 @@ public class Inscripciones extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(204, 204, 204));
         jLabel4.setText("Fecha de inicio:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(20, 390, 170, 25);
+        jLabel4.setBounds(20, 400, 170, 25);
 
         txtnombre.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtnombre.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1079,37 +1083,37 @@ public class Inscripciones extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(204, 204, 204));
         jLabel5.setText("Localidad:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(22, 224, 107, 31);
+        jLabel5.setBounds(20, 240, 107, 31);
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setText("Calle:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(22, 261, 107, 31);
+        jLabel6.setBounds(20, 280, 107, 31);
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("No. exterior:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(22, 298, 140, 31);
+        jLabel7.setBounds(20, 320, 140, 31);
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("No. interior:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(280, 300, 140, 31);
+        jLabel8.setBounds(280, 320, 140, 31);
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(204, 204, 204));
         jLabel9.setText("Teléfono:");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(22, 335, 107, 31);
+        jLabel9.setBounds(20, 350, 107, 31);
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 204));
         jLabel10.setText("Celular:");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(280, 340, 107, 31);
+        jLabel10.setBounds(280, 360, 107, 31);
 
         txtlocalidad.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtlocalidad.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1118,7 +1122,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtlocalidad);
-        txtlocalidad.setBounds(147, 222, 290, 30);
+        txtlocalidad.setBounds(150, 240, 290, 30);
 
         txtcalle.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtcalle.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1127,7 +1131,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtcalle);
-        txtcalle.setBounds(147, 259, 290, 30);
+        txtcalle.setBounds(150, 280, 290, 30);
 
         txtnumin.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtnumin.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1136,7 +1140,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtnumin);
-        txtnumin.setBounds(400, 300, 120, 30);
+        txtnumin.setBounds(400, 320, 120, 30);
 
         txtnumex.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtnumex.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1145,7 +1149,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtnumex);
-        txtnumex.setBounds(150, 300, 120, 30);
+        txtnumex.setBounds(150, 320, 120, 30);
 
         txttelefono.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txttelefono.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1154,7 +1158,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txttelefono);
-        txttelefono.setBounds(150, 340, 120, 30);
+        txttelefono.setBounds(150, 360, 120, 30);
 
         txtcelular.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtcelular.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1163,7 +1167,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtcelular);
-        txtcelular.setBounds(400, 340, 120, 30);
+        txtcelular.setBounds(400, 360, 120, 30);
 
         cktutor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cktutor.setForeground(new java.awt.Color(255, 255, 255));
@@ -1191,7 +1195,7 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(txtnombretutor);
         txtnombretutor.setBounds(230, 180, 290, 30);
 
-        tdatos.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
+        tdatos.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         tdatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -1260,7 +1264,7 @@ public class Inscripciones extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(204, 204, 204));
         jLabel14.setText("Fecha de termino:");
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(20, 420, 171, 31);
+        jLabel14.setBounds(20, 430, 171, 31);
 
         btnguardar.setBackground(new java.awt.Color(51, 255, 0));
         btnguardar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -1288,7 +1292,7 @@ public class Inscripciones extends javax.swing.JFrame {
         jLabel15.setForeground(new java.awt.Color(204, 204, 204));
         jLabel15.setText("Sesiones por semana:");
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(390, 410, 230, 25);
+        jLabel15.setBounds(420, 400, 230, 25);
 
         cbdias.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cbdias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
@@ -1298,7 +1302,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cbdias);
-        cbdias.setBounds(610, 410, 70, 30);
+        cbdias.setBounds(640, 400, 70, 30);
 
         cbhorasabado.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cbhorasabado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
@@ -1434,12 +1438,12 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtfechainicio);
-        txtfechainicio.setBounds(200, 390, 180, 30);
+        txtfechainicio.setBounds(200, 400, 180, 30);
 
         txtfechatermino.setDateFormatString("yyyy/MM/dd");
         txtfechatermino.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         getContentPane().add(txtfechatermino);
-        txtfechatermino.setBounds(200, 420, 180, 30);
+        txtfechatermino.setBounds(200, 430, 180, 30);
 
         btnguardarmodificaciones.setBackground(new java.awt.Color(51, 255, 0));
         btnguardarmodificaciones.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -1521,7 +1525,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cbmaestros);
-        cbmaestros.setBounds(700, 410, 420, 30);
+        cbmaestros.setBounds(730, 400, 420, 30);
 
         cbedad.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         cbedad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99" }));
@@ -1529,7 +1533,7 @@ public class Inscripciones extends javax.swing.JFrame {
         cbedad.setBounds(230, 140, 80, 30);
 
         getContentPane().add(cbidmaestro);
-        cbidmaestro.setBounds(1120, 400, 80, 30);
+        cbidmaestro.setBounds(1140, 440, 80, 30);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N

@@ -156,7 +156,7 @@ public class eliminados extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        tdatos.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tdatos.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         tdatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
