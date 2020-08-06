@@ -484,6 +484,7 @@ public class horarios extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         lblimagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -3575,73 +3576,73 @@ public class horarios extends javax.swing.JFrame {
         jPanel248.setBounds(920, 410, 80, 40);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(160, 110, 1000, 490);
+        jPanel1.setBounds(160, 70, 1000, 490);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("10:00 - 11:00");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(30, 210, 120, 30);
+        jLabel1.setBounds(30, 170, 120, 30);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("12:00 - 13:00");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(30, 290, 120, 30);
+        jLabel4.setBounds(30, 250, 120, 30);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("13:00 - 14:00");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(30, 330, 120, 30);
+        jLabel5.setBounds(30, 290, 120, 30);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("14:00 - 15:00");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(30, 370, 120, 30);
+        jLabel6.setBounds(30, 330, 120, 30);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("15:00 - 16:00");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(30, 410, 120, 30);
+        jLabel7.setBounds(30, 370, 120, 30);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("16:00 - 17:00");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(30, 450, 120, 30);
+        jLabel8.setBounds(30, 410, 120, 30);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("17:00 - 18:00");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(30, 490, 120, 30);
+        jLabel9.setBounds(30, 450, 120, 30);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("18:00 - 19:00");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(30, 530, 120, 30);
+        jLabel10.setBounds(30, 490, 120, 30);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("19:00 - 20:00");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(30, 570, 120, 30);
+        jLabel11.setBounds(30, 530, 120, 30);
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("11:00 - 12:00");
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(30, 250, 120, 30);
+        jLabel14.setBounds(30, 210, 120, 30);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("9:00 - 10:00");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(40, 170, 120, 30);
+        jLabel12.setBounds(40, 130, 120, 30);
 
         jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
@@ -3652,7 +3653,18 @@ public class horarios extends javax.swing.JFrame {
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Horarios disponibles");
         getContentPane().add(jLabel19);
-        jLabel19.setBounds(160, 70, 310, 40);
+        jLabel19.setBounds(160, 560, 310, 30);
+
+        jButton2.setBackground(new java.awt.Color(0, 153, 204));
+        jButton2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton2.setText("Ir a inscripción");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(990, 560, 170, 50);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
@@ -3665,6 +3677,12 @@ public class horarios extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Inscripciones ins= new Inscripciones();
+        ins.setVisible(true);
+        this.setEnabled(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3703,6 +3721,7 @@ public class horarios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

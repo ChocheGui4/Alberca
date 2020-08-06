@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Stack;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -25,7 +26,9 @@ public class Eliminarusuarios {
     public static String[] registro = new String[13];
 
     public static void main(String[] args) {
-        eliminarusuario(3, 2);
+//        eliminarusuario(3, 2);
+        Eliminarusuarios elus = new Eliminarusuarios();
+        System.out.println(elus.contarusuariosinfantes(11, "Miercoles"));
     }
 
     //Traer datos de usuarios a eliminar para posteriormente hacerlo
@@ -55,7 +58,7 @@ public class Eliminarusuarios {
                     + ",localidad='',calle='',numero_e='',numero_i='',telefono_1='',celular_1='',nombre_tutor='',"
                     + "mensualidad_id=null,foto='' WHERE id_usuario=" + id);
             s.executeUpdate();
-            
+
             sSQL = "delete from mensualidad where id_mensualidad=?";
             PreparedStatement pst = conn.prepareStatement(sSQL);
 
@@ -70,7 +73,6 @@ public class Eliminarusuarios {
             } else {
                 return false;
             }
-            
 
         } catch (Exception e) {
             System.out.println(e);
@@ -133,22 +135,21 @@ public class Eliminarusuarios {
         }
 
     }
-    
-    public JLabel contarusuariosadultos(JLabel label,int hora, String dianombre) {
+
+    public JLabel contarusuariosadultos(JLabel label, int hora, String dianombre) {
         conn = con.conectar();
         sSQL = "select count(*) as dato from usuario join mensualidad on mensualidad.id_mensualidad = usuario.mensualidad_id"
-                + " join dias on dias.mensualidad_id = mensualidad.id_mensualidad where edad>12 "
-                + "and horario_id='"+hora+"' and dias_nombre='"+dianombre+"'";
+                + " join dias on dias.mensualidad_id = mensualidad.id_mensualidad where edad>9 "
+                + "and horario_id='" + hora + "' and dias_nombre='" + dianombre + "' group by nombre";
 //        System.out.println("Después de la consulta");
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sSQL);
-
+            Stack pila = new Stack();
             while (rs.next()) {
-                
-                label.setText(rs.getString("dato")+" de 12");
-
+                pila.push(rs.getString("dato"));
             }
+            label.setText(pila.size() + " de 12");
 //            System.out.println("antes del return");
             return label;
         } catch (Exception e) {
@@ -156,26 +157,57 @@ public class Eliminarusuarios {
             return label;
         }
     }
-    public JLabel contarusuariosinfantes(JLabel label,int hora, String dianombre) {
+
+    public JLabel contarusuariosinfantes(JLabel label, int hora, String dianombre) {
         conn = con.conectar();
         sSQL = "select count(*) as dato from usuario join mensualidad on mensualidad.id_mensualidad = usuario.mensualidad_id"
-                + " join dias on dias.mensualidad_id = mensualidad.id_mensualidad where edad<=12 "
-                + "and horario_id='"+hora+"' and dias_nombre='"+dianombre+"'";
+                + " join dias on dias.mensualidad_id = mensualidad.id_mensualidad where edad<=9 "
+                + "and horario_id='" + hora + "' and dias_nombre='" + dianombre + "' group by nombre";
 //        System.out.println("Después de la consulta");
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sSQL);
-
+            Stack pila = new Stack();
             while (rs.next()) {
-                
-                label.setText(rs.getString("dato")+" de 5");
+
+                pila.push(rs.getString("dato"));
 
             }
+            label.setText(pila.size() + " de 5");
 //            System.out.println("antes del return");
             return label;
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, e);
             return label;
+        }
+    }
+
+    public String contarusuariosinfantes(int hora, String dianombre) {
+        conn = con.conectar();
+        sSQL = "select count(*) as dato from usuario join mensualidad on mensualidad.id_mensualidad = usuario.mensualidad_id"
+                + " join dias on dias.mensualidad_id = mensualidad.id_mensualidad where edad>12 "
+                + "and horario_id='" + hora + "' and dias_nombre='" + dianombre + "' group by nombre";
+//        System.out.println("Después de la consulta");
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sSQL);
+            String h = "";
+            int c = 0;
+            Stack pila = new Stack();
+            while (rs.next()) {
+
+                h += rs.getString("dato") + " de 12";
+                c = rs.getInt("dato");
+                pila.push(rs.getString("dato") + " de 12");
+//                rs.getArray("dato").getArray();
+
+            }
+
+//            System.out.println("antes del return");
+            return "" + pila.size() + "\nString: " + h;
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            return "null";
         }
     }
 

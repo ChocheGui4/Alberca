@@ -28,7 +28,7 @@ public class Principal extends javax.swing.JFrame {
 //        usal.mostrar();
 
 //        lblimagen.setVisible(false);
-        setIconImage(new ImageIcon(getClass().getResource("/Imágenes/logo1.jpg/")).getImage());
+//        setIconImage(new ImageIcon(getClass().getResource("/Imágenes/logo1.jpg/")).getImage());
         this.setLocationRelativeTo(null);
     }
 
