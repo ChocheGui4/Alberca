@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /**
@@ -131,6 +132,51 @@ public class Eliminarusuarios {
             return false;
         }
 
+    }
+    
+    public JLabel contarusuariosadultos(JLabel label,int hora, String dianombre) {
+        conn = con.conectar();
+        sSQL = "select count(*) as dato from usuario join mensualidad on mensualidad.id_mensualidad = usuario.mensualidad_id"
+                + " join dias on dias.mensualidad_id = mensualidad.id_mensualidad where edad>12 "
+                + "and horario_id='"+hora+"' and dias_nombre='"+dianombre+"'";
+//        System.out.println("Después de la consulta");
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sSQL);
+
+            while (rs.next()) {
+                
+                label.setText(rs.getString("dato")+" de 12");
+
+            }
+//            System.out.println("antes del return");
+            return label;
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            return label;
+        }
+    }
+    public JLabel contarusuariosinfantes(JLabel label,int hora, String dianombre) {
+        conn = con.conectar();
+        sSQL = "select count(*) as dato from usuario join mensualidad on mensualidad.id_mensualidad = usuario.mensualidad_id"
+                + " join dias on dias.mensualidad_id = mensualidad.id_mensualidad where edad<=12 "
+                + "and horario_id='"+hora+"' and dias_nombre='"+dianombre+"'";
+//        System.out.println("Después de la consulta");
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sSQL);
+
+            while (rs.next()) {
+                
+                label.setText(rs.getString("dato")+" de 5");
+
+            }
+//            System.out.println("antes del return");
+            return label;
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            return label;
+        }
     }
 
 }
