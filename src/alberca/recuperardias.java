@@ -29,7 +29,7 @@ public class recuperardias extends javax.swing.JFrame {
      */
     FondoPanel fondo = new FondoPanel();
     recuperar recu = new recuperar();
-    int id = 0;
+    int id = 0,idmen=0;
     String fecha = null;
 
     public recuperardias() {
@@ -40,6 +40,7 @@ public class recuperardias extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         cbrecuperarid.setVisible(false);
         cbidhorario.setVisible(false);
+        btncambiar.setEnabled(false);
 
     }
 
@@ -48,6 +49,8 @@ public class recuperardias extends javax.swing.JFrame {
             DefaultTableModel modelo;
             tabla tab = new tabla();
             modelo = tab.mostrarusuariosdiaperdido(buscar);
+            tab.mostrarmaestros(cbmaestros);
+            tab.mostraridmaestros(cbidmaestros);
 
             tdatos.setModel(modelo);
             ocultar_columnas();
@@ -60,40 +63,40 @@ public class recuperardias extends javax.swing.JFrame {
 
     public void ocultar_columnas() {
 
-        tdatos.getColumnModel().getColumn(0).setMaxWidth(50);
-        tdatos.getColumnModel().getColumn(0).setMinWidth(50);
-        tdatos.getColumnModel().getColumn(0).setPreferredWidth(50);
+        tdatos.getColumnModel().getColumn(0).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(0).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(0).setPreferredWidth(0);
 
-        tdatos.getColumnModel().getColumn(1).setMaxWidth(0);
-        tdatos.getColumnModel().getColumn(1).setMinWidth(0);
-        tdatos.getColumnModel().getColumn(1).setPreferredWidth(0);
+        tdatos.getColumnModel().getColumn(2).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(2).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(2).setPreferredWidth(0);
 
-        tdatos.getColumnModel().getColumn(2).setMaxWidth(170);
-        tdatos.getColumnModel().getColumn(2).setMinWidth(170);
-        tdatos.getColumnModel().getColumn(2).setPreferredWidth(170);
+        tdatos.getColumnModel().getColumn(3).setMaxWidth(170);
+        tdatos.getColumnModel().getColumn(3).setMinWidth(170);
+        tdatos.getColumnModel().getColumn(3).setPreferredWidth(170);
 
-        tdatos.getColumnModel().getColumn(3).setMaxWidth(300);
-        tdatos.getColumnModel().getColumn(3).setMinWidth(300);
-        tdatos.getColumnModel().getColumn(3).setPreferredWidth(300);
-        
         tdatos.getColumnModel().getColumn(4).setMaxWidth(300);
         tdatos.getColumnModel().getColumn(4).setMinWidth(300);
         tdatos.getColumnModel().getColumn(4).setPreferredWidth(300);
 
-        tdatos.getColumnModel().getColumn(5).setMaxWidth(80);
-        tdatos.getColumnModel().getColumn(5).setMinWidth(80);
-        tdatos.getColumnModel().getColumn(5).setPreferredWidth(80);
+        tdatos.getColumnModel().getColumn(5).setMaxWidth(300);
+        tdatos.getColumnModel().getColumn(5).setMinWidth(300);
+        tdatos.getColumnModel().getColumn(5).setPreferredWidth(300);
 
-        tdatos.getColumnModel().getColumn(6).setMaxWidth(130);
-        tdatos.getColumnModel().getColumn(6).setMinWidth(130);
-        tdatos.getColumnModel().getColumn(6).setPreferredWidth(130);
+        tdatos.getColumnModel().getColumn(6).setMaxWidth(80);
+        tdatos.getColumnModel().getColumn(6).setMinWidth(80);
+        tdatos.getColumnModel().getColumn(6).setPreferredWidth(80);
+
         tdatos.getColumnModel().getColumn(7).setMaxWidth(130);
         tdatos.getColumnModel().getColumn(7).setMinWidth(130);
         tdatos.getColumnModel().getColumn(7).setPreferredWidth(130);
-        tdatos.getColumnModel().getColumn(8).setMaxWidth(0);
-        tdatos.getColumnModel().getColumn(8).setMinWidth(0);
-        tdatos.getColumnModel().getColumn(8).setPreferredWidth(0);
-        
+        tdatos.getColumnModel().getColumn(8).setMaxWidth(130);
+        tdatos.getColumnModel().getColumn(8).setMinWidth(130);
+        tdatos.getColumnModel().getColumn(8).setPreferredWidth(130);
+        tdatos.getColumnModel().getColumn(9).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(9).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(9).setPreferredWidth(0);
+
         tdatos.getColumnModel().getColumn(0).setResizable(false);
         tdatos.getColumnModel().getColumn(1).setResizable(false);
         tdatos.getColumnModel().getColumn(2).setResizable(false);
@@ -135,6 +138,7 @@ public class recuperardias extends javax.swing.JFrame {
         lblnombre2 = new javax.swing.JLabel();
         lblnombre3 = new javax.swing.JLabel();
         lblnombre4 = new javax.swing.JLabel();
+        cbmaestros = new javax.swing.JComboBox<>();
         lblnombreset = new javax.swing.JLabel();
         lblapellidosset = new javax.swing.JLabel();
         lblfechainicioset = new javax.swing.JLabel();
@@ -148,11 +152,15 @@ public class recuperardias extends javax.swing.JFrame {
         txtbuscar = new javax.swing.JTextField();
         btnrecuperar = new javax.swing.JButton();
         lblnombre1 = new javax.swing.JLabel();
-        cbnombredias = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         cbidhorario = new javax.swing.JComboBox<>();
+        btncambiar = new javax.swing.JButton();
+        lblnombre11 = new javax.swing.JLabel();
+        cbidmaestros = new javax.swing.JComboBox<>();
+        cbnombredias = new javax.swing.JLabel();
+        cbnombredias1 = new javax.swing.JLabel();
         lblimagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -186,7 +194,7 @@ public class recuperardias extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tdatos);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(60, 300, 1160, 250);
+        jScrollPane1.setBounds(30, 310, 1220, 250);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -210,51 +218,61 @@ public class recuperardias extends javax.swing.JFrame {
         lblnombre.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre.setText("Buscar: AYO00");
         getContentPane().add(lblnombre);
-        lblnombre.setBounds(60, 260, 170, 31);
+        lblnombre.setBounds(30, 270, 170, 31);
 
         lblnombre2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         lblnombre2.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre2.setText("Apellidos:");
         getContentPane().add(lblnombre2);
-        lblnombre2.setBounds(60, 130, 107, 31);
+        lblnombre2.setBounds(30, 130, 107, 31);
 
         lblnombre3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         lblnombre3.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre3.setText("Fecha de inicio:");
         getContentPane().add(lblnombre3);
-        lblnombre3.setBounds(60, 170, 160, 31);
+        lblnombre3.setBounds(30, 170, 160, 31);
 
         lblnombre4.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         lblnombre4.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre4.setText("Nombre:");
         getContentPane().add(lblnombre4);
-        lblnombre4.setBounds(60, 100, 107, 31);
+        lblnombre4.setBounds(30, 90, 107, 31);
+
+        cbmaestros.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        cbmaestros.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona instructor" }));
+        cbmaestros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbmaestrosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cbmaestros);
+        cbmaestros.setBounds(670, 240, 340, 50);
 
         lblnombreset.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblnombreset.setForeground(new java.awt.Color(204, 204, 204));
         getContentPane().add(lblnombreset);
-        lblnombreset.setBounds(240, 100, 240, 31);
+        lblnombreset.setBounds(210, 90, 210, 31);
 
         lblapellidosset.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblapellidosset.setForeground(new java.awt.Color(204, 204, 204));
         getContentPane().add(lblapellidosset);
-        lblapellidosset.setBounds(240, 130, 210, 31);
+        lblapellidosset.setBounds(210, 130, 210, 31);
 
         lblfechainicioset.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblfechainicioset.setForeground(new java.awt.Color(204, 204, 204));
         getContentPane().add(lblfechainicioset);
-        lblfechainicioset.setBounds(240, 170, 210, 31);
+        lblfechainicioset.setBounds(210, 170, 210, 31);
 
         lblnombre8.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         lblnombre8.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre8.setText("Nueva sesión:");
         getContentPane().add(lblnombre8);
-        lblnombre8.setBounds(610, 190, 210, 31);
+        lblnombre8.setBounds(470, 180, 210, 31);
 
         txtfechamaxima.setDateFormatString("yyyy/MM/dd");
         txtfechamaxima.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         getContentPane().add(txtfechamaxima);
-        txtfechamaxima.setBounds(830, 180, 180, 40);
+        txtfechamaxima.setBounds(670, 160, 180, 50);
 
         cbrecuperarnombres.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         cbrecuperarnombres.addActionListener(new java.awt.event.ActionListener() {
@@ -263,26 +281,27 @@ public class recuperardias extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cbrecuperarnombres);
-        cbrecuperarnombres.setBounds(830, 110, 360, 40);
+        cbrecuperarnombres.setBounds(670, 110, 340, 40);
 
         getContentPane().add(cbrecuperarid);
-        cbrecuperarid.setBounds(1070, 240, 70, 30);
+        cbrecuperarid.setBounds(1000, 70, 70, 30);
 
         lblfechaterminoset.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblfechaterminoset.setForeground(new java.awt.Color(204, 204, 204));
         getContentPane().add(lblfechaterminoset);
-        lblfechaterminoset.setBounds(240, 210, 210, 31);
+        lblfechaterminoset.setBounds(210, 210, 210, 31);
 
         lblnombre10.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         lblnombre10.setForeground(new java.awt.Color(204, 204, 204));
-        lblnombre10.setText("Sesión a recuperar:");
+        lblnombre10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblnombre10.setText("Escoger profesor:");
         getContentPane().add(lblnombre10);
-        lblnombre10.setBounds(610, 120, 210, 31);
+        lblnombre10.setBounds(470, 250, 210, 31);
 
         cbhorario.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         cbhorario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhorario);
-        cbhorario.setBounds(1040, 180, 150, 40);
+        cbhorario.setBounds(860, 160, 150, 50);
 
         txtbuscar.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtbuscar.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -291,7 +310,7 @@ public class recuperardias extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtbuscar);
-        txtbuscar.setBounds(210, 260, 160, 30);
+        txtbuscar.setBounds(180, 270, 160, 30);
 
         btnrecuperar.setBackground(new java.awt.Color(51, 255, 0));
         btnrecuperar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -302,19 +321,13 @@ public class recuperardias extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnrecuperar);
-        btnrecuperar.setBounds(810, 230, 180, 50);
+        btnrecuperar.setBounds(1040, 160, 190, 50);
 
         lblnombre1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         lblnombre1.setForeground(new java.awt.Color(204, 204, 204));
         lblnombre1.setText("Fecha de termino:");
         getContentPane().add(lblnombre1);
-        lblnombre1.setBounds(60, 210, 190, 31);
-
-        cbnombredias.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        cbnombredias.setForeground(new java.awt.Color(204, 204, 204));
-        cbnombredias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        getContentPane().add(cbnombredias);
-        cbnombredias.setBounds(560, 100, 660, 190);
+        lblnombre1.setBounds(30, 210, 190, 31);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
@@ -323,19 +336,51 @@ public class recuperardias extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Recuperar días");
+        jLabel2.setText("Recuperar días y cambiar profesor");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(560, 70, 220, 40);
+        jLabel2.setBounds(460, 70, 340, 40);
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Coordinador: Alfonso Sánchez Piedras");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(770, 540, 450, 60);
+        jLabel4.setBounds(770, 550, 450, 60);
 
         cbidhorario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11" }));
         getContentPane().add(cbidhorario);
-        cbidhorario.setBounds(1200, 190, 70, 30);
+        cbidhorario.setBounds(920, 70, 70, 30);
+
+        btncambiar.setBackground(new java.awt.Color(51, 255, 0));
+        btncambiar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btncambiar.setText("Cambiar");
+        btncambiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncambiarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btncambiar);
+        btncambiar.setBounds(1040, 240, 190, 50);
+
+        lblnombre11.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        lblnombre11.setForeground(new java.awt.Color(204, 204, 204));
+        lblnombre11.setText("Sesión a recuperar:");
+        getContentPane().add(lblnombre11);
+        lblnombre11.setBounds(470, 120, 210, 31);
+
+        getContentPane().add(cbidmaestros);
+        cbidmaestros.setBounds(1010, 30, 70, 30);
+
+        cbnombredias.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        cbnombredias.setForeground(new java.awt.Color(204, 204, 204));
+        cbnombredias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        getContentPane().add(cbnombredias);
+        cbnombredias.setBounds(460, 230, 790, 70);
+
+        cbnombredias1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        cbnombredias1.setForeground(new java.awt.Color(204, 204, 204));
+        cbnombredias1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        getContentPane().add(cbnombredias1);
+        cbnombredias1.setBounds(460, 100, 790, 120);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
@@ -350,14 +395,16 @@ public class recuperardias extends javax.swing.JFrame {
         //        btneliminar.setEnabled(true);
         //        accion="editar";
         btnrecuperar.setEnabled(true);
+        btncambiar.setEnabled(true);
         int fila = tdatos.rowAtPoint(evt.getPoint());
 
         id = Integer.parseInt(tdatos.getValueAt(fila, 0).toString());
+        idmen = Integer.parseInt(tdatos.getValueAt(fila, 9).toString());
         cbrecuperarnombres.removeAllItems();
         cbrecuperarid.removeAllItems();
         recu.traerdiasarecuperar(cbrecuperarnombres, id);
         recu.traerdiasarecuperarid(cbrecuperarid, id);
-        fecha = tdatos.getValueAt(fila, 7).toString();
+        fecha = tdatos.getValueAt(fila, 8).toString();
         txtfechamaxima.setDate(StringaDate(fecha));
         //Primera opción
         txtfechamaxima.getJCalendar().setMinSelectableDate(new Date());
@@ -365,10 +412,10 @@ public class recuperardias extends javax.swing.JFrame {
 
         //Segunda opción
 //        txtfechamaxima.getJCalendar().setMaxSelectableDate(txtfechamaxima.getDate());
-        lblnombreset.setText(tdatos.getValueAt(fila, 2).toString());
-        lblapellidosset.setText(tdatos.getValueAt(fila, 3).toString());
-        lblfechainicioset.setText(tdatos.getValueAt(fila, 6).toString());
-        lblfechaterminoset.setText(tdatos.getValueAt(fila, 7).toString());
+        lblnombreset.setText(tdatos.getValueAt(fila, 3).toString());
+        lblapellidosset.setText(tdatos.getValueAt(fila, 4).toString());
+        lblfechainicioset.setText(tdatos.getValueAt(fila, 7).toString());
+        lblfechaterminoset.setText(tdatos.getValueAt(fila, 8).toString());
 
     }//GEN-LAST:event_tdatosMouseClicked
 
@@ -418,12 +465,29 @@ public class recuperardias extends javax.swing.JFrame {
         recu.traerdiasarecuperarid(cbrecuperarid, id);
         txtfechamaxima.setDate(StringaDate(fecha));
         cbhorario.setSelectedIndex(0);
+        
     }//GEN-LAST:event_btnrecuperarActionPerformed
 
     private void cbrecuperarnombresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbrecuperarnombresActionPerformed
 //        System.out.println("index: " + cbrecuperarnombres.getSelectedIndex());
 
     }//GEN-LAST:event_cbrecuperarnombresActionPerformed
+
+    private void cbmaestrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbmaestrosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbmaestrosActionPerformed
+
+    private void btncambiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncambiarActionPerformed
+        if (cbmaestros.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(null, "<html><span style=\"font-size:2em\">Escoge un maestro, por favor"
+                    + "</span></html>",
+                    "Cambiar maestro", JOptionPane.WARNING_MESSAGE);
+        } else {
+            recu.cambiarprofe(idmen, Integer.parseInt(cbidhorario.getItemAt(cbmaestros.getSelectedIndex() - 1)));
+//            btncambiar.setEnabled(false);
+        }
+
+    }//GEN-LAST:event_btncambiarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -479,10 +543,14 @@ public class recuperardias extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btncambiar;
     private javax.swing.JButton btnrecuperar;
     private javax.swing.JComboBox<String> cbhorario;
     private javax.swing.JComboBox<String> cbidhorario;
+    private javax.swing.JComboBox<String> cbidmaestros;
+    public javax.swing.JComboBox<String> cbmaestros;
     private javax.swing.JLabel cbnombredias;
+    private javax.swing.JLabel cbnombredias1;
     public javax.swing.JComboBox<String> cbrecuperarid;
     public javax.swing.JComboBox<String> cbrecuperarnombres;
     private javax.swing.JButton jButton1;
@@ -498,6 +566,7 @@ public class recuperardias extends javax.swing.JFrame {
     private javax.swing.JLabel lblnombre;
     private javax.swing.JLabel lblnombre1;
     private javax.swing.JLabel lblnombre10;
+    private javax.swing.JLabel lblnombre11;
     private javax.swing.JLabel lblnombre2;
     private javax.swing.JLabel lblnombre3;
     private javax.swing.JLabel lblnombre4;

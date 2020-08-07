@@ -39,13 +39,8 @@ public class tablausuariosaldia {
             @Override
             public boolean isCellEditable(int fila, int columna) {
                 return false;
-
             }
-
         };
-//        String g = " select * from usuario join mensualidad on usuario.mensualidad_id = mensualidad.id_mensualidad"
-//                + " join dias on dias.mensualidad_id = mensualidad.id_mensualidad where mes_num =7 and dias_num=30"
-//                + " and horario = \"9:00 - 10:00"+"";
         sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id = mensualidad.id_mensualidad "
                 + "join dias on dias.mensualidad_id = mensualidad.id_mensualidad join horario on dias.horario_id = "
                 + "horario.id_horario where mes_num= '" + mes + "' and dias_num = '" + dia + "'"

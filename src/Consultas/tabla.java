@@ -420,10 +420,10 @@ public class tabla {
         DefaultTableModel modelo;
 //        System.out.println("Se metió al método");
 
-        String[] titulos = {"ID", "Clave", "Nombre", "Apellidos", "localidad", "Sesiones",
+        String[] titulos = {"ID","´No. usuario", "Clave", "Nombre", "Apellidos", "localidad", "Sesiones",
             "fecha de inicio", "fecha de termino", "id mes"};
 
-        String[] registro = new String[9];
+        String[] registro = new String[10];
 
         totalregistros = 0;
         modelo = new DefaultTableModel(null, titulos) {
@@ -437,24 +437,28 @@ public class tabla {
 
         sSQL = "select * from usuario join mensualidad on mensualidad.id_mensualidad ="
                 + "usuario.mensualidad_id where clave like '%" + buscar + "%' or nombre"
-                + " like '%" + buscar + "%' order by id_usuario";
+                + " like '%" + buscar + "%' order by nombre";
 //        System.out.println("Después de la consulta");
+
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sSQL);
+            int contar=1;
 
             while (rs.next()) {
                 registro[0] = rs.getString("id_usuario");
-                registro[1] = rs.getString("clave");
-                registro[2] = rs.getString("nombre");
-                registro[3] = rs.getString("apellidos");
-                registro[4] = rs.getString("localidad");
-                registro[5] = "" + (rs.getInt("sesiones") * 4);
-                registro[6] = rs.getString("fecha_ini");
-                registro[7] = rs.getString("fecha_fin");
-                registro[8] = rs.getString("mensualidad_id");
+                registro[1] = ""+contar;
+                registro[2] = rs.getString("clave");
+                registro[3] = rs.getString("nombre");
+                registro[4] = rs.getString("apellidos");
+                registro[5] = rs.getString("localidad");
+                registro[6] = "" + (rs.getInt("sesiones") * 4);
+                registro[7] = rs.getString("fecha_ini");
+                registro[8] = rs.getString("fecha_fin");
+                registro[9] = rs.getString("mensualidad_id");
                 totalregistros = totalregistros + 1;
                 modelo.addRow(registro);
+                contar+=1;
 
             }
 //            System.out.println("antes del return");

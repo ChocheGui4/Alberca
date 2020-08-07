@@ -139,7 +139,42 @@ public class recuperar {
             }
             JOptionPane.showMessageDialog(null, "<html><span style=\"font-size:2em\">Se actualizó el día <br>"
                     + " correctamente</span></html>",
+                    "Día recuperado", JOptionPane.INFORMATION_MESSAGE);
+//            s = conn.prepareStatement("INSERT INTO dias(dias_num) VALUES (?)");
+//
+//            s.setString(1, fecha_ini);
+//            s.setString(2, fecha_termi);
+//            s.setString(3, sesiones);
+//
+//            s.executeUpdate();
+            return true;
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e);
+            System.out.println(e);
+            return false;
+
+        }
+
+    }
+
+    //Cambiar profesor
+    public static boolean cambiarprofe(int id_dia, int id_maestro) {
+        try {
+            conn = con.conectar();
+            //s = conn.prepareStatement("insert into Registrar_Usuario values (?,?,?,?,?)");
+
+            s = conn.prepareStatement("UPDATE dias set maestros_id=? WHERE mensualidad_id='" + id_dia + "'");
+            s.setString(1, "" + id_maestro);
+            int n = s.executeUpdate();
+            if (n != 0) {
+                JOptionPane.showMessageDialog(null, "<html><span style=\"font-size:2em\">Se actualizó el maestro <br>"
+                        + " correctamente</span></html>",
                         "Día recuperado", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                System.out.println("No se cambió el profesor");
+            }
+
 //            s = conn.prepareStatement("INSERT INTO dias(dias_num) VALUES (?)");
 //
 //            s.setString(1, fecha_ini);

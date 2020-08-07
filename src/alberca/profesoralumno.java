@@ -23,6 +23,28 @@ public class profesoralumno extends javax.swing.JFrame {
     public profesoralumno() {
         initComponents();
         mostrar();
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                // Esto se ejecuta en segundo plano una única vez
+                while (true) {
+                    // Pero usamos un truco y hacemos un ciclo infinito
+                    try {
+                        // En él, hacemos que el hilo duerma
+                        
+                        Thread.sleep(60000);
+                        // Y después realizamos las operaciones
+                        mostrar();
+//                        System.out.println("Me imprimo cada segundo");
+                        // Así, se da la impresión de que se ejecuta cada cierto tiempo
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+        Thread hilo = new Thread(runnable);
+        hilo.start();
         this.setLocationRelativeTo(null);
     }
     public void mostrar() {
