@@ -65,7 +65,9 @@ public class Principal extends javax.swing.JFrame {
         jButton11.setBackground(new java.awt.Color(0, 153, 204));
         jButton11.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton11.setForeground(new java.awt.Color(255, 255, 255));
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Agregar 2.png"))); // NOI18N
         jButton11.setText("AGREGAR PROFESOR");
+        jButton11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton11ActionPerformed(evt);
@@ -77,18 +79,21 @@ public class Principal extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 153, 204));
         jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Nuevo.png"))); // NOI18N
         jButton1.setText("INSCRIPCIÓN Y RENOVACIÓN");
+        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(480, 110, 330, 55);
+        jButton1.setBounds(480, 110, 340, 55);
 
         jButton10.setBackground(new java.awt.Color(0, 153, 204));
         jButton10.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton10.setForeground(new java.awt.Color(255, 255, 255));
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Cambiar.png"))); // NOI18N
         jButton10.setText("CAMBIAR PROFESOR");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,19 +101,21 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton10);
-        jButton10.setBounds(480, 190, 330, 55);
+        jButton10.setBounds(480, 190, 340, 55);
 
         jButton3.setBackground(new java.awt.Color(0, 153, 204));
         jButton3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Cambiar.png"))); // NOI18N
         jButton3.setText("RECUPERAR DÍAS PERDIDOS");
+        jButton3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(150, 190, 300, 55);
+        jButton3.setBounds(130, 190, 330, 55);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -120,7 +127,9 @@ public class Principal extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(255, 0, 0));
         jButton4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Eliminar.png"))); // NOI18N
         jButton4.setText("USUARIOS ELIMINADOS");
+        jButton4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -132,6 +141,7 @@ public class Principal extends javax.swing.JFrame {
         jSeparator1.setBounds(97, 348, 1090, 14);
 
         jButton5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Salir.png"))); // NOI18N
         jButton5.setText("SALIR");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,11 +149,12 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton5);
-        jButton5.setBounds(900, 560, 260, 50);
+        jButton5.setBounds(900, 560, 240, 50);
 
         jButton6.setBackground(new java.awt.Color(0, 153, 204));
         jButton6.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Usuarios.png"))); // NOI18N
         jButton6.setText("USUARIOS AL DÍA");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,12 +162,14 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton6);
-        jButton6.setBounds(480, 270, 330, 55);
+        jButton6.setBounds(480, 270, 340, 55);
 
         jButton7.setBackground(new java.awt.Color(0, 153, 204));
         jButton7.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Ver eliminados.png"))); // NOI18N
         jButton7.setText("VER DATOS DE USUARIO");
+        jButton7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -168,26 +181,30 @@ public class Principal extends javax.swing.JFrame {
         jButton9.setBackground(new java.awt.Color(0, 153, 204));
         jButton9.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Calendario.png"))); // NOI18N
         jButton9.setText("HORARIOS DISPONIBLES");
+        jButton9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton9);
-        jButton9.setBounds(150, 110, 300, 55);
+        jButton9.setBounds(130, 110, 330, 55);
 
         jButton8.setBackground(new java.awt.Color(0, 153, 204));
         jButton8.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Usuarios.png"))); // NOI18N
         jButton8.setText("USUARIOS POR PROFESOR");
+        jButton8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton8);
-        jButton8.setBounds(150, 270, 300, 55);
+        jButton8.setBounds(130, 270, 330, 55);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N

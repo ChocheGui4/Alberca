@@ -134,7 +134,6 @@ public class recuperardias extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tdatos = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         lblnombre = new javax.swing.JLabel();
         lblnombre2 = new javax.swing.JLabel();
         lblnombre3 = new javax.swing.JLabel();
@@ -162,6 +161,7 @@ public class recuperardias extends javax.swing.JFrame {
         cbidmaestros = new javax.swing.JComboBox<>();
         cbnombredias = new javax.swing.JLabel();
         cbnombredias1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         lblimagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -202,18 +202,6 @@ public class recuperardias extends javax.swing.JFrame {
         jLabel1.setText("CENTRO ACUÁTICO ALFA & OMEGA");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(330, 0, 819, 50);
-
-        jButton1.setBackground(new java.awt.Color(0, 153, 204));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Atrás");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(22, 12, 130, 40);
 
         lblnombre.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         lblnombre.setForeground(new java.awt.Color(204, 204, 204));
@@ -315,6 +303,7 @@ public class recuperardias extends javax.swing.JFrame {
 
         btnrecuperar.setBackground(new java.awt.Color(51, 255, 0));
         btnrecuperar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btnrecuperar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Guardar 2.png"))); // NOI18N
         btnrecuperar.setText("Recuperar día");
         btnrecuperar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -353,6 +342,7 @@ public class recuperardias extends javax.swing.JFrame {
 
         btncambiar.setBackground(new java.awt.Color(51, 255, 0));
         btncambiar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btncambiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Guardar 2.png"))); // NOI18N
         btncambiar.setText("Cambiar");
         btncambiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -382,6 +372,18 @@ public class recuperardias extends javax.swing.JFrame {
         cbnombredias1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         getContentPane().add(cbnombredias1);
         cbnombredias1.setBounds(460, 100, 790, 120);
+
+        jButton1.setBackground(new java.awt.Color(0, 153, 204));
+        jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Atrás azul.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(22, 12, 50, 40);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
@@ -419,10 +421,6 @@ public class recuperardias extends javax.swing.JFrame {
         lblfechaterminoset.setText(tdatos.getValueAt(fila, 8).toString());
 
     }//GEN-LAST:event_tdatosMouseClicked
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtbuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscarKeyReleased
         if (txtbuscar.getText().equals("")) {
@@ -489,6 +487,10 @@ public class recuperardias extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btncambiarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

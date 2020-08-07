@@ -141,13 +141,13 @@ public class eliminados extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tdatos = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnreinscribir = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         txtbuscar = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         lblimagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -189,18 +189,6 @@ public class eliminados extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(60, 120, 270, 40);
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 204));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Atrás");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(22, 12, 122, 40);
-
         jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("CENTRO ACUÁTICO ALFA & OMEGA");
@@ -208,7 +196,8 @@ public class eliminados extends javax.swing.JFrame {
         jLabel1.setBounds(320, 10, 819, 50);
 
         btnreinscribir.setBackground(new java.awt.Color(51, 255, 0));
-        btnreinscribir.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnreinscribir.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btnreinscribir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Reagregar.png"))); // NOI18N
         btnreinscribir.setText("Reinscribir");
         btnreinscribir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -216,7 +205,7 @@ public class eliminados extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnreinscribir);
-        btnreinscribir.setBounds(60, 520, 120, 40);
+        btnreinscribir.setBounds(60, 520, 180, 50);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
@@ -242,6 +231,18 @@ public class eliminados extends javax.swing.JFrame {
         jLabel18.setText("Buscar: AYO00");
         getContentPane().add(jLabel18);
         jLabel18.setBounds(890, 120, 180, 31);
+
+        jButton1.setBackground(new java.awt.Color(0, 153, 204));
+        jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Atrás azul.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(22, 12, 50, 40);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
@@ -322,11 +323,6 @@ public class eliminados extends javax.swing.JFrame {
         }
 
     }
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.setVisible(false);
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void btnreinscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreinscribirActionPerformed
         Inscripciones ins = new Inscripciones();
         ins.txteliminar.setText(id);
@@ -349,6 +345,10 @@ public class eliminados extends javax.swing.JFrame {
     private void txtbuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscarKeyReleased
         mostrar(txtbuscar.getText());
     }//GEN-LAST:event_txtbuscarKeyReleased
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

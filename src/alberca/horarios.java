@@ -194,7 +194,6 @@ public class horarios extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jSeparator2 = new javax.swing.JSeparator();
@@ -500,6 +499,7 @@ public class horarios extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         btninscripicion = new javax.swing.JButton();
         lblimagen = new javax.swing.JLabel();
 
@@ -508,18 +508,6 @@ public class horarios extends javax.swing.JFrame {
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(null);
-
-        jButton1.setBackground(new java.awt.Color(0, 153, 204));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Atrás");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(22, 12, 130, 40);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -3671,8 +3659,21 @@ public class horarios extends javax.swing.JFrame {
         getContentPane().add(jLabel19);
         jLabel19.setBounds(160, 590, 310, 30);
 
+        jButton1.setBackground(new java.awt.Color(0, 153, 204));
+        jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Atrás azul.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(22, 12, 50, 40);
+
         btninscripicion.setBackground(new java.awt.Color(0, 153, 204));
         btninscripicion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btninscripicion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Agregar.png"))); // NOI18N
         btninscripicion.setText("Ir a inscripción");
         btninscripicion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3680,7 +3681,7 @@ public class horarios extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btninscripicion);
-        btninscripicion.setBounds(990, 590, 170, 50);
+        btninscripicion.setBounds(950, 590, 210, 50);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
@@ -3690,15 +3691,15 @@ public class horarios extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void btninscripicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscripicionActionPerformed
         Inscripciones ins = new Inscripciones();
         ins.setVisible(true);
         this.setEnabled(false);
     }//GEN-LAST:event_btninscripicionActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -107,6 +107,7 @@ public class agregarprofesor extends javax.swing.JFrame {
         btneliminar.setBackground(new java.awt.Color(255, 0, 0));
         btneliminar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btneliminar.setForeground(new java.awt.Color(255, 255, 255));
+        btneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Eliminar.png"))); // NOI18N
         btneliminar.setText("Eliminar");
         btneliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,6 +154,7 @@ public class agregarprofesor extends javax.swing.JFrame {
         btncancelar.setBackground(new java.awt.Color(255, 0, 0));
         btncancelar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btncancelar.setForeground(new java.awt.Color(255, 255, 255));
+        btncancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Cancelar 1.png"))); // NOI18N
         btncancelar.setText("Cancelar");
         btncancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,10 +162,11 @@ public class agregarprofesor extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btncancelar);
-        btncancelar.setBounds(310, 320, 140, 50);
+        btncancelar.setBounds(310, 320, 150, 50);
 
         btnguardar.setBackground(new java.awt.Color(51, 255, 0));
         btnguardar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btnguardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Agregar.png"))); // NOI18N
         btnguardar.setText("Guardar");
         btnguardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
