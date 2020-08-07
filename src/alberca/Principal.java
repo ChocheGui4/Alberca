@@ -41,7 +41,9 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton11 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
@@ -59,6 +61,18 @@ public class Principal extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
+        jButton11.setBackground(new java.awt.Color(0, 153, 204));
+        jButton11.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton11.setForeground(new java.awt.Color(255, 255, 255));
+        jButton11.setText("AGREGAR PROFESOR");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton11);
+        jButton11.setBounds(840, 190, 320, 55);
+
         jButton1.setBackground(new java.awt.Color(0, 153, 204));
         jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -69,7 +83,19 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(140, 110, 297, 55);
+        jButton1.setBounds(480, 110, 330, 55);
+
+        jButton10.setBackground(new java.awt.Color(0, 153, 204));
+        jButton10.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(255, 255, 255));
+        jButton10.setText("CAMBIAR PROFESOR");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton10);
+        jButton10.setBounds(480, 190, 330, 55);
 
         jButton3.setBackground(new java.awt.Color(0, 153, 204));
         jButton3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -81,7 +107,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(480, 110, 330, 55);
+        jButton3.setBounds(150, 190, 300, 55);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -124,7 +150,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton6);
-        jButton6.setBounds(480, 200, 330, 55);
+        jButton6.setBounds(480, 270, 330, 55);
 
         jButton7.setBackground(new java.awt.Color(0, 153, 204));
         jButton7.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -136,7 +162,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton7);
-        jButton7.setBounds(850, 110, 317, 55);
+        jButton7.setBounds(840, 110, 317, 55);
 
         jButton9.setBackground(new java.awt.Color(0, 153, 204));
         jButton9.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -148,7 +174,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton9);
-        jButton9.setBounds(140, 200, 300, 55);
+        jButton9.setBounds(150, 110, 300, 55);
 
         jButton8.setBackground(new java.awt.Color(0, 153, 204));
         jButton8.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -160,7 +186,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton8);
-        jButton8.setBounds(850, 200, 320, 55);
+        jButton8.setBounds(150, 270, 300, 55);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
@@ -213,6 +239,15 @@ public class Principal extends javax.swing.JFrame {
         horarios ho=new horarios();
         ho.setVisible(true);
     }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        recuperardias rec = new recuperardias();
+        rec.setVisible(true);
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -270,6 +305,8 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
