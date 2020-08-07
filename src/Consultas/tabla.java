@@ -282,9 +282,9 @@ public class tabla {
             ResultSet rs = st.executeQuery(sSQL);
 
             while (rs.next()) {
-                System.out.println("se metio a la iteración: "+rs.getString("nombre"));
+//                System.out.println("se metio a la iteración: "+rs.getString("nombre"));
                 combo1.addItem(rs.getString("nombre") + " " + rs.getString("apellidos"));
-                System.out.println("se metio a la iteración: "+rs.getString("nombre"));
+//                System.out.println("se metio a la iteración: "+rs.getString("nombre"));
 
             }
 //            System.out.println("antes del return");
@@ -506,7 +506,7 @@ public class tabla {
         DefaultTableModel modelo;
 //        System.out.println("Se metió al método");
 
-        String[] titulos = {"ID","´No. usuario", "Clave", "Nombre", "Apellidos", "localidad", "Sesiones",
+        String[] titulos = {"ID","No. usuario", "Clave", "Nombre", "Apellidos", "localidad", "Sesiones",
             "fecha de inicio", "fecha de termino", "id mes"};
 
         String[] registro = new String[10];

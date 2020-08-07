@@ -162,6 +162,7 @@ public class recuperar {
     public static boolean cambiarprofe(int id_dia, int id_maestro) {
         try {
             conn = con.conectar();
+            System.out.println("id maestro---> "+id_maestro);
             //s = conn.prepareStatement("insert into Registrar_Usuario values (?,?,?,?,?)");
 
             s = conn.prepareStatement("UPDATE dias set maestros_id=? WHERE mensualidad_id='" + id_dia + "'");

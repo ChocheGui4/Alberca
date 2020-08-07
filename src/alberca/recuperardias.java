@@ -41,6 +41,7 @@ public class recuperardias extends javax.swing.JFrame {
         cbrecuperarid.setVisible(false);
         cbidhorario.setVisible(false);
         btncambiar.setEnabled(false);
+        cbidmaestros.setVisible(false);
 
     }
 
@@ -483,7 +484,7 @@ public class recuperardias extends javax.swing.JFrame {
                     + "</span></html>",
                     "Cambiar maestro", JOptionPane.WARNING_MESSAGE);
         } else {
-            recu.cambiarprofe(idmen, Integer.parseInt(cbidhorario.getItemAt(cbmaestros.getSelectedIndex() - 1)));
+            recu.cambiarprofe(idmen, Integer.parseInt(cbidmaestros.getItemAt(cbmaestros.getSelectedIndex() - 1)));
 //            btncambiar.setEnabled(false);
         }
 
