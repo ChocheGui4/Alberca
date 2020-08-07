@@ -6,6 +6,9 @@
 package alberca;
 
 import Consultas.Eliminarusuarios;
+import Consultas.tabla;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,157 +19,170 @@ public class horarios extends javax.swing.JFrame {
     /**
      * Creates new form horarios
      */
+    tabla tab = new tabla();
+    
     public horarios() {
         initComponents();
-        this.setLocationRelativeTo(null);
-        Eliminarusuarios elus=new Eliminarusuarios();
-        
+        //Maestros
+//        tab.mostrarmaestros(cbmaestros);
+//        tab.mostraridmaestros(cbidmaestros);
+        mostrar(1);
+
         //Adultos
-        elus.contarusuariosadultos(lbl1a,1,"Lunes");
-        elus.contarusuariosadultos(lbl2a,2,"Lunes");
-        elus.contarusuariosadultos(lbl3a,3,"Lunes");
-        elus.contarusuariosadultos(lbl4a,4,"Lunes");
-        elus.contarusuariosadultos(lbl5a,5,"Lunes");
-        elus.contarusuariosadultos(lbl6a,6,"Lunes");
-        elus.contarusuariosadultos(lbl7a,7,"Lunes");
-        elus.contarusuariosadultos(lbl8a,8,"Lunes");
-        elus.contarusuariosadultos(lbl9a,9,"Lunes");
-        elus.contarusuariosadultos(lbl10a,10,"Lunes");
-        elus.contarusuariosadultos(lbl11a,11,"Lunes");
+        this.setLocationRelativeTo(null);
         
-        elus.contarusuariosadultos(lbm1a,1,"Martes");
-        elus.contarusuariosadultos(lbm2a,2,"Martes");
-        elus.contarusuariosadultos(lbm3a,3,"Martes");
-        elus.contarusuariosadultos(lbm4a,4,"Martes");
-        elus.contarusuariosadultos(lbm5a,5,"Martes");
-        elus.contarusuariosadultos(lbm6a,6,"Martes");
-        elus.contarusuariosadultos(lbm7a,7,"Martes");
-        elus.contarusuariosadultos(lbm8a,8,"Martes");
-        elus.contarusuariosadultos(lbm9a,9,"Martes");
-        elus.contarusuariosadultos(lbm10a,10,"Martes");
-        elus.contarusuariosadultos(lbm11a,11,"Martes");
+    }
+
+   
+    
+    public void mostrar(int m) {
+//        int m=Integer.parseInt(cbidmaestros.getItemAt(cbmaestros.getSelectedIndex()));
+
+        Eliminarusuarios elus = new Eliminarusuarios();
+        elus.contarusuariosadultos(lbl1a, 1, "Lunes", m);
+        elus.contarusuariosadultos(lbl2a, 2, "Lunes", m);
+        elus.contarusuariosadultos(lbl3a, 3, "Lunes", m);
+        elus.contarusuariosadultos(lbl4a, 4, "Lunes", m);
+        elus.contarusuariosadultos(lbl5a, 5, "Lunes", m);
+        elus.contarusuariosadultos(lbl6a, 6, "Lunes", m);
+        elus.contarusuariosadultos(lbl7a, 7, "Lunes", m);
+        elus.contarusuariosadultos(lbl8a, 8, "Lunes", m);
+        elus.contarusuariosadultos(lbl9a, 9, "Lunes", m);
+        elus.contarusuariosadultos(lbl10a, 10, "Lunes", m);
+        elus.contarusuariosadultos(lbl11a, 11, "Lunes", m);
         
-        elus.contarusuariosadultos(lbmi1a,1,"Miercoles");
-        elus.contarusuariosadultos(lbmi2a,2,"Miercoles");
-        elus.contarusuariosadultos(lbmi3a,3,"Miercoles");
-        elus.contarusuariosadultos(lbmi4a,4,"Miercoles");
-        elus.contarusuariosadultos(lbmi5a,5,"Miercoles");
-        elus.contarusuariosadultos(lbmi6a,6,"Miercoles");
-        elus.contarusuariosadultos(lbmi7a,7,"Miercoles");
-        elus.contarusuariosadultos(lbmi8a,8,"Miercoles");
-        elus.contarusuariosadultos(lbmi9a,9,"Miercoles");
-        elus.contarusuariosadultos(lbmi10a,10,"Miercoles");
-        elus.contarusuariosadultos(lbmi11a,11,"Miercoles");
+        elus.contarusuariosadultos(lbm1a, 1, "Martes", m);
+        elus.contarusuariosadultos(lbm2a, 2, "Martes", m);
+        elus.contarusuariosadultos(lbm3a, 3, "Martes", m);
+        elus.contarusuariosadultos(lbm4a, 4, "Martes", m);
+        elus.contarusuariosadultos(lbm5a, 5, "Martes", m);
+        elus.contarusuariosadultos(lbm6a, 6, "Martes", m);
+        elus.contarusuariosadultos(lbm7a, 7, "Martes", m);
+        elus.contarusuariosadultos(lbm8a, 8, "Martes", m);
+        elus.contarusuariosadultos(lbm9a, 9, "Martes", m);
+        elus.contarusuariosadultos(lbm10a, 10, "Martes", m);
+        elus.contarusuariosadultos(lbm11a, 11, "Martes", m);
         
-        elus.contarusuariosadultos(lbj1a,1,"Jueves");
-        elus.contarusuariosadultos(lbj2a,2,"Jueves");
-        elus.contarusuariosadultos(lbj3a,3,"Jueves");
-        elus.contarusuariosadultos(lbj4a,4,"Jueves");
-        elus.contarusuariosadultos(lbj5a,5,"Jueves");
-        elus.contarusuariosadultos(lbj6a,6,"Jueves");
-        elus.contarusuariosadultos(lbj7a,7,"Jueves");
-        elus.contarusuariosadultos(lbj8a,8,"Jueves");
-        elus.contarusuariosadultos(lbj9a,9,"Jueves");
-        elus.contarusuariosadultos(lbj10a,10,"Jueves");
-        elus.contarusuariosadultos(lbj11a,11,"Jueves");
+        elus.contarusuariosadultos(lbmi1a, 1, "Miercoles", m);
+        elus.contarusuariosadultos(lbmi2a, 2, "Miercoles", m);
+        elus.contarusuariosadultos(lbmi3a, 3, "Miercoles", m);
+        elus.contarusuariosadultos(lbmi4a, 4, "Miercoles", m);
+        elus.contarusuariosadultos(lbmi5a, 5, "Miercoles", m);
+        elus.contarusuariosadultos(lbmi6a, 6, "Miercoles", m);
+        elus.contarusuariosadultos(lbmi7a, 7, "Miercoles", m);
+        elus.contarusuariosadultos(lbmi8a, 8, "Miercoles", m);
+        elus.contarusuariosadultos(lbmi9a, 9, "Miercoles", m);
+        elus.contarusuariosadultos(lbmi10a, 10, "Miercoles", m);
+        elus.contarusuariosadultos(lbmi11a, 11, "Miercoles", m);
         
-        elus.contarusuariosadultos(lbv1a,1,"Viernes");
-        elus.contarusuariosadultos(lbv2a,2,"Viernes");
-        elus.contarusuariosadultos(lbv3a,3,"Viernes");
-        elus.contarusuariosadultos(lbv4a,4,"Viernes");
-        elus.contarusuariosadultos(lbv5a,5,"Viernes");
-        elus.contarusuariosadultos(lbv6a,6,"Viernes");
-        elus.contarusuariosadultos(lbv7a,7,"Viernes");
-        elus.contarusuariosadultos(lbv8a,8,"Viernes");
-        elus.contarusuariosadultos(lbv9a,9,"Viernes");
-        elus.contarusuariosadultos(lbv10a,10,"Viernes");
-        elus.contarusuariosadultos(lbv11a,11,"Viernes");
+        elus.contarusuariosadultos(lbj1a, 1, "Jueves", m);
+        elus.contarusuariosadultos(lbj2a, 2, "Jueves", m);
+        elus.contarusuariosadultos(lbj3a, 3, "Jueves", m);
+        elus.contarusuariosadultos(lbj4a, 4, "Jueves", m);
+        elus.contarusuariosadultos(lbj5a, 5, "Jueves", m);
+        elus.contarusuariosadultos(lbj6a, 6, "Jueves", m);
+        elus.contarusuariosadultos(lbj7a, 7, "Jueves", m);
+        elus.contarusuariosadultos(lbj8a, 8, "Jueves", m);
+        elus.contarusuariosadultos(lbj9a, 9, "Jueves", m);
+        elus.contarusuariosadultos(lbj10a, 10, "Jueves", m);
+        elus.contarusuariosadultos(lbj11a, 11, "Jueves", m);
         
-        elus.contarusuariosadultos(lbs1a,1,"Sabado");
-        elus.contarusuariosadultos(lbs2a,2,"Sabado");
-        elus.contarusuariosadultos(lbs3a,3,"Sabado");
-        elus.contarusuariosadultos(lbs4a,4,"Sabado");
-        elus.contarusuariosadultos(lbs5a,5,"Sabado");
-        elus.contarusuariosadultos(lbs6a,6,"Sabado");
-        elus.contarusuariosadultos(lbs7a,7,"Sabado");
-        elus.contarusuariosadultos(lbs8a,8,"Sabado");
-        elus.contarusuariosadultos(lbs9a,9,"Sabado");
-        elus.contarusuariosadultos(lbs10a,10,"Sabado");
-        elus.contarusuariosadultos(lbs11a,11,"Sabado");
+        elus.contarusuariosadultos(lbv1a, 1, "Viernes", m);
+        elus.contarusuariosadultos(lbv2a, 2, "Viernes", m);
+        elus.contarusuariosadultos(lbv3a, 3, "Viernes", m);
+        elus.contarusuariosadultos(lbv4a, 4, "Viernes", m);
+        elus.contarusuariosadultos(lbv5a, 5, "Viernes", m);
+        elus.contarusuariosadultos(lbv6a, 6, "Viernes", m);
+        elus.contarusuariosadultos(lbv7a, 7, "Viernes", m);
+        elus.contarusuariosadultos(lbv8a, 8, "Viernes", m);
+        elus.contarusuariosadultos(lbv9a, 9, "Viernes", m);
+        elus.contarusuariosadultos(lbv10a, 10, "Viernes", m);
+        elus.contarusuariosadultos(lbv11a, 11, "Viernes", m);
         
+        elus.contarusuariosadultos(lbs1a, 1, "Sabado", m);
+        elus.contarusuariosadultos(lbs2a, 2, "Sabado", m);
+        elus.contarusuariosadultos(lbs3a, 3, "Sabado", m);
+        elus.contarusuariosadultos(lbs4a, 4, "Sabado", m);
+        elus.contarusuariosadultos(lbs5a, 5, "Sabado", m);
+        elus.contarusuariosadultos(lbs6a, 6, "Sabado", m);
+        elus.contarusuariosadultos(lbs7a, 7, "Sabado", m);
+        elus.contarusuariosadultos(lbs8a, 8, "Sabado", m);
+        elus.contarusuariosadultos(lbs9a, 9, "Sabado", m);
+        elus.contarusuariosadultos(lbs10a, 10, "Sabado", m);
+        elus.contarusuariosadultos(lbs11a, 11, "Sabado", m);
+
         //Kids
-        elus.contarusuariosinfantes(lbl1k,1,"Lunes");
-        elus.contarusuariosinfantes(lbl2k,2,"Lunes");
-        elus.contarusuariosinfantes(lbl3k,3,"Lunes");
-        elus.contarusuariosinfantes(lbl4k,4,"Lunes");
-        elus.contarusuariosinfantes(lbl5k,5,"Lunes");
-        elus.contarusuariosinfantes(lbl6k,6,"Lunes");
-        elus.contarusuariosinfantes(lbl7k,7,"Lunes");
-        elus.contarusuariosinfantes(lbl8k,8,"Lunes");
-        elus.contarusuariosinfantes(lbl9k,9,"Lunes");
-        elus.contarusuariosinfantes(lbl10k,10,"Lunes");
-        elus.contarusuariosinfantes(lbl11k,11,"Lunes");
+        elus.contarusuariosinfantes(lbl1k, 1, "Lunes", m);
+        elus.contarusuariosinfantes(lbl2k, 2, "Lunes", m);
+        elus.contarusuariosinfantes(lbl3k, 3, "Lunes", m);
+        elus.contarusuariosinfantes(lbl4k, 4, "Lunes", m);
+        elus.contarusuariosinfantes(lbl5k, 5, "Lunes", m);
+        elus.contarusuariosinfantes(lbl6k, 6, "Lunes", m);
+        elus.contarusuariosinfantes(lbl7k, 7, "Lunes", m);
+        elus.contarusuariosinfantes(lbl8k, 8, "Lunes", m);
+        elus.contarusuariosinfantes(lbl9k, 9, "Lunes", m);
+        elus.contarusuariosinfantes(lbl10k, 10, "Lunes", m);
+        elus.contarusuariosinfantes(lbl11k, 11, "Lunes", m);
         
-        elus.contarusuariosinfantes(lbm1k,1,"Martes");
-        elus.contarusuariosinfantes(lbm2k,2,"Martes");
-        elus.contarusuariosinfantes(lbm3k,3,"Martes");
-        elus.contarusuariosinfantes(lbm4k,4,"Martes");
-        elus.contarusuariosinfantes(lbm5k,5,"Martes");
-        elus.contarusuariosinfantes(lbm6k,6,"Martes");
-        elus.contarusuariosinfantes(lbm7k,7,"Martes");
-        elus.contarusuariosinfantes(lbm8k,8,"Martes");
-        elus.contarusuariosinfantes(lbm9k,9,"Martes");
-        elus.contarusuariosinfantes(lbm10k,10,"Martes");
-        elus.contarusuariosinfantes(lbm11k,11,"Martes");
+        elus.contarusuariosinfantes(lbm1k, 1, "Martes", m);
+        elus.contarusuariosinfantes(lbm2k, 2, "Martes", m);
+        elus.contarusuariosinfantes(lbm3k, 3, "Martes", m);
+        elus.contarusuariosinfantes(lbm4k, 4, "Martes", m);
+        elus.contarusuariosinfantes(lbm5k, 5, "Martes", m);
+        elus.contarusuariosinfantes(lbm6k, 6, "Martes", m);
+        elus.contarusuariosinfantes(lbm7k, 7, "Martes", m);
+        elus.contarusuariosinfantes(lbm8k, 8, "Martes", m);
+        elus.contarusuariosinfantes(lbm9k, 9, "Martes", m);
+        elus.contarusuariosinfantes(lbm10k, 10, "Martes", m);
+        elus.contarusuariosinfantes(lbm11k, 11, "Martes", m);
         
-        elus.contarusuariosinfantes(lbmi1k,1,"Miercoles");
-        elus.contarusuariosinfantes(lbmi2k,2,"Miercoles");
-        elus.contarusuariosinfantes(lbmi3k,3,"Miercoles");
-        elus.contarusuariosinfantes(lbmi4k,4,"Miercoles");
-        elus.contarusuariosinfantes(lbmi5k,5,"Miercoles");
-        elus.contarusuariosinfantes(lbmi6k,6,"Miercoles");
-        elus.contarusuariosinfantes(lbmi7k,7,"Miercoles");
-        elus.contarusuariosinfantes(lbmi8k,8,"Miercoles");
-        elus.contarusuariosinfantes(lbmi9k,9,"Miercoles");
-        elus.contarusuariosinfantes(lbmi10k,10,"Miercoles");
-        elus.contarusuariosinfantes(lbmi11k,11,"Miercoles");
+        elus.contarusuariosinfantes(lbmi1k, 1, "Miercoles", m);
+        elus.contarusuariosinfantes(lbmi2k, 2, "Miercoles", m);
+        elus.contarusuariosinfantes(lbmi3k, 3, "Miercoles", m);
+        elus.contarusuariosinfantes(lbmi4k, 4, "Miercoles", m);
+        elus.contarusuariosinfantes(lbmi5k, 5, "Miercoles", m);
+        elus.contarusuariosinfantes(lbmi6k, 6, "Miercoles", m);
+        elus.contarusuariosinfantes(lbmi7k, 7, "Miercoles", m);
+        elus.contarusuariosinfantes(lbmi8k, 8, "Miercoles", m);
+        elus.contarusuariosinfantes(lbmi9k, 9, "Miercoles", m);
+        elus.contarusuariosinfantes(lbmi10k, 10, "Miercoles", m);
+        elus.contarusuariosinfantes(lbmi11k, 11, "Miercoles", m);
         
-        elus.contarusuariosinfantes(lbj1k,1,"Jueves");
-        elus.contarusuariosinfantes(lbj2k,2,"Jueves");
-        elus.contarusuariosinfantes(lbj3k,3,"Jueves");
-        elus.contarusuariosinfantes(lbj4k,4,"Jueves");
-        elus.contarusuariosinfantes(lbj5k,5,"Jueves");
-        elus.contarusuariosinfantes(lbj6k,6,"Jueves");
-        elus.contarusuariosinfantes(lbj7k,7,"Jueves");
-        elus.contarusuariosinfantes(lbj8k,8,"Jueves");
-        elus.contarusuariosinfantes(lbj9k,9,"Jueves");
-        elus.contarusuariosinfantes(lbj10k,10,"Jueves");
-        elus.contarusuariosinfantes(lbj11k,11,"Jueves");
+        elus.contarusuariosinfantes(lbj1k, 1, "Jueves", m);
+        elus.contarusuariosinfantes(lbj2k, 2, "Jueves", m);
+        elus.contarusuariosinfantes(lbj3k, 3, "Jueves", m);
+        elus.contarusuariosinfantes(lbj4k, 4, "Jueves", m);
+        elus.contarusuariosinfantes(lbj5k, 5, "Jueves", m);
+        elus.contarusuariosinfantes(lbj6k, 6, "Jueves", m);
+        elus.contarusuariosinfantes(lbj7k, 7, "Jueves", m);
+        elus.contarusuariosinfantes(lbj8k, 8, "Jueves", m);
+        elus.contarusuariosinfantes(lbj9k, 9, "Jueves", m);
+        elus.contarusuariosinfantes(lbj10k, 10, "Jueves", m);
+        elus.contarusuariosinfantes(lbj11k, 11, "Jueves", m);
         
-        elus.contarusuariosinfantes(lbv1k,1,"Viernes");
-        elus.contarusuariosinfantes(lbv2k,2,"Viernes");
-        elus.contarusuariosinfantes(lbv3k,3,"Viernes");
-        elus.contarusuariosinfantes(lbv4k,4,"Viernes");
-        elus.contarusuariosinfantes(lbv5k,5,"Viernes");
-        elus.contarusuariosinfantes(lbv6k,6,"Viernes");
-        elus.contarusuariosinfantes(lbv7k,7,"Viernes");
-        elus.contarusuariosinfantes(lbv8k,8,"Viernes");
-        elus.contarusuariosinfantes(lbv9k,9,"Viernes");
-        elus.contarusuariosinfantes(lbv10k,10,"Viernes");
-        elus.contarusuariosinfantes(lbv11k,11,"Viernes");
+        elus.contarusuariosinfantes(lbv1k, 1, "Viernes", m);
+        elus.contarusuariosinfantes(lbv2k, 2, "Viernes", m);
+        elus.contarusuariosinfantes(lbv3k, 3, "Viernes", m);
+        elus.contarusuariosinfantes(lbv4k, 4, "Viernes", m);
+        elus.contarusuariosinfantes(lbv5k, 5, "Viernes", m);
+        elus.contarusuariosinfantes(lbv6k, 6, "Viernes", m);
+        elus.contarusuariosinfantes(lbv7k, 7, "Viernes", m);
+        elus.contarusuariosinfantes(lbv8k, 8, "Viernes", m);
+        elus.contarusuariosinfantes(lbv9k, 9, "Viernes", m);
+        elus.contarusuariosinfantes(lbv10k, 10, "Viernes", m);
+        elus.contarusuariosinfantes(lbv11k, 11, "Viernes", m);
         
-        elus.contarusuariosinfantes(lbs1k,1,"Sabado");
-        elus.contarusuariosinfantes(lbs2k,2,"Sabado");
-        elus.contarusuariosinfantes(lbs3k,3,"Sabado");
-        elus.contarusuariosinfantes(lbs4k,4,"Sabado");
-        elus.contarusuariosinfantes(lbs5k,5,"Sabado");
-        elus.contarusuariosinfantes(lbs6k,6,"Sabado");
-        elus.contarusuariosinfantes(lbs7k,7,"Sabado");
-        elus.contarusuariosinfantes(lbs8k,8,"Sabado");
-        elus.contarusuariosinfantes(lbs9k,9,"Sabado");
-        elus.contarusuariosinfantes(lbs10k,10,"Sabado");
-        elus.contarusuariosinfantes(lbs11k,11,"Sabado");
-        
+        elus.contarusuariosinfantes(lbs1k, 1, "Sabado", m);
+        elus.contarusuariosinfantes(lbs2k, 2, "Sabado", m);
+        elus.contarusuariosinfantes(lbs3k, 3, "Sabado", m);
+        elus.contarusuariosinfantes(lbs4k, 4, "Sabado", m);
+        elus.contarusuariosinfantes(lbs5k, 5, "Sabado", m);
+        elus.contarusuariosinfantes(lbs6k, 6, "Sabado", m);
+        elus.contarusuariosinfantes(lbs7k, 7, "Sabado", m);
+        elus.contarusuariosinfantes(lbs8k, 8, "Sabado", m);
+        elus.contarusuariosinfantes(lbs9k, 9, "Sabado", m);
+        elus.contarusuariosinfantes(lbs10k, 10, "Sabado", m);
+        elus.contarusuariosinfantes(lbs11k, 11, "Sabado", m);
     }
 
     /**
@@ -193,7 +209,6 @@ public class horarios extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jSeparator11 = new javax.swing.JSeparator();
@@ -471,6 +486,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel249 = new javax.swing.JPanel();
         jPanel244 = new javax.swing.JPanel();
         jPanel248 = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -484,7 +500,7 @@ public class horarios extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btninscripicion = new javax.swing.JButton();
         lblimagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -553,13 +569,6 @@ public class horarios extends javax.swing.JFrame {
         jLabel15.setText("MIÉRCOLES");
         jPanel1.add(jLabel15);
         jLabel15.setBounds(330, 10, 160, 30);
-
-        jLabel16.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(0, 130, 173));
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("JUEVES");
-        jPanel1.add(jLabel16);
-        jLabel16.setBounds(530, 10, 120, 30);
 
         jLabel17.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(0, 130, 173));
@@ -3575,74 +3584,81 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel248);
         jPanel248.setBounds(920, 410, 80, 40);
 
+        jLabel20.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(0, 130, 173));
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setText("JUEVES");
+        jPanel1.add(jLabel20);
+        jLabel20.setBounds(530, 10, 120, 30);
+
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(160, 70, 1000, 490);
+        jPanel1.setBounds(160, 100, 1000, 490);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("10:00 - 11:00");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(30, 170, 120, 30);
+        jLabel1.setBounds(30, 200, 120, 30);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("12:00 - 13:00");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(30, 250, 120, 30);
+        jLabel4.setBounds(30, 280, 120, 30);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("13:00 - 14:00");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(30, 290, 120, 30);
+        jLabel5.setBounds(30, 320, 120, 30);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("14:00 - 15:00");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(30, 330, 120, 30);
+        jLabel6.setBounds(30, 360, 120, 30);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("15:00 - 16:00");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(30, 370, 120, 30);
+        jLabel7.setBounds(30, 400, 120, 30);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("16:00 - 17:00");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(30, 410, 120, 30);
+        jLabel8.setBounds(30, 440, 120, 30);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("17:00 - 18:00");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(30, 450, 120, 30);
+        jLabel9.setBounds(30, 480, 120, 30);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("18:00 - 19:00");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(30, 490, 120, 30);
+        jLabel10.setBounds(30, 520, 120, 30);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("19:00 - 20:00");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(30, 530, 120, 30);
+        jLabel11.setBounds(30, 560, 120, 30);
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("11:00 - 12:00");
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(30, 210, 120, 30);
+        jLabel14.setBounds(30, 240, 120, 30);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("9:00 - 10:00");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(40, 130, 120, 30);
+        jLabel12.setBounds(40, 160, 120, 30);
 
         jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
@@ -3653,23 +3669,23 @@ public class horarios extends javax.swing.JFrame {
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Horarios disponibles");
         getContentPane().add(jLabel19);
-        jLabel19.setBounds(160, 560, 310, 30);
+        jLabel19.setBounds(160, 590, 310, 30);
 
-        jButton2.setBackground(new java.awt.Color(0, 153, 204));
-        jButton2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jButton2.setText("Ir a inscripción");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btninscripicion.setBackground(new java.awt.Color(0, 153, 204));
+        btninscripicion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btninscripicion.setText("Ir a inscripción");
+        btninscripicion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btninscripicionActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(990, 560, 170, 50);
+        getContentPane().add(btninscripicion);
+        btninscripicion.setBounds(990, 590, 170, 50);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
         getContentPane().add(lblimagen);
-        lblimagen.setBounds(0, 0, 1280, 650);
+        lblimagen.setBounds(0, 0, 1280, 670);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -3678,11 +3694,11 @@ public class horarios extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Inscripciones ins= new Inscripciones();
+    private void btninscripicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscripicionActionPerformed
+        Inscripciones ins = new Inscripciones();
         ins.setVisible(true);
         this.setEnabled(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btninscripicionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3720,8 +3736,8 @@ public class horarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btninscripicion;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -3729,11 +3745,11 @@ public class horarios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel43;

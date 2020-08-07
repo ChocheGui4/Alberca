@@ -136,7 +136,7 @@ public class Eliminarusuarios {
 
     }
 
-    public JLabel contarusuariosadultos(JLabel label, int hora, String dianombre) {
+    public JLabel contarusuariosadultos(JLabel label, int hora, String dianombre, int idmaestros) {
         conn = con.conectar();
         sSQL = "select count(*) as dato from usuario join mensualidad on mensualidad.id_mensualidad = usuario.mensualidad_id"
                 + " join dias on dias.mensualidad_id = mensualidad.id_mensualidad where edad>9 "
@@ -158,11 +158,11 @@ public class Eliminarusuarios {
         }
     }
 
-    public JLabel contarusuariosinfantes(JLabel label, int hora, String dianombre) {
+    public JLabel contarusuariosinfantes(JLabel label, int hora, String dianombre, int idmaestros) {
         conn = con.conectar();
         sSQL = "select count(*) as dato from usuario join mensualidad on mensualidad.id_mensualidad = usuario.mensualidad_id"
                 + " join dias on dias.mensualidad_id = mensualidad.id_mensualidad where edad<=9 "
-                + "and horario_id='" + hora + "' and dias_nombre='" + dianombre + "' group by nombre";
+                + "and horario_id='" + hora + "' and dias_nombre='" + dianombre + "' and maestros_id='"+idmaestros+"' group by nombre";
 //        System.out.println("Después de la consulta");
         try {
             Statement st = conn.createStatement();
@@ -209,6 +209,28 @@ public class Eliminarusuarios {
             JOptionPane.showConfirmDialog(null, e);
             return "null";
         }
+    }
+     public static boolean eliminarmaestro(int id) {
+        conn = con.conectar();
+        try {
+            sSQL = "delete from maestros where id_maestros=?";
+            PreparedStatement pst = conn.prepareStatement(sSQL);
+            pst.setInt(1, id);
+            int n = pst.executeUpdate();
+
+            if (n != 0) {
+                JOptionPane.showMessageDialog(null, "<html><span style=\"font-size:2em\">Se eliminó con éxito</span></html>",
+                        "Eliminación", JOptionPane.INFORMATION_MESSAGE);
+                return true;
+            } else {
+                return false;
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
+
     }
 
 }

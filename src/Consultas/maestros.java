@@ -34,7 +34,7 @@ public class maestros {
             int n = s.executeUpdate();
             if (n != 0) {
                 JOptionPane.showMessageDialog(null, "<html><span style=\"font-size:2em\">Se agregó con éxito</span></html>",
-                        "Éxito",JOptionPane.WARNING_MESSAGE);
+                        "Éxito",JOptionPane.INFORMATION_MESSAGE);
                 return true;
             } else {
                 return false;    

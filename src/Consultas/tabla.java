@@ -113,6 +113,46 @@ public class tabla {
             return null;
         }
     }
+    
+    //Mostrar a maestros
+     public DefaultTableModel mostrarmaestros(String buscar) {
+        conn = con.conectar();
+        DefaultTableModel modelo;
+//        System.out.println("Se metió al método");
+
+        String[] titulos = {"No.", "Nombre"};
+
+        String[] registro = new String[2];
+
+        totalregistros = 0;
+        modelo = new DefaultTableModel(null, titulos) {
+            @Override
+            public boolean isCellEditable(int fila, int columna) {
+                return false;
+
+            }
+
+        };
+
+        sSQL = "select * from maestros order by id_maestros";
+//        System.out.println("Después de la consulta");
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sSQL);
+
+            while (rs.next()) {
+                registro[0] = rs.getString("id_maestros");
+                registro[1] = rs.getString("nombre")+" "+rs.getString("apellidos");
+                modelo.addRow(registro);
+
+            }
+//            System.out.println("antes del return");
+            return modelo;
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            return null;
+        }
+    }
 
     //Método para mostrar usuarios eliminados del centro acuático
     public DefaultTableModel mostrareliminados(String buscar) {
@@ -163,6 +203,7 @@ public class tabla {
                 registro[12] = rs.getString("nombre_tutor");
                 totalregistros = totalregistros + 1;
                 modelo.addRow(registro);
+                
 
             }
 //            System.out.println("antes del return");
@@ -241,13 +282,15 @@ public class tabla {
             ResultSet rs = st.executeQuery(sSQL);
 
             while (rs.next()) {
+                System.out.println("se metio a la iteración: "+rs.getString("nombre"));
                 combo1.addItem(rs.getString("nombre") + " " + rs.getString("apellidos"));
+                System.out.println("se metio a la iteración: "+rs.getString("nombre"));
 
             }
 //            System.out.println("antes del return");
             return combo1;
         } catch (Exception e) {
-            JOptionPane.showConfirmDialog(null, e);
+            System.out.println(e);
             return null;
         }
     }
@@ -269,6 +312,49 @@ public class tabla {
             }
 //            System.out.println("antes del return");
             return combo1;
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            return null;
+        }
+    }
+    
+    //Llenar tabla de horario
+    public DefaultTableModel mostrarhorario(String buscar) {
+        conn = con.conectar();
+        DefaultTableModel modelo;
+//        System.out.println("Se metió al método");
+
+        String[] titulos = {"Lunes", "Martes","Miercoles","Jueves","Viernes","Sábado"};
+
+        String[] registro = new String[6];
+
+        totalregistros = 0;
+        modelo = new DefaultTableModel(null, titulos) {
+            @Override
+            public boolean isCellEditable(int fila, int columna) {
+                return false;
+
+            }
+
+        };
+
+        sSQL = "select count(*) as dato from usuario";
+//        System.out.println("Después de la consulta");
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sSQL);
+
+            while (rs.next()) {
+                System.out.println(rs.getString("dato"));
+                registro[0] = rs.getString("dato");
+                registro[1] = rs.getString("dato");
+                registro[2] = rs.getString("dato");
+                modelo.addColumn(registro);
+                
+
+            }
+//            System.out.println("antes del return");
+            return modelo;
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, e);
             return null;
