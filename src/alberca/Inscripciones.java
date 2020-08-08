@@ -10,7 +10,11 @@ import Consultas.Guardarmodificaciones;
 import Consultas.Renovar;
 import Consultas.inscripcion;
 import Consultas.tabla;
+import com.github.sarxos.webcam.Webcam;
+import com.github.sarxos.webcam.WebcamPanel;
+import com.github.sarxos.webcam.WebcamResolution;
 import com.toedter.calendar.JDateChooser;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
@@ -27,7 +31,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
-import newscomponents.RSDateChooser;
 
 /**
  *
@@ -38,6 +41,8 @@ public class Inscripciones extends javax.swing.JFrame {
     /**
      * Creates new form Inscripciones
      */
+    
+   
     FondoPanel fondo = new FondoPanel();
     SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
     byte[] image;
@@ -1000,7 +1005,6 @@ public class Inscripciones extends javax.swing.JFrame {
         ckjueves = new javax.swing.JCheckBox();
         ckviernes = new javax.swing.JCheckBox();
         cksabado = new javax.swing.JCheckBox();
-        jpcfoto = new JPanelWebCam.JPanelWebCam();
         btneditardatos = new javax.swing.JButton();
         lblclave = new javax.swing.JLabel();
         txtidusuario = new javax.swing.JTextField();
@@ -1022,6 +1026,8 @@ public class Inscripciones extends javax.swing.JFrame {
         cbmaestros = new javax.swing.JComboBox<>();
         cbedad = new javax.swing.JComboBox<>();
         cbidmaestro = new javax.swing.JComboBox<>();
+        jpcamara = new javax.swing.JPanel();
+        jButton3 = new javax.swing.JButton();
         lblimagen = new javax.swing.JLabel();
         lblregistros = new javax.swing.JLabel();
 
@@ -1068,7 +1074,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtnombre);
-        txtnombre.setBounds(230, 60, 290, 30);
+        txtnombre.setBounds(230, 50, 290, 40);
 
         txtapellidos.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtapellidos.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1077,7 +1083,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtapellidos);
-        txtapellidos.setBounds(230, 100, 290, 30);
+        txtapellidos.setBounds(230, 90, 290, 40);
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 204, 204));
@@ -1122,7 +1128,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtlocalidad);
-        txtlocalidad.setBounds(150, 240, 290, 30);
+        txtlocalidad.setBounds(150, 230, 290, 40);
 
         txtcalle.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtcalle.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1131,7 +1137,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtcalle);
-        txtcalle.setBounds(150, 280, 290, 30);
+        txtcalle.setBounds(150, 270, 290, 40);
 
         txtnumin.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtnumin.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1140,7 +1146,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtnumin);
-        txtnumin.setBounds(400, 320, 120, 30);
+        txtnumin.setBounds(400, 310, 120, 40);
 
         txtnumex.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtnumex.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1149,7 +1155,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtnumex);
-        txtnumex.setBounds(150, 320, 120, 30);
+        txtnumex.setBounds(150, 310, 120, 40);
 
         txttelefono.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txttelefono.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1158,7 +1164,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txttelefono);
-        txttelefono.setBounds(150, 360, 120, 30);
+        txttelefono.setBounds(150, 350, 120, 40);
 
         txtcelular.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtcelular.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1167,7 +1173,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtcelular);
-        txtcelular.setBounds(400, 360, 120, 30);
+        txtcelular.setBounds(400, 350, 120, 40);
 
         cktutor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cktutor.setForeground(new java.awt.Color(255, 255, 255));
@@ -1193,7 +1199,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtnombretutor);
-        txtnombretutor.setBounds(230, 180, 290, 30);
+        txtnombretutor.setBounds(230, 170, 290, 40);
 
         tdatos.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         tdatos.setModel(new javax.swing.table.DefaultTableModel(
@@ -1404,16 +1410,6 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(cksabado);
         cksabado.setBounds(1010, 470, 140, 33);
 
-        jpcfoto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jpcfoto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jpcfotoMouseClicked(evt);
-            }
-        });
-        jpcfoto.setLayout(null);
-        getContentPane().add(jpcfoto);
-        jpcfoto.setBounds(1130, 10, 120, 100);
-
         btneditardatos.setBackground(new java.awt.Color(0, 153, 204));
         btneditardatos.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btneditardatos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Editar.png"))); // NOI18N
@@ -1542,6 +1538,20 @@ public class Inscripciones extends javax.swing.JFrame {
 
         getContentPane().add(cbidmaestro);
         cbidmaestro.setBounds(1140, 440, 80, 30);
+        getContentPane().add(jpcamara);
+        jpcamara.setBounds(1120, 10, 120, 100);
+
+        jButton3.setBackground(new java.awt.Color(0, 153, 204));
+        jButton3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Cámara.png"))); // NOI18N
+        jButton3.setText("Tomar foto");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(530, 50, 190, 40);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
@@ -2170,7 +2180,7 @@ public class Inscripciones extends javax.swing.JFrame {
         cbmaestros.setSelectedIndex(0);
         cbedad.setEnabled(true);
         cbmaestros.setEnabled(true);
-        jpcfoto.setImagenNull();
+//        jpcfoto.setImagenNull();
 
 
     }//GEN-LAST:event_btnnuevoActionPerformed
@@ -2654,15 +2664,14 @@ public class Inscripciones extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtcalleKeyTyped
 
-    private void jpcfotoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpcfotoMouseClicked
-//        byte[] image = jpcfoto.getBytes();
-//        System.out.println("foto: "+image);
-//        btnfoto.setEnabled(true);
-    }//GEN-LAST:event_jpcfotoMouseClicked
-
     private void cbmaestrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbmaestrosActionPerformed
 
     }//GEN-LAST:event_cbmaestrosActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Camara cam= new Camara();
+        cam.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2756,6 +2765,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JCheckBox ckviernes;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
@@ -2773,7 +2783,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private JPanelWebCam.JPanelWebCam jpcfoto;
+    private javax.swing.JPanel jpcamara;
     private javax.swing.JLabel lblclave;
     private javax.swing.JLabel lblimagen;
     private javax.swing.JLabel lblnombre;
