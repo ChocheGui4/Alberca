@@ -5,6 +5,7 @@
  */
 package Consultas;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -37,10 +38,11 @@ public class Eliminarusuarios {
 
         try {
             respaldardatoselimiados(id);
-
+            File foto = new File(registro[10]);
+            foto.delete();
             s = conn.prepareStatement("INSERT INTO usuarios_eliminados(nombre,apellidos,"
                     + "edad,localidad,calle,numero_e,numero_i,telefono_1,celular_1,"
-                    + "nombre_tutor,foto) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+                    + "nombre_tutor) VALUES (?,?,?,?,?,?,?,?,?,?)");
             s.setString(1, registro[0]);
             s.setString(2, registro[1]);
             s.setString(3, registro[2]);
@@ -51,7 +53,7 @@ public class Eliminarusuarios {
             s.setString(8, registro[7]);
             s.setString(9, registro[8]);
             s.setString(10, registro[9]);
-            s.setString(11, registro[10]);
+//            s.setString(11, registro[10]);
 
             s.executeUpdate();
             s = conn.prepareStatement("UPDATE usuario SET nombre='',apellidos='',edad=''"

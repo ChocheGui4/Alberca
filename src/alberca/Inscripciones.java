@@ -10,11 +10,7 @@ import Consultas.Guardarmodificaciones;
 import Consultas.Renovar;
 import Consultas.inscripcion;
 import Consultas.tabla;
-import com.github.sarxos.webcam.Webcam;
-import com.github.sarxos.webcam.WebcamPanel;
-import com.github.sarxos.webcam.WebcamResolution;
 import com.toedter.calendar.JDateChooser;
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
@@ -24,6 +20,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import javax.imageio.ImageIO;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -41,8 +38,6 @@ public class Inscripciones extends javax.swing.JFrame {
     /**
      * Creates new form Inscripciones
      */
-    
-   
     FondoPanel fondo = new FondoPanel();
     SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
     byte[] image;
@@ -50,7 +45,8 @@ public class Inscripciones extends javax.swing.JFrame {
     int diacero = 0, diauno = 1, diados = 2, diatres = 3, diacuatro = 4, diacinco = 5;
     int resultado = -1;
     int r = 0;
-
+    //Camara
+//    BufferedImage ruta=null;
     //Número de días de la semanna
     int dia0 = 0;
     int dia1 = 0;
@@ -132,6 +128,7 @@ public class Inscripciones extends javax.swing.JFrame {
         cbidus.setVisible(false);
         cbidmaestro.setVisible(false);
         cbidhorario.setVisible(false);
+        btntomarfoto.setVisible(false);
 //        btnfoto.setVisible(false);
         mostrar("");
         marcarcalendar(new Date());
@@ -850,7 +847,7 @@ public class Inscripciones extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(1).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(1).setMinWidth(0);
         tdatos.getColumnModel().getColumn(1).setPreferredWidth(0);
-        
+
         tdatos.getColumnModel().getColumn(2).setMaxWidth(200);
         tdatos.getColumnModel().getColumn(2).setMinWidth(200);
         tdatos.getColumnModel().getColumn(2).setPreferredWidth(200);
@@ -894,10 +891,14 @@ public class Inscripciones extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(13).setMaxWidth(110);
         tdatos.getColumnModel().getColumn(13).setMinWidth(110);
         tdatos.getColumnModel().getColumn(13).setPreferredWidth(110);
-        
+
         tdatos.getColumnModel().getColumn(15).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(15).setMinWidth(0);
         tdatos.getColumnModel().getColumn(15).setPreferredWidth(0);
+        
+        tdatos.getColumnModel().getColumn(16).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(16).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(16).setPreferredWidth(0);
 
         tdatos.getColumnModel().getColumn(14).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(14).setMinWidth(0);
@@ -1027,7 +1028,8 @@ public class Inscripciones extends javax.swing.JFrame {
         cbedad = new javax.swing.JComboBox<>();
         cbidmaestro = new javax.swing.JComboBox<>();
         jpcamara = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
+        lblfotousuario = new javax.swing.JLabel();
+        btntomarfoto = new javax.swing.JButton();
         lblimagen = new javax.swing.JLabel();
         lblregistros = new javax.swing.JLabel();
 
@@ -1312,7 +1314,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cbdias);
-        cbdias.setBounds(640, 400, 70, 30);
+        cbdias.setBounds(640, 400, 70, 40);
 
         cbhorasabado.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cbhorasabado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
@@ -1529,7 +1531,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cbmaestros);
-        cbmaestros.setBounds(730, 400, 420, 30);
+        cbmaestros.setBounds(730, 400, 420, 40);
 
         cbedad.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         cbedad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99" }));
@@ -1538,20 +1540,32 @@ public class Inscripciones extends javax.swing.JFrame {
 
         getContentPane().add(cbidmaestro);
         cbidmaestro.setBounds(1140, 440, 80, 30);
+
+        javax.swing.GroupLayout jpcamaraLayout = new javax.swing.GroupLayout(jpcamara);
+        jpcamara.setLayout(jpcamaraLayout);
+        jpcamaraLayout.setHorizontalGroup(
+            jpcamaraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblfotousuario, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+        );
+        jpcamaraLayout.setVerticalGroup(
+            jpcamaraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblfotousuario, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+        );
+
         getContentPane().add(jpcamara);
         jpcamara.setBounds(1120, 10, 120, 100);
 
-        jButton3.setBackground(new java.awt.Color(0, 153, 204));
-        jButton3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Cámara.png"))); // NOI18N
-        jButton3.setText("Tomar foto");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btntomarfoto.setBackground(new java.awt.Color(0, 153, 204));
+        btntomarfoto.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btntomarfoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Cámara.png"))); // NOI18N
+        btntomarfoto.setText("Tomar foto");
+        btntomarfoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btntomarfotoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3);
-        jButton3.setBounds(530, 50, 190, 40);
+        getContentPane().add(btntomarfoto);
+        btntomarfoto.setBounds(530, 50, 190, 40);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
@@ -1583,35 +1597,6 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_cktutorActionPerformed
 
     private void cklunesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cklunesActionPerformed
-//        if (diacero == 0) {
-//            System.out.println("Es Lunes");
-//            checkdias(diacero, 0, ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
-//                    cbhoramartes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoralunes, cbhoralunes);
-//        } else if (diacero == 1) {
-//            System.out.println("Es Martes");
-//            checkdias(diauno, 1, ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
-//                    cbhoramartes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoralunes, cbhoralunes);
-//        } else if (diacero == 2) {
-//            System.out.println("Es Miércoles");
-//            checkdias(diados, 2, ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
-//                    cbhoramartes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoralunes, cbhoralunes);
-//        } else if (diacero == 3) {
-//            System.out.println("Es Jueves");
-//            checkdias(diatres, 3, ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
-//                    cbhoramartes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoralunes, cbhoralunes);
-//
-//        } else if (diacero == 4) {
-//            System.out.println("Es Viernes");
-//            checkdias(diacuatro,4, ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
-//                    cbhoramartes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoralunes, cbhoralunes);
-//
-//        } else if (diacero == 5) {
-//            System.out.println("Es Sábado");
-//            checkdias(diacinco, 5, ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
-//                    cbhoramartes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoralunes, cbhoralunes);
-//
-//        }
-        System.out.println("diacero: " + diacero);
         checkdias(diacero, dia0, ckmartes, ckmiercoles, ckjueves, ckviernes, cksabado, cklunes,
                 cbhoramartes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoralunes, cbhoralunes);
 
@@ -1621,35 +1606,6 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_cklunesActionPerformed
 
     private void ckmartesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckmartesActionPerformed
-//        if (diauno == 0) {
-//            System.out.println("Es Lunes");
-//            checkdias(diacero, 0, cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
-//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramartes, cbhoramartes);
-//        } else if (diauno == 1) {
-//            System.out.println("Es Martes");
-//            checkdias(diauno, 1, cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
-//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramartes, cbhoramartes);
-//        } else if (diauno == 2) {
-//            System.out.println("Es Miércoles");
-//            checkdias(diados, 2, cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
-//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramartes, cbhoramartes);
-//        } else if (diauno == 3) {
-//            System.out.println("Es Jueves");
-//            checkdias(diatres, 3, cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
-//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramartes, cbhoramartes);
-//
-//        } else if (diauno == 4) {
-//            System.out.println("Es Viernes");
-//            checkdias(diacuatro, 4, cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
-//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramartes, cbhoramartes);
-//
-//        } else if (diauno == 5) {
-//            System.out.println("Es Sabado");
-//            checkdias(diacinco, 5, cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
-//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramartes, cbhoramartes);
-//
-//        }
-        System.out.println("diauno: " + diauno);
         checkdias(diauno, dia1, cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
                 cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramartes, cbhoramartes);
 //        checkdias(diauno, cklunes, ckmiercoles, ckjueves, ckviernes, cksabado, ckmartes,
@@ -1658,35 +1614,6 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_ckmartesActionPerformed
 
     private void ckmiercolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckmiercolesActionPerformed
-//        if (diados == 0) {
-//            System.out.println("Es Lunes");
-//            checkdias(diacero, 0, cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
-//                    cbhoralunes, cbhoramartes, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramiercoles, cbhoramiercoles);
-//        } else if (diados == 1) {
-//            System.out.println("Es Martes");
-//            checkdias(diauno, 1, cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
-//                    cbhoralunes, cbhoramartes, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramiercoles, cbhoramiercoles);
-//        } else if (diados == 2) {
-//            System.out.println("Es Miércoles");
-//            checkdias(diados, 2, cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
-//                    cbhoralunes, cbhoramartes, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramiercoles, cbhoramiercoles);
-//        } else if (diados == 3) {
-//            System.out.println("Es Jueves");
-//            checkdias(diatres, 3, cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
-//                    cbhoralunes, cbhoramartes, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramiercoles, cbhoramiercoles);
-//
-//        } else if (diados == 4) {
-//            System.out.println("Es Viernes");
-//            checkdias(diacuatro, 4, cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
-//                    cbhoralunes, cbhoramartes, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramiercoles, cbhoramiercoles);
-//
-//        } else if (diados == 5) {
-//            System.out.println("Es Sábado");
-//            checkdias(diacinco, 5, cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
-//                    cbhoralunes, cbhoramartes, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramiercoles, cbhoramiercoles);
-//
-//        }
-        System.out.println("diados: " + diados);
         checkdias(diados, dia2, cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
                 cbhoralunes, cbhoramartes, cbhorajueves, cbhoraviernes, cbhorasabado, cbhoramiercoles, cbhoramiercoles);
 //        checkdias(diados, cklunes, ckmartes, ckjueves, ckviernes, cksabado, ckmiercoles,
@@ -1695,35 +1622,6 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_ckmiercolesActionPerformed
 
     private void ckjuevesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckjuevesActionPerformed
-//        if (diatres == 0) {
-//            System.out.println("Es Lunes");
-//            checkdias(diacero, 0, ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
-//                    cbhoralunes, cbhoramiercoles, cbhoramartes, cbhoraviernes, cbhorasabado, cbhorajueves, cbhorajueves);
-//        } else if (diatres == 1) {
-//            System.out.println("Es Martes");
-//            checkdias(diauno, 1, ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
-//                    cbhoralunes, cbhoramiercoles, cbhoramartes, cbhoraviernes, cbhorasabado, cbhorajueves, cbhorajueves);
-//        } else if (diatres == 2) {
-//            System.out.println("Es Miércoles");
-//            checkdias(diados, 2, ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
-//                    cbhoralunes, cbhoramiercoles, cbhoramartes, cbhoraviernes, cbhorasabado, cbhorajueves, cbhorajueves);
-//        } else if (diatres == 3) {
-//            System.out.println("Es Jueves");
-//            checkdias(diatres, 3, ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
-//                    cbhoralunes, cbhoramiercoles, cbhoramartes, cbhoraviernes, cbhorasabado, cbhorajueves, cbhorajueves);
-//
-//        } else if (diatres == 4) {
-//            System.out.println("Es Viernes");
-//            checkdias(diacuatro, 4, ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
-//                    cbhoralunes, cbhoramiercoles, cbhoramartes, cbhoraviernes, cbhorasabado, cbhorajueves, cbhorajueves);
-//
-//        } else if (diatres == 5) {
-//            System.out.println("Es Sábado");
-//            checkdias(diacinco, 5, ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
-//                    cbhoralunes, cbhoramiercoles, cbhoramartes, cbhoraviernes, cbhorasabado, cbhorajueves, cbhorajueves);
-//
-//        }
-        System.out.println("diatres: " + diatres);
         checkdias(diatres, dia3, ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
                 cbhoralunes, cbhoramiercoles, cbhoramartes, cbhoraviernes, cbhorasabado, cbhorajueves, cbhorajueves);
 //        checkdias(diatres, ckmartes, ckmiercoles, cklunes, ckviernes, cksabado, ckjueves,
@@ -1732,35 +1630,6 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_ckjuevesActionPerformed
 
     private void ckviernesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckviernesActionPerformed
-//        if (diacuatro == 0) {
-//            System.out.println("Es Lunes");
-//            checkdias(diacero, 0, ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
-//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoramartes, cbhorasabado, cbhoraviernes, cbhoraviernes);
-//        } else if (diacuatro == 1) {
-//            System.out.println("Es Martes");
-//            checkdias(diauno, 1, ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
-//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoramartes, cbhorasabado, cbhoraviernes, cbhoraviernes);
-//        } else if (diacuatro == 2) {
-//            System.out.println("Es Miércoles");
-//            checkdias(diados, 2, ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
-//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoramartes, cbhorasabado, cbhoraviernes, cbhoraviernes);
-//        } else if (diacuatro == 3) {
-//            System.out.println("Es Jueves");
-//            checkdias(diatres, 3, ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
-//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoramartes, cbhorasabado, cbhoraviernes, cbhoraviernes);
-//
-//        } else if (diacuatro == 4) {
-//            System.out.println("Es Viernes");
-//            checkdias(diacuatro, 4, ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
-//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoramartes, cbhorasabado, cbhoraviernes, cbhoraviernes);
-//
-//        } else if (diacuatro == 5) {
-//            System.out.println("Es Sábado");
-//            checkdias(diacinco, 5, ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
-//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoramartes, cbhorasabado, cbhoraviernes, cbhoraviernes);
-//
-//        }
-        System.out.println("diacuatro: " + diacuatro);
         checkdias(diacuatro, dia4, ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
                 cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoramartes, cbhorasabado, cbhoraviernes, cbhoraviernes);
 //        checkdias(diacuatro, ckmartes, ckmiercoles, ckjueves, cklunes, cksabado, ckviernes,
@@ -1769,35 +1638,6 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_ckviernesActionPerformed
 
     private void cksabadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cksabadoActionPerformed
-//        if (diacinco == 0) {
-//            System.out.println("Es Lunes");
-//            checkdias(diacero, 0, ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
-//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhoramartes, cbhorasabado, cbhorasabado);
-//        } else if (diacinco == 1) {
-//            System.out.println("Es Martes");
-//            checkdias(diauno, 1, ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
-//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhoramartes, cbhorasabado, cbhorasabado);
-//        } else if (diacinco == 2) {
-//            System.out.println("Es Miércoles");
-//            checkdias(diados, 2, ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
-//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhoramartes, cbhorasabado, cbhorasabado);
-//        } else if (diacinco == 3) {
-//            System.out.println("Es Jueves");
-//            checkdias(diatres, 3, ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
-//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhoramartes, cbhorasabado, cbhorasabado);
-//
-//        } else if (diacinco == 4) {
-//            System.out.println("Es Viernes");
-//            checkdias(diacuatro, 4, ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
-//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhoramartes, cbhorasabado, cbhorasabado);
-//
-//        } else if (diacinco == 5) {
-//            System.out.println("Es Sábado");
-//            checkdias(diacinco, 5, ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
-//                    cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhoramartes, cbhorasabado, cbhorasabado);
-//
-//        }
-        System.out.println("diacinco: " + diacinco);
         checkdias(diacinco, dia5, ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
                 cbhoralunes, cbhoramiercoles, cbhorajueves, cbhoraviernes, cbhoramartes, cbhorasabado, cbhorasabado);
 //        checkdias(diacinco, ckmartes, ckmiercoles, ckjueves, ckviernes, cklunes, cksabado,
@@ -1815,7 +1655,7 @@ public class Inscripciones extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_cbdiasActionPerformed
-    
+
     public void guardar() {
         Renovar re = new Renovar();
         if (diacero == 0) {
@@ -1893,7 +1733,7 @@ public class Inscripciones extends javax.swing.JFrame {
                 resultado = -1;
                 JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">No se han seleccionado"
                         + " todos los días<br>hazlo por favor</span></html>",
-                        "Escoger horario",JOptionPane.WARNING_MESSAGE);
+                        "Escoger horario", JOptionPane.WARNING_MESSAGE);
             }
         } else if (dias == 2) {
             if (masdos[0] != -1 & masdos[1] != -1) {
@@ -1929,7 +1769,7 @@ public class Inscripciones extends javax.swing.JFrame {
                 resultado = -1;
                 JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">No se han seleccionado"
                         + " todos los días<br>hazlo por favor</span></html>",
-                        "Escoger horario",JOptionPane.WARNING_MESSAGE);
+                        "Escoger horario", JOptionPane.WARNING_MESSAGE);
             }
         } else if (dias == 3) {
             if (mastres[0] != -1 & mastres[1] != -1 & mastres[2] != -1) {
@@ -1965,7 +1805,7 @@ public class Inscripciones extends javax.swing.JFrame {
                 resultado = -1;
                 JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">No se han seleccionado"
                         + " todos los días<br>hazlo por favor</span></html>",
-                        "Escoger horario",JOptionPane.WARNING_MESSAGE);
+                        "Escoger horario", JOptionPane.WARNING_MESSAGE);
 
             }
         } else if (dias == 4) {
@@ -2001,7 +1841,7 @@ public class Inscripciones extends javax.swing.JFrame {
                 resultado = -1;
                 JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">No se han seleccionado"
                         + " todos los días<br>hazlo por favor</span></html>",
-                        "Escoger horario",JOptionPane.WARNING_MESSAGE);
+                        "Escoger horario", JOptionPane.WARNING_MESSAGE);
             }
         } else if (dias == 5) {
             if (mascinco[0] != -1 & mascinco[1] != -1 & mascinco[2] != -1 & mascinco[3] != -1 & mascinco[4] != -1) {
@@ -2036,7 +1876,7 @@ public class Inscripciones extends javax.swing.JFrame {
                 resultado = -1;
                 JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">No se han seleccionado"
                         + " todos los días<br>hazlo por favor</span></html>",
-                        "Escoger horario",JOptionPane.WARNING_MESSAGE);
+                        "Escoger horario", JOptionPane.WARNING_MESSAGE);
             }
 
         }
@@ -2045,10 +1885,7 @@ public class Inscripciones extends javax.swing.JFrame {
             dias = 1;
             inscripcion ins = new inscripcion();
             r = re.idmensualidad();
-            //Calcular edad
 
-            //
-            //                System.out.println("antes de::::::::::");
             boolean v = ins.insertardias(cbidus.getItemAt(0), cbclaves.getItemAt(0), txtnombre.getText(),
                     txtapellidos.getText(), cbedad.getItemAt(cbedad.getSelectedIndex()), txtlocalidad.getText(),
                     txtcalle.getText(), txtnumex.getText(), txtnumin.getText(), txttelefono.getText(), txtcelular.getText(),
@@ -2063,7 +1900,7 @@ public class Inscripciones extends javax.swing.JFrame {
                     //                        System.out.println("------------------------------------------Se eliminó en la tabla de usuarios eliminados");
                 }
                 JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">Se agregó con éxito</span></html>",
-                        "Éxito",JOptionPane.INFORMATION_MESSAGE);
+                        "Éxito", JOptionPane.INFORMATION_MESSAGE);
                 habilitarcamposmensualidad(true);
                 habilitarhoras(false);
                 deseleccionarckdias(false);
@@ -2090,12 +1927,12 @@ public class Inscripciones extends javax.swing.JFrame {
                 | txtlocalidad.getText().equals("") | txtcalle.getText().equals("") | txtnumex.getText().equals("")
                 | txttelefono.getText().equals("") | txtcelular.getText().equals("")) {
             JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">Completa los datos solicitados"
-                    + "<br>por favor</span></html>","Llenar campos",JOptionPane.INFORMATION_MESSAGE);
+                    + "<br>por favor</span></html>", "Llenar campos", JOptionPane.INFORMATION_MESSAGE);
         } else {
             if (cktutor.isSelected()) {
                 if (txtnombretutor.getText().equals("")) {
                     JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">Completa todos los campos"
-                            + "<br>por favor</span></html>","Llenar campos",JOptionPane.INFORMATION_MESSAGE);
+                            + "<br>por favor</span></html>", "Llenar campos", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     guardar();
                 }
@@ -2108,22 +1945,14 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_btnguardarActionPerformed
 
     private void tdatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tdatosMouseClicked
-        habilitarcamposdatopersonal(false);
-        habilitarcamposdatosdireccion(false);
-        habilitarcamposmensualidad(false);
-        deseleccionarckdias(false);
-        habilitarhoras(false);
-//        btneliminar.setEnabled(true);
-//        accion="editar";
+       
+
 
         int fila = tdatos.rowAtPoint(evt.getPoint());
-//        byte[] imagen;
-//        imagen=t.mostrarimagen(Integer.parseInt(tdatos.getValueAt(fila, 0).toString()));
-//        jpcfoto.setImagen(imagen);
+        Camara cam = new Camara();
         txtidusuario.setText(tdatos.getValueAt(fila, 0).toString());
         txtnombre.setText(tdatos.getValueAt(fila, 2).toString());
         txtapellidos.setText(tdatos.getValueAt(fila, 3).toString());
-//        txtfechatermino.setDate(StringaDate("2018/02/12"));
         cbedad.setSelectedIndex(Integer.parseInt(tdatos.getValueAt(fila, 4).toString()) - 1);
         if (tdatos.getValueAt(fila, 11).toString().equals("")) {
             cktutor.setEnabled(false);
@@ -2146,11 +1975,15 @@ public class Inscripciones extends javax.swing.JFrame {
         txttelefono.setText(tdatos.getValueAt(fila, 9).toString());
         txtcelular.setText(tdatos.getValueAt(fila, 10).toString());
         txtfechainicio.setDate(StringaDate(tdatos.getValueAt(fila, 12).toString()));
-//        txtfechatermino.setDate(StringaDate(tdatos.getValueAt(fila, 13).toString()));
         txtmensualidad.setText(tdatos.getValueAt(fila, 14).toString());
-//        cbmaestros.setSelectedIndex(Integer.parseInt(tdatos.getValueAt(fila, 15).toString()));
         cbidmaestro.setSelectedItem(tdatos.getValueAt(fila, 15).toString());
-        cbmaestros.setSelectedIndex(cbidmaestro.getSelectedIndex()+1);
+        String fotoo=tdatos.getValueAt(fila, 16).toString();
+        ImageIcon icon = new ImageIcon(fotoo);
+        Icon icono = new ImageIcon(icon.getImage().getScaledInstance(lblfotousuario.getWidth(),
+                lblfotousuario.getHeight(), Image.SCALE_DEFAULT));
+        lblfotousuario.setText(null);
+        lblfotousuario.setIcon(icono);
+        cbmaestros.setSelectedIndex(cbidmaestro.getSelectedIndex() + 1);
         btneditardatos.setEnabled(true);
         btnrenovar.setEnabled(true);
         btnguardar.setEnabled(false);
@@ -2158,6 +1991,12 @@ public class Inscripciones extends javax.swing.JFrame {
         btnguardarrenovacion.setEnabled(false);
         cbmaestros.setEnabled(false);
         cbedad.setEnabled(false);
+        btntomarfoto.setVisible(true);
+         habilitarcamposdatopersonal(false);
+        habilitarcamposdatosdireccion(false);
+        habilitarcamposmensualidad(false);
+        deseleccionarckdias(false);
+        habilitarhoras(false);
 
     }//GEN-LAST:event_tdatosMouseClicked
 
@@ -2180,6 +2019,8 @@ public class Inscripciones extends javax.swing.JFrame {
         cbmaestros.setSelectedIndex(0);
         cbedad.setEnabled(true);
         cbmaestros.setEnabled(true);
+        btntomarfoto.setVisible(false);
+        lblfotousuario.setIcon(null);
 //        jpcfoto.setImagenNull();
 
 
@@ -2240,6 +2081,7 @@ public class Inscripciones extends javax.swing.JFrame {
         cbclaves.removeAllItems();
         cbidus.removeAllItems();
         llenarclaves();
+        btntomarfoto.setVisible(false);
 
     }//GEN-LAST:event_btneliminarActionPerformed
 
@@ -2312,7 +2154,7 @@ public class Inscripciones extends javax.swing.JFrame {
             combohoras[6] = cbidhorario.getItemAt(cbhorasabado.getSelectedIndex());
         }
         if (dias == 1) {
-            if (masuno[0] != -1&cbmaestros.getSelectedIndex()!=0) {
+            if (masuno[0] != -1 & cbmaestros.getSelectedIndex() != 0) {
                 re.renovarrmensualidad(Integer.parseInt(txtmensualidad.getText()),
                         obtenerfechastr(txtfechainicio, masuno[0]),
                         obtenerfecha(txtfechainicio, masuno[0]), "" + dias);
@@ -2336,7 +2178,7 @@ public class Inscripciones extends javax.swing.JFrame {
 //                }
 //                int nm = Integer.parseInt(valor);
                 re.eliminardiasmes(Integer.parseInt(txtmensualidad.getText()));
-                System.out.println("combo tiene: "+combohoras[masuno[0]]);
+                System.out.println("combo tiene: " + combohoras[masuno[0]]);
                 re.insertardiasmes(unasesion, unasesionmes, diamasuno[0], Integer.parseInt(txtmensualidad.getText()),
                         Integer.parseInt(combohoras[masuno[0]]),
                         Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex() - 1)));
@@ -2349,7 +2191,7 @@ public class Inscripciones extends javax.swing.JFrame {
                         "Actualizar mensualidad", JOptionPane.WARNING_MESSAGE);
             }
         } else if (dias == 2) {
-            if (masdos[0] != -1 & masdos[1] != -1&cbmaestros.getSelectedIndex()!=0) {
+            if (masdos[0] != -1 & masdos[1] != -1 & cbmaestros.getSelectedIndex() != 0) {
                 quicksort(masdos, 0, masdos.length - 1);
 //                    System.out.println(masdos[1] + " >>>>");
                 re.renovarrmensualidad(Integer.parseInt(txtmensualidad.getText()),
@@ -2398,7 +2240,7 @@ public class Inscripciones extends javax.swing.JFrame {
                         "Actualizar mensualidad", JOptionPane.WARNING_MESSAGE);
             }
         } else if (dias == 3) {
-            if (mastres[0] != -1 & mastres[1] != -1 & mastres[2] != -1&cbmaestros.getSelectedIndex()!=0) {
+            if (mastres[0] != -1 & mastres[1] != -1 & mastres[2] != -1 & cbmaestros.getSelectedIndex() != 0) {
 
                 quicksort(mastres, 0, mastres.length - 1);
 //                re.insertarmensualidad(obtenerfechastr(txtfechainicio, 0),
@@ -2448,7 +2290,7 @@ public class Inscripciones extends javax.swing.JFrame {
 
             }
         } else if (dias == 4) {
-            if (mascuatro[0] != -1 & mascuatro[1] != -1 & mascuatro[2] != -1 & mascuatro[3] != -1&cbmaestros.getSelectedIndex()!=0) {
+            if (mascuatro[0] != -1 & mascuatro[1] != -1 & mascuatro[2] != -1 & mascuatro[3] != -1 & cbmaestros.getSelectedIndex() != 0) {
                 quicksort(mascuatro, 0, mascuatro.length - 1);
 //                re.insertarmensualidad(obtenerfechastr(txtfechainicio, 0),
 //                        obtenerfecha(txtfechainicio, mascuatro[3]), "" + dias);
@@ -2498,8 +2340,8 @@ public class Inscripciones extends javax.swing.JFrame {
                         "Actualizar mensualidad", JOptionPane.WARNING_MESSAGE);
             }
         } else if (dias == 5) {
-            if (mascinco[0] != -1 & mascinco[1] != -1 & mascinco[2] != -1 & mascinco[3] != -1 & mascinco[4] != -1&
-                    cbmaestros.getSelectedIndex()!=0) {
+            if (mascinco[0] != -1 & mascinco[1] != -1 & mascinco[2] != -1 & mascinco[3] != -1 & mascinco[4] != -1
+                    & cbmaestros.getSelectedIndex() != 0) {
                 quicksort(mascinco, 0, mascinco.length - 1);
 //                re.insertarmensualidad(obtenerfechastr(txtfechainicio, 0),
 //                        obtenerfecha(txtfechainicio, mascinco[4]), "" + dias);
@@ -2668,10 +2510,11 @@ public class Inscripciones extends javax.swing.JFrame {
 
     }//GEN-LAST:event_cbmaestrosActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Camara cam= new Camara();
+    private void btntomarfotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntomarfotoActionPerformed
+        Camara cam = new Camara();
+        cam.idusuario = Integer.parseInt(txtidusuario.getText());
         cam.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btntomarfotoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2743,6 +2586,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JButton btnguardarrenovacion;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JButton btnrenovar;
+    public javax.swing.JButton btntomarfoto;
     private javax.swing.JComboBox<String> cbclaves;
     private javax.swing.JComboBox<String> cbdias;
     public javax.swing.JComboBox<String> cbedad;
@@ -2765,7 +2609,6 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JCheckBox ckviernes;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
@@ -2785,6 +2628,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPanel jpcamara;
     private javax.swing.JLabel lblclave;
+    public javax.swing.JLabel lblfotousuario;
     private javax.swing.JLabel lblimagen;
     private javax.swing.JLabel lblnombre;
     private javax.swing.JLabel lblregistros;
@@ -2797,7 +2641,7 @@ public class Inscripciones extends javax.swing.JFrame {
     public javax.swing.JTextField txteliminar;
     private com.toedter.calendar.JDateChooser txtfechainicio;
     private com.toedter.calendar.JDateChooser txtfechatermino;
-    private javax.swing.JTextField txtidusuario;
+    public javax.swing.JTextField txtidusuario;
     public javax.swing.JTextField txtlocalidad;
     private javax.swing.JTextField txtmensualidad;
     public javax.swing.JTextField txtnombre;

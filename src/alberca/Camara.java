@@ -5,12 +5,19 @@
  */
 package alberca;
 
+import Consultas.Camara1;
 import com.github.sarxos.webcam.Webcam;
 import com.github.sarxos.webcam.WebcamPanel;
 import com.github.sarxos.webcam.WebcamResolution;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,6 +29,8 @@ public class Camara extends javax.swing.JFrame {
      * Creates new form Camara
      */
     //Camara
+    Inscripciones ins = new Inscripciones();
+    public int idusuario;
     int largocamara = 230;
     int anchocamara = 210;
     Dimension dimension = new Dimension(largocamara, anchocamara);
@@ -30,6 +39,7 @@ public class Camara extends javax.swing.JFrame {
     WebcamPanel webcamPanel = new WebcamPanel(webcam, dimension, false);
     BufferedImage ruta;
     int contador = 0;
+    Icon iconofoto;
 
     //Fin camara
     public Camara() {
@@ -100,6 +110,11 @@ public class Camara extends javax.swing.JFrame {
         btnguardar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnguardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Guardar 2.png"))); // NOI18N
         btnguardar.setText("Guardar");
+        btnguardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnguardarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnguardar);
         btnguardar.setBounds(460, 200, 140, 50);
 
@@ -146,6 +161,7 @@ public class Camara extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        webcamPanel.stop();
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -165,7 +181,43 @@ public class Camara extends javax.swing.JFrame {
 
     private void btntomarfotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntomarfotoActionPerformed
         btnguardar.setEnabled(true);
+        ImageIcon foto;
+        foto = new ImageIcon(webcam.getImage());
+        iconofoto = new ImageIcon(foto.getImage().getScaledInstance(lblfoto.getWidth(),
+                lblfoto.getHeight(), Image.SCALE_SMOOTH));
+        lblfoto.setIcon(iconofoto);
+        
+        ruta = webcam.getImage();
+                
     }//GEN-LAST:event_btntomarfotoActionPerformed
+
+    private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
+        int pregunta=JOptionPane.showConfirmDialog(this, "¿Deseas guardar la foto?","Pregunta",JOptionPane.YES_NO_OPTION,
+                JOptionPane.INFORMATION_MESSAGE);
+        if(pregunta==0){
+//            Inscripciones ins= new Inscripciones();
+//            
+//            ins.lblfotousuario.setIcon(iconofoto);
+            webcamPanel.stop();
+//            this.setVisible(false);
+            String imagensave="C:\\Users\\Choche\\Documents\\Fotos del usuario\\foto"+idusuario+".jpg";
+            File salidaimagen= new File(imagensave);
+            Camara1 cama= new Camara1();            
+            
+            try {
+                ImageIO.write(ruta, "jpg", salidaimagen);
+                System.out.println("Foto guardada: "+salidaimagen.getAbsolutePath());
+                cama.ponerfoto(idusuario, imagensave);
+                this.setVisible(false);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }else{
+            
+        }
+//        webcamPanel.stop();
+        
+    }//GEN-LAST:event_btnguardarActionPerformed
 
     /**
      * @param args the command line arguments

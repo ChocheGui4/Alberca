@@ -62,9 +62,9 @@ public class tabla {
 
         String[] titulos = {"ID", "Clave", "Nombre", "Apellidos", "Edad", "localidad", "calle",
             "no_interno", "no_externo", "telefono", "celular", "nombre del tutor",
-            "fecha de inicio", "fecha de termino", "id mes","id maestro"};
+            "fecha de inicio", "fecha de termino", "id mes","id maestro","foto"};
 
-        String[] registro = new String[16];
+        String[] registro = new String[17];
 
         totalregistros = 0;
         modelo = new DefaultTableModel(null, titulos) {
@@ -102,6 +102,7 @@ public class tabla {
                 registro[13] = rs.getString("fecha_fin");
                 registro[14] = rs.getString("mensualidad_id");
                 registro[15] = rs.getString("maestros_id");
+                registro[16] = rs.getString("foto");
                 totalregistros = totalregistros + 1;
                 modelo.addRow(registro);
 
