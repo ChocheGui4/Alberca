@@ -3694,7 +3694,7 @@ public class horarios extends javax.swing.JFrame {
     private void btninscripicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscripicionActionPerformed
         Inscripciones ins = new Inscripciones();
         ins.setVisible(true);
-        this.setEnabled(false);
+        this.setVisible(false);
     }//GEN-LAST:event_btninscripicionActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

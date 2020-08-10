@@ -142,7 +142,7 @@ public class Eliminarusuarios {
         conn = con.conectar();
         sSQL = "select count(*) as dato from usuario join mensualidad on mensualidad.id_mensualidad = usuario.mensualidad_id"
                 + " join dias on dias.mensualidad_id = mensualidad.id_mensualidad where edad>9 "
-                + "and horario_id='" + hora + "' and dias_nombre='" + dianombre + "' group by nombre";
+                + "and dias.horario_id='" + hora + "' and dias.dias_nombre='" + dianombre + "' group by nombre";
 //        System.out.println("Después de la consulta");
         try {
             Statement st = conn.createStatement();
@@ -153,9 +153,10 @@ public class Eliminarusuarios {
             }
             label.setText(pila.size() + " de 12");
 //            System.out.println("antes del return");
+            conn.close();
             return label;
         } catch (Exception e) {
-            JOptionPane.showConfirmDialog(null, e);
+            JOptionPane.showConfirmDialog(null, "Adulto: " + e);
             return label;
         }
     }
@@ -164,7 +165,7 @@ public class Eliminarusuarios {
         conn = con.conectar();
         sSQL = "select count(*) as dato from usuario join mensualidad on mensualidad.id_mensualidad = usuario.mensualidad_id"
                 + " join dias on dias.mensualidad_id = mensualidad.id_mensualidad where edad<=9 "
-                + "and horario_id='" + hora + "' and dias_nombre='" + dianombre + "' and maestros_id='"+idmaestros+"' group by nombre";
+                + "and dias.horario_id='" + hora + "' and dias.dias_nombre='" + dianombre + "' group by nombre";
 //        System.out.println("Después de la consulta");
         try {
             Statement st = conn.createStatement();
@@ -177,9 +178,10 @@ public class Eliminarusuarios {
             }
             label.setText(pila.size() + " de 5");
 //            System.out.println("antes del return");
+            conn.close();
             return label;
         } catch (Exception e) {
-            JOptionPane.showConfirmDialog(null, e);
+            JOptionPane.showConfirmDialog(null, "Kid: " + e);
             return label;
         }
     }
@@ -212,7 +214,8 @@ public class Eliminarusuarios {
             return "null";
         }
     }
-     public static boolean eliminarmaestro(int id) {
+
+    public static boolean eliminarmaestro(int id) {
         conn = con.conectar();
         try {
             sSQL = "delete from maestros where id_maestros=?";
