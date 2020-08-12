@@ -2084,6 +2084,7 @@ public class Inscripciones extends javax.swing.JFrame {
         cbidus.removeAllItems();
         llenarclaves();
         btntomarfoto.setVisible(false);
+        lblfotousuario.setIcon(null);
 
     }//GEN-LAST:event_btneliminarActionPerformed
 

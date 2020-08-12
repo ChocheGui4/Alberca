@@ -187,7 +187,7 @@ public class tabla {
             while (rs.next()) {
                 registro[0] = rs.getString("id_usuario");
                 registro[1] = rs.getString("nombre");
-                registro[2] = rs.getString("nombre");
+                registro[2] = rs.getString("nombre")+" ";
                 registro[2] += rs.getString("apellidos");
                 registro[3] = rs.getString("apellidos");
                 registro[4] = rs.getString("edad");

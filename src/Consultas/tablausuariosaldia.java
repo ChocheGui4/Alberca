@@ -123,4 +123,53 @@ public class tablausuariosaldia {
             return null;
         }
     }
+    
+    //Mostrar usuarios por maestro
+    public DefaultTableModel usuariosporamestro(String nombre) {
+        conn = con.conectar();
+        DefaultTableModel modelo;
+//        System.out.println("Se metió al método");
+
+        String[] titulos = {"Maestro", "Nombre de usuario"};
+
+        String[] registro = new String[2];
+
+        totalregistros = 0;
+        modelo = new DefaultTableModel(null, titulos) {
+            @Override
+            public boolean isCellEditable(int fila, int columna) {
+                return false;
+
+            }
+
+        };
+//        String g = " select * from usuario join mensualidad on usuario.mensualidad_id = mensualidad.id_mensualidad"
+//                + " join dias on dias.mensualidad_id = mensualidad.id_mensualidad where mes_num =7 and dias_num=30"
+//                + " and horario = \"9:00 - 10:00"+"";
+        sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id = mensualidad.id_mensualidad "
+                + "join dias on dias.mensualidad_id = mensualidad.id_mensualidad join horario on dias.horario_id = "
+                + "horario.id_horario join maestros on dias.maestros_id = maestros.id_maestros"
+                + " where maestros.nombre like '%"+nombre+"%' group by usuario.nombre order by maestros.nombre";
+//        System.out.println("Después de la consulta");
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sSQL);
+
+            while (rs.next()) {
+                registro[0] = rs.getString("maestros.nombre")+" ";
+                registro[0] += rs.getString("maestros.apellidos");
+                registro[1] = rs.getString("usuario.nombre")+" ";
+                registro[1] += rs.getString("usuario.apellidos");
+                totalregistros = totalregistros + 1;
+                modelo.addRow(registro);
+
+            }
+//            System.out.println("antes del return");
+            return modelo;
+        } catch (Exception e) {
+            System.out.println(e);
+//            JOptionPane.showConfirmDialog(null, e);
+            return null;
+        }
+    }
 }

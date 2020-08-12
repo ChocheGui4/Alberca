@@ -205,7 +205,6 @@ public class horarios extends javax.swing.JFrame {
         jSeparator8 = new javax.swing.JSeparator();
         jSeparator9 = new javax.swing.JSeparator();
         jSeparator10 = new javax.swing.JSeparator();
-        jLabel2 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -486,6 +485,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel244 = new javax.swing.JPanel();
         jPanel248 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -499,8 +499,12 @@ public class horarios extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         btninscripicion = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         lblimagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -536,13 +540,6 @@ public class horarios extends javax.swing.JFrame {
         jSeparator9.setBounds(0, 410, 996, 10);
         jPanel1.add(jSeparator10);
         jSeparator10.setBounds(0, 450, 996, 10);
-
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 130, 173));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("LUNES");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(30, 10, 120, 30);
 
         jLabel13.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 130, 173));
@@ -603,6 +600,7 @@ public class horarios extends javax.swing.JFrame {
         lbl3a.setBounds(0, 130, 70, 40);
 
         lbl3k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbl3k.setForeground(new java.awt.Color(255, 255, 255));
         lbl3k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl3k.setText("3 de 5");
         jPanel1.add(lbl3k);
@@ -615,12 +613,14 @@ public class horarios extends javax.swing.JFrame {
         lbl1a.setBounds(0, 50, 70, 40);
 
         lbl1k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbl1k.setForeground(new java.awt.Color(255, 255, 255));
         lbl1k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl1k.setText("3 de 5");
         jPanel1.add(lbl1k);
         lbl1k.setBounds(70, 50, 80, 40);
 
         lbl4k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbl4k.setForeground(new java.awt.Color(255, 255, 255));
         lbl4k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl4k.setText("3 de 5");
         jPanel1.add(lbl4k);
@@ -633,6 +633,7 @@ public class horarios extends javax.swing.JFrame {
         lbl5a.setBounds(0, 210, 70, 40);
 
         lbl5k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbl5k.setForeground(new java.awt.Color(255, 255, 255));
         lbl5k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl5k.setText("3 de 5");
         jPanel1.add(lbl5k);
@@ -645,6 +646,7 @@ public class horarios extends javax.swing.JFrame {
         lbl6a.setBounds(0, 250, 70, 40);
 
         lbl6k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbl6k.setForeground(new java.awt.Color(255, 255, 255));
         lbl6k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl6k.setText("3 de 5");
         jPanel1.add(lbl6k);
@@ -657,12 +659,14 @@ public class horarios extends javax.swing.JFrame {
         lbl7a.setBounds(0, 290, 70, 40);
 
         lbl7k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbl7k.setForeground(new java.awt.Color(255, 255, 255));
         lbl7k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl7k.setText("3 de 5");
         jPanel1.add(lbl7k);
         lbl7k.setBounds(70, 290, 80, 40);
 
         lbl8k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbl8k.setForeground(new java.awt.Color(255, 255, 255));
         lbl8k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl8k.setText("3 de 5");
         jPanel1.add(lbl8k);
@@ -675,12 +679,14 @@ public class horarios extends javax.swing.JFrame {
         lbl9a.setBounds(0, 370, 70, 40);
 
         lbl9k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbl9k.setForeground(new java.awt.Color(255, 255, 255));
         lbl9k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl9k.setText("3 de 5");
         jPanel1.add(lbl9k);
         lbl9k.setBounds(70, 370, 80, 40);
 
         lbl10k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbl10k.setForeground(new java.awt.Color(255, 255, 255));
         lbl10k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl10k.setText("3 de 5");
         jPanel1.add(lbl10k);
@@ -693,12 +699,14 @@ public class horarios extends javax.swing.JFrame {
         lbl11a.setBounds(0, 450, 70, 40);
 
         lbl11k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbl11k.setForeground(new java.awt.Color(255, 255, 255));
         lbl11k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl11k.setText("3 de 5");
         jPanel1.add(lbl11k);
         lbl11k.setBounds(70, 450, 80, 40);
 
         lbl2k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbl2k.setForeground(new java.awt.Color(255, 255, 255));
         lbl2k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl2k.setText("3 de 5");
         jPanel1.add(lbl2k);
@@ -711,6 +719,7 @@ public class horarios extends javax.swing.JFrame {
         lbm1a.setBounds(150, 50, 80, 40);
 
         lbm1k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbm1k.setForeground(new java.awt.Color(255, 255, 255));
         lbm1k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbm1k.setText("3 de 5");
         jPanel1.add(lbm1k);
@@ -723,6 +732,7 @@ public class horarios extends javax.swing.JFrame {
         lbm2a.setBounds(150, 90, 80, 40);
 
         lbm2k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbm2k.setForeground(new java.awt.Color(255, 255, 255));
         lbm2k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbm2k.setText("3 de 5");
         jPanel1.add(lbm2k);
@@ -735,6 +745,7 @@ public class horarios extends javax.swing.JFrame {
         lbm3a.setBounds(150, 130, 80, 40);
 
         lbm3k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbm3k.setForeground(new java.awt.Color(255, 255, 255));
         lbm3k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbm3k.setText("3 de 5");
         jPanel1.add(lbm3k);
@@ -747,6 +758,7 @@ public class horarios extends javax.swing.JFrame {
         lbm4a.setBounds(150, 170, 80, 40);
 
         lbm4k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbm4k.setForeground(new java.awt.Color(255, 255, 255));
         lbm4k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbm4k.setText("3 de 5");
         jPanel1.add(lbm4k);
@@ -759,6 +771,7 @@ public class horarios extends javax.swing.JFrame {
         lbm5a.setBounds(150, 210, 80, 40);
 
         lbm5k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbm5k.setForeground(new java.awt.Color(255, 255, 255));
         lbm5k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbm5k.setText("3 de 5");
         jPanel1.add(lbm5k);
@@ -771,6 +784,7 @@ public class horarios extends javax.swing.JFrame {
         lbm6a.setBounds(150, 250, 80, 40);
 
         lbm6k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbm6k.setForeground(new java.awt.Color(255, 255, 255));
         lbm6k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbm6k.setText("3 de 5");
         jPanel1.add(lbm6k);
@@ -783,6 +797,7 @@ public class horarios extends javax.swing.JFrame {
         lbm7a.setBounds(150, 290, 80, 40);
 
         lbm7k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbm7k.setForeground(new java.awt.Color(255, 255, 255));
         lbm7k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbm7k.setText("3 de 5");
         jPanel1.add(lbm7k);
@@ -813,24 +828,28 @@ public class horarios extends javax.swing.JFrame {
         lbm8a.setBounds(150, 330, 80, 40);
 
         lbm8k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbm8k.setForeground(new java.awt.Color(255, 255, 255));
         lbm8k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbm8k.setText("3 de 5");
         jPanel1.add(lbm8k);
         lbm8k.setBounds(230, 330, 80, 40);
 
         lbm9k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbm9k.setForeground(new java.awt.Color(255, 255, 255));
         lbm9k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbm9k.setText("3 de 5");
         jPanel1.add(lbm9k);
         lbm9k.setBounds(230, 370, 80, 40);
 
         lbm10k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbm10k.setForeground(new java.awt.Color(255, 255, 255));
         lbm10k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbm10k.setText("3 de 5");
         jPanel1.add(lbm10k);
         lbm10k.setBounds(230, 410, 80, 40);
 
         lbm11k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbm11k.setForeground(new java.awt.Color(255, 255, 255));
         lbm11k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbm11k.setText("3 de 5");
         jPanel1.add(lbm11k);
@@ -843,6 +862,7 @@ public class horarios extends javax.swing.JFrame {
         lbmi1a.setBounds(310, 50, 100, 40);
 
         lbmi1k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbmi1k.setForeground(new java.awt.Color(255, 255, 255));
         lbmi1k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbmi1k.setText("3 de 5");
         jPanel1.add(lbmi1k);
@@ -855,6 +875,7 @@ public class horarios extends javax.swing.JFrame {
         lbmi2a.setBounds(310, 90, 100, 40);
 
         lbmi2k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbmi2k.setForeground(new java.awt.Color(255, 255, 255));
         lbmi2k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbmi2k.setText("3 de 5");
         jPanel1.add(lbmi2k);
@@ -867,6 +888,7 @@ public class horarios extends javax.swing.JFrame {
         lbmi3a.setBounds(310, 130, 100, 40);
 
         lbmi3k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbmi3k.setForeground(new java.awt.Color(255, 255, 255));
         lbmi3k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbmi3k.setText("3 de 5");
         jPanel1.add(lbmi3k);
@@ -879,6 +901,7 @@ public class horarios extends javax.swing.JFrame {
         lbmi4a.setBounds(310, 170, 100, 40);
 
         lbmi4k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbmi4k.setForeground(new java.awt.Color(255, 255, 255));
         lbmi4k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbmi4k.setText("3 de 5");
         jPanel1.add(lbmi4k);
@@ -891,6 +914,7 @@ public class horarios extends javax.swing.JFrame {
         lbmi5a.setBounds(310, 210, 100, 40);
 
         lbmi5k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbmi5k.setForeground(new java.awt.Color(255, 255, 255));
         lbmi5k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbmi5k.setText("3 de 5");
         jPanel1.add(lbmi5k);
@@ -903,6 +927,7 @@ public class horarios extends javax.swing.JFrame {
         lbmi6a.setBounds(310, 250, 100, 40);
 
         lbmi6k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbmi6k.setForeground(new java.awt.Color(255, 255, 255));
         lbmi6k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbmi6k.setText("3 de 5");
         jPanel1.add(lbmi6k);
@@ -915,6 +940,7 @@ public class horarios extends javax.swing.JFrame {
         lbmi7a.setBounds(310, 290, 100, 40);
 
         lbmi7k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbmi7k.setForeground(new java.awt.Color(255, 255, 255));
         lbmi7k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbmi7k.setText("3 de 5");
         jPanel1.add(lbmi7k);
@@ -945,24 +971,28 @@ public class horarios extends javax.swing.JFrame {
         lbmi8a.setBounds(310, 330, 100, 40);
 
         lbmi8k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbmi8k.setForeground(new java.awt.Color(255, 255, 255));
         lbmi8k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbmi8k.setText("3 de 5");
         jPanel1.add(lbmi8k);
         lbmi8k.setBounds(410, 330, 100, 40);
 
         lbmi9k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbmi9k.setForeground(new java.awt.Color(255, 255, 255));
         lbmi9k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbmi9k.setText("3 de 5");
         jPanel1.add(lbmi9k);
         lbmi9k.setBounds(410, 370, 100, 40);
 
         lbmi10k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbmi10k.setForeground(new java.awt.Color(255, 255, 255));
         lbmi10k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbmi10k.setText("3 de 5");
         jPanel1.add(lbmi10k);
         lbmi10k.setBounds(410, 410, 100, 40);
 
         lbmi11k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbmi11k.setForeground(new java.awt.Color(255, 255, 255));
         lbmi11k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbmi11k.setText("3 de 5");
         jPanel1.add(lbmi11k);
@@ -975,6 +1005,7 @@ public class horarios extends javax.swing.JFrame {
         lbj1a.setBounds(510, 50, 80, 40);
 
         lbj1k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbj1k.setForeground(new java.awt.Color(255, 255, 255));
         lbj1k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbj1k.setText("3 de 5");
         jPanel1.add(lbj1k);
@@ -987,6 +1018,7 @@ public class horarios extends javax.swing.JFrame {
         lbj2a.setBounds(510, 90, 80, 40);
 
         lbj2k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbj2k.setForeground(new java.awt.Color(255, 255, 255));
         lbj2k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbj2k.setText("3 de 5");
         jPanel1.add(lbj2k);
@@ -999,6 +1031,7 @@ public class horarios extends javax.swing.JFrame {
         lbj3a.setBounds(510, 130, 80, 40);
 
         lbj3k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbj3k.setForeground(new java.awt.Color(255, 255, 255));
         lbj3k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbj3k.setText("3 de 5");
         jPanel1.add(lbj3k);
@@ -1011,6 +1044,7 @@ public class horarios extends javax.swing.JFrame {
         lbj4a.setBounds(510, 170, 80, 40);
 
         lbj4k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbj4k.setForeground(new java.awt.Color(255, 255, 255));
         lbj4k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbj4k.setText("3 de 5");
         jPanel1.add(lbj4k);
@@ -1023,6 +1057,7 @@ public class horarios extends javax.swing.JFrame {
         lbj5a.setBounds(510, 210, 80, 40);
 
         lbj5k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbj5k.setForeground(new java.awt.Color(255, 255, 255));
         lbj5k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbj5k.setText("3 de 5");
         jPanel1.add(lbj5k);
@@ -1035,6 +1070,7 @@ public class horarios extends javax.swing.JFrame {
         lbj6a.setBounds(510, 250, 80, 40);
 
         lbj6k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbj6k.setForeground(new java.awt.Color(255, 255, 255));
         lbj6k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbj6k.setText("3 de 5");
         jPanel1.add(lbj6k);
@@ -1047,6 +1083,7 @@ public class horarios extends javax.swing.JFrame {
         lbj7a.setBounds(510, 290, 80, 40);
 
         lbj7k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbj7k.setForeground(new java.awt.Color(255, 255, 255));
         lbj7k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbj7k.setText("3 de 5");
         jPanel1.add(lbj7k);
@@ -1077,24 +1114,28 @@ public class horarios extends javax.swing.JFrame {
         lbj8a.setBounds(510, 330, 80, 40);
 
         lbj8k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbj8k.setForeground(new java.awt.Color(255, 255, 255));
         lbj8k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbj8k.setText("3 de 5");
         jPanel1.add(lbj8k);
         lbj8k.setBounds(590, 330, 80, 40);
 
         lbj9k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbj9k.setForeground(new java.awt.Color(255, 255, 255));
         lbj9k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbj9k.setText("3 de 5");
         jPanel1.add(lbj9k);
         lbj9k.setBounds(590, 370, 80, 40);
 
         lbj10k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbj10k.setForeground(new java.awt.Color(255, 255, 255));
         lbj10k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbj10k.setText("3 de 5");
         jPanel1.add(lbj10k);
         lbj10k.setBounds(590, 410, 80, 40);
 
         lbj11k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbj11k.setForeground(new java.awt.Color(255, 255, 255));
         lbj11k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbj11k.setText("3 de 5");
         jPanel1.add(lbj11k);
@@ -1107,6 +1148,7 @@ public class horarios extends javax.swing.JFrame {
         lbs1a.setBounds(840, 50, 70, 40);
 
         lbs1k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbs1k.setForeground(new java.awt.Color(255, 255, 255));
         lbs1k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbs1k.setText("3 de 5");
         jPanel1.add(lbs1k);
@@ -1119,6 +1161,7 @@ public class horarios extends javax.swing.JFrame {
         lbs2a.setBounds(840, 90, 70, 40);
 
         lbs2k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbs2k.setForeground(new java.awt.Color(255, 255, 255));
         lbs2k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbs2k.setText("3 de 5");
         jPanel1.add(lbs2k);
@@ -1131,6 +1174,7 @@ public class horarios extends javax.swing.JFrame {
         lbs3a.setBounds(840, 130, 70, 40);
 
         lbs3k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbs3k.setForeground(new java.awt.Color(255, 255, 255));
         lbs3k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbs3k.setText("3 de 5");
         jPanel1.add(lbs3k);
@@ -1143,6 +1187,7 @@ public class horarios extends javax.swing.JFrame {
         lbs4a.setBounds(840, 170, 70, 40);
 
         lbs4k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbs4k.setForeground(new java.awt.Color(255, 255, 255));
         lbs4k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbs4k.setText("3 de 5");
         jPanel1.add(lbs4k);
@@ -1155,6 +1200,7 @@ public class horarios extends javax.swing.JFrame {
         lbs5a.setBounds(840, 210, 70, 40);
 
         lbs5k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbs5k.setForeground(new java.awt.Color(255, 255, 255));
         lbs5k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbs5k.setText("3 de 5");
         jPanel1.add(lbs5k);
@@ -1167,6 +1213,7 @@ public class horarios extends javax.swing.JFrame {
         lbs6a.setBounds(840, 250, 70, 40);
 
         lbs6k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbs6k.setForeground(new java.awt.Color(255, 255, 255));
         lbs6k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbs6k.setText("3 de 5");
         jPanel1.add(lbs6k);
@@ -1179,6 +1226,7 @@ public class horarios extends javax.swing.JFrame {
         lbs7a.setBounds(840, 290, 70, 40);
 
         lbs7k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbs7k.setForeground(new java.awt.Color(255, 255, 255));
         lbs7k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbs7k.setText("3 de 5");
         jPanel1.add(lbs7k);
@@ -1209,24 +1257,28 @@ public class horarios extends javax.swing.JFrame {
         lbs8a.setBounds(840, 330, 70, 40);
 
         lbs8k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbs8k.setForeground(new java.awt.Color(255, 255, 255));
         lbs8k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbs8k.setText("3 de 5");
         jPanel1.add(lbs8k);
         lbs8k.setBounds(910, 330, 90, 40);
 
         lbs9k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbs9k.setForeground(new java.awt.Color(255, 255, 255));
         lbs9k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbs9k.setText("3 de 5");
         jPanel1.add(lbs9k);
         lbs9k.setBounds(910, 370, 90, 40);
 
         lbs10k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbs10k.setForeground(new java.awt.Color(255, 255, 255));
         lbs10k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbs10k.setText("3 de 5");
         jPanel1.add(lbs10k);
         lbs10k.setBounds(910, 410, 90, 40);
 
         lbs11k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbs11k.setForeground(new java.awt.Color(255, 255, 255));
         lbs11k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbs11k.setText("3 de 5");
         jPanel1.add(lbs11k);
@@ -1239,6 +1291,7 @@ public class horarios extends javax.swing.JFrame {
         lbv1a.setBounds(670, 50, 80, 40);
 
         lbv1k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbv1k.setForeground(new java.awt.Color(255, 255, 255));
         lbv1k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbv1k.setText("3 de 5");
         jPanel1.add(lbv1k);
@@ -1251,6 +1304,7 @@ public class horarios extends javax.swing.JFrame {
         lbv2a.setBounds(670, 90, 80, 40);
 
         lbv2k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbv2k.setForeground(new java.awt.Color(255, 255, 255));
         lbv2k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbv2k.setText("3 de 5");
         jPanel1.add(lbv2k);
@@ -1263,6 +1317,7 @@ public class horarios extends javax.swing.JFrame {
         lbv3a.setBounds(670, 130, 80, 40);
 
         lbv3k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbv3k.setForeground(new java.awt.Color(255, 255, 255));
         lbv3k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbv3k.setText("3 de 5");
         jPanel1.add(lbv3k);
@@ -1275,6 +1330,7 @@ public class horarios extends javax.swing.JFrame {
         lbv4a.setBounds(670, 170, 80, 40);
 
         lbv4k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbv4k.setForeground(new java.awt.Color(255, 255, 255));
         lbv4k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbv4k.setText("3 de 5");
         jPanel1.add(lbv4k);
@@ -1287,6 +1343,7 @@ public class horarios extends javax.swing.JFrame {
         lbv5a.setBounds(670, 210, 80, 40);
 
         lbv5k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbv5k.setForeground(new java.awt.Color(255, 255, 255));
         lbv5k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbv5k.setText("3 de 5");
         jPanel1.add(lbv5k);
@@ -1299,6 +1356,7 @@ public class horarios extends javax.swing.JFrame {
         lbv6a.setBounds(670, 250, 80, 40);
 
         lbv6k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbv6k.setForeground(new java.awt.Color(255, 255, 255));
         lbv6k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbv6k.setText("3 de 5");
         jPanel1.add(lbv6k);
@@ -1311,6 +1369,7 @@ public class horarios extends javax.swing.JFrame {
         lbv7a.setBounds(670, 290, 80, 40);
 
         lbv7k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbv7k.setForeground(new java.awt.Color(255, 255, 255));
         lbv7k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbv7k.setText("3 de 5");
         jPanel1.add(lbv7k);
@@ -1341,24 +1400,28 @@ public class horarios extends javax.swing.JFrame {
         lbv8a.setBounds(670, 330, 80, 40);
 
         lbv8k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbv8k.setForeground(new java.awt.Color(255, 255, 255));
         lbv8k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbv8k.setText("3 de 5");
         jPanel1.add(lbv8k);
         lbv8k.setBounds(750, 330, 90, 40);
 
         lbv9k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbv9k.setForeground(new java.awt.Color(255, 255, 255));
         lbv9k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbv9k.setText("3 de 5");
         jPanel1.add(lbv9k);
         lbv9k.setBounds(750, 370, 90, 40);
 
         lbv10k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbv10k.setForeground(new java.awt.Color(255, 255, 255));
         lbv10k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbv10k.setText("3 de 5");
         jPanel1.add(lbv10k);
         lbv10k.setBounds(750, 410, 90, 40);
 
         lbv11k.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lbv11k.setForeground(new java.awt.Color(255, 255, 255));
         lbv11k.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbv11k.setText("3 de 5");
         jPanel1.add(lbv11k);
@@ -1380,7 +1443,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel114);
         jPanel114.setBounds(0, 50, 70, 40);
 
-        jPanel115.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel115.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel115Layout = new javax.swing.GroupLayout(jPanel115);
         jPanel115.setLayout(jPanel115Layout);
@@ -1396,7 +1459,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel115);
         jPanel115.setBounds(60, 50, 90, 40);
 
-        jPanel117.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel117.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel117Layout = new javax.swing.GroupLayout(jPanel117);
         jPanel117.setLayout(jPanel117Layout);
@@ -1452,7 +1515,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel118);
         jPanel118.setBounds(0, 130, 70, 40);
 
-        jPanel119.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel119.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel119Layout = new javax.swing.GroupLayout(jPanel119);
         jPanel119.setLayout(jPanel119Layout);
@@ -1468,7 +1531,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel119);
         jPanel119.setBounds(60, 130, 90, 40);
 
-        jPanel121.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel121.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel121Layout = new javax.swing.GroupLayout(jPanel121);
         jPanel121.setLayout(jPanel121Layout);
@@ -1524,7 +1587,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel122);
         jPanel122.setBounds(0, 210, 70, 40);
 
-        jPanel123.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel123.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel123Layout = new javax.swing.GroupLayout(jPanel123);
         jPanel123.setLayout(jPanel123Layout);
@@ -1556,7 +1619,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel124);
         jPanel124.setBounds(0, 250, 70, 40);
 
-        jPanel125.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel125.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel125Layout = new javax.swing.GroupLayout(jPanel125);
         jPanel125.setLayout(jPanel125Layout);
@@ -1588,7 +1651,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel126);
         jPanel126.setBounds(0, 290, 70, 40);
 
-        jPanel127.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel127.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel127Layout = new javax.swing.GroupLayout(jPanel127);
         jPanel127.setLayout(jPanel127Layout);
@@ -1604,7 +1667,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel127);
         jPanel127.setBounds(60, 290, 90, 40);
 
-        jPanel129.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel129.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel129Layout = new javax.swing.GroupLayout(jPanel129);
         jPanel129.setLayout(jPanel129Layout);
@@ -1660,7 +1723,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel130);
         jPanel130.setBounds(0, 370, 70, 40);
 
-        jPanel131.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel131.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel131Layout = new javax.swing.GroupLayout(jPanel131);
         jPanel131.setLayout(jPanel131Layout);
@@ -1676,7 +1739,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel131);
         jPanel131.setBounds(60, 370, 90, 40);
 
-        jPanel133.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel133.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel133Layout = new javax.swing.GroupLayout(jPanel133);
         jPanel133.setLayout(jPanel133Layout);
@@ -1732,7 +1795,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel134);
         jPanel134.setBounds(0, 450, 70, 40);
 
-        jPanel135.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel135.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel135Layout = new javax.swing.GroupLayout(jPanel135);
         jPanel135.setLayout(jPanel135Layout);
@@ -1844,7 +1907,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel140);
         jPanel140.setBounds(150, 330, 80, 40);
 
-        jPanel141.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel141.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel141Layout = new javax.swing.GroupLayout(jPanel141);
         jPanel141.setLayout(jPanel141Layout);
@@ -1876,7 +1939,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel144);
         jPanel144.setBounds(150, 170, 80, 40);
 
-        jPanel143.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel143.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel143Layout = new javax.swing.GroupLayout(jPanel143);
         jPanel143.setLayout(jPanel143Layout);
@@ -1892,7 +1955,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel143);
         jPanel143.setBounds(210, 130, 100, 40);
 
-        jPanel145.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel145.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel145Layout = new javax.swing.GroupLayout(jPanel145);
         jPanel145.setLayout(jPanel145Layout);
@@ -1908,7 +1971,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel145);
         jPanel145.setBounds(210, 170, 100, 40);
 
-        jPanel152.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel152.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel152Layout = new javax.swing.GroupLayout(jPanel152);
         jPanel152.setLayout(jPanel152Layout);
@@ -1924,7 +1987,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel152);
         jPanel152.setBounds(410, 50, 100, 40);
 
-        jPanel154.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel154.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel154Layout = new javax.swing.GroupLayout(jPanel154);
         jPanel154.setLayout(jPanel154Layout);
@@ -1940,7 +2003,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel154);
         jPanel154.setBounds(410, 90, 100, 40);
 
-        jPanel155.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel155.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel155Layout = new javax.swing.GroupLayout(jPanel155);
         jPanel155.setLayout(jPanel155Layout);
@@ -1956,7 +2019,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel155);
         jPanel155.setBounds(410, 130, 100, 40);
 
-        jPanel158.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel158.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel158Layout = new javax.swing.GroupLayout(jPanel158);
         jPanel158.setLayout(jPanel158Layout);
@@ -1972,7 +2035,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel158);
         jPanel158.setBounds(410, 170, 100, 40);
 
-        jPanel157.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel157.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel157Layout = new javax.swing.GroupLayout(jPanel157);
         jPanel157.setLayout(jPanel157Layout);
@@ -1988,7 +2051,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel157);
         jPanel157.setBounds(410, 210, 100, 40);
 
-        jPanel156.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel156.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel156Layout = new javax.swing.GroupLayout(jPanel156);
         jPanel156.setLayout(jPanel156Layout);
@@ -2004,7 +2067,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel156);
         jPanel156.setBounds(410, 250, 100, 40);
 
-        jPanel160.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel160.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel160Layout = new javax.swing.GroupLayout(jPanel160);
         jPanel160.setLayout(jPanel160Layout);
@@ -2020,7 +2083,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel160);
         jPanel160.setBounds(410, 290, 100, 40);
 
-        jPanel159.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel159.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel159Layout = new javax.swing.GroupLayout(jPanel159);
         jPanel159.setLayout(jPanel159Layout);
@@ -2036,7 +2099,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel159);
         jPanel159.setBounds(410, 330, 100, 40);
 
-        jPanel162.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel162.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel162Layout = new javax.swing.GroupLayout(jPanel162);
         jPanel162.setLayout(jPanel162Layout);
@@ -2052,7 +2115,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel162);
         jPanel162.setBounds(410, 370, 100, 40);
 
-        jPanel161.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel161.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel161Layout = new javax.swing.GroupLayout(jPanel161);
         jPanel161.setLayout(jPanel161Layout);
@@ -2068,7 +2131,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel161);
         jPanel161.setBounds(410, 450, 100, 40);
 
-        jPanel163.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel163.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel163Layout = new javax.swing.GroupLayout(jPanel163);
         jPanel163.setLayout(jPanel163Layout);
@@ -2260,7 +2323,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel171);
         jPanel171.setBounds(310, 450, 100, 40);
 
-        jPanel146.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel146.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel146Layout = new javax.swing.GroupLayout(jPanel146);
         jPanel146.setLayout(jPanel146Layout);
@@ -2276,7 +2339,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel146);
         jPanel146.setBounds(230, 370, 80, 40);
 
-        jPanel147.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel147.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel147Layout = new javax.swing.GroupLayout(jPanel147);
         jPanel147.setLayout(jPanel147Layout);
@@ -2292,7 +2355,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel147);
         jPanel147.setBounds(230, 410, 80, 40);
 
-        jPanel148.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel148.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel148Layout = new javax.swing.GroupLayout(jPanel148);
         jPanel148.setLayout(jPanel148Layout);
@@ -2308,7 +2371,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel148);
         jPanel148.setBounds(230, 450, 80, 40);
 
-        jPanel149.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel149.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel149Layout = new javax.swing.GroupLayout(jPanel149);
         jPanel149.setLayout(jPanel149Layout);
@@ -2324,7 +2387,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel149);
         jPanel149.setBounds(230, 290, 80, 40);
 
-        jPanel150.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel150.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel150Layout = new javax.swing.GroupLayout(jPanel150);
         jPanel150.setLayout(jPanel150Layout);
@@ -2340,7 +2403,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel150);
         jPanel150.setBounds(230, 250, 80, 40);
 
-        jPanel151.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel151.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel151Layout = new javax.swing.GroupLayout(jPanel151);
         jPanel151.setLayout(jPanel151Layout);
@@ -2356,7 +2419,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel151);
         jPanel151.setBounds(230, 210, 80, 40);
 
-        jPanel175.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel175.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel175Layout = new javax.swing.GroupLayout(jPanel175);
         jPanel175.setLayout(jPanel175Layout);
@@ -2372,7 +2435,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel175);
         jPanel175.setBounds(230, 50, 80, 40);
 
-        jPanel174.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel174.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel174Layout = new javax.swing.GroupLayout(jPanel174);
         jPanel174.setLayout(jPanel174Layout);
@@ -3044,7 +3107,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel211);
         jPanel211.setBounds(840, 130, 80, 40);
 
-        jPanel219.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel219.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel219Layout = new javax.swing.GroupLayout(jPanel219);
         jPanel219.setLayout(jPanel219Layout);
@@ -3060,7 +3123,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel219);
         jPanel219.setBounds(570, 130, 100, 40);
 
-        jPanel218.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel218.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel218Layout = new javax.swing.GroupLayout(jPanel218);
         jPanel218.setLayout(jPanel218Layout);
@@ -3076,7 +3139,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel218);
         jPanel218.setBounds(590, 90, 80, 40);
 
-        jPanel222.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel222.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel222Layout = new javax.swing.GroupLayout(jPanel222);
         jPanel222.setLayout(jPanel222Layout);
@@ -3092,7 +3155,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel222);
         jPanel222.setBounds(590, 250, 80, 40);
 
-        jPanel220.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel220.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel220Layout = new javax.swing.GroupLayout(jPanel220);
         jPanel220.setLayout(jPanel220Layout);
@@ -3108,7 +3171,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel220);
         jPanel220.setBounds(570, 170, 100, 40);
 
-        jPanel223.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel223.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel223Layout = new javax.swing.GroupLayout(jPanel223);
         jPanel223.setLayout(jPanel223Layout);
@@ -3124,7 +3187,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel223);
         jPanel223.setBounds(590, 290, 80, 40);
 
-        jPanel221.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel221.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel221Layout = new javax.swing.GroupLayout(jPanel221);
         jPanel221.setLayout(jPanel221Layout);
@@ -3140,7 +3203,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel221);
         jPanel221.setBounds(590, 210, 80, 40);
 
-        jPanel224.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel224.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel224Layout = new javax.swing.GroupLayout(jPanel224);
         jPanel224.setLayout(jPanel224Layout);
@@ -3156,7 +3219,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel224);
         jPanel224.setBounds(570, 330, 100, 40);
 
-        jPanel227.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel227.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel227Layout = new javax.swing.GroupLayout(jPanel227);
         jPanel227.setLayout(jPanel227Layout);
@@ -3172,7 +3235,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel227);
         jPanel227.setBounds(590, 450, 80, 40);
 
-        jPanel226.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel226.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel226Layout = new javax.swing.GroupLayout(jPanel226);
         jPanel226.setLayout(jPanel226Layout);
@@ -3188,7 +3251,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel226);
         jPanel226.setBounds(590, 410, 80, 40);
 
-        jPanel225.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel225.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel225Layout = new javax.swing.GroupLayout(jPanel225);
         jPanel225.setLayout(jPanel225Layout);
@@ -3204,7 +3267,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel225);
         jPanel225.setBounds(590, 370, 80, 40);
 
-        jPanel217.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel217.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel217Layout = new javax.swing.GroupLayout(jPanel217);
         jPanel217.setLayout(jPanel217Layout);
@@ -3220,7 +3283,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel217);
         jPanel217.setBounds(590, 50, 80, 40);
 
-        jPanel228.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel228.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel228Layout = new javax.swing.GroupLayout(jPanel228);
         jPanel228.setLayout(jPanel228Layout);
@@ -3236,7 +3299,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel228);
         jPanel228.setBounds(750, 50, 90, 40);
 
-        jPanel230.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel230.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel230Layout = new javax.swing.GroupLayout(jPanel230);
         jPanel230.setLayout(jPanel230Layout);
@@ -3252,7 +3315,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel230);
         jPanel230.setBounds(740, 130, 100, 40);
 
-        jPanel234.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel234.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel234Layout = new javax.swing.GroupLayout(jPanel234);
         jPanel234.setLayout(jPanel234Layout);
@@ -3268,7 +3331,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel234);
         jPanel234.setBounds(750, 290, 90, 40);
 
-        jPanel231.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel231.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel231Layout = new javax.swing.GroupLayout(jPanel231);
         jPanel231.setLayout(jPanel231Layout);
@@ -3284,7 +3347,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel231);
         jPanel231.setBounds(740, 170, 100, 40);
 
-        jPanel236.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel236.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel236Layout = new javax.swing.GroupLayout(jPanel236);
         jPanel236.setLayout(jPanel236Layout);
@@ -3300,7 +3363,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel236);
         jPanel236.setBounds(750, 370, 90, 40);
 
-        jPanel233.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel233.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel233Layout = new javax.swing.GroupLayout(jPanel233);
         jPanel233.setLayout(jPanel233Layout);
@@ -3316,7 +3379,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel233);
         jPanel233.setBounds(750, 250, 90, 40);
 
-        jPanel229.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel229.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel229Layout = new javax.swing.GroupLayout(jPanel229);
         jPanel229.setLayout(jPanel229Layout);
@@ -3332,7 +3395,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel229);
         jPanel229.setBounds(750, 90, 90, 40);
 
-        jPanel235.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel235.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel235Layout = new javax.swing.GroupLayout(jPanel235);
         jPanel235.setLayout(jPanel235Layout);
@@ -3348,7 +3411,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel235);
         jPanel235.setBounds(740, 330, 100, 40);
 
-        jPanel238.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel238.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel238Layout = new javax.swing.GroupLayout(jPanel238);
         jPanel238.setLayout(jPanel238Layout);
@@ -3364,7 +3427,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel238);
         jPanel238.setBounds(750, 450, 90, 40);
 
-        jPanel237.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel237.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel237Layout = new javax.swing.GroupLayout(jPanel237);
         jPanel237.setLayout(jPanel237Layout);
@@ -3380,7 +3443,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel237);
         jPanel237.setBounds(750, 410, 90, 40);
 
-        jPanel232.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel232.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel232Layout = new javax.swing.GroupLayout(jPanel232);
         jPanel232.setLayout(jPanel232Layout);
@@ -3396,7 +3459,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel232);
         jPanel232.setBounds(750, 210, 90, 40);
 
-        jPanel247.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel247.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel247Layout = new javax.swing.GroupLayout(jPanel247);
         jPanel247.setLayout(jPanel247Layout);
@@ -3412,7 +3475,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel247);
         jPanel247.setBounds(920, 370, 80, 40);
 
-        jPanel239.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel239.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel239Layout = new javax.swing.GroupLayout(jPanel239);
         jPanel239.setLayout(jPanel239Layout);
@@ -3428,7 +3491,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel239);
         jPanel239.setBounds(920, 50, 80, 40);
 
-        jPanel241.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel241.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel241Layout = new javax.swing.GroupLayout(jPanel241);
         jPanel241.setLayout(jPanel241Layout);
@@ -3444,7 +3507,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel241);
         jPanel241.setBounds(900, 130, 100, 40);
 
-        jPanel243.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel243.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel243Layout = new javax.swing.GroupLayout(jPanel243);
         jPanel243.setLayout(jPanel243Layout);
@@ -3460,7 +3523,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel243);
         jPanel243.setBounds(920, 210, 80, 40);
 
-        jPanel240.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel240.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel240Layout = new javax.swing.GroupLayout(jPanel240);
         jPanel240.setLayout(jPanel240Layout);
@@ -3476,7 +3539,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel240);
         jPanel240.setBounds(920, 90, 80, 40);
 
-        jPanel245.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel245.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel245Layout = new javax.swing.GroupLayout(jPanel245);
         jPanel245.setLayout(jPanel245Layout);
@@ -3492,7 +3555,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel245);
         jPanel245.setBounds(920, 290, 80, 40);
 
-        jPanel242.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel242.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel242Layout = new javax.swing.GroupLayout(jPanel242);
         jPanel242.setLayout(jPanel242Layout);
@@ -3508,7 +3571,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel242);
         jPanel242.setBounds(900, 170, 100, 40);
 
-        jPanel246.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel246.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel246Layout = new javax.swing.GroupLayout(jPanel246);
         jPanel246.setLayout(jPanel246Layout);
@@ -3524,7 +3587,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel246);
         jPanel246.setBounds(900, 330, 100, 40);
 
-        jPanel249.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel249.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel249Layout = new javax.swing.GroupLayout(jPanel249);
         jPanel249.setLayout(jPanel249Layout);
@@ -3540,7 +3603,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel249);
         jPanel249.setBounds(920, 450, 80, 40);
 
-        jPanel244.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel244.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel244Layout = new javax.swing.GroupLayout(jPanel244);
         jPanel244.setLayout(jPanel244Layout);
@@ -3556,7 +3619,7 @@ public class horarios extends javax.swing.JFrame {
         jPanel1.add(jPanel244);
         jPanel244.setBounds(920, 250, 80, 40);
 
-        jPanel248.setBackground(new java.awt.Color(84, 251, 84));
+        jPanel248.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jPanel248Layout = new javax.swing.GroupLayout(jPanel248);
         jPanel248.setLayout(jPanel248Layout);
@@ -3578,6 +3641,13 @@ public class horarios extends javax.swing.JFrame {
         jLabel20.setText("JUEVES");
         jPanel1.add(jLabel20);
         jLabel20.setBounds(530, 10, 120, 30);
+
+        jLabel16.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 130, 173));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("LUNES");
+        jPanel1.add(jLabel16);
+        jLabel16.setBounds(30, 10, 120, 30);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(160, 100, 1000, 490);
@@ -3659,6 +3729,13 @@ public class horarios extends javax.swing.JFrame {
         getContentPane().add(jLabel19);
         jLabel19.setBounds(160, 590, 310, 30);
 
+        jLabel21.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("Infantes");
+        getContentPane().add(jLabel21);
+        jLabel21.setBounds(440, 60, 120, 40);
+
         jButton1.setBackground(new java.awt.Color(0, 153, 204));
         jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -3682,6 +3759,45 @@ public class horarios extends javax.swing.JFrame {
         });
         getContentPane().add(btninscripicion);
         btninscripicion.setBounds(950, 590, 210, 50);
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Adultos");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(210, 60, 120, 40);
+
+        jPanel3.setBackground(new java.awt.Color(153, 215, 236));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel3);
+        jPanel3.setBounds(160, 60, 50, 40);
+
+        jPanel2.setBackground(new java.awt.Color(255, 51, 51));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(390, 60, 50, 40);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
@@ -3746,11 +3862,13 @@ public class horarios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel43;
@@ -3846,6 +3964,7 @@ public class horarios extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel197;
     private javax.swing.JPanel jPanel198;
     private javax.swing.JPanel jPanel199;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel200;
     private javax.swing.JPanel jPanel201;
     private javax.swing.JPanel jPanel202;
@@ -3896,6 +4015,7 @@ public class horarios extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel247;
     private javax.swing.JPanel jPanel248;
     private javax.swing.JPanel jPanel249;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;

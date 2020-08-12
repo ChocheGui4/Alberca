@@ -105,13 +105,13 @@ public class eliminados extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(9).setMinWidth(0);
         tdatos.getColumnModel().getColumn(9).setPreferredWidth(0);
 
-        tdatos.getColumnModel().getColumn(10).setMaxWidth(100);
-        tdatos.getColumnModel().getColumn(10).setMinWidth(100);
-        tdatos.getColumnModel().getColumn(10).setPreferredWidth(100);
+        tdatos.getColumnModel().getColumn(10).setMaxWidth(110);
+        tdatos.getColumnModel().getColumn(10).setMinWidth(110);
+        tdatos.getColumnModel().getColumn(10).setPreferredWidth(110);
 
-        tdatos.getColumnModel().getColumn(11).setMaxWidth(100);
-        tdatos.getColumnModel().getColumn(11).setMinWidth(100);
-        tdatos.getColumnModel().getColumn(11).setPreferredWidth(100);
+        tdatos.getColumnModel().getColumn(11).setMaxWidth(110);
+        tdatos.getColumnModel().getColumn(11).setMinWidth(110);
+        tdatos.getColumnModel().getColumn(11).setPreferredWidth(110);
         
         tdatos.getColumnModel().getColumn(0).setResizable(false);
         tdatos.getColumnModel().getColumn(1).setResizable(false);
