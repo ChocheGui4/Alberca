@@ -7,6 +7,7 @@ package alberca;
 
 import Consultas.Eliminarusuarios;
 import Consultas.Guardarmodificaciones;
+import Consultas.Render;
 import Consultas.Renovar;
 import Consultas.inscripcion;
 import Consultas.tabla;
@@ -131,6 +132,7 @@ public class Inscripciones extends javax.swing.JFrame {
         btntomarfoto.setVisible(false);
 //        btnfoto.setVisible(false);
         mostrar("");
+        tdatos.setDefaultRenderer(Object.class, new Render());
         marcarcalendar(new Date());
         llenarclaves();
         tab.mostraridhorario(cbidhorario);
@@ -158,7 +160,7 @@ public class Inscripciones extends javax.swing.JFrame {
         habilitarhoras(false);
         inicializarvariables();
         cbdias.setSelectedIndex(0);
-        System.out.println("dia de la semana: " + i);
+//        System.out.println("dia de la semana: " + i);
         txtfechainicio.getJCalendar().setMinSelectableDate(new Date());
         if (i == 1) {
 //            calendar.setTime(fecha);
