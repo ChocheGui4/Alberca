@@ -68,17 +68,28 @@ public class Render extends DefaultTableCellRenderer {
         int diahoy = calendarhoy.get(Calendar.DAY_OF_MONTH);
 //        calendarhoy.add(Calendar.DAY_OF_MONTH, -7);
 //        int diahoymenos7 = calendarhoy.get(Calendar.DAY_OF_MONTH);
-
-        if (anio == aniohoy & mes == meshoy & (diahoy >= diamenos7 & diahoy <= dia)) {
-//        if (anio == aniohoy & mes == meshoy & dia == diahoy) {
-
+        if (meshoy == mes & diahoy > dia) {
             setBackground(Color.RED);
             setForeground(Color.BLACK);
-//            System.out.println("Misma fecha");
-        } else {
-            setBackground(Color.WHITE);
+        } else if (meshoy > mes) {
+            setBackground(Color.RED);
             setForeground(Color.BLACK);
-//            System.out.println("Fecha diferente");
+        } else if (aniohoy > anio) {
+            setBackground(Color.RED);
+            setForeground(Color.BLACK);
+        } else {
+
+            if (anio == aniohoy & mes == meshoy & (diahoy >= diamenos7 & diahoy <= dia)) {
+                //        if (anio == aniohoy & mes == meshoy & dia == diahoy) {
+
+                setBackground(Color.RED);
+                setForeground(Color.BLACK);
+                //            System.out.println("Misma fecha");
+            } else {
+                setBackground(Color.WHITE);
+                setForeground(Color.BLACK);
+                //            System.out.println("Fecha diferente");
+            }
         }
 
         return super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
