@@ -897,6 +897,10 @@ public class Inscripciones extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(16).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(16).setMinWidth(0);
         tdatos.getColumnModel().getColumn(16).setPreferredWidth(0);
+        
+//        tdatos.getColumnModel().getColumn(17).setMaxWidth(0);
+//        tdatos.getColumnModel().getColumn(17).setMinWidth(0);
+//        tdatos.getColumnModel().getColumn(17).setPreferredWidth(0);
 
         tdatos.getColumnModel().getColumn(14).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(14).setMinWidth(0);
@@ -916,6 +920,7 @@ public class Inscripciones extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(13).setResizable(false);
         tdatos.getColumnModel().getColumn(14).setResizable(false);
         tdatos.getColumnModel().getColumn(15).setResizable(false);
+        tdatos.getColumnModel().getColumn(17).setResizable(false);
 
     }
 
@@ -1913,6 +1918,7 @@ public class Inscripciones extends javax.swing.JFrame {
                 lblfotousuario.getHeight(), Image.SCALE_DEFAULT));
         lblfotousuario.setText(null);
         lblfotousuario.setIcon(icono);
+        cbdias.setSelectedItem(tdatos.getValueAt(fila, 17).toString());
         cbmaestros.setSelectedIndex(cbidmaestro.getSelectedIndex() + 1);
         btneditardatos.setEnabled(true);
         btnrenovar.setEnabled(true);
@@ -2304,14 +2310,14 @@ public class Inscripciones extends javax.swing.JFrame {
                         val[j] = cincosesion[i][j];
                         mess[j] = cincosesionmes[i][j];
                     }
-                    String valor = "";
-                    String cha = "" + combohoras[mascinco[i]].charAt(0) + combohoras[mascinco[i]].charAt(1);
-                    if (cha.charAt(0) == '9') {
-                        valor = "9";
-                    } else {
-                        valor = cha;
-                    }
-                    int nm = Integer.parseInt(valor);
+//                    String valor = "";
+//                    String cha = "" + combohoras[mascinco[i]].charAt(0) + combohoras[mascinco[i]].charAt(1);
+//                    if (cha.charAt(0) == '9') {
+//                        valor = "9";
+//                    } else {
+//                        valor = cha;
+//                    }
+//                    int nm = Integer.parseInt(valor);
 //                    re.renovardiasmes(Integer.parseInt(txtmensualidad.getText()), val, mascinco[i], combohoras[mascinco[i]]);
                     re.insertardiasmes(val, mess, diamascinco[i], Integer.parseInt(txtmensualidad.getText()),
                             Integer.parseInt(combohoras[mascinco[i]]),
