@@ -30,28 +30,23 @@ public class inscripcion {
     }
 
     public static boolean insertardias(String id, String clave, String nombre, String apellidos, String edad, String localidad,
-            String calle, String numero_e, String numero_i,
-            String telefono, String celular, String nombre_tutor, int mensualidad, String foto) {
+            String celular, String nombre_tutor, int mensualidad, String foto) {
         try {
             conn = con.conectar();
             //s = conn.prepareStatement("insert into Registrar_Usuario values (?,?,?,?,?)");
             if (clave == null) {
 //                System.out.println("miraaaaaaa id anterior vacio");
-                s = conn.prepareStatement("INSERT INTO usuario(nombre,apellidos,edad,localidad,calle,"
-                        + "numero_e,numero_i,telefono_1,celular_1,nombre_tutor,mensualidad_id,foto)"
-                        + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+                s = conn.prepareStatement("INSERT INTO usuario(nombre,apellidos,edad,localidad,"
+                        + "celular_1,nombre_tutor,mensualidad_id,foto)"
+                        + " VALUES (?,?,?,?,?,?,?,?)");
                 s.setString(1, nombre);
                 s.setString(2, apellidos);
                 s.setString(3, edad);
                 s.setString(4, localidad);
-                s.setString(5, calle);
-                s.setString(6, numero_e);
-                s.setString(7, numero_i);
-                s.setString(8, telefono);
-                s.setString(9, celular);
-                s.setString(10, nombre_tutor);
-                s.setInt(11, mensualidad);
-                s.setString(12, foto);
+                s.setString(5, celular);
+                s.setString(6, nombre_tutor);
+                s.setInt(7, mensualidad);
+                s.setString(8, foto);
                 s.executeUpdate();
                 sSQL = "select * from usuario order by id_usuario desc limit 1";
                 Statement st = conn.createStatement();
@@ -68,19 +63,15 @@ public class inscripcion {
 //                System.out.println("No miraaaaaaa id anterior No vacio");
 //                System.out.println("Claveeeeee: "+clave);
                 s = conn.prepareStatement("UPDATE usuario SET nombre=?,apellidos=?,edad=?"
-                        + ",localidad=?,calle=?,numero_e=?,numero_i=?,telefono_1=?,celular_1=?,nombre_tutor=?,"
+                        + ",localidad=?,celular_1=?,nombre_tutor=?,"
                         + "mensualidad_id=? WHERE id_usuario=" + id);
                 s.setString(1, nombre);
                 s.setString(2, apellidos);
                 s.setString(3, edad);
                 s.setString(4, localidad);
-                s.setString(5, calle);
-                s.setString(6, numero_e);
-                s.setString(7, numero_i);
-                s.setString(8, telefono);
-                s.setString(9, celular);
-                s.setString(10, nombre_tutor);
-                s.setInt(11, mensualidad);
+                s.setString(5, celular);
+                s.setString(6, nombre_tutor);
+                s.setInt(7, mensualidad);
                 s.executeUpdate();
             }
             

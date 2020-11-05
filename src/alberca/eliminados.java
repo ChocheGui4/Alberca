@@ -335,10 +335,6 @@ public class eliminados extends javax.swing.JFrame {
         ins.cbedad.setSelectedIndex(edad-1);
         ins.txtnombretutor.setText(nombre_tutor);
         ins.txtlocalidad.setText(localidad);
-        ins.txtcalle.setText(calle);
-        ins.txtnumex.setText(numero_e);
-        ins.txtnumin.setText(numero_i);
-        ins.txttelefono.setText(telefono);
         ins.txtcelular.setText(celular);
         ins.setVisible(true);
         

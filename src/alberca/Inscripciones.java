@@ -668,10 +668,6 @@ public class Inscripciones extends javax.swing.JFrame {
         txtnombretutor.setEnabled(valor);
         cktutor.setEnabled(valor);
         txtlocalidad.setEnabled(valor);
-        txtcalle.setEnabled(valor);
-        txtnumex.setEnabled(valor);
-        txtnumin.setEnabled(valor);
-        txttelefono.setEnabled(valor);
         txtcelular.setEnabled(valor);
 
     }
@@ -684,10 +680,6 @@ public class Inscripciones extends javax.swing.JFrame {
         txtnombretutor.setEnabled(false);
         cktutor.setSelected(false);
         txtlocalidad.setText("");
-        txtcalle.setText("");
-        txtnumex.setText("");
-        txtnumin.setText("");
-        txttelefono.setText("");
         txtcelular.setText("");
         txtfechainicio.setDate(new Date());
         cktutor.setSelected(false);
@@ -975,16 +967,8 @@ public class Inscripciones extends javax.swing.JFrame {
         txtnombre = new javax.swing.JTextField();
         txtapellidos = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         txtlocalidad = new javax.swing.JTextField();
-        txtcalle = new javax.swing.JTextField();
-        txtnumin = new javax.swing.JTextField();
-        txtnumex = new javax.swing.JTextField();
-        txttelefono = new javax.swing.JTextField();
         txtcelular = new javax.swing.JTextField();
         cktutor = new javax.swing.JCheckBox();
         lbltutor = new javax.swing.JLabel();
@@ -1099,35 +1083,11 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(jLabel5);
         jLabel5.setBounds(20, 240, 107, 31);
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel6.setText("Calle:");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(20, 280, 107, 31);
-
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel7.setText("No. exterior:");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(20, 320, 140, 31);
-
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel8.setText("No. interior:");
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(280, 320, 140, 31);
-
-        jLabel9.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel9.setText("Teléfono:");
-        getContentPane().add(jLabel9);
-        jLabel9.setBounds(20, 350, 107, 31);
-
         jLabel10.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 204));
         jLabel10.setText("Celular:");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(280, 360, 107, 31);
+        jLabel10.setBounds(20, 270, 107, 31);
 
         txtlocalidad.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtlocalidad.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1136,43 +1096,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtlocalidad);
-        txtlocalidad.setBounds(150, 230, 290, 40);
-
-        txtcalle.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        txtcalle.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtcalleKeyTyped(evt);
-            }
-        });
-        getContentPane().add(txtcalle);
-        txtcalle.setBounds(150, 270, 290, 40);
-
-        txtnumin.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        txtnumin.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtnuminKeyTyped(evt);
-            }
-        });
-        getContentPane().add(txtnumin);
-        txtnumin.setBounds(400, 310, 120, 40);
-
-        txtnumex.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        txtnumex.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtnumexKeyTyped(evt);
-            }
-        });
-        getContentPane().add(txtnumex);
-        txtnumex.setBounds(150, 310, 120, 40);
-
-        txttelefono.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        txttelefono.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txttelefonoKeyTyped(evt);
-            }
-        });
-        getContentPane().add(txttelefono);
-        txttelefono.setBounds(150, 350, 120, 40);
+        txtlocalidad.setBounds(130, 230, 290, 40);
 
         txtcelular.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtcelular.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1181,7 +1105,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtcelular);
-        txtcelular.setBounds(400, 350, 120, 40);
+        txtcelular.setBounds(130, 270, 290, 40);
 
         cktutor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cktutor.setForeground(new java.awt.Color(255, 255, 255));
@@ -1896,10 +1820,10 @@ public class Inscripciones extends javax.swing.JFrame {
             dias = 1;
             inscripcion ins = new inscripcion();
             r = re.idmensualidad();
-
+            System.out.println("Hasta aquíiiiiiiiiiiiiiiiiiiii");
             boolean v = ins.insertardias(cbidus.getItemAt(0), cbclaves.getItemAt(0), txtnombre.getText(),
                     txtapellidos.getText(), cbedad.getItemAt(cbedad.getSelectedIndex()), txtlocalidad.getText(),
-                    txtcalle.getText(), txtnumex.getText(), txtnumin.getText(), txttelefono.getText(), txtcelular.getText(),
+                    txtcelular.getText(),
                     txtnombretutor.getText(), r, "");
             if (v == true) {
                 if (txteliminar.getText().equals("")) {
@@ -1935,8 +1859,7 @@ public class Inscripciones extends javax.swing.JFrame {
 //        txtfechatermino.setDate(StringaDate("2018/02/12"));
 
         if (txtnombre.getText().equals("") | txtapellidos.getText().equals("") | cbmaestros.getSelectedIndex() == 0
-                | txtlocalidad.getText().equals("") | txtcalle.getText().equals("") | txtnumex.getText().equals("")
-                | txttelefono.getText().equals("") | txtcelular.getText().equals("")) {
+                | txtlocalidad.getText().equals("") | txtcelular.getText().equals("")) {
             JOptionPane.showMessageDialog(rootPane, "<html><span style=\"font-size:2em\">Completa los datos solicitados"
                     + "<br>por favor</span></html>", "Llenar campos", JOptionPane.INFORMATION_MESSAGE);
         } else {
@@ -1980,10 +1903,6 @@ public class Inscripciones extends javax.swing.JFrame {
         }
 
         txtlocalidad.setText(tdatos.getValueAt(fila, 5).toString());
-        txtcalle.setText(tdatos.getValueAt(fila, 6).toString());
-        txtnumex.setText(tdatos.getValueAt(fila, 7).toString());
-        txtnumin.setText(tdatos.getValueAt(fila, 8).toString());
-        txttelefono.setText(tdatos.getValueAt(fila, 9).toString());
         txtcelular.setText(tdatos.getValueAt(fila, 10).toString());
         txtfechainicio.setDate(StringaDate(tdatos.getValueAt(fila, 12).toString()));
         txtmensualidad.setText(tdatos.getValueAt(fila, 14).toString());
@@ -2114,8 +2033,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private void btnguardarmodificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarmodificacionesActionPerformed
         Guardarmodificaciones gm = new Guardarmodificaciones();
         gm.Actualizar(txtnombre.getText(), txtapellidos.getText(), cbedad.getItemAt(cbedad.getSelectedIndex()),
-                txtnombretutor.getText(),
-                txtlocalidad.getText(), txtcalle.getText(), txtnumex.getText(), txtnumin.getText(), txttelefono.getText(),
+                txtnombretutor.getText(),txtlocalidad.getText(),
                 txtcelular.getText(), Integer.parseInt(txtidusuario.getText()));
         btnguardarmodificaciones.setEnabled(false);
 //        btnfoto.setEnabled(false);
@@ -2443,25 +2361,6 @@ public class Inscripciones extends javax.swing.JFrame {
             evt.consume();
         }
     }
-    private void txtnumexKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnumexKeyTyped
-        if (txtnumex.getText().length() == 5) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_txtnumexKeyTyped
-
-    private void txttelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txttelefonoKeyTyped
-        SoloNumeros(evt);
-        if (txttelefono.getText().length() == 10) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_txttelefonoKeyTyped
-
-    private void txtnuminKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnuminKeyTyped
-        if (txtnumin.getText().length() == 5) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_txtnuminKeyTyped
-
     private void txtcelularKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcelularKeyTyped
         SoloNumeros(evt);
         if (txtcelular.getText().length() == 10) {
@@ -2517,12 +2416,6 @@ public class Inscripciones extends javax.swing.JFrame {
 //      lblErrorLetra.setText("Escribe solo letras");
         }
     }//GEN-LAST:event_txtlocalidadKeyTyped
-
-    private void txtcalleKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcalleKeyTyped
-        if (txtcalle.getText().length() == 34) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_txtcalleKeyTyped
 
     private void cbmaestrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbmaestrosActionPerformed
 
@@ -2641,10 +2534,6 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -2658,7 +2547,6 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JTable tdatos;
     public javax.swing.JTextField txtapellidos;
     private javax.swing.JTextField txtbuscar;
-    public javax.swing.JTextField txtcalle;
     public javax.swing.JTextField txtcelular;
     public javax.swing.JTextField txteliminar;
     private com.toedter.calendar.JDateChooser txtfechainicio;
@@ -2668,8 +2556,5 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JTextField txtmensualidad;
     public javax.swing.JTextField txtnombre;
     public javax.swing.JTextField txtnombretutor;
-    public javax.swing.JTextField txtnumex;
-    public javax.swing.JTextField txtnumin;
-    public javax.swing.JTextField txttelefono;
     // End of variables declaration//GEN-END:variables
 }
