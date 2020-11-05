@@ -86,6 +86,19 @@ public class usuariosaldia extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(0).setMaxWidth(400);
         tdatos.getColumnModel().getColumn(0).setMinWidth(400);
         tdatos.getColumnModel().getColumn(0).setPreferredWidth(400);
+        
+        tdatos.getColumnModel().getColumn(1).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(1).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(1).setPreferredWidth(0);
+        
+        tdatos.getColumnModel().getColumn(4).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(4).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(4).setPreferredWidth(0);
+        
+        tdatos.getColumnModel().getColumn(5).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(5).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(5).setPreferredWidth(0);
+        
         tdatos.getColumnModel().getColumn(0).setResizable(false);
         tdatos.getColumnModel().getColumn(1).setResizable(false);
         tdatos.getColumnModel().getColumn(2).setResizable(false);
