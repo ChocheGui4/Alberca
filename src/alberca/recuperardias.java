@@ -5,6 +5,7 @@
  */
 package alberca;
 
+import Consultas.maestros;
 import Consultas.recuperar;
 import Consultas.tabla;
 import java.awt.Graphics;
@@ -30,10 +31,12 @@ public class recuperardias extends javax.swing.JFrame {
     recuperar recu = new recuperar();
     int id = 0,idmen=0;
     String fecha = null;
+    maestros ma=new maestros();
 
     public recuperardias() {
 //        this.setContentPane(fondo);
         initComponents();
+        lblcoordinador.setText("Coordinador: "+ma.mostrarcoordinador());
         mostrar("");
         btnrecuperar.setEnabled(false);
         this.setLocationRelativeTo(null);
@@ -153,7 +156,7 @@ public class recuperardias extends javax.swing.JFrame {
         lblnombre1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblcoordinador = new javax.swing.JLabel();
         cbidhorario = new javax.swing.JComboBox<>();
         btncambiar = new javax.swing.JButton();
         lblnombre11 = new javax.swing.JLabel();
@@ -287,7 +290,7 @@ public class recuperardias extends javax.swing.JFrame {
         lblnombre10.setBounds(470, 250, 210, 31);
 
         cbhorario.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        cbhorario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
+        cbhorario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "6:00 - 7:00", "7:00 - 8:00", "8:00 - 9:00", "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhorario);
         cbhorario.setBounds(860, 160, 150, 50);
 
@@ -329,13 +332,13 @@ public class recuperardias extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(460, 70, 340, 40);
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Coordinador: Alfonso Sánchez Piedras");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(770, 550, 450, 60);
+        lblcoordinador.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        lblcoordinador.setForeground(new java.awt.Color(255, 255, 255));
+        lblcoordinador.setText("Coordinador: Alfonso Sánchez Piedras2");
+        getContentPane().add(lblcoordinador);
+        lblcoordinador.setBounds(30, 550, 650, 60);
 
-        cbidhorario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11" }));
+        cbidhorario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14" }));
         getContentPane().add(cbidhorario);
         cbidhorario.setBounds(920, 70, 70, 30);
 
@@ -559,9 +562,9 @@ public class recuperardias extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblapellidosset;
+    private javax.swing.JLabel lblcoordinador;
     private javax.swing.JLabel lblfechainicioset;
     private javax.swing.JLabel lblfechaterminoset;
     private javax.swing.JLabel lblimagen;

@@ -161,7 +161,7 @@ public class Inscripciones extends javax.swing.JFrame {
         inicializarvariables();
         cbdias.setSelectedIndex(0);
 //        System.out.println("dia de la semana: " + i);
-        txtfechainicio.getJCalendar().setMinSelectableDate(new Date());
+//        txtfechainicio.getJCalendar().setMinSelectableDate(new Date());
         if (i == 1) {
 //            calendar.setTime(fecha);
 //            calendar.add(Calendar.DAY_OF_YEAR, 1);
@@ -662,7 +662,11 @@ public class Inscripciones extends javax.swing.JFrame {
     }
 
     public void habilitarcamposdatosdireccion(boolean valor) {
-
+        txtnombre.setEnabled(valor);
+        txtapellidos.setEnabled(valor);
+        cbedad.setEnabled(valor);
+        txtnombretutor.setEnabled(valor);
+        cktutor.setEnabled(valor);
         txtlocalidad.setEnabled(valor);
         txtcalle.setEnabled(valor);
         txtnumex.setEnabled(valor);
@@ -779,7 +783,7 @@ public class Inscripciones extends javax.swing.JFrame {
             calendar.setTime(jd.getDate());
             calendar.add(Calendar.DAY_OF_YEAR, 21 + ultimo);
             if (jd.getDate() != null) {
-                txtfechatermino.getJCalendar().setMinSelectableDate(calendar.getTime());
+//                txtfechatermino.getJCalendar().setMinSelectableDate(calendar.getTime());
 //                txtfechatermino.getJCalendar().setm);
                 return formato.format(calendar.getTime());
             } else {
@@ -897,7 +901,7 @@ public class Inscripciones extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(15).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(15).setMinWidth(0);
         tdatos.getColumnModel().getColumn(15).setPreferredWidth(0);
-        
+
         tdatos.getColumnModel().getColumn(16).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(16).setMinWidth(0);
         tdatos.getColumnModel().getColumn(16).setPreferredWidth(0);
@@ -1319,17 +1323,17 @@ public class Inscripciones extends javax.swing.JFrame {
         cbdias.setBounds(640, 400, 70, 40);
 
         cbhorasabado.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cbhorasabado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
+        cbhorasabado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "6:00 - 7:00", "7:00 - 8:00", "8:00 - 9:00", "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhorasabado);
         cbhorasabado.setBounds(1010, 500, 140, 30);
 
         cbhoralunes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cbhoralunes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
+        cbhoralunes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "6:00 - 7:00", "7:00 - 8:00", "8:00 - 9:00", "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhoralunes);
         cbhoralunes.setBounds(70, 500, 150, 30);
 
         cbhoramartes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cbhoramartes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
+        cbhoramartes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "6:00 - 7:00", "7:00 - 8:00", "8:00 - 9:00", "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhoramartes);
         cbhoramartes.setBounds(260, 500, 150, 30);
 
@@ -1345,17 +1349,17 @@ public class Inscripciones extends javax.swing.JFrame {
         ckmartes.setBounds(260, 470, 150, 33);
 
         cbhoramiercoles.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cbhoramiercoles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
+        cbhoramiercoles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "6:00 - 7:00", "7:00 - 8:00", "8:00 - 9:00", "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhoramiercoles);
         cbhoramiercoles.setBounds(440, 500, 140, 30);
 
         cbhorajueves.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cbhorajueves.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
+        cbhorajueves.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "6:00 - 7:00", "7:00 - 8:00", "8:00 - 9:00", "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhorajueves);
         cbhorajueves.setBounds(620, 500, 140, 30);
 
         cbhoraviernes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cbhoraviernes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
+        cbhoraviernes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "6:00 - 7:00", "7:00 - 8:00", "8:00 - 9:00", "9:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "13:00 - 14:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00", "19:00 - 20:00" }));
         getContentPane().add(cbhoraviernes);
         cbhoraviernes.setBounds(810, 500, 150, 30);
 
@@ -1522,6 +1526,11 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(1170, 490, 90, 90);
 
+        cbidhorario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbidhorarioActionPerformed(evt);
+            }
+        });
         getContentPane().add(cbidhorario);
         cbidhorario.setBounds(1200, 460, 70, 30);
 
@@ -1947,8 +1956,6 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_btnguardarActionPerformed
 
     private void tdatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tdatosMouseClicked
-       
-
 
         int fila = tdatos.rowAtPoint(evt.getPoint());
         Camara cam = new Camara();
@@ -1958,11 +1965,13 @@ public class Inscripciones extends javax.swing.JFrame {
         cbedad.setSelectedIndex(Integer.parseInt(tdatos.getValueAt(fila, 4).toString()) - 1);
         if (tdatos.getValueAt(fila, 11).toString().equals("")) {
             cktutor.setEnabled(false);
+            lbltutor.setVisible(false);
             cktutor.setSelected(false);
             txtnombretutor.setVisible(false);
             txtnombretutor.setEnabled(false);
         } else {
             txtnombretutor.setText(tdatos.getValueAt(fila, 11).toString());
+            lbltutor.setVisible(true);
             txtnombretutor.setVisible(true);
             txtnombretutor.setEnabled(false);
             cktutor.setSelected(true);
@@ -1979,7 +1988,7 @@ public class Inscripciones extends javax.swing.JFrame {
         txtfechainicio.setDate(StringaDate(tdatos.getValueAt(fila, 12).toString()));
         txtmensualidad.setText(tdatos.getValueAt(fila, 14).toString());
         cbidmaestro.setSelectedItem(tdatos.getValueAt(fila, 15).toString());
-        String fotoo=tdatos.getValueAt(fila, 16).toString();
+        String fotoo = tdatos.getValueAt(fila, 16).toString();
         ImageIcon icon = new ImageIcon(fotoo);
         Icon icono = new ImageIcon(icon.getImage().getScaledInstance(lblfotousuario.getWidth(),
                 lblfotousuario.getHeight(), Image.SCALE_DEFAULT));
@@ -1994,7 +2003,7 @@ public class Inscripciones extends javax.swing.JFrame {
         cbmaestros.setEnabled(false);
         cbedad.setEnabled(false);
         btntomarfoto.setVisible(true);
-         habilitarcamposdatopersonal(false);
+        habilitarcamposdatopersonal(false);
         habilitarcamposdatosdireccion(false);
         habilitarcamposmensualidad(false);
         deseleccionarckdias(false);
@@ -2005,6 +2014,7 @@ public class Inscripciones extends javax.swing.JFrame {
     private void btnnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnuevoActionPerformed
         habilitarcamposdatopersonal(true);
         habilitarcamposdatosdireccion(true);
+        lbltutor.setVisible(false);
         limpiar();
         reiniciarcombos(0);
         habilitarcamposmensualidad(true);
@@ -2029,6 +2039,9 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_btnnuevoActionPerformed
 
     private void btneditardatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditardatosActionPerformed
+        habilitarcamposdatopersonal(true);
+        cktutor.setEnabled(true);
+        txtnombretutor.setEnabled(true);
         habilitarcamposdatosdireccion(true);
         btnguardarmodificaciones.setEnabled(true);
 //        btnfoto.setEnabled(true);
@@ -2100,7 +2113,9 @@ public class Inscripciones extends javax.swing.JFrame {
 
     private void btnguardarmodificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarmodificacionesActionPerformed
         Guardarmodificaciones gm = new Guardarmodificaciones();
-        gm.Actualizar(txtlocalidad.getText(), txtcalle.getText(), txtnumex.getText(), txtnumin.getText(), txttelefono.getText(),
+        gm.Actualizar(txtnombre.getText(), txtapellidos.getText(), cbedad.getItemAt(cbedad.getSelectedIndex()),
+                txtnombretutor.getText(),
+                txtlocalidad.getText(), txtcalle.getText(), txtnumex.getText(), txtnumin.getText(), txttelefono.getText(),
                 txtcelular.getText(), Integer.parseInt(txtidusuario.getText()));
         btnguardarmodificaciones.setEnabled(false);
 //        btnfoto.setEnabled(false);
@@ -2518,6 +2533,10 @@ public class Inscripciones extends javax.swing.JFrame {
         cam.idusuario = Integer.parseInt(txtidusuario.getText());
         cam.setVisible(true);
     }//GEN-LAST:event_btntomarfotoActionPerformed
+
+    private void cbidhorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbidhorarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbidhorarioActionPerformed
 
     /**
      * @param args the command line arguments

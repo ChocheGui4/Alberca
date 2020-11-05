@@ -121,9 +121,9 @@ public class tabla {
         DefaultTableModel modelo;
 //        System.out.println("Se metió al método");
 
-        String[] titulos = {"No.", "Nombre"};
+        String[] titulos = {"No.","id", "Nombre del instructor"};
 
-        String[] registro = new String[2];
+        String[] registro = new String[3];
 
         totalregistros = 0;
         modelo = new DefaultTableModel(null, titulos) {
@@ -140,10 +140,11 @@ public class tabla {
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sSQL);
-
+            int idma=0;
             while (rs.next()) {
-                registro[0] = rs.getString("id_maestros");
-                registro[1] = rs.getString("nombre")+" "+rs.getString("apellidos");
+                registro[0] = ""+(idma+=1);
+                registro[1] = rs.getString("id_maestros");
+                registro[2] = rs.getString("nombre")+" "+rs.getString("apellidos");
                 modelo.addRow(registro);
 
             }

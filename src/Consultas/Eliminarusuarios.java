@@ -215,6 +215,25 @@ public class Eliminarusuarios {
         }
     }
 
+    //Eliminar maestros------------------------------------
+    public int consultarmaestro(int id) {
+        conn = con.conectar();
+        sSQL = "select * from dias where maestros_id=" + id;
+//        System.out.println("Después de la consulta");
+        try {
+            int maestro = 0;
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sSQL);
+            while (rs.next()) {
+                maestro = 1;
+            }
+            return maestro;
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            return 0;
+        }
+    }
+
     public static boolean eliminarmaestro(int id) {
         conn = con.conectar();
         try {

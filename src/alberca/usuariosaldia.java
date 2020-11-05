@@ -5,6 +5,7 @@
  */
 package alberca;
 
+import Consultas.maestros;
 import Consultas.tablausuariosaldia;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -25,10 +26,12 @@ public class usuariosaldia extends javax.swing.JFrame {
      * Creates new form usariosaldia
      */
     FondoPanel fondo = new FondoPanel();
+    maestros ma = new maestros();
 
     public usuariosaldia() {
 //        this.setContentPane(fondo);
         initComponents();
+        lblcoordinador.setText("Coordinador: " + ma.mostrarcoordinador());
         mostrar();
         Runnable runnable = new Runnable() {
             @Override
@@ -38,7 +41,7 @@ public class usuariosaldia extends javax.swing.JFrame {
                     // Pero usamos un truco y hacemos un ciclo infinito
                     try {
                         // En él, hacemos que el hilo duerma
-                        
+
                         Thread.sleep(60000);
                         // Y después realizamos las operaciones
                         mostrar();
@@ -104,7 +107,7 @@ public class usuariosaldia extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tdatos = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblcoordinador = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         lblimagen = new javax.swing.JLabel();
@@ -170,11 +173,11 @@ public class usuariosaldia extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(40, 90, 260, 40);
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Coordinador: Alfonso Sánchez Piedras");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(780, 560, 450, 50);
+        lblcoordinador.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        lblcoordinador.setForeground(new java.awt.Color(255, 255, 255));
+        lblcoordinador.setText("Coordinador: Alfonso Sánchez Piedras2");
+        getContentPane().add(lblcoordinador);
+        lblcoordinador.setBounds(40, 560, 670, 50);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
@@ -310,8 +313,8 @@ public class usuariosaldia extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblcoordinador;
     private javax.swing.JLabel lblimagen;
     private static javax.swing.JTable tdatos;
     // End of variables declaration//GEN-END:variables

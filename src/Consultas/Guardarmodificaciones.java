@@ -20,19 +20,24 @@ public class Guardarmodificaciones {
     public static PreparedStatement s;
     public static Connection conn = null;
     
-    public void Actualizar(String localidad, String calle, String numero_e, String numero_i,
+    public void Actualizar(String nombre, String apellidos, String edad, String nombretutor,
+            String localidad, String calle, String numero_e, String numero_i,
             String telefono, String celular, int id) {
         try {
             
             conn =con.conectar();
-            s = conn.prepareStatement("UPDATE usuario SET localidad=?,calle=?,numero_e=?,"
-                    + "numero_i=?,telefono_1=?,celular_1=? WHERE id_usuario=" + id);
-            s.setString(1, localidad);
-            s.setString(2, calle);
-            s.setString(3, numero_e);
-            s.setString(4, numero_i);
-            s.setString(5, telefono);
-            s.setString(6, celular);
+            s = conn.prepareStatement("UPDATE usuario SET nombre=?, apellidos=?, edad=?, localidad=?,calle=?,numero_e=?,"
+                    + "numero_i=?,telefono_1=?,celular_1=?, nombre_tutor=? WHERE id_usuario=" + id);
+            s.setString(1, nombre);
+            s.setString(2, apellidos);
+            s.setString(3, edad);
+            s.setString(4, localidad);
+            s.setString(5, calle);
+            s.setString(6, numero_e);
+            s.setString(7, numero_i);
+            s.setString(8, telefono);
+            s.setString(9, celular);
+            s.setString(10, nombretutor);
 
             s.executeUpdate();
 

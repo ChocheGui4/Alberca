@@ -5,6 +5,7 @@
  */
 package alberca;
 
+import Consultas.maestros;
 import Consultas.tablausuariosaldia;
 import java.util.Calendar;
 import java.util.Date;
@@ -20,8 +21,10 @@ public class Usuariosprofesor extends javax.swing.JFrame {
     /**
      * Creates new form Usuariosprofesor
      */
+    maestros ma=new maestros();
     public Usuariosprofesor() {
         initComponents();
+        lblcoordinador.setText("Coordinador: "+ma.mostrarcoordinador());
         mostrar("");
         this.setLocationRelativeTo(null);
     }
@@ -66,7 +69,7 @@ public class Usuariosprofesor extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tdatos = new javax.swing.JTable();
-        jLabel4 = new javax.swing.JLabel();
+        lblcoordinador = new javax.swing.JLabel();
         lblimagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -157,11 +160,11 @@ public class Usuariosprofesor extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(50, 140, 980, 380);
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Coordinador: Alfonso Sánchez Piedras");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(580, 510, 450, 50);
+        lblcoordinador.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        lblcoordinador.setForeground(new java.awt.Color(255, 255, 255));
+        lblcoordinador.setText("Coordinador: Alfonso Sánchez Piedras2");
+        getContentPane().add(lblcoordinador);
+        lblcoordinador.setBounds(50, 520, 680, 50);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
@@ -224,8 +227,8 @@ public class Usuariosprofesor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblcoordinador;
     private javax.swing.JLabel lblimagen;
     private static javax.swing.JTable tdatos;
     private javax.swing.JTextField txtbuscar;

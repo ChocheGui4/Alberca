@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import Consultas.maestros;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -31,12 +32,13 @@ public class Informacion extends javax.swing.JFrame  {
      */
     FondoPanel fondo = new FondoPanel();
 //    Render re=new Render();
-
+    maestros ma= new maestros();
     public Informacion() {
 //        this.setContentPane(fondo);
 
         initComponents();
         this.setLocationRelativeTo(null);
+        lblcoordinador.setText("Coordinador: "+ma.mostrarcoordinador());
         mostrar("");
 //        tdatos.setDefaultRenderer(tdatos.getColumnClass(0), re);
     }
@@ -142,7 +144,7 @@ public class Informacion extends javax.swing.JFrame  {
         tdatos = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         txtbuscar = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        lblcoordinador = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         lblimagen = new javax.swing.JLabel();
@@ -200,11 +202,11 @@ public class Informacion extends javax.swing.JFrame  {
         getContentPane().add(txtbuscar);
         txtbuscar.setBounds(1060, 110, 170, 30);
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Coordinador: Alfonso Sánchez Piedras");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(770, 550, 450, 50);
+        lblcoordinador.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        lblcoordinador.setForeground(new java.awt.Color(255, 255, 255));
+        lblcoordinador.setText("Coordinador: Alfonso Sánchez Piedras");
+        getContentPane().add(lblcoordinador);
+        lblcoordinador.setBounds(40, 550, 680, 50);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
@@ -315,8 +317,8 @@ public class Informacion extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblcoordinador;
     private javax.swing.JLabel lblimagen;
     private javax.swing.JTable tdatos;
     private javax.swing.JTextField txtbuscar;

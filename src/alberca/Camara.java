@@ -186,37 +186,38 @@ public class Camara extends javax.swing.JFrame {
         iconofoto = new ImageIcon(foto.getImage().getScaledInstance(lblfoto.getWidth(),
                 lblfoto.getHeight(), Image.SCALE_SMOOTH));
         lblfoto.setIcon(iconofoto);
-        
+
         ruta = webcam.getImage();
-                
+
     }//GEN-LAST:event_btntomarfotoActionPerformed
 
     private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
-        int pregunta=JOptionPane.showConfirmDialog(this, "¿Deseas guardar la foto?","Pregunta",JOptionPane.YES_NO_OPTION,
+        int pregunta = JOptionPane.showConfirmDialog(this, "¿Deseas guardar la foto?", "Pregunta", JOptionPane.YES_NO_OPTION,
                 JOptionPane.INFORMATION_MESSAGE);
-        if(pregunta==0){
+        if (pregunta == 0) {
 //            Inscripciones ins= new Inscripciones();
 //            
 //            ins.lblfotousuario.setIcon(iconofoto);
             webcamPanel.stop();
 //            this.setVisible(false);
-            String imagensave="C:\\Users\\Choche\\Documents\\Fotos del usuario\\foto"+idusuario+".jpg";
-            File salidaimagen= new File(imagensave);
-            Camara1 cama= new Camara1();            
-            
+//            String imagensave="C:\\Users\\Choche\\Documents\\Fotos del usuario\\foto"+idusuario+".jpg";
+            String imagensave = "C:\\Users\\Lu\\Desktop\\Fotos del usuario\\foto" + idusuario + ".jpg";
+            File salidaimagen = new File(imagensave);
+            Camara1 cama = new Camara1();
+
             try {
                 ImageIO.write(ruta, "jpg", salidaimagen);
-                System.out.println("Foto guardada: "+salidaimagen.getAbsolutePath());
+                System.out.println("Foto guardada: " + salidaimagen.getAbsolutePath());
                 cama.ponerfoto(idusuario, imagensave);
                 this.setVisible(false);
             } catch (Exception e) {
                 System.out.println(e);
             }
-        }else{
-            
+        } else {
+
         }
 //        webcamPanel.stop();
-        
+
     }//GEN-LAST:event_btnguardarActionPerformed
 
     /**

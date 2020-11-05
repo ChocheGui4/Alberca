@@ -9,7 +9,6 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-import javax.swing.Timer;
 
 /**
  *
@@ -29,7 +28,8 @@ public class Principal extends javax.swing.JFrame {
 //        usal.mostrar();
 
 //        lblimagen.setVisible(false);
-//        setIconImage(new ImageIcon(getClass().getResource("/Imágenes/logo1.jpg/")).getImage());
+
+        setIconImage(new ImageIcon(getClass().getResource("/Imágenes/logo1.jpg")).getImage());
         this.setLocationRelativeTo(null);
     }
 
@@ -55,6 +55,7 @@ public class Principal extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        btncoordinador = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         lblimagen = new javax.swing.JLabel();
 
@@ -137,9 +138,9 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(480, 370, 340, 58);
+        jButton4.setBounds(480, 460, 340, 58);
         getContentPane().add(jSeparator1);
-        jSeparator1.setBounds(97, 348, 1090, 14);
+        jSeparator1.setBounds(100, 440, 1090, 14);
 
         jButton5.setBackground(new java.awt.Color(0, 153, 204));
         jButton5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -180,7 +181,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton7);
-        jButton7.setBounds(840, 190, 320, 55);
+        jButton7.setBounds(130, 350, 330, 50);
 
         jButton9.setBackground(new java.awt.Color(0, 153, 204));
         jButton9.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -215,6 +216,19 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(1150, 0, 100, 100);
 
+        btncoordinador.setBackground(new java.awt.Color(0, 153, 204));
+        btncoordinador.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btncoordinador.setForeground(new java.awt.Color(255, 255, 255));
+        btncoordinador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Cambiar.png"))); // NOI18N
+        btncoordinador.setText("CAMBIAR COORDINADOR");
+        btncoordinador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncoordinadorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btncoordinador);
+        btncoordinador.setBounds(840, 190, 320, 55);
+
         jButton2.setBackground(new java.awt.Color(0, 153, 204));
         jButton2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -227,7 +241,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(840, 270, 320, 50);
+        jButton2.setBounds(480, 350, 340, 50);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
@@ -294,6 +308,11 @@ public class Principal extends javax.swing.JFrame {
         usp.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void btncoordinadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncoordinadorActionPerformed
+        Agregarcoordinador agc= new Agregarcoordinador();
+        agc.setVisible(true);
+    }//GEN-LAST:event_btncoordinadorActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -349,6 +368,7 @@ public class Principal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btncoordinador;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;

@@ -5,6 +5,7 @@
  */
 package alberca;
 
+import Consultas.maestros;
 import Consultas.tablausuariosaldia;
 import java.util.Calendar;
 import java.util.Date;
@@ -20,8 +21,10 @@ public class profesoralumno extends javax.swing.JFrame {
     /**
      * Creates new form profesoralumno
      */
+    maestros ma=new maestros();
     public profesoralumno() {
         initComponents();
+        lblcoordinador.setText("Coordinador: "+ma.mostrarcoordinador());
         mostrar();
         Runnable runnable = new Runnable() {
             @Override
@@ -88,7 +91,7 @@ public class profesoralumno extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblcoordinador = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tdatos = new javax.swing.JTable();
@@ -108,11 +111,11 @@ public class profesoralumno extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(320, 10, 819, 50);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Coordinador: Alfonso Sánchez Piedras");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(770, 550, 450, 50);
+        lblcoordinador.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        lblcoordinador.setForeground(new java.awt.Color(255, 255, 255));
+        lblcoordinador.setText("Coordinador: Alfonso Sánchez Piedras2");
+        getContentPane().add(lblcoordinador);
+        lblcoordinador.setBounds(40, 550, 700, 50);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
@@ -229,10 +232,10 @@ public class profesoralumno extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblcoordinador;
     private javax.swing.JLabel lblimagen;
     private static javax.swing.JTable tdatos;
     // End of variables declaration//GEN-END:variables

@@ -61,6 +61,10 @@ public class agregarprofesor extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(0).setMaxWidth(70);
         tdatos.getColumnModel().getColumn(0).setMinWidth(70);
         tdatos.getColumnModel().getColumn(0).setPreferredWidth(70);
+        
+        tdatos.getColumnModel().getColumn(1).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(1).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(1).setPreferredWidth(0);
 
 //        tdatos.getColumnModel().getColumn(1).setMaxWidth(200);
 //        tdatos.getColumnModel().getColumn(1).setMinWidth(200);
@@ -261,16 +265,23 @@ public class agregarprofesor extends javax.swing.JFrame {
 
     private void tdatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tdatosMouseClicked
         int fila = tdatos.rowAtPoint(evt.getPoint());
-        id = Integer.parseInt(tdatos.getValueAt(fila, 0).toString());
+        id = Integer.parseInt(tdatos.getValueAt(fila, 1).toString());
         btneliminar.setEnabled(true);
     }//GEN-LAST:event_tdatosMouseClicked
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
         Eliminarusuarios elus = new Eliminarusuarios();
+        int res = elus.consultarmaestro(id);
+        if (res == 1) {
+            JOptionPane.showMessageDialog(null, "<html><span style=\"font-size:2em\">No se puede eliminar al instructor "
+                    + "ya que tiene estudiantes inscritos con él (ella)</span></html>",
+                    "Cambios realizados",JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            elus.eliminarmaestro(id);
+            mostrar("");
+            btneliminar.setEnabled(false);
+        }
 
-        elus.eliminarmaestro(id);
-        mostrar("");
-        btneliminar.setEnabled(false);
     }//GEN-LAST:event_btneliminarActionPerformed
 
     /**
