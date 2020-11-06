@@ -438,7 +438,7 @@ public class tabla {
 
         String[] titulos = {"ID", "Clave", "Nombre", "Apellidos", "Fecha de nacimiento", "localidad", "calle",
             "no_interno", "no_externo", "telefono", "celular", "nombre del tutor",
-            "fecha de inicio", "fecha de termino", "Mes/Día", "Horario"};
+            "fecha de inicio", "fecha de termino", "Día Mes/Día", "Horario"};
 
         String[] registro = new String[16];
 
@@ -456,7 +456,7 @@ public class tabla {
             }
 
         };
-
+        int conti = 1, contador = 1;
         sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id = mensualidad.id_mensualidad"
                 + " join dias on dias.mensualidad_id = mensualidad.id_mensualidad join horario on dias.horario_id = "
                 + "horario.id_horario where clave like '%" + buscar + "%' or nombre like '%" + buscar + "%' "
@@ -465,8 +465,11 @@ public class tabla {
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sSQL);
+            String clav = "", clavus = "";
 
+            int sesion = 0;
             while (rs.next()) {
+
                 registro[0] = rs.getString("id_usuario");
                 registro[1] = rs.getString("clave");
                 registro[2] = rs.getString("nombre") + " ";
@@ -483,13 +486,63 @@ public class tabla {
                 registro[12] = rs.getString("fecha_ini");
                 registro[13] = rs.getString("fecha_fin");
                 registro[14] = "<html>";
-                registro[14] += rs.getString("dias_nombre");
-                registro[14] += "<br>";
+                registro[14] += rs.getString("dias_nombre")+ " ";
+//                registro[14] += "<br>";
                 registro[14] += rs.getString("mes_num") + "/";
                 registro[14] += rs.getString("dias_num");
                 registro[14] += "</html>";
                 registro[15] = rs.getString("horario");
                 totalregistros = totalregistros + 1;
+                sesion = Integer.parseInt(rs.getString("sesiones"));
+                if (contador == (sesion * 4)) {
+                    registro[1] = "";
+                    registro[2] = "";
+                    registro[3] = "";
+                    registro[4] = "";
+                    registro[5] = "";
+                    registro[6] = "";
+                    registro[7] = "";
+                    registro[8] = "";
+                    registro[9] = "";
+                    registro[10] = "";
+                    registro[11] = "";
+                    registro[12] = "";
+                    registro[13] = "";
+                    System.out.println("Numero......: " + sesion + " -> Más contador: " + conti);
+                    conti = 1;
+                    contador = 1;
+                } else if (conti > sesion) {
+                    registro[1] = "";
+                    registro[2] = "";
+                    registro[3] = "";
+                    registro[4] = "";
+                    registro[5] = "";
+                    registro[6] = "";
+                    registro[7] = "";
+                    registro[8] = "";
+                    registro[9] = "";
+                    registro[10] = "";
+                    registro[11] = "";
+                    registro[12] = "";
+                    registro[13] = "";
+                    System.out.println("A ver.... " + conti + " y sesión: " + sesion);
+                    conti = conti + 1;
+                    contador += 1;
+                } else if (conti == 1) {
+                    System.out.println("respeta:" + conti);
+//                    registro[1] = rs.getString("clave");
+                    conti = sesion + 1;
+                    contador = contador + 1;
+                }
+//                clav=rs.getString("clave");
+//                clavus="AYO00"+rs.getString("id_usuario");
+//                if(clav.equals(clavus) & conti==0){
+////                    registro[1] = "";
+//                    conti=1;
+//                }else{
+//                    registro[1] = "";
+//                    
+//                }
                 modelo.addRow(registro);
 
             }
@@ -541,44 +594,43 @@ public class tabla {
 
                 sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id=id_mensualidad join "
                         + "dias on id_mensualidad=dias.mensualidad_id join horario on horario.id_horario=dias.horario_id "
-                        + "where horario_id=" + i + " and dias_nombre='"+dia+"' group by usuario.clave;";
+                        + "where horario_id=" + i + " and dias_nombre='" + dia + "' group by usuario.clave;";
                 Statement st = conn.createStatement();
                 ResultSet rs = st.executeQuery(sSQL);
                 if (i == 1) {
                     registro[0] = "6:00 - 7:00";
-                }else if(i==2){
+                } else if (i == 2) {
                     registro[0] = "7:00 - 8:00";
-                }else if(i==3){
+                } else if (i == 3) {
                     registro[0] = "8:00 - 9:00";
-                }else if(i==4){
+                } else if (i == 4) {
                     registro[0] = "9:00 - 10:00";
                     System.out.println("999999");
-                }else if(i==5){
+                } else if (i == 5) {
                     registro[0] = "10:00 - 11:00";
-                }else if(i==6){
+                } else if (i == 6) {
                     registro[0] = "11:00 - 12:00";
-                }else if(i==7){
+                } else if (i == 7) {
                     registro[0] = "12:00 - 13:00";
-                }else if(i==8){
+                } else if (i == 8) {
                     registro[0] = "13:00 - 14:00";
-                }else if(i==9){
+                } else if (i == 9) {
                     registro[0] = "14:00 - 15:00";
-                }else if(i==10){
+                } else if (i == 10) {
                     registro[0] = "15:00 - 16:00";
-                }else if(i==11){
+                } else if (i == 11) {
                     registro[0] = "16:00 - 17:00";
-                }else if(i==12){
+                } else if (i == 12) {
                     registro[0] = "17:00 - 18:00";
-                }else if(i==13){
+                } else if (i == 13) {
                     registro[0] = "18:00 - 19:00";
-                }else if(i==14){
+                } else if (i == 14) {
                     registro[0] = "19:00 - 20:00";
                 }
-                
 
                 while (rs.next()) {
                     conti++;
-                    if(conti>1){
+                    if (conti > 1) {
                         registro[0] = "";
                     }
                     registro[1] = rs.getString("nombre") + " " + rs.getString("apellidos");
@@ -586,11 +638,10 @@ public class tabla {
                     registro[3] = rs.getString("fecha_fin");
                     totalregistros = totalregistros + 1;
                     modelo.addRow(registro);
-                    
 
                 }
-                conti=0;
-                
+                conti = 0;
+
             }
 //            System.out.println("antes del return");
             return modelo;

@@ -93,12 +93,17 @@ public class Informacion extends javax.swing.JFrame  {
         tdatos.getColumnModel().getColumn(8).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(8).setMinWidth(0);
         tdatos.getColumnModel().getColumn(8).setPreferredWidth(0);
-        tdatos.getColumnModel().getColumn(9).setMaxWidth(100);
-        tdatos.getColumnModel().getColumn(9).setMinWidth(100);
-        tdatos.getColumnModel().getColumn(9).setPreferredWidth(100);
+        tdatos.getColumnModel().getColumn(9).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(9).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(9).setPreferredWidth(0);
         tdatos.getColumnModel().getColumn(10).setMaxWidth(100);
         tdatos.getColumnModel().getColumn(10).setMinWidth(100);
         tdatos.getColumnModel().getColumn(10).setPreferredWidth(100);
+        
+        tdatos.getColumnModel().getColumn(11).setMaxWidth(260);
+        tdatos.getColumnModel().getColumn(11).setMinWidth(260);
+        tdatos.getColumnModel().getColumn(11).setPreferredWidth(260);
+        
         tdatos.getColumnModel().getColumn(12).setMaxWidth(110);
         tdatos.getColumnModel().getColumn(12).setMinWidth(110);
         tdatos.getColumnModel().getColumn(12).setPreferredWidth(110);
@@ -106,9 +111,9 @@ public class Informacion extends javax.swing.JFrame  {
         tdatos.getColumnModel().getColumn(13).setMinWidth(110);
         tdatos.getColumnModel().getColumn(13).setPreferredWidth(90);
         
-        tdatos.getColumnModel().getColumn(14).setMaxWidth(85);
-        tdatos.getColumnModel().getColumn(14).setMinWidth(85);
-        tdatos.getColumnModel().getColumn(14).setPreferredWidth(85);
+        tdatos.getColumnModel().getColumn(14).setMaxWidth(135);
+        tdatos.getColumnModel().getColumn(14).setMinWidth(135);
+        tdatos.getColumnModel().getColumn(14).setPreferredWidth(135);
         tdatos.getColumnModel().getColumn(15).setMaxWidth(110);
         tdatos.getColumnModel().getColumn(15).setMinWidth(110);
         tdatos.getColumnModel().getColumn(15).setPreferredWidth(110);
@@ -167,6 +172,7 @@ public class Informacion extends javax.swing.JFrame  {
         getContentPane().add(jLabel18);
         jLabel18.setBounds(880, 110, 180, 31);
 
+        tdatos.setBackground(new java.awt.Color(0, 255, 153));
         tdatos.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
         tdatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
