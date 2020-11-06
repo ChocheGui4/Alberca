@@ -27,7 +27,7 @@ public class tabla {
 
     public static void main(String[] args) {
         tabla tab = new tabla();
-        tab.contarhorarios(8,"Lunes",1);
+        tab.contarhorarios(8, "Lunes", 1);
 //
 //        tab.contarhorarios(8);
     }
@@ -62,7 +62,7 @@ public class tabla {
 
         String[] titulos = {"ID", "Clave", "Nombre", "Apellidos", "Edad", "localidad", "calle",
             "no_interno", "no_externo", "telefono", "celular", "nombre del tutor",
-            "fecha de inicio", "fecha de termino", "id mes","id maestro","foto","sesiones"};
+            "fecha de inicio", "fecha de termino", "id mes", "id maestro", "foto", "sesiones"};
 
         String[] registro = new String[18];
 
@@ -115,14 +115,14 @@ public class tabla {
             return null;
         }
     }
-    
+
     //Mostrar a maestros
-     public DefaultTableModel mostrarmaestros(String buscar) {
+    public DefaultTableModel mostrarmaestros(String buscar) {
         conn = con.conectar();
         DefaultTableModel modelo;
 //        System.out.println("Se metió al método");
 
-        String[] titulos = {"No.","id", "Nombre del instructor"};
+        String[] titulos = {"No.", "id", "Nombre del instructor"};
 
         String[] registro = new String[3];
 
@@ -141,11 +141,11 @@ public class tabla {
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sSQL);
-            int idma=0;
+            int idma = 0;
             while (rs.next()) {
-                registro[0] = ""+(idma+=1);
+                registro[0] = "" + (idma += 1);
                 registro[1] = rs.getString("id_maestros");
-                registro[2] = rs.getString("nombre")+" "+rs.getString("apellidos");
+                registro[2] = rs.getString("nombre") + " " + rs.getString("apellidos");
                 modelo.addRow(registro);
 
             }
@@ -189,7 +189,7 @@ public class tabla {
             while (rs.next()) {
                 registro[0] = rs.getString("id_usuario");
                 registro[1] = rs.getString("nombre");
-                registro[2] = rs.getString("nombre")+" ";
+                registro[2] = rs.getString("nombre") + " ";
                 registro[2] += rs.getString("apellidos");
                 registro[3] = rs.getString("apellidos");
                 registro[4] = rs.getString("edad");
@@ -206,7 +206,6 @@ public class tabla {
                 registro[12] = rs.getString("nombre_tutor");
                 totalregistros = totalregistros + 1;
                 modelo.addRow(registro);
-                
 
             }
 //            System.out.println("antes del return");
@@ -229,12 +228,12 @@ public class tabla {
             ResultSet rs = st.executeQuery(sSQL);
             int val = 0, cont = 1;
             while (rs.next()) {
-                
+
                 val = contarhorarios(cont, dia, maestro);
                 if ((val / 4) < 5) {
                     combo1.addItem(rs.getString("horario"));
                 }
-                cont+=1;
+                cont += 1;
 
             }
 //            System.out.println("antes del return");
@@ -253,7 +252,7 @@ public class tabla {
         sSQL = " select count(*) as hola from maestros join dias on"
                 + " dias.maestros_id = maestros.id_maestros join horario on"
                 + " dias.horario_id = horario.id_horario where id_horario='" + id + "' "
-                + "and dias_nombre='"+dia+"' and maestros_id='"+maestro+"'";
+                + "and dias_nombre='" + dia + "' and maestros_id='" + maestro + "'";
 //        System.out.println("Después de la consulta");
         try {
             Statement st = conn.createStatement();
@@ -297,7 +296,7 @@ public class tabla {
             return null;
         }
     }
-    
+
     //Llenar id de maestro
     public JComboBox mostraridmaestros(JComboBox combo1) {
         conn = con.conectar();
@@ -320,14 +319,14 @@ public class tabla {
             return null;
         }
     }
-    
+
     //Llenar tabla de horario
     public DefaultTableModel mostrarhorario(String buscar) {
         conn = con.conectar();
         DefaultTableModel modelo;
 //        System.out.println("Se metió al método");
 
-        String[] titulos = {"Lunes", "Martes","Miercoles","Jueves","Viernes","Sábado"};
+        String[] titulos = {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado"};
 
         String[] registro = new String[6];
 
@@ -353,7 +352,6 @@ public class tabla {
                 registro[1] = rs.getString("dato");
                 registro[2] = rs.getString("dato");
                 modelo.addColumn(registro);
-                
 
             }
 //            System.out.println("antes del return");
@@ -503,13 +501,104 @@ public class tabla {
         }
     }
 
+    //Mostrar alumnos por hora y por día en horario disponible
+    public DefaultTableModel mostraralumnos(String dia) {
+        conn = con.conectar();
+        DefaultTableModel modelo;
+//        System.out.println("Se metió al método");
+
+        String[] titulos = {"Horario", "Nombre completo",
+            "fecha de inicio", "fecha de termino"};
+
+        String[] registro = new String[4];
+
+        totalregistros = 0;
+        modelo = new DefaultTableModel(null, titulos) {
+            @Override
+            public boolean isCellEditable(int fila, int columna) {
+//                if (columna == 11) {
+//                    return true;
+//                } else {
+//                    return false;
+//                }
+                return false;
+
+            }
+
+        };
+        sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id=id_mensualidad join "
+                + "dias on id_mensualidad=dias.mensualidad_id join horario on horario.id_horario=dias.horario_id "
+                + "where horario_id=1 and dias_nombre='Lunes' group by usuario.clave;";
+
+//        sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id = mensualidad.id_mensualidad"
+//                + " join dias on dias.mensualidad_id = mensualidad.id_mensualidad join horario on dias.horario_id = "
+//                + "horario.id_horario where clave like '%" + buscar + "%' or nombre like '%" + buscar + "%' "
+//                + "order by clave";
+//        System.out.println("Después de la consulta");
+        try {
+            for (int i = 1; i <= 14; i++) {
+
+                sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id=id_mensualidad join "
+                        + "dias on id_mensualidad=dias.mensualidad_id join horario on horario.id_horario=dias.horario_id "
+                        + "where horario_id=" + i + " and dias_nombre='"+dia+"' group by usuario.clave;";
+                Statement st = conn.createStatement();
+                ResultSet rs = st.executeQuery(sSQL);
+                if (i == 1) {
+                    registro[0] = "6:00 - 7:00";
+                }else if(i==2){
+                    registro[0] = "7:00 - 8:00";
+                }else if(i==3){
+                    registro[0] = "8:00 - 9:00";
+                }else if(i==4){
+                    registro[0] = "9:00 - 10:00";
+                    System.out.println("999999");
+                }else if(i==5){
+                    registro[0] = "10:00 - 11:00";
+                }else if(i==6){
+                    registro[0] = "11:00 - 12:00";
+                }else if(i==7){
+                    registro[0] = "12:00 - 13:00";
+                }else if(i==8){
+                    registro[0] = "13:00 - 14:00";
+                }else if(i==9){
+                    registro[0] = "14:00 - 15:00";
+                }else if(i==10){
+                    registro[0] = "15:00 - 16:00";
+                }else if(i==11){
+                    registro[0] = "16:00 - 17:00";
+                }else if(i==12){
+                    registro[0] = "17:00 - 18:00";
+                }else if(i==13){
+                    registro[0] = "18:00 - 19:00";
+                }else if(i==14){
+                    registro[0] = "19:00 - 20:00";
+                }
+
+                while (rs.next()) {
+                    System.out.println( rs.getString("nombre") );
+                    registro[1] = rs.getString("nombre") + " " + rs.getString("apellidos");
+                    registro[2] = rs.getString("fecha_ini");
+                    registro[3] = rs.getString("fecha_fin");
+                    totalregistros = totalregistros + 1;
+                    modelo.addRow(registro);
+
+                }
+            }
+//            System.out.println("antes del return");
+            return modelo;
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, e);
+            return null;
+        }
+    }
+
     //Mostrar datos de usuario para recuperar día perdido
     public DefaultTableModel mostrarusuariosdiaperdido(String buscar) {
         conn = con.conectar();
         DefaultTableModel modelo;
 //        System.out.println("Se metió al método");
 
-        String[] titulos = {"ID","No. usuario", "Clave", "Nombre", "Apellidos", "localidad", "Sesiones",
+        String[] titulos = {"ID", "No. usuario", "Clave", "Nombre", "Apellidos", "localidad", "Sesiones",
             "fecha de inicio", "fecha de termino", "id mes"};
 
         String[] registro = new String[10];
@@ -532,11 +621,11 @@ public class tabla {
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sSQL);
-            int contar=1;
+            int contar = 1;
 
             while (rs.next()) {
                 registro[0] = rs.getString("id_usuario");
-                registro[1] = ""+contar;
+                registro[1] = "" + contar;
                 registro[2] = rs.getString("clave");
                 registro[3] = rs.getString("nombre");
                 registro[4] = rs.getString("apellidos");
@@ -547,7 +636,7 @@ public class tabla {
                 registro[9] = rs.getString("mensualidad_id");
                 totalregistros = totalregistros + 1;
                 modelo.addRow(registro);
-                contar+=1;
+                contar += 1;
 
             }
 //            System.out.println("antes del return");
