@@ -122,7 +122,7 @@ public class profesoralumno extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(1140, 0, 100, 100);
 
-        tdatos.setBackground(new java.awt.Color(102, 255, 102));
+        tdatos.setBackground(new java.awt.Color(0, 255, 153));
         tdatos.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         tdatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

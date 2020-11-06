@@ -76,9 +76,9 @@ public class eliminados extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(1).setMinWidth(0);
         tdatos.getColumnModel().getColumn(1).setPreferredWidth(0);
 
-        tdatos.getColumnModel().getColumn(2).setMaxWidth(230);
-        tdatos.getColumnModel().getColumn(2).setMinWidth(230);
-        tdatos.getColumnModel().getColumn(2).setPreferredWidth(230);
+        tdatos.getColumnModel().getColumn(2).setMaxWidth(270);
+        tdatos.getColumnModel().getColumn(2).setMinWidth(270);
+        tdatos.getColumnModel().getColumn(2).setPreferredWidth(270);
 
         tdatos.getColumnModel().getColumn(3).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(3).setMinWidth(0);
@@ -88,13 +88,13 @@ public class eliminados extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(4).setMinWidth(0);
         tdatos.getColumnModel().getColumn(4).setPreferredWidth(0);
 
-        tdatos.getColumnModel().getColumn(5).setMaxWidth(0);
-        tdatos.getColumnModel().getColumn(5).setMinWidth(0);
-        tdatos.getColumnModel().getColumn(5).setPreferredWidth(0);
+        tdatos.getColumnModel().getColumn(5).setMaxWidth(330);
+        tdatos.getColumnModel().getColumn(5).setMinWidth(330);
+        tdatos.getColumnModel().getColumn(5).setPreferredWidth(330);
 
-        tdatos.getColumnModel().getColumn(6).setMaxWidth(300);
-        tdatos.getColumnModel().getColumn(6).setMinWidth(300);
-        tdatos.getColumnModel().getColumn(6).setPreferredWidth(300);
+        tdatos.getColumnModel().getColumn(6).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(6).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(6).setPreferredWidth(0);
 
         tdatos.getColumnModel().getColumn(7).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(7).setMinWidth(0);
@@ -108,13 +108,13 @@ public class eliminados extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(9).setMinWidth(0);
         tdatos.getColumnModel().getColumn(9).setPreferredWidth(0);
 
-        tdatos.getColumnModel().getColumn(10).setMaxWidth(110);
-        tdatos.getColumnModel().getColumn(10).setMinWidth(110);
-        tdatos.getColumnModel().getColumn(10).setPreferredWidth(110);
+        tdatos.getColumnModel().getColumn(10).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(10).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(10).setPreferredWidth(0);
 
-        tdatos.getColumnModel().getColumn(11).setMaxWidth(110);
-        tdatos.getColumnModel().getColumn(11).setMinWidth(110);
-        tdatos.getColumnModel().getColumn(11).setPreferredWidth(110);
+        tdatos.getColumnModel().getColumn(11).setMaxWidth(150);
+        tdatos.getColumnModel().getColumn(11).setMinWidth(150);
+        tdatos.getColumnModel().getColumn(11).setPreferredWidth(150);
         
         tdatos.getColumnModel().getColumn(0).setResizable(false);
         tdatos.getColumnModel().getColumn(1).setResizable(false);

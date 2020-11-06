@@ -898,9 +898,9 @@ public class Inscripciones extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(16).setMinWidth(0);
         tdatos.getColumnModel().getColumn(16).setPreferredWidth(0);
         
-//        tdatos.getColumnModel().getColumn(17).setMaxWidth(0);
-//        tdatos.getColumnModel().getColumn(17).setMinWidth(0);
-//        tdatos.getColumnModel().getColumn(17).setPreferredWidth(0);
+        tdatos.getColumnModel().getColumn(17).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(17).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(17).setPreferredWidth(0);
 
         tdatos.getColumnModel().getColumn(14).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(14).setMinWidth(0);

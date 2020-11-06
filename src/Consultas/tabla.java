@@ -536,6 +536,7 @@ public class tabla {
 //                + "order by clave";
 //        System.out.println("Después de la consulta");
         try {
+            int conti = 0;
             for (int i = 1; i <= 14; i++) {
 
                 sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id=id_mensualidad join "
@@ -573,16 +574,23 @@ public class tabla {
                 }else if(i==14){
                     registro[0] = "19:00 - 20:00";
                 }
+                
 
                 while (rs.next()) {
-                    System.out.println( rs.getString("nombre") );
+                    conti++;
+                    if(conti>1){
+                        registro[0] = "";
+                    }
                     registro[1] = rs.getString("nombre") + " " + rs.getString("apellidos");
                     registro[2] = rs.getString("fecha_ini");
                     registro[3] = rs.getString("fecha_fin");
                     totalregistros = totalregistros + 1;
                     modelo.addRow(registro);
+                    
 
                 }
+                conti=0;
+                
             }
 //            System.out.println("antes del return");
             return modelo;

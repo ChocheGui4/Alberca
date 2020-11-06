@@ -20,7 +20,7 @@ public class horarios extends javax.swing.JFrame {
      * Creates new form horarios
      */
     tabla tab = new tabla();
-    
+
     public horarios() {
         initComponents();
         //Maestros
@@ -30,15 +30,13 @@ public class horarios extends javax.swing.JFrame {
 
         //Adultos
         this.setLocationRelativeTo(null);
-        
+
     }
 
-   
-    
     void mostrar(String dia) {
         try {
             DefaultTableModel modelo;
-            
+
             modelo = tab.mostraralumnos(dia);
 
             tdatos.setModel(modelo);
@@ -50,16 +48,16 @@ public class horarios extends javax.swing.JFrame {
         }
 
     }
-    
-    public void ocultar_columnas(){
+
+    public void ocultar_columnas() {
         tdatos.getColumnModel().getColumn(0).setMaxWidth(200);
         tdatos.getColumnModel().getColumn(0).setMinWidth(200);
         tdatos.getColumnModel().getColumn(0).setPreferredWidth(200);
-        
+
         tdatos.getColumnModel().getColumn(2).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(2).setMinWidth(0);
         tdatos.getColumnModel().getColumn(2).setPreferredWidth(0);
-        
+
         tdatos.getColumnModel().getColumn(3).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(3).setMinWidth(0);
         tdatos.getColumnModel().getColumn(3).setPreferredWidth(0);
@@ -85,7 +83,7 @@ public class horarios extends javax.swing.JFrame {
         lblimagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1270, 640));
+        setMinimumSize(new java.awt.Dimension(928, 595));
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(null);
@@ -94,18 +92,18 @@ public class horarios extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("CENTRO ACUÁTICO ALFA & OMEGA");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(310, 0, 819, 50);
+        jLabel3.setBounds(119, 0, 660, 50);
 
         jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
         getContentPane().add(jLabel43);
-        jLabel43.setBounds(1150, 0, 100, 100);
+        jLabel43.setBounds(780, 0, 100, 100);
 
         jLabel19.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Horarios disponibles");
         getContentPane().add(jLabel19);
-        jLabel19.setBounds(160, 590, 310, 30);
+        jLabel19.setBounds(60, 520, 310, 30);
 
         jButton1.setBackground(new java.awt.Color(0, 153, 204));
         jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -129,7 +127,7 @@ public class horarios extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btninscripicion);
-        btninscripicion.setBounds(1000, 570, 210, 50);
+        btninscripicion.setBounds(650, 520, 210, 50);
 
         cbseleccionar.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         cbseleccionar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar día", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" }));
@@ -139,8 +137,9 @@ public class horarios extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cbseleccionar);
-        cbseleccionar.setBounds(1000, 110, 230, 40);
+        cbseleccionar.setBounds(620, 110, 230, 40);
 
+        tdatos.setBackground(new java.awt.Color(0, 255, 153));
         tdatos.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
         tdatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -159,7 +158,7 @@ public class horarios extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tdatos);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(50, 162, 1180, 390);
+        jScrollPane1.setBounds(50, 162, 810, 340);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
@@ -180,7 +179,11 @@ public class horarios extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void cbseleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbseleccionarActionPerformed
-        mostrar(cbseleccionar.getSelectedItem().toString());
+
+        if (cbseleccionar.getSelectedIndex() != 0) {
+            mostrar(cbseleccionar.getSelectedItem().toString());
+        }
+
     }//GEN-LAST:event_cbseleccionarActionPerformed
 
     /**

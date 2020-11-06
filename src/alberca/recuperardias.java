@@ -412,8 +412,8 @@ public class recuperardias extends javax.swing.JFrame {
         fecha = tdatos.getValueAt(fila, 8).toString();
         txtfechamaxima.setDate(StringaDate(fecha));
         //Primera opción
-        txtfechamaxima.getJCalendar().setMinSelectableDate(new Date());
-        txtfechamaxima.getJCalendar().setMaxSelectableDate(txtfechamaxima.getDate());
+//        txtfechamaxima.getJCalendar().setMinSelectableDate(new Date());
+//        txtfechamaxima.getJCalendar().setMaxSelectableDate(txtfechamaxima.getDate());
 
         //Segunda opción
 //        txtfechamaxima.getJCalendar().setMaxSelectableDate(txtfechamaxima.getDate());
