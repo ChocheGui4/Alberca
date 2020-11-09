@@ -5,6 +5,8 @@
  */
 package alberca;
 
+import Consultas.Render;
+import Consultas.Render2;
 import Consultas.maestros;
 import Consultas.tablausuariosaldia;
 import java.util.Calendar;
@@ -26,6 +28,7 @@ public class Usuariosprofesor extends javax.swing.JFrame {
         initComponents();
         lblcoordinador.setText("Coordinador: "+ma.mostrarcoordinador());
         mostrar("");
+        tdatos.setDefaultRenderer(Object.class, new Render2());
         this.setLocationRelativeTo(null);
     }
     public void mostrar(String nombre) {
@@ -43,13 +46,24 @@ public class Usuariosprofesor extends javax.swing.JFrame {
             modelo = tab.usuariosporamestro(nombre);
 //            ocultar_columnas();
             tdatos.setModel(modelo);
-//            ocultar_columnas();
+            ocultar_columnas();
 //            lblregistros.setText("Registros: " + Integer.toString(tab.totalregistros));
 
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, e);
         }
 
+    }
+    public void ocultar_columnas(){
+        tdatos.getColumnModel().getColumn(2).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(2).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(2).setPreferredWidth(0);
+        tdatos.getColumnModel().getColumn(2).setResizable(false);
+        
+        tdatos.getColumnModel().getColumn(3).setMaxWidth(0);
+        tdatos.getColumnModel().getColumn(3).setMinWidth(0);
+        tdatos.getColumnModel().getColumn(3).setPreferredWidth(0);
+        tdatos.getColumnModel().getColumn(3).setResizable(false);
     }
 
     /**

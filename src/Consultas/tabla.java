@@ -282,17 +282,20 @@ public class tabla {
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sSQL);
-
+            System.out.println("Antes de");
+//            combo1.addItem("Seleccione un maestro");
             while (rs.next()) {
+                System.out.println("Se metiò");
 //                System.out.println("se metio a la iteración: "+rs.getString("nombre"));
                 combo1.addItem(rs.getString("nombre") + " " + rs.getString("apellidos"));
+                System.out.println(rs.getString("nombre")+" <-.");
 //                System.out.println("se metio a la iteración: "+rs.getString("nombre"));
 
             }
 //            System.out.println("antes del return");
             return combo1;
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println("Errorttt: "+ e);
             return null;
         }
     }
@@ -307,7 +310,7 @@ public class tabla {
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sSQL);
-
+//            combo1.addItem("0");
             while (rs.next()) {
                 combo1.addItem(rs.getString("id_maestros"));
 
@@ -486,7 +489,7 @@ public class tabla {
                 registro[12] = rs.getString("fecha_ini");
                 registro[13] = rs.getString("fecha_fin");
                 registro[14] = "<html>";
-                registro[14] += rs.getString("dias_nombre")+ " ";
+                registro[14] += rs.getString("dias_nombre") + " ";
 //                registro[14] += "<br>";
                 registro[14] += rs.getString("mes_num") + "/";
                 registro[14] += rs.getString("dias_num");
@@ -555,7 +558,7 @@ public class tabla {
     }
 
     //Mostrar alumnos por hora y por día en horario disponible
-    public DefaultTableModel mostraralumnos(String dia) {
+    public DefaultTableModel mostraralumnos(String dia, int numero) {
         conn = con.conectar();
         DefaultTableModel modelo;
 //        System.out.println("Se metió al método");
@@ -579,22 +582,22 @@ public class tabla {
             }
 
         };
-        sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id=id_mensualidad join "
-                + "dias on id_mensualidad=dias.mensualidad_id join horario on horario.id_horario=dias.horario_id "
-                + "where horario_id=1 and dias_nombre='Lunes' group by usuario.clave;";
+//        sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id=id_mensualidad join "
+//                + "dias on id_mensualidad=dias.mensualidad_id join horario on horario.id_horario=dias.horario_id "
+//                + "where horario_id=1 and dias_nombre='Lunes' group by usuario.clave;";
 
-//        sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id = mensualidad.id_mensualidad"
-//                + " join dias on dias.mensualidad_id = mensualidad.id_mensualidad join horario on dias.horario_id = "
-//                + "horario.id_horario where clave like '%" + buscar + "%' or nombre like '%" + buscar + "%' "
-//                + "order by clave";
 //        System.out.println("Después de la consulta");
         try {
             int conti = 0;
             for (int i = 1; i <= 14; i++) {
 
-                sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id=id_mensualidad join "
-                        + "dias on id_mensualidad=dias.mensualidad_id join horario on horario.id_horario=dias.horario_id "
-                        + "where horario_id=" + i + " and dias_nombre='" + dia + "' group by usuario.clave;";
+//                sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id=id_mensualidad join "
+//                        + "dias on id_mensualidad=dias.mensualidad_id join horario on horario.id_horario=dias.horario_id "
+//                        + "where horario_id=" + i + " and dias_nombre='" + dia + "' group by usuario.clave;";
+                sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id=id_mensualidad join"
+                        + " dias on id_mensualidad=dias.mensualidad_id join maestros on dias.maestros_id=id_maestros"
+                        + " where horario_id=" + i + " and dias_nombre='" + dia + "' and"
+                        + " maestros_id="+numero+" group by usuario.clave;";
                 Statement st = conn.createStatement();
                 ResultSet rs = st.executeQuery(sSQL);
                 if (i == 1) {
@@ -605,7 +608,7 @@ public class tabla {
                     registro[0] = "8:00 - 9:00";
                 } else if (i == 4) {
                     registro[0] = "9:00 - 10:00";
-                    System.out.println("999999");
+//                    System.out.println("999999");
                 } else if (i == 5) {
                     registro[0] = "10:00 - 11:00";
                 } else if (i == 6) {
@@ -647,6 +650,7 @@ public class tabla {
             return modelo;
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, e);
+            System.out.println("Error: "+e);
             return null;
         }
     }

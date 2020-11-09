@@ -17,7 +17,7 @@ import java.util.Date;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 
-public class Render extends DefaultTableCellRenderer {
+public class Render2 extends DefaultTableCellRenderer {
 
     public static void main(String[] args) {
         Render rn = new Render();
@@ -52,7 +52,7 @@ public class Render extends DefaultTableCellRenderer {
         setBackground(Color.red);
 //        setForeground(Color.red);
 //        System.out.println("Fecha fin: "+table.getValueAt(row, 13).toString());
-        Date f = StringaDate(table.getValueAt(row, 13).toString());
+        Date f = StringaDate(table.getValueAt(row, 3).toString());
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(f);
         int anio = calendar.get(Calendar.YEAR);
@@ -94,7 +94,7 @@ public class Render extends DefaultTableCellRenderer {
 
         return super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
     }
-
+    
     public java.util.Date StringaDate(String fecha) {
         SimpleDateFormat formatotexto = new SimpleDateFormat("yyyy-MM-dd");
         Date fechaE = null;

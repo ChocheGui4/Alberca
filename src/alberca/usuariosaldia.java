@@ -5,10 +5,14 @@
  */
 package alberca;
 
+import Consultas.Render;
+import Consultas.Render2;
 import Consultas.maestros;
 import Consultas.tablausuariosaldia;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import javax.swing.ImageIcon;
@@ -33,6 +37,8 @@ public class usuariosaldia extends javax.swing.JFrame {
         initComponents();
         lblcoordinador.setText("Coordinador: " + ma.mostrarcoordinador());
         mostrar();
+        tdatos.setDefaultRenderer(Object.class, new Render2());
+
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -41,10 +47,10 @@ public class usuariosaldia extends javax.swing.JFrame {
                     // Pero usamos un truco y hacemos un ciclo infinito
                     try {
                         // En él, hacemos que el hilo duerma
-
                         Thread.sleep(60000);
                         // Y después realizamos las operaciones
                         mostrar();
+
 //                        System.out.println("Me imprimo cada segundo");
                         // Así, se da la impresión de que se ejecuta cada cierto tiempo
                     } catch (InterruptedException e) {
@@ -53,8 +59,33 @@ public class usuariosaldia extends javax.swing.JFrame {
                 }
             }
         };
+
         Thread hilo = new Thread(runnable);
         hilo.start();
+        DateTimeFormatter formateador = DateTimeFormatter.ofPattern("HH:mm:ss"); // El formato es HH:mm:ss
+//        String horaActual = formateador.format(LocalDateTime.now());
+//        lblreloj.setText(horaActual);
+        Runnable runnable2 = new Runnable() {
+            @Override
+            public void run() {
+                // Esto se ejecuta en segundo plano una única vez
+                while (true) {
+                    // Pero usamos un truco y hacemos un ciclo infinito
+                    try {
+                        // En él, hacemos que el hilo duerma
+                        Thread.sleep(500);
+                        lblreloj.setText(formateador.format(LocalDateTime.now()));
+
+//                        System.out.println("Me imprimo cada segundo");
+                        // Así, se da la impresión de que se ejecuta cada cierto tiempo
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+        Thread hilo2 = new Thread(runnable2);
+        hilo2.start();
         this.setLocationRelativeTo(null);
     }
 
@@ -86,19 +117,19 @@ public class usuariosaldia extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(0).setMaxWidth(400);
         tdatos.getColumnModel().getColumn(0).setMinWidth(400);
         tdatos.getColumnModel().getColumn(0).setPreferredWidth(400);
-        
+
         tdatos.getColumnModel().getColumn(1).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(1).setMinWidth(0);
         tdatos.getColumnModel().getColumn(1).setPreferredWidth(0);
-        
+
         tdatos.getColumnModel().getColumn(4).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(4).setMinWidth(0);
         tdatos.getColumnModel().getColumn(4).setPreferredWidth(0);
-        
-        tdatos.getColumnModel().getColumn(5).setMaxWidth(0);
-        tdatos.getColumnModel().getColumn(5).setMinWidth(0);
-        tdatos.getColumnModel().getColumn(5).setPreferredWidth(0);
-        
+
+//        tdatos.getColumnModel().getColumn(5).setMaxWidth(0);
+//        tdatos.getColumnModel().getColumn(5).setMinWidth(0);
+//        tdatos.getColumnModel().getColumn(5).setPreferredWidth(0);
+//        
         tdatos.getColumnModel().getColumn(0).setResizable(false);
         tdatos.getColumnModel().getColumn(1).setResizable(false);
         tdatos.getColumnModel().getColumn(2).setResizable(false);
@@ -122,6 +153,7 @@ public class usuariosaldia extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         lblcoordinador = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        lblreloj = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         lblimagen = new javax.swing.JLabel();
 
@@ -196,6 +228,13 @@ public class usuariosaldia extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(1140, 0, 100, 100);
+
+        lblreloj.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        lblreloj.setForeground(new java.awt.Color(255, 255, 255));
+        lblreloj.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblreloj.setText("Hora");
+        getContentPane().add(lblreloj);
+        lblreloj.setBounds(430, 70, 390, 60);
 
         jButton1.setBackground(new java.awt.Color(0, 153, 204));
         jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -329,6 +368,7 @@ public class usuariosaldia extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblcoordinador;
     private javax.swing.JLabel lblimagen;
+    private javax.swing.JLabel lblreloj;
     private static javax.swing.JTable tdatos;
     // End of variables declaration//GEN-END:variables
 }

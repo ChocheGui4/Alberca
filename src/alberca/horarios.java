@@ -26,18 +26,22 @@ public class horarios extends javax.swing.JFrame {
         //Maestros
 //        tab.mostrarmaestros(cbmaestros);
 //        tab.mostraridmaestros(cbidmaestros);
-        mostrar("Lunes");
+        tab.mostrarmaestros(cbmaestros);
+        tab.mostraridmaestros(cbidmaestro);
+//        mostrar("Lunes",1);
+        mostrar("Lunes", 1);
+        cbidmaestro.setVisible(false);
 
         //Adultos
         this.setLocationRelativeTo(null);
 
     }
 
-    void mostrar(String dia) {
+    void mostrar(String dia, int numero) {
         try {
             DefaultTableModel modelo;
 
-            modelo = tab.mostraralumnos(dia);
+            modelo = tab.mostraralumnos(dia, numero);
 
             tdatos.setModel(modelo);
             ocultar_columnas();
@@ -78,6 +82,8 @@ public class horarios extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         btninscripicion = new javax.swing.JButton();
         cbseleccionar = new javax.swing.JComboBox<>();
+        cbmaestros = new javax.swing.JComboBox<>();
+        cbidmaestro = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         tdatos = new javax.swing.JTable();
         lblimagen = new javax.swing.JLabel();
@@ -130,14 +136,28 @@ public class horarios extends javax.swing.JFrame {
         btninscripicion.setBounds(650, 520, 210, 50);
 
         cbseleccionar.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        cbseleccionar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar día", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" }));
+        cbseleccionar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" }));
         cbseleccionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbseleccionarActionPerformed(evt);
             }
         });
         getContentPane().add(cbseleccionar);
-        cbseleccionar.setBounds(620, 110, 230, 40);
+        cbseleccionar.setBounds(370, 110, 200, 40);
+
+        cbmaestros.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        cbmaestros.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione instructor" }));
+        cbmaestros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbmaestrosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cbmaestros);
+        cbmaestros.setBounds(50, 110, 310, 40);
+
+        cbidmaestro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0" }));
+        getContentPane().add(cbidmaestro);
+        cbidmaestro.setBounds(480, 60, 80, 30);
 
         tdatos.setBackground(new java.awt.Color(0, 255, 153));
         tdatos.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
@@ -179,12 +199,25 @@ public class horarios extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void cbseleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbseleccionarActionPerformed
-
-        if (cbseleccionar.getSelectedIndex() != 0) {
-            mostrar(cbseleccionar.getSelectedItem().toString());
+        if (cbmaestros.getSelectedIndex() > 0) {
+            mostrar(cbseleccionar.getSelectedItem().toString(), Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex())));
+            System.out.println("id: " + Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex())));
         }
 
+//                    mostrar(cbseleccionar.getSelectedItem().toString(),Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex())));
+
     }//GEN-LAST:event_cbseleccionarActionPerformed
+
+    private void cbmaestrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbmaestrosActionPerformed
+//        mostrar(cbseleccionar.getSelectedItem().toString(), Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex())));
+        if (cbmaestros.getSelectedIndex() > 0) {
+            mostrar(cbseleccionar.getSelectedItem().toString(), Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex())));
+        }
+
+//        System.out.println("maestro: " + cbidmaestro.getItemAt(cbmaestros.getSelectedIndex()));
+//        System.out.println("dia: " + cbseleccionar.getSelectedItem().toString());
+//        mostrar(cbseleccionar.getSelectedItem().toString(),Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex())));
+    }//GEN-LAST:event_cbmaestrosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,6 +256,8 @@ public class horarios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btninscripicion;
+    private javax.swing.JComboBox<String> cbidmaestro;
+    private javax.swing.JComboBox<String> cbmaestros;
     private javax.swing.JComboBox<String> cbseleccionar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel19;

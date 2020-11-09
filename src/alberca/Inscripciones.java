@@ -116,14 +116,12 @@ public class Inscripciones extends javax.swing.JFrame {
         lbltutor.setVisible(false);
         txtnombretutor.setVisible(false);
         habilitarhoras(false);
-        btneditardatos.setEnabled(false);
         btnrenovar.setEnabled(false);
 //        btnguardar.setEnabled(false);
         txtidusuario.setEnabled(false);
         txtidusuario.setVisible(false);
         txtmensualidad.setVisible(false);
         txteliminar.setVisible(false);
-        btnguardarmodificaciones.setEnabled(false);
         btnguardarrenovacion.setEnabled(false);
         cbclaves.setVisible(false);
         cbidus.setVisible(false);
@@ -897,7 +895,7 @@ public class Inscripciones extends javax.swing.JFrame {
         tdatos.getColumnModel().getColumn(16).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(16).setMinWidth(0);
         tdatos.getColumnModel().getColumn(16).setPreferredWidth(0);
-        
+
         tdatos.getColumnModel().getColumn(17).setMaxWidth(0);
         tdatos.getColumnModel().getColumn(17).setMinWidth(0);
         tdatos.getColumnModel().getColumn(17).setPreferredWidth(0);
@@ -1001,13 +999,10 @@ public class Inscripciones extends javax.swing.JFrame {
         ckjueves = new javax.swing.JCheckBox();
         ckviernes = new javax.swing.JCheckBox();
         cksabado = new javax.swing.JCheckBox();
-        btneditardatos = new javax.swing.JButton();
         lblclave = new javax.swing.JLabel();
         txtidusuario = new javax.swing.JTextField();
         txtfechainicio = new com.toedter.calendar.JDateChooser();
         txtfechatermino = new com.toedter.calendar.JDateChooser();
-        btnguardarmodificaciones = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         btnguardarrenovacion = new javax.swing.JButton();
         txtmensualidad = new javax.swing.JTextField();
@@ -1197,7 +1192,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnnuevo);
-        btnnuevo.setBounds(20, 560, 140, 50);
+        btnnuevo.setBounds(190, 560, 140, 50);
 
         jLabel13.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(204, 204, 204));
@@ -1221,19 +1216,19 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnguardar);
-        btnguardar.setBounds(190, 560, 160, 50);
+        btnguardar.setBounds(350, 560, 160, 50);
 
         btnrenovar.setBackground(new java.awt.Color(0, 153, 204));
         btnrenovar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnrenovar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Editar mes.png"))); // NOI18N
-        btnrenovar.setText("Renovar mensualidad");
+        btnrenovar.setText("Editar y renovar mensualidad");
         btnrenovar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnrenovarActionPerformed(evt);
             }
         });
         getContentPane().add(btnrenovar);
-        btnrenovar.setBounds(740, 560, 270, 50);
+        btnrenovar.setBounds(530, 560, 350, 50);
 
         jLabel15.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(204, 204, 204));
@@ -1347,18 +1342,6 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(cksabado);
         cksabado.setBounds(1010, 470, 140, 33);
 
-        btneditardatos.setBackground(new java.awt.Color(0, 153, 204));
-        btneditardatos.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        btneditardatos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Editar.png"))); // NOI18N
-        btneditardatos.setText("Editar datos");
-        btneditardatos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btneditardatosActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btneditardatos);
-        btneditardatos.setBounds(380, 560, 180, 50);
-
         lblclave.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         lblclave.setForeground(new java.awt.Color(204, 204, 204));
         lblclave.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1383,25 +1366,9 @@ public class Inscripciones extends javax.swing.JFrame {
         getContentPane().add(txtfechatermino);
         txtfechatermino.setBounds(200, 430, 180, 30);
 
-        btnguardarmodificaciones.setBackground(new java.awt.Color(51, 255, 0));
-        btnguardarmodificaciones.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        btnguardarmodificaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Guardar.png"))); // NOI18N
-        btnguardarmodificaciones.setText("Guardar");
-        btnguardarmodificaciones.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnguardarmodificacionesActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnguardarmodificaciones);
-        btnguardarmodificaciones.setBounds(570, 560, 140, 50);
-
-        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        getContentPane().add(jSeparator1);
-        jSeparator1.setBounds(720, 560, 30, 60);
-
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
         getContentPane().add(jSeparator2);
-        jSeparator2.setBounds(370, 560, 30, 60);
+        jSeparator2.setBounds(520, 550, 30, 60);
 
         btnguardarrenovacion.setBackground(new java.awt.Color(51, 255, 0));
         btnguardarrenovacion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -1413,7 +1380,7 @@ public class Inscripciones extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnguardarrenovacion);
-        btnguardarrenovacion.setBounds(1020, 560, 150, 50);
+        btnguardarrenovacion.setBounds(900, 560, 150, 50);
         getContentPane().add(txtmensualidad);
         txtmensualidad.setBounds(840, 130, 20, 20);
 
@@ -1920,10 +1887,8 @@ public class Inscripciones extends javax.swing.JFrame {
         lblfotousuario.setIcon(icono);
         cbdias.setSelectedItem(tdatos.getValueAt(fila, 17).toString());
         cbmaestros.setSelectedIndex(cbidmaestro.getSelectedIndex() + 1);
-        btneditardatos.setEnabled(true);
         btnrenovar.setEnabled(true);
         btnguardar.setEnabled(false);
-        btnguardarmodificaciones.setEnabled(false);
         btnguardarrenovacion.setEnabled(false);
         cbmaestros.setEnabled(false);
         cbedad.setEnabled(false);
@@ -1948,10 +1913,8 @@ public class Inscripciones extends javax.swing.JFrame {
         marcarcalendar(new Date());
         cbdias.setSelectedIndex(0);
         deseleccionarckdias(false);
-        btneditardatos.setEnabled(false);
         btnrenovar.setEnabled(false);
         btnguardar.setEnabled(true);
-        btnguardarmodificaciones.setEnabled(false);
         cbedad.setSelectedIndex(0);
         cbmaestros.setSelectedIndex(0);
         cbedad.setEnabled(true);
@@ -1962,15 +1925,6 @@ public class Inscripciones extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_btnnuevoActionPerformed
-
-    private void btneditardatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditardatosActionPerformed
-        habilitarcamposdatopersonal(true);
-        cktutor.setEnabled(true);
-        txtnombretutor.setEnabled(true);
-        habilitarcamposdatosdireccion(true);
-        btnguardarmodificaciones.setEnabled(true);
-//        btnfoto.setEnabled(true);
-    }//GEN-LAST:event_btneditardatosActionPerformed
 
     private void txtbuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscarKeyReleased
         if (txtbuscar.getText().equals("")) {
@@ -1995,6 +1949,12 @@ public class Inscripciones extends javax.swing.JFrame {
     }//GEN-LAST:event_txtbuscarKeyReleased
 
     private void btnrenovarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrenovarActionPerformed
+        habilitarcamposdatopersonal(true);
+        cktutor.setEnabled(true);
+        txtnombretutor.setEnabled(true);
+        habilitarcamposdatosdireccion(true);
+        
+        
         habilitarcamposmensualidad(true);
         btnguardarrenovacion.setEnabled(true);
         cbmaestros.setEnabled(true);
@@ -2012,10 +1972,8 @@ public class Inscripciones extends javax.swing.JFrame {
         habilitarhoras(false);
         inicializarvariables();
         deseleccionarckdias(false);
-        btneditardatos.setEnabled(false);
         btnrenovar.setEnabled(false);
         btnguardar.setEnabled(true);
-        btnguardarmodificaciones.setEnabled(false);
         mostrar("");
         marcarcalendar(new Date());
         cbclaves.removeAllItems();
@@ -2035,18 +1993,6 @@ public class Inscripciones extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_txtfechainicioPropertyChange
-
-    private void btnguardarmodificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarmodificacionesActionPerformed
-        Guardarmodificaciones gm = new Guardarmodificaciones();
-        gm.Actualizar(txtnombre.getText(), txtapellidos.getText(), cbedad.getItemAt(cbedad.getSelectedIndex()),
-                txtnombretutor.getText(),txtlocalidad.getText(),
-                txtcelular.getText(), Integer.parseInt(txtidusuario.getText()));
-        btnguardarmodificaciones.setEnabled(false);
-//        btnfoto.setEnabled(false);
-        habilitarcamposdatosdireccion(false);
-        marcarcalendar(new Date());
-        mostrar("");
-    }//GEN-LAST:event_btnguardarmodificacionesActionPerformed
 
     private void btnguardarrenovacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarrenovacionActionPerformed
 
@@ -2333,7 +2279,18 @@ public class Inscripciones extends javax.swing.JFrame {
 
         }
         if (resultado == 1) {
-            JOptionPane.showMessageDialog(null, "<html><span style=\"font-size:2em\">Se renovó la mensualidad con éxito</span></html>");
+//            JOptionPane.showMessageDialog(null, "<html><span style=\"font-size:2em\">Se renovó la mensualidad con éxito</span></html>");
+            //Se actualizan datos personales
+            Guardarmodificaciones gm = new Guardarmodificaciones();
+            gm.Actualizar(txtnombre.getText(), txtapellidos.getText(), cbedad.getItemAt(cbedad.getSelectedIndex()),
+                    txtnombretutor.getText(), txtlocalidad.getText(),
+                    txtcelular.getText(), Integer.parseInt(txtidusuario.getText()));
+            //Se termina la actualización de datos personales
+            
+//        btnfoto.setEnabled(false);
+            habilitarcamposdatosdireccion(false);
+            marcarcalendar(new Date());
+            mostrar("");
             btnguardarrenovacion.setEnabled(false);
             habilitarcamposdatopersonal(false);
             habilitarcamposdatosdireccion(false);
@@ -2500,10 +2457,8 @@ public class Inscripciones extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btneditardatos;
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardar;
-    private javax.swing.JButton btnguardarmodificaciones;
     private javax.swing.JButton btnguardarrenovacion;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JButton btnrenovar;
@@ -2541,7 +2496,6 @@ public class Inscripciones extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPanel jpcamara;
     private javax.swing.JLabel lblclave;

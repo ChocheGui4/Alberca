@@ -130,9 +130,9 @@ public class tablausuariosaldia {
         DefaultTableModel modelo;
 //        System.out.println("Se metió al método");
 
-        String[] titulos = {"Maestro", "Nombre de usuario"};
+        String[] titulos = {"Maestro", "Nombre de usuario","Algo","Fin"};
 
-        String[] registro = new String[2];
+        String[] registro = new String[4];
 
         totalregistros = 0;
         modelo = new DefaultTableModel(null, titulos) {
@@ -160,6 +160,7 @@ public class tablausuariosaldia {
                 registro[0] += rs.getString("maestros.apellidos");
                 registro[1] = rs.getString("usuario.nombre")+" ";
                 registro[1] += rs.getString("usuario.apellidos");
+                registro[3] = rs.getString("mensualidad.fecha_fin");
                 totalregistros = totalregistros + 1;
                 modelo.addRow(registro);
 

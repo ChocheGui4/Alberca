@@ -7,6 +7,8 @@ package alberca;
 
 import Consultas.maestros;
 import Consultas.tablausuariosaldia;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -48,6 +50,31 @@ public class profesoralumno extends javax.swing.JFrame {
         };
         Thread hilo = new Thread(runnable);
         hilo.start();
+        DateTimeFormatter formateador = DateTimeFormatter.ofPattern("HH:mm:ss"); // El formato es HH:mm:ss
+//        String horaActual = formateador.format(LocalDateTime.now());
+//        lblreloj.setText(horaActual);
+       
+        Runnable runnable2 = new Runnable() {
+            @Override
+            public void run() {
+                // Esto se ejecuta en segundo plano una única vez
+                while (true) {
+                    // Pero usamos un truco y hacemos un ciclo infinito
+                    try {
+                        // En él, hacemos que el hilo duerma
+                        Thread.sleep(500);
+                        lblreloj.setText(formateador.format(LocalDateTime.now()));
+
+//                        System.out.println("Me imprimo cada segundo");
+                        // Así, se da la impresión de que se ejecuta cada cierto tiempo
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+        Thread hilo2 = new Thread(runnable2);
+        hilo2.start();
         this.setLocationRelativeTo(null);
     }
     public void mostrar() {
@@ -96,6 +123,7 @@ public class profesoralumno extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tdatos = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
+        lblreloj = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         lblimagen = new javax.swing.JLabel();
 
@@ -164,6 +192,13 @@ public class profesoralumno extends javax.swing.JFrame {
         jLabel4.setText("Usuarios al día por profesor");
         getContentPane().add(jLabel4);
         jLabel4.setBounds(40, 100, 340, 40);
+
+        lblreloj.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        lblreloj.setForeground(new java.awt.Color(255, 255, 255));
+        lblreloj.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblreloj.setText("Hora");
+        getContentPane().add(lblreloj);
+        lblreloj.setBounds(430, 70, 390, 60);
 
         jButton1.setBackground(new java.awt.Color(0, 153, 204));
         jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -237,6 +272,7 @@ public class profesoralumno extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblcoordinador;
     private javax.swing.JLabel lblimagen;
+    private javax.swing.JLabel lblreloj;
     private static javax.swing.JTable tdatos;
     // End of variables declaration//GEN-END:variables
 }
