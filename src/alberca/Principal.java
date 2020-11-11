@@ -42,27 +42,29 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSeparator1 = new javax.swing.JSeparator();
         jButton11 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         btncoordinador = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         lblimagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1270, 661));
-        setResizable(false);
+        setMinimumSize(new java.awt.Dimension(1350, 661));
+        setPreferredSize(new java.awt.Dimension(1350, 661));
         getContentPane().setLayout(null);
+        getContentPane().add(jSeparator1);
+        jSeparator1.setBounds(100, 440, 1160, 14);
 
         jButton11.setBackground(new java.awt.Color(0, 153, 204));
         jButton11.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -76,7 +78,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton11);
-        jButton11.setBounds(840, 110, 320, 55);
+        jButton11.setBounds(920, 110, 320, 55);
 
         jButton1.setBackground(new java.awt.Color(0, 153, 204));
         jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -90,7 +92,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(480, 110, 340, 55);
+        jButton1.setBounds(520, 110, 340, 55);
 
         jButton10.setBackground(new java.awt.Color(0, 153, 204));
         jButton10.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -103,7 +105,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton10);
-        jButton10.setBounds(480, 190, 340, 55);
+        jButton10.setBounds(520, 190, 340, 55);
 
         jButton3.setBackground(new java.awt.Color(0, 153, 204));
         jButton3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -138,9 +140,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(480, 460, 340, 58);
-        getContentPane().add(jSeparator1);
-        jSeparator1.setBounds(100, 440, 1090, 14);
+        jButton4.setBounds(520, 460, 340, 58);
 
         jButton5.setBackground(new java.awt.Color(0, 153, 204));
         jButton5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -154,7 +154,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton5);
-        jButton5.setBounds(900, 560, 240, 50);
+        jButton5.setBounds(990, 550, 240, 50);
 
         jButton6.setBackground(new java.awt.Color(0, 153, 204));
         jButton6.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -167,7 +167,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton6);
-        jButton6.setBounds(480, 270, 340, 55);
+        jButton6.setBounds(520, 270, 340, 55);
 
         jButton7.setBackground(new java.awt.Color(0, 153, 204));
         jButton7.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -211,11 +211,6 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(jButton8);
         jButton8.setBounds(130, 270, 330, 55);
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(1150, 0, 100, 100);
-
         btncoordinador.setBackground(new java.awt.Color(0, 153, 204));
         btncoordinador.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btncoordinador.setForeground(new java.awt.Color(255, 255, 255));
@@ -227,7 +222,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btncoordinador);
-        btncoordinador.setBounds(840, 190, 320, 55);
+        btncoordinador.setBounds(920, 190, 320, 55);
 
         jButton2.setBackground(new java.awt.Color(0, 153, 204));
         jButton2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -241,12 +236,17 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(480, 350, 340, 50);
+        jButton2.setBounds(520, 350, 340, 50);
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(1200, 0, 100, 100);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
         getContentPane().add(lblimagen);
-        lblimagen.setBounds(0, 0, 1280, 661);
+        lblimagen.setBounds(0, 0, 1380, 730);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
