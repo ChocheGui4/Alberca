@@ -263,6 +263,7 @@ public class eliminados extends javax.swing.JFrame {
         nombre = tdatos.getValueAt(fila, 1).toString();
         apellidos = tdatos.getValueAt(fila, 3).toString();
         edad = Integer.parseInt(tdatos.getValueAt(fila, 4).toString());
+        System.out.println("Edaaaaad: "+edad);
         nombre_tutor = tdatos.getValueAt(fila, 12).toString();
 
         localidad = tdatos.getValueAt(fila, 5).toString();
