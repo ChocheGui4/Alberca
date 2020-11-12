@@ -215,13 +215,14 @@ public class eliminados extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(1140, 10, 100, 100);
 
+        txtbuscar.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         txtbuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtbuscarKeyReleased(evt);
             }
         });
         getContentPane().add(txtbuscar);
-        txtbuscar.setBounds(1070, 120, 150, 30);
+        txtbuscar.setBounds(990, 110, 230, 40);
 
         lblcoordinador.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         lblcoordinador.setForeground(new java.awt.Color(255, 255, 255));
@@ -231,7 +232,7 @@ public class eliminados extends javax.swing.JFrame {
 
         jLabel18.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel18.setText("Buscar: AYO00");
+        jLabel18.setText("Buscar:");
         getContentPane().add(jLabel18);
         jLabel18.setBounds(890, 120, 180, 31);
 

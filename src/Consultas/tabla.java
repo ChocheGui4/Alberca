@@ -511,7 +511,7 @@ public class tabla {
                     registro[11] = "";
                     registro[12] = "";
                     registro[13] = "";
-                    System.out.println("Numero......: " + sesion + " -> Más contador: " + conti);
+//                    System.out.println("Numero......: " + sesion + " -> Más contador: " + conti);
                     conti = 1;
                     contador = 1;
                 } else if (conti > sesion) {
@@ -528,11 +528,11 @@ public class tabla {
                     registro[11] = "";
                     registro[12] = "";
                     registro[13] = "";
-                    System.out.println("A ver.... " + conti + " y sesión: " + sesion);
+//                    System.out.println("A ver.... " + conti + " y sesión: " + sesion);
                     conti = conti + 1;
                     contador += 1;
                 } else if (conti == 1) {
-                    System.out.println("respeta:" + conti);
+//                    System.out.println("respeta:" + conti);
 //                    registro[1] = rs.getString("clave");
                     conti = sesion + 1;
                     contador = contador + 1;
@@ -558,12 +558,12 @@ public class tabla {
     }
 
     //Mostrar alumnos por hora y por día en horario disponible
-    public DefaultTableModel mostraralumnos(String dia, int numero) {
+    public DefaultTableModel mostraralumnos(String dia) {
         conn = con.conectar();
         DefaultTableModel modelo;
 //        System.out.println("Se metió al método");
 
-        String[] titulos = {"Horario", "Nombre completo",
+        String[] titulos = {"Horario", dia,
             "fecha de inicio", "fecha de termino"};
 
         String[] registro = new String[4];
@@ -595,9 +595,9 @@ public class tabla {
 //                        + "dias on id_mensualidad=dias.mensualidad_id join horario on horario.id_horario=dias.horario_id "
 //                        + "where horario_id=" + i + " and dias_nombre='" + dia + "' group by usuario.clave;";
                 sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id=id_mensualidad join"
-                        + " dias on id_mensualidad=dias.mensualidad_id join maestros on dias.maestros_id=id_maestros"
-                        + " where horario_id=" + i + " and dias_nombre='" + dia + "' and"
-                        + " maestros_id="+numero+" group by usuario.clave;";
+                        + " dias on id_mensualidad=dias.mensualidad_id"
+                        + " where horario_id=" + i + " and dias_nombre='"+dia+"'"
+                        + " group by usuario.clave;";
                 Statement st = conn.createStatement();
                 ResultSet rs = st.executeQuery(sSQL);
                 if (i == 1) {
@@ -636,7 +636,7 @@ public class tabla {
                     if (conti > 1) {
                         registro[0] = "";
                     }
-                    registro[1] = rs.getString("nombre") + " " + rs.getString("apellidos");
+                    registro[1] = rs.getString("nombre") /*+ " " + rs.getString("apellidos")*/;
                     registro[2] = rs.getString("fecha_ini");
                     registro[3] = rs.getString("fecha_fin");
                     totalregistros = totalregistros + 1;

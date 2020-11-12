@@ -8,6 +8,7 @@ package alberca;
 import Consultas.Eliminarusuarios;
 import Consultas.tabla;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -26,25 +27,32 @@ public class horarios extends javax.swing.JFrame {
         //Maestros
 //        tab.mostrarmaestros(cbmaestros);
 //        tab.mostraridmaestros(cbidmaestros);
-        tab.mostrarmaestros(cbmaestros);
-        tab.mostraridmaestros(cbidmaestro);
 //        mostrar("Lunes",1);
-        mostrar("Lunes", 1);
-        cbidmaestro.setVisible(false);
+        mostrar(tdatoslunes, "Lunes");
+        mostrar(tdatosmartes, "Martes");
+        mostrar(tdatosmiercoles, "Miercoles");
+        mostrar(tdatosjueves, "Jueves");
+        mostrar(tdatosviernes, "Viernes");
+        mostrar(tdatossabado, "Sabado");
+        lblviernes.setVisible(false);
+        lblsabado.setVisible(false);
+        jsviernes.setVisible(false);
+        jssabado.setVisible(false);
+        btncambiar2.setVisible(false);
 
         //Adultos
         this.setLocationRelativeTo(null);
 
     }
 
-    void mostrar(String dia, int numero) {
+    void mostrar(JTable t, String dia) {
         try {
             DefaultTableModel modelo;
 
-            modelo = tab.mostraralumnos(dia, numero);
+            modelo = tab.mostraralumnos(dia);
 
-            tdatos.setModel(modelo);
-            ocultar_columnas();
+            t.setModel(modelo);
+            ocultar_columnas(t);
 //            lblregistros.setText("Registros: " + Integer.toString(tab.totalregistros));
 
         } catch (Exception e) {
@@ -53,18 +61,34 @@ public class horarios extends javax.swing.JFrame {
 
     }
 
-    public void ocultar_columnas() {
-        tdatos.getColumnModel().getColumn(0).setMaxWidth(200);
-        tdatos.getColumnModel().getColumn(0).setMinWidth(200);
-        tdatos.getColumnModel().getColumn(0).setPreferredWidth(200);
+    void mostrarmartes(String dia) {
+        try {
+            DefaultTableModel modelo;
 
-        tdatos.getColumnModel().getColumn(2).setMaxWidth(0);
-        tdatos.getColumnModel().getColumn(2).setMinWidth(0);
-        tdatos.getColumnModel().getColumn(2).setPreferredWidth(0);
+            modelo = tab.mostraralumnos(dia);
 
-        tdatos.getColumnModel().getColumn(3).setMaxWidth(0);
-        tdatos.getColumnModel().getColumn(3).setMinWidth(0);
-        tdatos.getColumnModel().getColumn(3).setPreferredWidth(0);
+            tdatosmartes.setModel(modelo);
+            ocultar_columnas(tdatosmartes);
+//            lblregistros.setText("Registros: " + Integer.toString(tab.totalregistros));
+
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(rootPane, e);
+        }
+
+    }
+
+    public void ocultar_columnas(JTable td) {
+        td.getColumnModel().getColumn(0).setMaxWidth(140);
+        td.getColumnModel().getColumn(0).setMinWidth(140);
+        td.getColumnModel().getColumn(0).setPreferredWidth(140);
+
+        td.getColumnModel().getColumn(2).setMaxWidth(0);
+        td.getColumnModel().getColumn(2).setMinWidth(0);
+        td.getColumnModel().getColumn(2).setPreferredWidth(0);
+
+        td.getColumnModel().getColumn(3).setMaxWidth(0);
+        td.getColumnModel().getColumn(3).setMinWidth(0);
+        td.getColumnModel().getColumn(3).setPreferredWidth(0);
     }
 
     /**
@@ -76,34 +100,49 @@ public class horarios extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
+        lbljueves = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jsjueves = new javax.swing.JScrollPane();
+        tdatosjueves = new javax.swing.JTable();
+        jsmiercoles = new javax.swing.JScrollPane();
+        tdatosmiercoles = new javax.swing.JTable();
+        jsmartes = new javax.swing.JScrollPane();
+        tdatosmartes = new javax.swing.JTable();
+        jslunes = new javax.swing.JScrollPane();
+        tdatoslunes = new javax.swing.JTable();
+        jsviernes = new javax.swing.JScrollPane();
+        tdatosviernes = new javax.swing.JTable();
+        jssabado = new javax.swing.JScrollPane();
+        tdatossabado = new javax.swing.JTable();
+        lblsabado = new javax.swing.JLabel();
+        lblmartes = new javax.swing.JLabel();
+        lblmiercoles = new javax.swing.JLabel();
+        btncambiar2 = new javax.swing.JButton();
+        btncambiar = new javax.swing.JButton();
         btninscripicion = new javax.swing.JButton();
-        cbseleccionar = new javax.swing.JComboBox<>();
-        cbmaestros = new javax.swing.JComboBox<>();
-        cbidmaestro = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tdatos = new javax.swing.JTable();
+        lblviernes = new javax.swing.JLabel();
+        lbllunes = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         lblimagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(928, 595));
+        setMinimumSize(new java.awt.Dimension(1256, 595));
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("CENTRO ACUÁTICO ALFA & OMEGA");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(119, 0, 660, 50);
+        lbljueves.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        lbljueves.setForeground(new java.awt.Color(255, 255, 255));
+        lbljueves.setText("Jueves");
+        getContentPane().add(lbljueves);
+        lbljueves.setBounds(990, 100, 160, 50);
 
         jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/logo2.jpg"))); // NOI18N
         getContentPane().add(jLabel43);
-        jLabel43.setBounds(780, 0, 100, 100);
+        jLabel43.setBounds(1120, 20, 100, 100);
 
         jLabel19.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
@@ -123,45 +162,9 @@ public class horarios extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(22, 12, 50, 40);
 
-        btninscripicion.setBackground(new java.awt.Color(0, 153, 204));
-        btninscripicion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        btninscripicion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Agregar.png"))); // NOI18N
-        btninscripicion.setText("Ir a inscripción");
-        btninscripicion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btninscripicionActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btninscripicion);
-        btninscripicion.setBounds(650, 520, 210, 50);
-
-        cbseleccionar.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        cbseleccionar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" }));
-        cbseleccionar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbseleccionarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cbseleccionar);
-        cbseleccionar.setBounds(370, 110, 200, 40);
-
-        cbmaestros.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        cbmaestros.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione instructor" }));
-        cbmaestros.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbmaestrosActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cbmaestros);
-        cbmaestros.setBounds(50, 110, 310, 40);
-
-        cbidmaestro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0" }));
-        getContentPane().add(cbidmaestro);
-        cbidmaestro.setBounds(480, 60, 80, 30);
-
-        tdatos.setBackground(new java.awt.Color(0, 255, 153));
-        tdatos.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
-        tdatos.setModel(new javax.swing.table.DefaultTableModel(
+        tdatosjueves.setBackground(new java.awt.Color(0, 255, 153));
+        tdatosjueves.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tdatosjueves.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -172,13 +175,188 @@ public class horarios extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tdatos.setRowHeight(40);
-        tdatos.setSelectionBackground(new java.awt.Color(102, 255, 102));
-        tdatos.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jScrollPane1.setViewportView(tdatos);
+        tdatosjueves.setRowHeight(40);
+        tdatosjueves.setSelectionBackground(new java.awt.Color(102, 255, 102));
+        tdatosjueves.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jsjueves.setViewportView(tdatosjueves);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(50, 162, 810, 340);
+        getContentPane().add(jsjueves);
+        jsjueves.setBounds(910, 160, 290, 340);
+
+        tdatosmiercoles.setBackground(new java.awt.Color(0, 255, 153));
+        tdatosmiercoles.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tdatosmiercoles.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tdatosmiercoles.setRowHeight(40);
+        tdatosmiercoles.setSelectionBackground(new java.awt.Color(102, 255, 102));
+        tdatosmiercoles.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jsmiercoles.setViewportView(tdatosmiercoles);
+
+        getContentPane().add(jsmiercoles);
+        jsmiercoles.setBounds(620, 160, 290, 340);
+
+        tdatosmartes.setBackground(new java.awt.Color(0, 255, 153));
+        tdatosmartes.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tdatosmartes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tdatosmartes.setRowHeight(40);
+        tdatosmartes.setSelectionBackground(new java.awt.Color(102, 255, 102));
+        tdatosmartes.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jsmartes.setViewportView(tdatosmartes);
+
+        getContentPane().add(jsmartes);
+        jsmartes.setBounds(330, 160, 290, 340);
+
+        tdatoslunes.setBackground(new java.awt.Color(0, 255, 153));
+        tdatoslunes.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tdatoslunes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tdatoslunes.setRowHeight(40);
+        tdatoslunes.setSelectionBackground(new java.awt.Color(102, 255, 102));
+        tdatoslunes.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jslunes.setViewportView(tdatoslunes);
+
+        getContentPane().add(jslunes);
+        jslunes.setBounds(40, 160, 290, 340);
+
+        tdatosviernes.setBackground(new java.awt.Color(0, 255, 153));
+        tdatosviernes.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tdatosviernes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tdatosviernes.setRowHeight(40);
+        tdatosviernes.setSelectionBackground(new java.awt.Color(102, 255, 102));
+        tdatosviernes.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jsviernes.setViewportView(tdatosviernes);
+
+        getContentPane().add(jsviernes);
+        jsviernes.setBounds(40, 160, 290, 340);
+
+        tdatossabado.setBackground(new java.awt.Color(0, 255, 153));
+        tdatossabado.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        tdatossabado.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tdatossabado.setRowHeight(40);
+        tdatossabado.setSelectionBackground(new java.awt.Color(102, 255, 102));
+        tdatossabado.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jssabado.setViewportView(tdatossabado);
+
+        getContentPane().add(jssabado);
+        jssabado.setBounds(330, 160, 290, 340);
+
+        lblsabado.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        lblsabado.setForeground(new java.awt.Color(255, 255, 255));
+        lblsabado.setText("Sábado");
+        getContentPane().add(lblsabado);
+        lblsabado.setBounds(410, 100, 160, 50);
+
+        lblmartes.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        lblmartes.setForeground(new java.awt.Color(255, 255, 255));
+        lblmartes.setText("Martes");
+        getContentPane().add(lblmartes);
+        lblmartes.setBounds(430, 100, 140, 50);
+
+        lblmiercoles.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        lblmiercoles.setForeground(new java.awt.Color(255, 255, 255));
+        lblmiercoles.setText("Miércoles");
+        getContentPane().add(lblmiercoles);
+        lblmiercoles.setBounds(690, 100, 210, 50);
+
+        btncambiar2.setBackground(new java.awt.Color(0, 153, 204));
+        btncambiar2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btncambiar2.setText("Ver Lunes - Jueves");
+        btncambiar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncambiar2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btncambiar2);
+        btncambiar2.setBounds(710, 510, 270, 50);
+
+        btncambiar.setBackground(new java.awt.Color(0, 153, 204));
+        btncambiar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btncambiar.setText("Ver viernes y sábado");
+        btncambiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncambiarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btncambiar);
+        btncambiar.setBounds(710, 510, 270, 50);
+
+        btninscripicion.setBackground(new java.awt.Color(0, 153, 204));
+        btninscripicion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btninscripicion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Agregar.png"))); // NOI18N
+        btninscripicion.setText("Ir a inscripción");
+        btninscripicion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btninscripicionActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btninscripicion);
+        btninscripicion.setBounds(990, 510, 210, 50);
+
+        lblviernes.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        lblviernes.setForeground(new java.awt.Color(255, 255, 255));
+        lblviernes.setText("Viernes");
+        getContentPane().add(lblviernes);
+        lblviernes.setBounds(140, 100, 140, 50);
+
+        lbllunes.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        lbllunes.setForeground(new java.awt.Color(255, 255, 255));
+        lbllunes.setText("Lunes");
+        getContentPane().add(lbllunes);
+        lbllunes.setBounds(140, 100, 140, 50);
+
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("CENTRO ACUÁTICO ALFA & OMEGA");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(300, 10, 660, 50);
 
         lblimagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblimagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/azul claro 1.jpg"))); // NOI18N
@@ -198,26 +376,42 @@ public class horarios extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void cbseleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbseleccionarActionPerformed
-        if (cbmaestros.getSelectedIndex() > 0) {
-            mostrar(cbseleccionar.getSelectedItem().toString(), Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex())));
-            System.out.println("id: " + Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex())));
-        }
+    private void btncambiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncambiarActionPerformed
+//        tdatoslunes.setVisible(false);
+        jslunes.setVisible(false);
+        jsmartes.setVisible(false);
+        jsmiercoles.setVisible(false);
+        jsjueves.setVisible(false);
+        lbllunes.setVisible(false);
+        lblmartes.setVisible(false);
+        lblmiercoles.setVisible(false);
+        lbljueves.setVisible(false);
+        btncambiar.setVisible(false);
+        
+        btncambiar2.setVisible(true);
+        jsviernes.setVisible(true);
+        jssabado.setVisible(true);
+        lblviernes.setVisible(true);
+        lblsabado.setVisible(true);
+    }//GEN-LAST:event_btncambiarActionPerformed
 
-//                    mostrar(cbseleccionar.getSelectedItem().toString(),Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex())));
-
-    }//GEN-LAST:event_cbseleccionarActionPerformed
-
-    private void cbmaestrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbmaestrosActionPerformed
-//        mostrar(cbseleccionar.getSelectedItem().toString(), Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex())));
-        if (cbmaestros.getSelectedIndex() > 0) {
-            mostrar(cbseleccionar.getSelectedItem().toString(), Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex())));
-        }
-
-//        System.out.println("maestro: " + cbidmaestro.getItemAt(cbmaestros.getSelectedIndex()));
-//        System.out.println("dia: " + cbseleccionar.getSelectedItem().toString());
-//        mostrar(cbseleccionar.getSelectedItem().toString(),Integer.parseInt(cbidmaestro.getItemAt(cbmaestros.getSelectedIndex())));
-    }//GEN-LAST:event_cbmaestrosActionPerformed
+    private void btncambiar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncambiar2ActionPerformed
+        jslunes.setVisible(true);
+        jsmartes.setVisible(true);
+        jsmiercoles.setVisible(true);
+        jsjueves.setVisible(true);
+        lbllunes.setVisible(true);
+        lblmartes.setVisible(true);
+        lblmiercoles.setVisible(true);
+        lbljueves.setVisible(true);
+        btncambiar.setVisible(true);
+        
+        btncambiar2.setVisible(false);
+        jsviernes.setVisible(false);
+        jssabado.setVisible(false);
+        lblviernes.setVisible(false);
+        lblsabado.setVisible(false);
+    }//GEN-LAST:event_btncambiar2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -255,16 +449,31 @@ public class horarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btncambiar;
+    private javax.swing.JButton btncambiar2;
     private javax.swing.JButton btninscripicion;
-    private javax.swing.JComboBox<String> cbidmaestro;
-    private javax.swing.JComboBox<String> cbmaestros;
-    private javax.swing.JComboBox<String> cbseleccionar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel43;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jsjueves;
+    private javax.swing.JScrollPane jslunes;
+    private javax.swing.JScrollPane jsmartes;
+    private javax.swing.JScrollPane jsmiercoles;
+    private javax.swing.JScrollPane jssabado;
+    private javax.swing.JScrollPane jsviernes;
     private javax.swing.JLabel lblimagen;
-    private javax.swing.JTable tdatos;
+    private javax.swing.JLabel lbljueves;
+    private javax.swing.JLabel lbllunes;
+    private javax.swing.JLabel lblmartes;
+    private javax.swing.JLabel lblmiercoles;
+    private javax.swing.JLabel lblsabado;
+    private javax.swing.JLabel lblviernes;
+    private javax.swing.JTable tdatosjueves;
+    private javax.swing.JTable tdatoslunes;
+    private javax.swing.JTable tdatosmartes;
+    private javax.swing.JTable tdatosmiercoles;
+    private javax.swing.JTable tdatossabado;
+    private javax.swing.JTable tdatosviernes;
     // End of variables declaration//GEN-END:variables
 }

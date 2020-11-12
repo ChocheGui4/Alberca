@@ -168,7 +168,7 @@ public class Informacion extends javax.swing.JFrame  {
 
         jLabel18.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel18.setText("Buscar: AYO00");
+        jLabel18.setText("Buscar:");
         getContentPane().add(jLabel18);
         jLabel18.setBounds(880, 110, 180, 31);
 
@@ -206,7 +206,7 @@ public class Informacion extends javax.swing.JFrame  {
             }
         });
         getContentPane().add(txtbuscar);
-        txtbuscar.setBounds(1060, 110, 170, 30);
+        txtbuscar.setBounds(980, 100, 250, 40);
 
         lblcoordinador.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         lblcoordinador.setForeground(new java.awt.Color(255, 255, 255));
@@ -241,7 +241,7 @@ public class Informacion extends javax.swing.JFrame  {
 
     private void txtbuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscarKeyReleased
         if (txtbuscar.getText().equals("")) {
-            mostrar("AYO00" + txtbuscar.getText());
+            mostrar(txtbuscar.getText());
         } else {
             if (txtbuscar.getText().charAt(0) == '0'
                     | txtbuscar.getText().charAt(0) == '1'
@@ -253,7 +253,7 @@ public class Informacion extends javax.swing.JFrame  {
                     | txtbuscar.getText().charAt(0) == '7'
                     | txtbuscar.getText().charAt(0) == '8'
                     | txtbuscar.getText().charAt(0) == '9') {
-                mostrar("AYO00" + txtbuscar.getText());
+                mostrar(txtbuscar.getText());
             } else {
                 mostrar(txtbuscar.getText());
             }

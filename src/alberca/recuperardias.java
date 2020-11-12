@@ -207,7 +207,7 @@ public class recuperardias extends javax.swing.JFrame {
 
         lblnombre.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         lblnombre.setForeground(new java.awt.Color(204, 204, 204));
-        lblnombre.setText("Buscar: AYO00");
+        lblnombre.setText("Buscar: ");
         getContentPane().add(lblnombre);
         lblnombre.setBounds(30, 270, 170, 31);
 
@@ -301,7 +301,7 @@ public class recuperardias extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtbuscar);
-        txtbuscar.setBounds(180, 270, 160, 30);
+        txtbuscar.setBounds(120, 260, 220, 40);
 
         btnrecuperar.setBackground(new java.awt.Color(51, 255, 0));
         btnrecuperar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -426,7 +426,7 @@ public class recuperardias extends javax.swing.JFrame {
 
     private void txtbuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscarKeyReleased
         if (txtbuscar.getText().equals("")) {
-            mostrar("AYO00" + txtbuscar.getText());
+            mostrar(txtbuscar.getText());
         } else {
             if (txtbuscar.getText().charAt(0) == '0'
                     | txtbuscar.getText().charAt(0) == '1'
@@ -438,7 +438,7 @@ public class recuperardias extends javax.swing.JFrame {
                     | txtbuscar.getText().charAt(0) == '7'
                     | txtbuscar.getText().charAt(0) == '8'
                     | txtbuscar.getText().charAt(0) == '9') {
-                mostrar("AYO00" + txtbuscar.getText());
+                mostrar(txtbuscar.getText());
             } else {
                 mostrar(txtbuscar.getText());
             }
