@@ -76,10 +76,14 @@ public class tabla {
 
         };
 
+//        sSQL = "select * from usuario join mensualidad on mensualidad.id_mensualidad ="
+//                + "usuario.mensualidad_id join dias on dias.mensualidad_id = mensualidad.id_mensualidad"
+//                + " where clave like '%" + buscar + "%' or nombre like '%" + buscar + "%' group by usuario.mensualidad_id "
+//                + "order by id_usuario";
         sSQL = "select * from usuario join mensualidad on mensualidad.id_mensualidad ="
                 + "usuario.mensualidad_id join dias on dias.mensualidad_id = mensualidad.id_mensualidad"
                 + " where clave like '%" + buscar + "%' or nombre like '%" + buscar + "%' group by usuario.mensualidad_id "
-                + "order by id_usuario";
+                + "order by usuario.nombre";
 //        System.out.println("Después de la consulta");
         try {
             Statement st = conn.createStatement();

@@ -766,6 +766,9 @@ public class Inscripciones extends javax.swing.JFrame {
             Calendar calendar = Calendar.getInstance();
 //            System.out.println("Fecha a poner ultimo -> " + jd.getDate());
             calendar.setTime(jd.getDate());
+            //Aquí se aumentan los días por 21 o por 28
+//            calendar.add(Calendar.DAY_OF_YEAR, 28 + ultimo);
+            
             calendar.add(Calendar.DAY_OF_YEAR, 21 + ultimo);
             if (jd.getDate() != null) {
 //                txtfechatermino.getJCalendar().setMinSelectableDate(calendar.getTime());
@@ -1977,6 +1980,9 @@ public class Inscripciones extends javax.swing.JFrame {
         btntomarfoto.setVisible(false);
         lblfotousuario.setIcon(null);
         cbedad.setSelectedIndex(0);
+        txtbuscar.setText("");
+        cbmaestros.setEnabled(true);
+        cbmaestros.setSelectedIndex(0);
 
     }//GEN-LAST:event_btneliminarActionPerformed
 

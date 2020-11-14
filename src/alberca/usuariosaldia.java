@@ -95,13 +95,17 @@ public class usuariosaldia extends javax.swing.JFrame {
             calendar.setTime(new Date());
             int m = calendar.get(Calendar.MONTH) + 1;
             System.out.println("mes: " + m);
-            int d = calendar.get(Calendar.DAY_OF_MONTH);
+            //------------------- AQUI se cambió--------------
+//            int d = calendar.get(Calendar.DAY_OF_MONTH);
+//            int dianombre= calendar.get(Calendar.DAY_OF_MONTH);
+            int d= calendar.get(Calendar.DAY_OF_WEEK);
+            //--------------AQUI------------------------------------
             System.out.println("dia: " + d);
             int h = calendar.get(Calendar.HOUR_OF_DAY);
             System.out.println("hora: " + h);
             DefaultTableModel modelo;
             tablausuariosaldia tab = new tablausuariosaldia();
-            modelo = tab.usuariosaldia("" + m, "" + d, h);
+            modelo = tab.usuariosaldia("" + m, d, h);
 //            ocultar_columnas();
             tdatos.setModel(modelo);
             ocultar_columnas();

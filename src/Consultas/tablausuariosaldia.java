@@ -25,7 +25,7 @@ public class tablausuariosaldia {
     public Integer totalregistros;
 
     //Mostrar los usuarios al día
-    public DefaultTableModel usuariosaldia(String mes, String dia, int hora) {
+    public DefaultTableModel usuariosaldia(String mes, int dia, int hora) {
         conn = con.conectar();
         DefaultTableModel modelo;
 //        System.out.println("Se metió al método");
@@ -41,10 +41,32 @@ public class tablausuariosaldia {
                 return false;
             }
         };
-        sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id = mensualidad.id_mensualidad "
+//        sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id = mensualidad.id_mensualidad "
+//                + "join dias on dias.mensualidad_id = mensualidad.id_mensualidad join horario on dias.horario_id = "
+//                + "horario.id_horario where mes_num= '" + mes + "' and dias_num = '" + dia + "'"
+//                + " and hora_num>='" + hora + "' order by hora_num";
+        String d = "";
+        if (dia == 2) {
+            d="Lunes";
+        }else if (dia == 3) {
+            d="Martes";
+        }else if (dia == 4) {
+            d="Miercoles";
+        }else if (dia == 5) {
+            d="Jueves";
+        }else if (dia == 6) {
+            d="Viernes";
+        }else if (dia == 7) {
+            d="Sabado";
+        }
+//        sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id = mensualidad.id_mensualidad "
+//                + "join dias on dias.mensualidad_id = mensualidad.id_mensualidad join horario on dias.horario_id = "
+//                + "horario.id_horario where mes_num= '" + mes + "' and dias_nombre = '" + d + "'"
+//                + " and hora_num>='" + hora + "' order by hora_num";
+sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id = mensualidad.id_mensualidad "
                 + "join dias on dias.mensualidad_id = mensualidad.id_mensualidad join horario on dias.horario_id = "
-                + "horario.id_horario where mes_num= '" + mes + "' and dias_num = '" + dia + "'"
-                + " and hora_num>='" + hora + "' order by hora_num";
+                + "horario.id_horario where dias_nombre = '" + d + "'"
+                + " and hora_num>='" + hora + "' group by clave order by hora_num";
 //        System.out.println("Después de la consulta");
         try {
             Statement st = conn.createStatement();
@@ -106,9 +128,9 @@ public class tablausuariosaldia {
             ResultSet rs = st.executeQuery(sSQL);
 
             while (rs.next()) {
-                registro[0] = rs.getString("maestros.nombre")+" ";
+                registro[0] = rs.getString("maestros.nombre") + " ";
                 registro[0] += rs.getString("maestros.apellidos");
-                registro[1] = rs.getString("usuario.nombre")+" ";
+                registro[1] = rs.getString("usuario.nombre") + " ";
                 registro[1] += rs.getString("usuario.apellidos");
                 registro[2] = rs.getString("horario.horario");
                 totalregistros = totalregistros + 1;
@@ -123,14 +145,14 @@ public class tablausuariosaldia {
             return null;
         }
     }
-    
+
     //Mostrar usuarios por maestro
     public DefaultTableModel usuariosporamestro(String nombre) {
         conn = con.conectar();
         DefaultTableModel modelo;
 //        System.out.println("Se metió al método");
 
-        String[] titulos = {"Maestro", "Nombre de usuario","Algo","Fin"};
+        String[] titulos = {"Maestro", "Nombre de usuario", "Algo", "Fin"};
 
         String[] registro = new String[4];
 
@@ -149,16 +171,16 @@ public class tablausuariosaldia {
         sSQL = "select * from usuario join mensualidad on usuario.mensualidad_id = mensualidad.id_mensualidad "
                 + "join dias on dias.mensualidad_id = mensualidad.id_mensualidad join horario on dias.horario_id = "
                 + "horario.id_horario join maestros on dias.maestros_id = maestros.id_maestros"
-                + " where maestros.nombre like '%"+nombre+"%' group by usuario.nombre order by maestros.nombre";
+                + " where maestros.nombre like '%" + nombre + "%' group by usuario.nombre order by maestros.nombre";
 //        System.out.println("Después de la consulta");
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sSQL);
 
             while (rs.next()) {
-                registro[0] = rs.getString("maestros.nombre")+" ";
+                registro[0] = rs.getString("maestros.nombre") + " ";
                 registro[0] += rs.getString("maestros.apellidos");
-                registro[1] = rs.getString("usuario.nombre")+" ";
+                registro[1] = rs.getString("usuario.nombre") + " ";
                 registro[1] += rs.getString("usuario.apellidos");
                 registro[3] = rs.getString("mensualidad.fecha_fin");
                 totalregistros = totalregistros + 1;
